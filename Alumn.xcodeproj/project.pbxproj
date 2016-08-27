@@ -34,6 +34,8 @@
 		121947751D7168BE002F8287 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1219476E1D7168BE002F8287 /* MJRefreshComponent.m */; };
 		121947761D7168BE002F8287 /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 121947701D7168BE002F8287 /* MJRefreshFooter.m */; };
 		121947771D7168BE002F8287 /* MJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 121947721D7168BE002F8287 /* MJRefreshHeader.m */; };
+		1219477D1D71B0A8002F8287 /* FindCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1219477B1D71B0A8002F8287 /* FindCircleViewController.m */; };
+		1219477E1D71B0A8002F8287 /* FindCircleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1219477C1D71B0A8002F8287 /* FindCircleViewController.xib */; };
 		121BE6291D6C52530072705F /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121BE6281D6C52530072705F /* TabBarController.m */; };
 		121BE63C1D6C57820072705F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121BE6371D6C57820072705F /* ViewController.m */; };
 		1224C2001D7054C600B4CF72 /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1224C1FF1D7054C600B4CF72 /* searchViewController.m */; };
@@ -151,6 +153,9 @@
 		121947701D7168BE002F8287 /* MJRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooter.m; sourceTree = "<group>"; };
 		121947711D7168BE002F8287 /* MJRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeader.h; sourceTree = "<group>"; };
 		121947721D7168BE002F8287 /* MJRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeader.m; sourceTree = "<group>"; };
+		1219477A1D71B0A8002F8287 /* FindCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindCircleViewController.h; sourceTree = "<group>"; };
+		1219477B1D71B0A8002F8287 /* FindCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindCircleViewController.m; sourceTree = "<group>"; };
+		1219477C1D71B0A8002F8287 /* FindCircleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindCircleViewController.xib; sourceTree = "<group>"; };
 		121BE6271D6C52530072705F /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		121BE6281D6C52530072705F /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		121BE6361D6C57820072705F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -448,6 +453,8 @@
 		12BF628B1D6D22C80083ECD5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1219477A1D71B0A8002F8287 /* FindCircleViewController.h */,
+				1219477B1D71B0A8002F8287 /* FindCircleViewController.m */,
 				121BE6361D6C57820072705F /* ViewController.h */,
 				121BE6371D6C57820072705F /* ViewController.m */,
 				121BE6271D6C52530072705F /* TabBarController.h */,
@@ -544,7 +551,6 @@
 				7AB0F9FC1D644DB60098CEDF /* LoginAndRegister */,
 				7AB0F9DA1D644B510098CEDF /* AppDelegate.h */,
 				7AB0F9DB1D644B510098CEDF /* AppDelegate.m */,
-				1263B7F11D6EE14F0018A762 /* circleDeatil.storyboard */,
 				7AB0F9E01D644B510098CEDF /* Main.storyboard */,
 				7AB0F9E51D644B510098CEDF /* LaunchScreen.storyboard */,
 				7AB0F9E31D644B510098CEDF /* Assets.xcassets */,
@@ -595,6 +601,8 @@
 			isa = PBXGroup;
 			children = (
 				12BF62AC1D6D96130083ECD5 /* SecondViewController.xib */,
+				1263B7F11D6EE14F0018A762 /* circleDeatil.storyboard */,
+				1219477C1D71B0A8002F8287 /* FindCircleViewController.xib */,
 				12BF62931D6D75170083ECD5 /* Model */,
 				12BF628C1D6D23200083ECD5 /* View */,
 				12BF628B1D6D22C80083ECD5 /* Controller */,
@@ -712,6 +720,7 @@
 				7AB0F9E71D644B510098CEDF /* LaunchScreen.storyboard in Resources */,
 				7AB0F9E41D644B510098CEDF /* Assets.xcassets in Resources */,
 				7AB0F9E21D644B510098CEDF /* Main.storyboard in Resources */,
+				1219477E1D71B0A8002F8287 /* FindCircleViewController.xib in Resources */,
 				1263B7F21D6EE14F0018A762 /* circleDeatil.storyboard in Resources */,
 				121947241D7165E3002F8287 /* MJRefresh.bundle in Resources */,
 				123AAF1A1D713E900027554A /* t_comments@2x.png in Resources */,
@@ -839,6 +848,7 @@
 				121947661D71683E002F8287 /* MJRefreshGifHeader.m in Sources */,
 				123AAEFB1D713AE30027554A /* SDWebImageCompat.m in Sources */,
 				121947491D716770002F8287 /* CardTableViewController.m in Sources */,
+				1219477D1D71B0A8002F8287 /* FindCircleViewController.m in Sources */,
 				121947541D71680F002F8287 /* MJRefreshAutoNormalFooter.m in Sources */,
 				121947771D7168BE002F8287 /* MJRefreshHeader.m in Sources */,
 				1219472E1D7165F0002F8287 /* MJRefreshConst.m in Sources */,

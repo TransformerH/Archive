@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindCircleViewController">
+            <connections>
+                <outlet property="EnterpriseButton" destination="a6Y-bs-IDM" id="qly-oP-OW6"/>
+                <outlet property="InternshipButton" destination="eGh-QY-pL8" id="d4o-NB-Hnt"/>
+                <outlet property="InternshipImage" destination="Wpu-In-xxJ" id="dft-p9-MeC"/>
+                <outlet property="ecoManButton" destination="9Qe-fw-zbX" id="ksv-6q-XfS"/>
+                <outlet property="ecoManImage" destination="DoA-Mq-AaY" id="gzU-ie-hDL"/>
+                <outlet property="electricButton" destination="3ad-yO-pz4" id="p6z-nO-WT5"/>
+                <outlet property="electricImage" destination="KBb-GF-FNC" id="69Z-xc-vgc"/>
+                <outlet property="enterpriseImage" destination="nqp-JO-LY5" id="qxd-Bl-iWP"/>
+                <outlet property="lawButton" destination="2ns-1c-Fxa" id="PAp-fL-eRs"/>
+                <outlet property="lawImage" destination="qdM-Hy-Aow" id="D9r-UA-gEs"/>
+                <outlet property="softwareButton" destination="c5p-nQ-lu5" id="akf-Eq-mGZ"/>
+                <outlet property="softwareImage" destination="9gf-aO-yMa" id="fge-hL-eBG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PoN-dH-wAm">
+                    <rect key="frame" x="0.0" y="25" width="375" height="44"/>
+                    <items>
+                        <navigationItem title="发现圈子" id="Wsd-2E-QCu"/>
+                    </items>
+                </navigationBar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="创业圈" translatesAutoresizingMaskIntoConstraints="NO" id="nqp-JO-LY5">
+                    <rect key="frame" x="63" y="110" width="60" height="60"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="创业圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTb-6t-pkP">
+                    <rect key="frame" x="67" y="178" width="53" height="25"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6Y-bs-IDM">
+                    <rect key="frame" x="0.0" y="69" width="187.5" height="187"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle"/>
+                    </state>
+                    <connections>
+                        <action selector="enterpriseClicked:" destination="-1" eventType="touchUpInside" id="Wmr-EI-jPG"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="软件圈" translatesAutoresizingMaskIntoConstraints="NO" id="9gf-aO-yMa">
+                    <rect key="frame" x="247" y="115" width="60" height="60"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="软件圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ho8-1z-1km">
+                    <rect key="frame" x="249" y="174" width="53" height="25"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c5p-nQ-lu5">
+                    <rect key="frame" x="187.5" y="69" width="187" height="187"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle"/>
+                    </state>
+                    <connections>
+                        <action selector="softwareClicked:" destination="-1" eventType="touchUpInside" id="pIf-TC-LYf"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="实习圈" translatesAutoresizingMaskIntoConstraints="NO" id="Wpu-In-xxJ">
+                    <rect key="frame" x="63" y="301" width="60" height="60"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="实习圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGB-gZ-sNY">
+                    <rect key="frame" x="67" y="369" width="53" height="25"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eGh-QY-pL8">
+                    <rect key="frame" x="0.0" y="256" width="187.5" height="187"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle"/>
+                    </state>
+                    <connections>
+                        <action selector="InternshipClicked:" destination="-1" eventType="touchUpInside" id="6S2-FD-RKh"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="法律圈" translatesAutoresizingMaskIntoConstraints="NO" id="qdM-Hy-Aow">
+                    <rect key="frame" x="247" y="301" width="60" height="60"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="法律圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZ4-qW-bGI">
+                    <rect key="frame" x="249" y="369" width="53" height="25"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ns-1c-Fxa">
+                    <rect key="frame" x="187.5" y="256" width="187.5" height="187"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle"/>
+                    </state>
+                    <connections>
+                        <action selector="lawButtonClicked:" destination="-1" eventType="touchUpInside" id="fBi-L1-VU9"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="经管圈" translatesAutoresizingMaskIntoConstraints="NO" id="DoA-Mq-AaY">
+                    <rect key="frame" x="63" y="488" width="60" height="60"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="经管圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0m-Is-7V7">
+                    <rect key="frame" x="67" y="556" width="53" height="25"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qe-fw-zbX">
+                    <rect key="frame" x="0.0" y="443" width="187.5" height="187"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle"/>
+                    </state>
+                    <connections>
+                        <action selector="ecoManButtonClicked:" destination="-1" eventType="touchUpInside" id="y2P-3k-gMe"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="电气圈" translatesAutoresizingMaskIntoConstraints="NO" id="KBb-GF-FNC">
+                    <rect key="frame" x="251" y="488" width="60" height="60"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="电气圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOZ-fN-1is">
+                    <rect key="frame" x="249" y="556" width="53" height="25"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ad-yO-pz4">
+                    <rect key="frame" x="187.5" y="443" width="187.5" height="187"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle"/>
+                    </state>
+                    <connections>
+                        <action selector="electricButtonClicked:" destination="-1" eventType="touchUpInside" id="Par-W1-uCM"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="358.5" y="308.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="创业圈" width="110" height="111"/>
+        <image name="实习圈" width="110" height="109"/>
+        <image name="法律圈" width="112" height="106"/>
+        <image name="电气圈" width="80" height="80"/>
+        <image name="经管圈" width="94" height="93"/>
+        <image name="软件圈" width="123" height="93"/>
+    </resources>
+</document>

@@ -150,12 +150,7 @@
         <!--发现圈子-->
         <scene sceneID="YAU-Y8-hBC">
             <objects>
-                <viewController id="s7b-vf-hrV" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WHN-KU-aOB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                <viewController id="s7b-vf-hrV" customClass="FindCircleViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="发现圈子" image="findCircle_icon" id="rNR-Jq-3TU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpX-OW-UPG" userLabel="First Responder" sceneMemberID="firstResponder"/>

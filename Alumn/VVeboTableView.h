@@ -1,10 +1,11 @@
 //
 //  VVeboTableView.h
-//  VVeboTableViewDemo
+//  Alumn
 //
-//  Created by Johnil on 15/5/25.
-//  Copyright (c) 2015年 Johnil. All rights reserved.
+//  Created by Dorangefly Liu on 16/8/23.
+//  Copyright © 2016年 刘龙飞. All rights reserved.
 //
+
 
 #import <UIKit/UIKit.h>
 

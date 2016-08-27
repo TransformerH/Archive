@@ -1,9 +1,9 @@
 //
 //  VVeboTableView.m
-//  VVeboTableViewDemo
+//  Alumn
 //
-//  Created by Johnil on 15/5/25.
-//  Copyright (c) 2015年 Johnil. All rights reserved.
+//  Created by Dorangefly Liu on 16/8/23.
+//  Copyright © 2016年 刘龙飞. All rights reserved.
 //
 
 #import "VVeboTableView.h"
@@ -287,4 +287,17 @@
     [super removeFromSuperview];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   // NSIndexPath *index1 =  [NSIndexPath indexPathForItem:row inSection:0];
+    //UITableViewCell *cell1 = VVeboTableView    VVeboTableViewCell *cell;
+    VVeboTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSLog(@"你获取到了cell");
+    NSString *test = cell.data [@"text"];
+    NSString *test2 = cell.data [@"user"][@"name" ];
+    NSLog(test);
+    NSLog(test2);
+
+    
+}
 @end

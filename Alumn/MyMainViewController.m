@@ -76,6 +76,7 @@
         _bottomScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds))];
         _bottomScrollView.delegate = self;
         _bottomScrollView.backgroundColor = [UIColor whiteColor];
+        [_bottomScrollView.layer setBorderWidth:1];
         _bottomScrollView.showsHorizontalScrollIndicator = NO;
         _bottomScrollView.showsVerticalScrollIndicator = NO;
         _bottomScrollView.contentSize = CGSizeMake(_bottomScrollView.bounds.size.width , _bottomScrollView.bounds.size.height + self.headScrollView.frame.size.height);
@@ -113,7 +114,6 @@
         UIButton *setButton = [[UIButton alloc] init];
         setButton.frame = CGRectMake((_headScrollView.bounds.size.width - 45), 35, 24, 24);
         [setButton setBackgroundImage:[self OriginImage:[UIImage imageNamed:@"setBtn"] scaleToSize:setButton.bounds.size] forState:UIControlStateNormal];
-        
         [backImgView addSubview:userImg];
         [backImgView addSubview:userHead];
         [backImgView addSubview:chooseBtn];
@@ -149,7 +149,7 @@
 {
     if (!_contentScrollView) {
         _contentScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headMenuScrollView.frame), CGRectGetWidth([UIScreen mainScreen].bounds), self.bottomScrollView.bounds.size.height - self.headMenuScrollView.bounds.size.height)];
-        _contentScrollView.backgroundColor = [UIColor redColor];
+        _contentScrollView.backgroundColor = [UIColor clearColor];
         _contentScrollView.delegate = self;
         _contentScrollView.bounces = NO;
         _contentScrollView.pagingEnabled = YES;
@@ -229,6 +229,9 @@
             [button setTitle:string forState:UIControlStateNormal];
             button.titleLabel.font = [UIFont boldSystemFontOfSize:16];
             [button setTitleColor:RGB(100, 100, 100) forState:UIControlStateNormal];
+            [button.layer setBorderColor:[UIColor grayColor].CGColor];
+            [button.layer setBorderWidth:0.2];
+            [button.layer setMasksToBounds:YES];
             //            [button setTitleColor:RGB(24, 181, 44) forState:UIControlStateSelected];
             [button addTarget:self action:@selector(processHeadMenuScrollViewButton:) forControlEvents:UIControlEventTouchUpInside];
             button.tag = 1000 + i;
