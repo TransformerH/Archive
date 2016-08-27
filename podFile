@@ -1,0 +1,9 @@
+
+target "Alumn" do
+pod 'ReactiveCocoa', '2.1.8'
+pod 'objectiveflickr', '2.0.4'
+pod 'LinqToObjectiveC', '2.0.0'
+pod 'RBStoryboardLink', '~> 0.1'
+pod 'Masonry', '~> 1.0.1'
+pod 'CBTableViewDataSource'
+end
