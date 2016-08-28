@@ -17,9 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *setButton2;
 @property (weak, nonatomic) IBOutlet UIButton *setButton3;
 @property (weak, nonatomic) IBOutlet UIButton *ExitButton;
-//@property (weak, nonatomic) IBOutlet UIBarButtonItem *back;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *back;
 @property (weak, nonatomic) IBOutlet UINavigationBar *NavBar;
-@property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UILabel *cicrleName;
 @property (weak, nonatomic) IBOutlet UILabel *numbers;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
