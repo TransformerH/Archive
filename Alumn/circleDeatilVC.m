@@ -6,6 +6,12 @@
 //  Copyright © 2016年 刘龙飞. All rights reserved.
 //
 
+/****************************
+ 该控制器用于控制圈子详情页面的显示，
+ 通过creatbutton创建了一个浮动按钮
+ 通过附加子控制方法实现多视窗叠加
+ Copyright © 2016年 刘龙飞. All rights reserved.
+ ******************************/
 #import "circleDeatilVC.h"
 #import "RNTableViewController.h"
 #import "RNContainerController.h"
