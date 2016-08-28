@@ -60,7 +60,7 @@
                         <action selector="softwareClicked:" destination="-1" eventType="touchUpInside" id="pIf-TC-LYf"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="实习圈" translatesAutoresizingMaskIntoConstraints="NO" id="Wpu-In-xxJ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="实习圈" translatesAutoresizingMaskIntoConstraints="NO" id="Wpu-In-xxJ">
                     <rect key="frame" x="63" y="301" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Wpu-In-xxJ" secondAttribute="height" multiplier="1:1" id="1sU-Bt-LQe"/>
@@ -73,7 +73,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eGh-QY-pL8">
-                    <rect key="frame" x="0.0" y="259" width="187.5" height="187"/>
+                    <rect key="frame" x="0.0" y="259" width="188" height="187"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="187" id="KWV-8Q-h28"/>
                         <constraint firstAttribute="width" constant="187.5" id="fK1-dI-HYu"/>
@@ -99,7 +99,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ns-1c-Fxa">
-                    <rect key="frame" x="188" y="259" width="187.5" height="187"/>
+                    <rect key="frame" x="188" y="259" width="188" height="187"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="2ns-1c-Fxa" secondAttribute="height" multiplier="1:1" id="HXj-7q-cOl"/>
                         <constraint firstAttribute="width" secondItem="2ns-1c-Fxa" secondAttribute="height" multiplier="1:1" id="cej-4q-Bzt"/>
@@ -127,7 +127,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qe-fw-zbX">
-                    <rect key="frame" x="0.0" y="446" width="187.5" height="187"/>
+                    <rect key="frame" x="0.0" y="446" width="188" height="187"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="9Qe-fw-zbX" secondAttribute="height" multiplier="1:1" id="ThJ-it-rMd"/>
                         <constraint firstAttribute="height" constant="187" id="YRq-p7-D6J"/>
@@ -154,7 +154,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ad-yO-pz4">
-                    <rect key="frame" x="187" y="446" width="187.5" height="187"/>
+                    <rect key="frame" x="187" y="446" width="188" height="187"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="187" id="HMX-9v-Wzq"/>
                         <constraint firstAttribute="width" constant="187.5" id="RDe-bL-ZXu"/>
@@ -183,7 +183,7 @@
                     </variation>
                 </navigationBar>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6Y-bs-IDM">
-                    <rect key="frame" x="0.0" y="64" width="187.5" height="187"/>
+                    <rect key="frame" x="0.0" y="64" width="188" height="187"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="a6Y-bs-IDM" secondAttribute="height" multiplier="1:1" id="52M-12-WG6"/>
                         <constraint firstAttribute="width" constant="187.5" id="Ouz-Y0-EaZ"/>
