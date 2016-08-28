@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIDragButton.h"
 
 @interface circleDeatilVC : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *setButton;
+//@property (weak, nonatomic) IBOutlet UIDragButton *setButton;
 @property (weak, nonatomic) IBOutlet UIImageView *ciecleDeatilMask2;
 
 @property (weak, nonatomic) IBOutlet UIButton *setButton1;
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *numbers;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (weak, nonatomic) IBOutlet UIButton *settingButton;
+@property (weak, nonatomic) circleDeatilVC *current;
 
 -(void)hidden:(UIButton *) mybutton;
 @end

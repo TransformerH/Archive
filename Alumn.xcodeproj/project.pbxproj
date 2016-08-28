@@ -67,6 +67,8 @@
 		123AAF1A1D713E900027554A /* t_comments@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 123AAF171D713E900027554A /* t_comments@2x.png */; };
 		123AAF1B1D713E900027554A /* t_repost@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 123AAF181D713E900027554A /* t_repost@2x.png */; };
 		1263B7F21D6EE14F0018A762 /* circleDeatil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1263B7F11D6EE14F0018A762 /* circleDeatil.storyboard */; };
+		12BC84EA1D7285E600383806 /* UIDragButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC84E91D7285E600383806 /* UIDragButton.m */; };
+		12BC84ED1D72865D00383806 /* FloatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC84EC1D72865D00383806 /* FloatingViewController.m */; };
 		12BF62911D6D74BF0083ECD5 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BF62901D6D74BF0083ECD5 /* SecondViewController.m */; };
 		12BF62981D6D75270083ECD5 /* SectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BF62951D6D75270083ECD5 /* SectionModel.m */; };
 		12BF62991D6D75270083ECD5 /* CellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BF62971D6D75270083ECD5 /* CellModel.m */; };
@@ -214,6 +216,10 @@
 		123AAF171D713E900027554A /* t_comments@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "t_comments@2x.png"; sourceTree = "<group>"; };
 		123AAF181D713E900027554A /* t_repost@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "t_repost@2x.png"; sourceTree = "<group>"; };
 		1263B7F11D6EE14F0018A762 /* circleDeatil.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = circleDeatil.storyboard; path = ../circleDeatil.storyboard; sourceTree = "<group>"; };
+		12BC84E81D7285E600383806 /* UIDragButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDragButton.h; sourceTree = "<group>"; };
+		12BC84E91D7285E600383806 /* UIDragButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDragButton.m; sourceTree = "<group>"; };
+		12BC84EB1D72865D00383806 /* FloatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatingViewController.h; sourceTree = "<group>"; };
+		12BC84EC1D72865D00383806 /* FloatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatingViewController.m; sourceTree = "<group>"; };
 		12BF628F1D6D74BF0083ECD5 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		12BF62901D6D74BF0083ECD5 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		12BF62941D6D75270083ECD5 /* SectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionModel.h; sourceTree = "<group>"; };
@@ -477,6 +483,8 @@
 				1224C1FF1D7054C600B4CF72 /* searchViewController.m */,
 				123AAF111D713C810027554A /* tableListViewController.h */,
 				123AAF121D713C810027554A /* tableListViewController.m */,
+				12BC84EB1D72865D00383806 /* FloatingViewController.h */,
+				12BC84EC1D72865D00383806 /* FloatingViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -608,6 +616,8 @@
 				12BF628B1D6D22C80083ECD5 /* Controller */,
 				123AAED61D713AD70027554A /* SDWebImage */,
 				123AAECC1D713AA60027554A /* support */,
+				12BC84E81D7285E600383806 /* UIDragButton.h */,
+				12BC84E91D7285E600383806 /* UIDragButton.m */,
 			);
 			name = Circle;
 			sourceTree = "<group>";
@@ -799,6 +809,7 @@
 				12BF62A81D6D81270083ECD5 /* SecondViewLoadControllerViewController.m in Sources */,
 				123AAF131D713C810027554A /* tableListViewController.m in Sources */,
 				12BF62991D6D75270083ECD5 /* CellModel.m in Sources */,
+				12BC84ED1D72865D00383806 /* FloatingViewController.m in Sources */,
 				121947481D716770002F8287 /* JoinedCircleTableViewController.m in Sources */,
 				12C9733C1D702D15005B814A /* RNTableViewController.m in Sources */,
 				12BF629F1D6D75910083ECD5 /* CollectionReusableView.m in Sources */,
@@ -826,6 +837,7 @@
 				1219475E1D716827002F8287 /* MJRefreshBackNormalFooter.m in Sources */,
 				12C973421D704A58005B814A /* searchController.m in Sources */,
 				12F5166B1D6FD2C4003E6B33 /* circleDeatilVC.m in Sources */,
+				12BC84EA1D7285E600383806 /* UIDragButton.m in Sources */,
 				123AAEFA1D713AE30027554A /* SDImageCache.m in Sources */,
 				123AAED31D713ABA0027554A /* UIScreen+Additions.m in Sources */,
 				123AAEFF1D713AE30027554A /* SDWebImageManager.m in Sources */,

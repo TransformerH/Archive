@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -33,8 +34,11 @@
                         <action selector="editButtonPressed:" destination="-1" eventType="touchUpInside" id="mlR-uO-nD5"/>
                     </connections>
                 </button>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EBS-RO-kYK">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EBS-RO-kYK">
                     <rect key="frame" x="0.0" y="51" width="375" height="565"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="EBS-RO-kYK" secondAttribute="height" multiplier="75:113" id="U2x-R8-wkB"/>
+                    </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LJp-DV-Bah">
                         <size key="itemSize" width="100" height="100"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -49,12 +53,16 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="EBS-RO-kYK" secondAttribute="trailing" id="1u9-89-Yfb"/>
                 <constraint firstAttribute="trailing" secondItem="aUT-zJ-ZJ5" secondAttribute="trailing" id="4CT-GX-puq"/>
                 <constraint firstItem="aUT-zJ-ZJ5" firstAttribute="top" secondItem="EBS-RO-kYK" secondAttribute="bottom" constant="15" id="9zY-nE-LI9"/>
                 <constraint firstItem="EBS-RO-kYK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="Ckn-0t-LV3"/>
                 <constraint firstAttribute="bottom" secondItem="EBS-RO-kYK" secondAttribute="bottom" constant="58" id="DX6-8D-nYS"/>
                 <constraint firstItem="EBS-RO-kYK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EUx-yF-TYD"/>
                 <constraint firstAttribute="trailing" secondItem="Rdi-ur-yza" secondAttribute="trailing" constant="44" id="Ve1-T8-PF7"/>
+                <constraint firstItem="EBS-RO-kYK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="51" id="aGO-qq-Dln"/>
+                <constraint firstItem="aUT-zJ-ZJ5" firstAttribute="top" secondItem="EBS-RO-kYK" secondAttribute="bottom" constant="8" id="iLy-3Q-PQJ"/>
+                <constraint firstItem="EBS-RO-kYK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="m4x-Tu-hxl"/>
                 <constraint firstAttribute="trailing" secondItem="EBS-RO-kYK" secondAttribute="trailing" id="mEF-T0-jMS"/>
                 <constraint firstItem="Rdi-ur-yza" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="20" id="o1x-G9-plq"/>
                 <constraint firstItem="aUT-zJ-ZJ5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uvA-Di-r7d"/>

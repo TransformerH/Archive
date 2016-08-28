@@ -104,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Alumn/circleDeatilVC.m"
-            timestampString = "493960167.262154"
+            timestampString = "494049294.714006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "-searchButtonClicked:"
             landmarkType = "5">
          </BreakpointContent>
