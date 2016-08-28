@@ -49,12 +49,12 @@
 */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.NavBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsCompact];
+    //[self.NavBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsCompact];
     [self performSelector:@selector(createButton) withObject:nil afterDelay:1];
-
+    //_floatview.frame = CGRectZero;
     
-    self.NavBar.layer.masksToBounds = YES;
-    [self.NavBar setBackgroundColor:[UIColor clearColor]];
+    //self.NavBar.layer.masksToBounds = YES;
+    //[self.NavBar setBackgroundColor:[UIColor clearColor]];
     [self.cicrleName setText:@"圈子名称"];
     [self.cicrleName endEditing:true];
     [self.numbers setText:@"成员 ％ld"];
@@ -201,5 +201,8 @@
     [self.ExitButton setHidden:false];
 }
 
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end
