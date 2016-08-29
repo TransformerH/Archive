@@ -21,6 +21,7 @@
 #import "FloatingViewController.h"
 #import "UIDragButton.h"
 //#import "WeiXinFriendsCircleVC .h"
+#import "circleSettingVC.h"
 
 #define floatSize 120
 
@@ -39,7 +40,7 @@
 /**
  *  悬浮的按钮
  */
-@property(strong,nonatomic)UIDragButton *button;
+
 
 @end
 
@@ -70,10 +71,10 @@
     [self.setButton2 setHidden:true];
     [self.setButton3 setHidden:true];
     [self.ExitButton setHidden:true];
-    FloatingViewController *floatVc = [ [ FloatingViewController alloc]init];
+  //  FloatingViewController *floatVc = [ [ FloatingViewController alloc]init];
     //[self addChildViewController:floatVc];
     //[self.view addSubview:floatVc.view];
-    _current =self;
+    //_current =self;
    
     
     
@@ -208,7 +209,15 @@
 }
 
 - (IBAction)backButtonClicked:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
+    [self.button setHidden:false];
+}
+- (IBAction)settingButoonClicked:(id)sender {
+    [self.button setHidden: true];
+    circleSettingVC *viewVC = [[circleSettingVC alloc]init];
+       [self.navigationController pushViewController:viewVC animated:YES];
+    viewVC.dargbutton =self.button;
+    
 }
 
 @end

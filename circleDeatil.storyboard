@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="B1o-Xo-0Xq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JhR-50-esF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yUi-xa-9ng">
-                                <rect key="frame" x="0.0" y="18" width="375" height="223"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="10" translatesAutoresizingMaskIntoConstraints="NO" id="lqj-ew-j04">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
@@ -35,9 +35,9 @@
                                         </constraints>
                                     </imageView>
                                     <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gT8-Z9-BQI">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="gT8-Z9-BQI" secondAttribute="height" multiplier="375:44" id="cPn-1A-vt3"/>
+                                            <constraint firstAttribute="width" secondItem="gT8-Z9-BQI" secondAttribute="height" multiplier="375:65" id="cPn-1A-vt3"/>
                                         </constraints>
                                         <items>
                                             <navigationItem id="E77-MH-qvU">
@@ -123,6 +123,9 @@
                                         <state key="normal" image="设置">
                                             <attributedString key="attributedTitle"/>
                                         </state>
+                                        <connections>
+                                            <action selector="settingButoonClicked:" destination="B1o-Xo-0Xq" eventType="touchUpInside" id="zdl-2h-yfb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h4b-f6-paM">
                                         <rect key="frame" x="146" y="69" width="86" height="85"/>
@@ -269,7 +272,7 @@
                             <constraint firstItem="CDi-GV-sTy" firstAttribute="leading" secondItem="1ru-Kl-ru1" secondAttribute="leadingMargin" constant="19" id="B1a-UT-NlS"/>
                             <constraint firstItem="yUi-xa-9ng" firstAttribute="top" secondItem="rdz-IL-1Id" secondAttribute="bottom" id="CyR-sv-rgb"/>
                             <constraint firstItem="h4b-f6-paM" firstAttribute="centerX" secondItem="1ru-Kl-ru1" secondAttribute="centerX" id="FmH-IX-Szg"/>
-                            <constraint firstItem="yUi-xa-9ng" firstAttribute="top" secondItem="1ru-Kl-ru1" secondAttribute="topMargin" constant="18" id="IWC-PJ-bg9"/>
+                            <constraint firstItem="yUi-xa-9ng" firstAttribute="top" secondItem="1ru-Kl-ru1" secondAttribute="topMargin" id="IWC-PJ-bg9"/>
                             <constraint firstItem="yUi-xa-9ng" firstAttribute="leading" secondItem="1ru-Kl-ru1" secondAttribute="leadingMargin" constant="-20" id="S6U-SB-Gvs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yUi-xa-9ng" secondAttribute="trailing" id="Wca-Az-vZs"/>
                             <constraint firstItem="U1R-15-LcC" firstAttribute="centerX" secondItem="yUi-xa-9ng" secondAttribute="centerX" id="WjJ-SB-hQE"/>
@@ -316,6 +319,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISm-QS-IOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="402.5" y="1537.5"/>
+        </scene>
+        <!--Circle SettingVC-->
+        <scene sceneID="AKM-vL-ZVE">
+            <objects>
+                <viewController id="qB6-JJ-zWt" customClass="circleSettingVC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="J3d-se-Ihz"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4WS-Bq-xRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065" y="1562"/>
+        </scene>
+        <!--Lf DeleteVC-->
+        <scene sceneID="DO5-e3-5qS">
+            <objects>
+                <viewController id="JhR-50-esF" customClass="LfDeleteVC" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jB5-ly-2ns" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1283" y="2884"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="hzz-wU-AMf">

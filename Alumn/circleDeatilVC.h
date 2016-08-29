@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *settingButton;
 @property (weak, nonatomic) circleDeatilVC *current;
 //@property (weak, nonatomic) IBOutlet UIView *floatview;
+@property(strong,nonatomic)UIDragButton *button;
 
 -(void)hidden:(UIButton *) mybutton;
 @end
