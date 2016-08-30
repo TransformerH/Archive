@@ -73,6 +73,14 @@
 		123D7E7A1D75765C008B0DF9 /* CollectionReusableView_F.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E731D75765C008B0DF9 /* CollectionReusableView_F.m */; };
 		123D7E801D7576C7008B0DF9 /* Circle_FindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E7E1D7576C7008B0DF9 /* Circle_FindVC.m */; };
 		123D7E811D7576C7008B0DF9 /* Circle_FindVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123D7E7F1D7576C7008B0DF9 /* Circle_FindVC.xib */; };
+		123D7E831D758930008B0DF9 /* 创建圈子.png in Resources */ = {isa = PBXBuildFile; fileRef = 123D7E821D758930008B0DF9 /* 创建圈子.png */; };
+		123D7E871D758CC8008B0DF9 /* PeopleListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E861D758CC8008B0DF9 /* PeopleListVC.m */; };
+		123D7E8A1D758CCF008B0DF9 /* PeopleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E891D758CCF008B0DF9 /* PeopleViewCell.m */; };
+		123D7E8C1D758CD4008B0DF9 /* PeopleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123D7E8B1D758CD4008B0DF9 /* PeopleViewCell.xib */; };
+		123D7E8F1D758CD9008B0DF9 /* ChooseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E8E1D758CD9008B0DF9 /* ChooseButton.m */; };
+		123D7E921D758CE0008B0DF9 /* PeopleVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E911D758CE0008B0DF9 /* PeopleVM.m */; };
+		123D7E941D758D00008B0DF9 /* peopleList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 123D7E931D758D00008B0DF9 /* peopleList.plist */; };
+		123D7E961D758D2D008B0DF9 /* MeList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 123D7E951D758D2D008B0DF9 /* MeList.plist */; };
 		123F26161D73BCDC00B619DF /* circleSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123F26141D73BCDC00B619DF /* circleSettingVC.m */; };
 		123F26171D73BCDC00B619DF /* circleSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123F26151D73BCDC00B619DF /* circleSettingVC.xib */; };
 		123F26341D74195300B619DF /* LfDeleteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123F262F1D74195300B619DF /* LfDeleteVC.m */; };
@@ -254,6 +262,18 @@
 		123D7E7D1D7576C7008B0DF9 /* Circle_FindVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle_FindVC.h; sourceTree = "<group>"; };
 		123D7E7E1D7576C7008B0DF9 /* Circle_FindVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle_FindVC.m; sourceTree = "<group>"; };
 		123D7E7F1D7576C7008B0DF9 /* Circle_FindVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Circle_FindVC.xib; sourceTree = "<group>"; };
+		123D7E821D758930008B0DF9 /* 创建圈子.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "创建圈子.png"; sourceTree = "<group>"; };
+		123D7E851D758CC2008B0DF9 /* PeopleListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeopleListVC.h; sourceTree = "<group>"; };
+		123D7E861D758CC8008B0DF9 /* PeopleListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleListVC.m; sourceTree = "<group>"; };
+		123D7E881D758CCF008B0DF9 /* PeopleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewCell.h; sourceTree = "<group>"; };
+		123D7E891D758CCF008B0DF9 /* PeopleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewCell.m; sourceTree = "<group>"; };
+		123D7E8B1D758CD4008B0DF9 /* PeopleViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleViewCell.xib; sourceTree = "<group>"; };
+		123D7E8D1D758CD9008B0DF9 /* ChooseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseButton.h; sourceTree = "<group>"; };
+		123D7E8E1D758CD9008B0DF9 /* ChooseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseButton.m; sourceTree = "<group>"; };
+		123D7E901D758CE0008B0DF9 /* PeopleVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleVM.h; sourceTree = "<group>"; };
+		123D7E911D758CE0008B0DF9 /* PeopleVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleVM.m; sourceTree = "<group>"; };
+		123D7E931D758D00008B0DF9 /* peopleList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = peopleList.plist; sourceTree = "<group>"; };
+		123D7E951D758D2D008B0DF9 /* MeList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MeList.plist; sourceTree = "<group>"; };
 		123F26131D73BCDC00B619DF /* circleSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleSettingVC.h; sourceTree = "<group>"; };
 		123F26141D73BCDC00B619DF /* circleSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleSettingVC.m; sourceTree = "<group>"; };
 		123F26151D73BCDC00B619DF /* circleSettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circleSettingVC.xib; sourceTree = "<group>"; };
@@ -549,6 +569,24 @@
 			name = FindCircle;
 			sourceTree = "<group>";
 		};
+		123D7E841D758A5A008B0DF9 /* peopleList */ = {
+			isa = PBXGroup;
+			children = (
+				123D7E851D758CC2008B0DF9 /* PeopleListVC.h */,
+				123D7E861D758CC8008B0DF9 /* PeopleListVC.m */,
+				123D7E881D758CCF008B0DF9 /* PeopleViewCell.h */,
+				123D7E891D758CCF008B0DF9 /* PeopleViewCell.m */,
+				123D7E8B1D758CD4008B0DF9 /* PeopleViewCell.xib */,
+				123D7E8D1D758CD9008B0DF9 /* ChooseButton.h */,
+				123D7E8E1D758CD9008B0DF9 /* ChooseButton.m */,
+				123D7E901D758CE0008B0DF9 /* PeopleVM.h */,
+				123D7E911D758CE0008B0DF9 /* PeopleVM.m */,
+				123D7E931D758D00008B0DF9 /* peopleList.plist */,
+				123D7E951D758D2D008B0DF9 /* MeList.plist */,
+			);
+			name = peopleList;
+			sourceTree = "<group>";
+		};
 		123F262D1D74194000B619DF /* LeftToDelete */ = {
 			isa = PBXGroup;
 			children = (
@@ -724,6 +762,7 @@
 		7AB0F9D71D644B510098CEDF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				123D7E821D758930008B0DF9 /* 创建圈子.png */,
 				12C8C2A91D731104001DD69B /* icon0.jpg */,
 				12C8C2AA1D731104001DD69B /* icon1.jpg */,
 				12C8C2AB1D731104001DD69B /* icon2.jpg */,
@@ -786,6 +825,7 @@
 		7AB0F9FF1D644DEB0098CEDF /* People */ = {
 			isa = PBXGroup;
 			children = (
+				123D7E841D758A5A008B0DF9 /* peopleList */,
 			);
 			name = People;
 			sourceTree = "<group>";
@@ -887,12 +927,14 @@
 				12C8C2AF1D731104001DD69B /* icon1.jpg in Resources */,
 				123AAF151D713E7E0027554A /* data.plist in Resources */,
 				123D7D9D1D756023008B0DF9 /* findCircle.storyboard in Resources */,
+				123D7E941D758D00008B0DF9 /* peopleList.plist in Resources */,
 				123AAF1B1D713E900027554A /* t_repost@2x.png in Resources */,
 				12BF62AD1D6D96130083ECD5 /* SecondViewController.xib in Resources */,
 				12C8C2AE1D731104001DD69B /* icon0.jpg in Resources */,
 				121947431D71675F002F8287 /* CircleCell.xib in Resources */,
 				12C8C2B11D731104001DD69B /* icon3.jpg in Resources */,
 				123F26171D73BCDC00B619DF /* circleSettingVC.xib in Resources */,
+				123D7E961D758D2D008B0DF9 /* MeList.plist in Resources */,
 				7AB0F9E71D644B510098CEDF /* LaunchScreen.storyboard in Resources */,
 				123D7E811D7576C7008B0DF9 /* Circle_FindVC.xib in Resources */,
 				12C8C2B01D731104001DD69B /* icon2.jpg in Resources */,
@@ -901,8 +943,10 @@
 				12C8C2B21D731104001DD69B /* icon4.jpg in Resources */,
 				1219477E1D71B0A8002F8287 /* FindCircleViewController.xib in Resources */,
 				1263B7F21D6EE14F0018A762 /* circleDeatil.storyboard in Resources */,
+				123D7E8C1D758CD4008B0DF9 /* PeopleViewCell.xib in Resources */,
 				12C8C29A1D730F3D001DD69B /* sdRefeshView_arrow@2x.png in Resources */,
 				121947241D7165E3002F8287 /* MJRefresh.bundle in Resources */,
+				123D7E831D758930008B0DF9 /* 创建圈子.png in Resources */,
 				123AAF1A1D713E900027554A /* t_comments@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -974,6 +1018,7 @@
 				123AAF071D713AE30027554A /* UIView+WebCacheOperation.m in Sources */,
 				121947741D7168BE002F8287 /* MJRefreshBackFooter.m in Sources */,
 				123AAF101D713B380027554A /* VVeboTableView.m in Sources */,
+				123D7E871D758CC8008B0DF9 /* PeopleListVC.m in Sources */,
 				121BE6291D6C52530072705F /* TabBarController.m in Sources */,
 				123F26341D74195300B619DF /* LfDeleteVC.m in Sources */,
 				121947421D71675F002F8287 /* CircleCell.m in Sources */,
@@ -1001,6 +1046,7 @@
 				121BE63C1D6C57820072705F /* ViewController.m in Sources */,
 				123AAF031D713AE30027554A /* UIImage+MultiFormat.m in Sources */,
 				121947381D7166F3002F8287 /* TableViewController.m in Sources */,
+				123D7E921D758CE0008B0DF9 /* PeopleVM.m in Sources */,
 				12C8C29E1D730F3D001DD69B /* UIView+SDExtension.m in Sources */,
 				1224C2001D7054C600B4CF72 /* searchViewController.m in Sources */,
 				123F26361D74195300B619DF /* LfDeleteVCModel.m in Sources */,
@@ -1019,6 +1065,7 @@
 				12C8C2981D730F3D001DD69B /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				12F5166B1D6FD2C4003E6B33 /* circleDeatilVC.m in Sources */,
 				12BC84EA1D7285E600383806 /* UIDragButton.m in Sources */,
+				123D7E8A1D758CCF008B0DF9 /* PeopleViewCell.m in Sources */,
 				123AAEFA1D713AE30027554A /* SDImageCache.m in Sources */,
 				123AAED31D713ABA0027554A /* UIScreen+Additions.m in Sources */,
 				123AAEFF1D713AE30027554A /* SDWebImageManager.m in Sources */,
@@ -1039,6 +1086,7 @@
 				123D7E781D75765C008B0DF9 /* Cell_FModel.m in Sources */,
 				123D7E801D7576C7008B0DF9 /* Circle_FindVC.m in Sources */,
 				121947531D71680F002F8287 /* MJRefreshAutoGifFooter.m in Sources */,
+				123D7E8F1D758CD9008B0DF9 /* ChooseButton.m in Sources */,
 				121947551D71680F002F8287 /* MJRefreshAutoStateFooter.m in Sources */,
 				121947341D716672002F8287 /* MyMainViewController.m in Sources */,
 				123AAEFC1D713AE30027554A /* SDWebImageDecoder.m in Sources */,

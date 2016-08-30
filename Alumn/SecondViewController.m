@@ -51,7 +51,7 @@ NS_ENUM(NSInteger,CellState){
   [super viewDidLoad];
   //进行CollectionView和Cell的绑定
   [self.collectionView registerClass:[CollectionViewCell class]  forCellWithReuseIdentifier:@"CollectionCell"];
-  self.collectionView.backgroundColor = [UIColor clearColor];//背景透明
+  self.collectionView.backgroundColor = [UIColor colorWithRed:242.0f/255.0f green:242.0f/255.0f blue:248.0f/255.0f alpha:0.5];//背景透明
   //加入头部视图；
   [self.collectionView registerClass:[CollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header"];
   //一开始是正常状态；
@@ -131,7 +131,7 @@ NS_ENUM(NSInteger,CellState){
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-  return UIEdgeInsetsMake(10,25,35,15);
+  return UIEdgeInsetsMake(10,15,15,15);
 }
 
 
@@ -185,7 +185,7 @@ NS_ENUM(NSInteger,CellState){
 - (NSMutableArray *)headerArray{
   
   if (!_headerArray) {
-    self.headerArray = [[NSMutableArray alloc] initWithObjects:@"第一个",@"第二个", nil];
+    self.headerArray = [[NSMutableArray alloc] initWithObjects:@"",@"", nil];
   }
   return _headerArray;
 }
@@ -193,14 +193,14 @@ NS_ENUM(NSInteger,CellState){
 - (NSMutableArray *)cellImageArr{
   
   if (!_cellImageArr) {
-    self.cellImageArr = [[NSMutableArray alloc] initWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",nil];
+    self.cellImageArr = [[NSMutableArray alloc] initWithObjects:@"0",@"1",@"2",@"3",@"4",@"创建圈子",nil];
   }
   return _cellImageArr;
 }
 
 - (NSMutableArray *)cellDescArr{
   if (!_cellDescArr) {
-    self.cellDescArr = [[NSMutableArray alloc] initWithObjects:@"第0个",@"第1个",@"第2个",@"第3个",@"第4个",@"添加",nil];
+    self.cellDescArr = [[NSMutableArray alloc] initWithObjects:@"第0个",@"第1个",@"第2个",@"第3个",@"第4个",@"",nil];
   }
   return _cellDescArr;
 }
@@ -214,7 +214,7 @@ NS_ENUM(NSInteger,CellState){
     NSLog(@"点击最后一个cell，执行添加操作");
     //初始化一个新的cell模型；
     CellModel *cel = [[CellModel alloc] init];
-    cel.cellImage = @"2";
+    cel.cellImage = @"1";
     cel.cellDesc = @"再来一个";
     //获取当前的cell数组；
     self.dataCellArray = sec.cellArray;

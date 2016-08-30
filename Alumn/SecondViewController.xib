@@ -53,8 +53,8 @@
                         </mask>
                     </variation>
                 </navigationBar>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZT-bw-yJU">
-                    <rect key="frame" x="118" y="26" width="34" height="32"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="帽子" translatesAutoresizingMaskIntoConstraints="NO" id="hZT-bw-yJU">
+                    <rect key="frame" x="130" y="31" width="29" height="22"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -82,4 +82,7 @@
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="帽子" width="51" height="32"/>
+    </resources>
 </document>
