@@ -131,8 +131,10 @@ NS_ENUM(NSInteger,CellState){
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-  return UIEdgeInsetsMake(0,20,0,20);
+  return UIEdgeInsetsMake(10,25,35,15);
 }
+
+
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
   return CGSizeMake(self.collectionView.frame.size.width, 50);

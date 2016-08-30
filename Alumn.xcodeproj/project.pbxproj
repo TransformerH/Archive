@@ -66,6 +66,13 @@
 		123AAF191D713E900027554A /* corner_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 123AAF161D713E900027554A /* corner_circle@2x.png */; };
 		123AAF1A1D713E900027554A /* t_comments@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 123AAF171D713E900027554A /* t_comments@2x.png */; };
 		123AAF1B1D713E900027554A /* t_repost@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 123AAF181D713E900027554A /* t_repost@2x.png */; };
+		123D7D9D1D756023008B0DF9 /* findCircle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123D7D9C1D756023008B0DF9 /* findCircle.storyboard */; };
+		123D7E771D75765C008B0DF9 /* Section_FModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E6D1D75765C008B0DF9 /* Section_FModel.m */; };
+		123D7E781D75765C008B0DF9 /* Cell_FModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E6F1D75765C008B0DF9 /* Cell_FModel.m */; };
+		123D7E791D75765C008B0DF9 /* CollectionViewCell_F.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E711D75765C008B0DF9 /* CollectionViewCell_F.m */; };
+		123D7E7A1D75765C008B0DF9 /* CollectionReusableView_F.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E731D75765C008B0DF9 /* CollectionReusableView_F.m */; };
+		123D7E801D7576C7008B0DF9 /* Circle_FindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E7E1D7576C7008B0DF9 /* Circle_FindVC.m */; };
+		123D7E811D7576C7008B0DF9 /* Circle_FindVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123D7E7F1D7576C7008B0DF9 /* Circle_FindVC.xib */; };
 		123F26161D73BCDC00B619DF /* circleSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123F26141D73BCDC00B619DF /* circleSettingVC.m */; };
 		123F26171D73BCDC00B619DF /* circleSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123F26151D73BCDC00B619DF /* circleSettingVC.xib */; };
 		123F26341D74195300B619DF /* LfDeleteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123F262F1D74195300B619DF /* LfDeleteVC.m */; };
@@ -235,6 +242,18 @@
 		123AAF161D713E900027554A /* corner_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "corner_circle@2x.png"; sourceTree = "<group>"; };
 		123AAF171D713E900027554A /* t_comments@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "t_comments@2x.png"; sourceTree = "<group>"; };
 		123AAF181D713E900027554A /* t_repost@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "t_repost@2x.png"; sourceTree = "<group>"; };
+		123D7D9C1D756023008B0DF9 /* findCircle.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = findCircle.storyboard; sourceTree = "<group>"; };
+		123D7E6C1D75765C008B0DF9 /* Section_FModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section_FModel.h; sourceTree = "<group>"; };
+		123D7E6D1D75765C008B0DF9 /* Section_FModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Section_FModel.m; sourceTree = "<group>"; };
+		123D7E6E1D75765C008B0DF9 /* Cell_FModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_FModel.h; sourceTree = "<group>"; };
+		123D7E6F1D75765C008B0DF9 /* Cell_FModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_FModel.m; sourceTree = "<group>"; };
+		123D7E701D75765C008B0DF9 /* CollectionViewCell_F.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell_F.h; sourceTree = "<group>"; };
+		123D7E711D75765C008B0DF9 /* CollectionViewCell_F.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell_F.m; sourceTree = "<group>"; };
+		123D7E721D75765C008B0DF9 /* CollectionReusableView_F.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionReusableView_F.h; sourceTree = "<group>"; };
+		123D7E731D75765C008B0DF9 /* CollectionReusableView_F.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionReusableView_F.m; sourceTree = "<group>"; };
+		123D7E7D1D7576C7008B0DF9 /* Circle_FindVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle_FindVC.h; sourceTree = "<group>"; };
+		123D7E7E1D7576C7008B0DF9 /* Circle_FindVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle_FindVC.m; sourceTree = "<group>"; };
+		123D7E7F1D7576C7008B0DF9 /* Circle_FindVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Circle_FindVC.xib; sourceTree = "<group>"; };
 		123F26131D73BCDC00B619DF /* circleSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleSettingVC.h; sourceTree = "<group>"; };
 		123F26141D73BCDC00B619DF /* circleSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleSettingVC.m; sourceTree = "<group>"; };
 		123F26151D73BCDC00B619DF /* circleSettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circleSettingVC.xib; sourceTree = "<group>"; };
@@ -512,6 +531,24 @@
 			name = SDWebImage;
 			sourceTree = "<group>";
 		};
+		123D7E6B1D757641008B0DF9 /* FindCircle */ = {
+			isa = PBXGroup;
+			children = (
+				123D7E6C1D75765C008B0DF9 /* Section_FModel.h */,
+				123D7E6D1D75765C008B0DF9 /* Section_FModel.m */,
+				123D7E6E1D75765C008B0DF9 /* Cell_FModel.h */,
+				123D7E6F1D75765C008B0DF9 /* Cell_FModel.m */,
+				123D7E701D75765C008B0DF9 /* CollectionViewCell_F.h */,
+				123D7E711D75765C008B0DF9 /* CollectionViewCell_F.m */,
+				123D7E721D75765C008B0DF9 /* CollectionReusableView_F.h */,
+				123D7E731D75765C008B0DF9 /* CollectionReusableView_F.m */,
+				123D7E7D1D7576C7008B0DF9 /* Circle_FindVC.h */,
+				123D7E7E1D7576C7008B0DF9 /* Circle_FindVC.m */,
+				123D7E7F1D7576C7008B0DF9 /* Circle_FindVC.xib */,
+			);
+			name = FindCircle;
+			sourceTree = "<group>";
+		};
 		123F262D1D74194000B619DF /* LeftToDelete */ = {
 			isa = PBXGroup;
 			children = (
@@ -729,6 +766,7 @@
 		7AB0F9FE1D644DDB0098CEDF /* Circle */ = {
 			isa = PBXGroup;
 			children = (
+				123D7E6B1D757641008B0DF9 /* FindCircle */,
 				12BF62AC1D6D96130083ECD5 /* SecondViewController.xib */,
 				1263B7F11D6EE14F0018A762 /* circleDeatil.storyboard */,
 				1219477C1D71B0A8002F8287 /* FindCircleViewController.xib */,
@@ -740,6 +778,7 @@
 				123AAECC1D713AA60027554A /* support */,
 				123F26131D73BCDC00B619DF /* circleSettingVC.h */,
 				123F26141D73BCDC00B619DF /* circleSettingVC.m */,
+				123D7D9C1D756023008B0DF9 /* findCircle.storyboard */,
 			);
 			name = Circle;
 			sourceTree = "<group>";
@@ -847,6 +886,7 @@
 				123AAF191D713E900027554A /* corner_circle@2x.png in Resources */,
 				12C8C2AF1D731104001DD69B /* icon1.jpg in Resources */,
 				123AAF151D713E7E0027554A /* data.plist in Resources */,
+				123D7D9D1D756023008B0DF9 /* findCircle.storyboard in Resources */,
 				123AAF1B1D713E900027554A /* t_repost@2x.png in Resources */,
 				12BF62AD1D6D96130083ECD5 /* SecondViewController.xib in Resources */,
 				12C8C2AE1D731104001DD69B /* icon0.jpg in Resources */,
@@ -854,6 +894,7 @@
 				12C8C2B11D731104001DD69B /* icon3.jpg in Resources */,
 				123F26171D73BCDC00B619DF /* circleSettingVC.xib in Resources */,
 				7AB0F9E71D644B510098CEDF /* LaunchScreen.storyboard in Resources */,
+				123D7E811D7576C7008B0DF9 /* Circle_FindVC.xib in Resources */,
 				12C8C2B01D731104001DD69B /* icon2.jpg in Resources */,
 				7AB0F9E41D644B510098CEDF /* Assets.xcassets in Resources */,
 				7AB0F9E21D644B510098CEDF /* Main.storyboard in Resources */,
@@ -943,6 +984,7 @@
 				12BC84ED1D72865D00383806 /* FloatingViewController.m in Sources */,
 				12C8C2A71D730F7A001DD69B /* DemoVC5CellTableViewCell.m in Sources */,
 				121947481D716770002F8287 /* JoinedCircleTableViewController.m in Sources */,
+				123D7E7A1D75765C008B0DF9 /* CollectionReusableView_F.m in Sources */,
 				12C9733C1D702D15005B814A /* RNTableViewController.m in Sources */,
 				12BF629F1D6D75910083ECD5 /* CollectionReusableView.m in Sources */,
 				1219475F1D716827002F8287 /* MJRefreshBackStateFooter.m in Sources */,
@@ -989,10 +1031,13 @@
 				123AAF061D713AE30027554A /* UIImageView+WebCache.m in Sources */,
 				123AAEFD1D713AE30027554A /* SDWebImageDownloader.m in Sources */,
 				121947731D7168BE002F8287 /* MJRefreshAutoFooter.m in Sources */,
+				123D7E791D75765C008B0DF9 /* CollectionViewCell_F.m in Sources */,
 				12BF62AB1D6D8C1D0083ECD5 /* MyNavigationBar.m in Sources */,
 				121947671D71683E002F8287 /* MJRefreshNormalHeader.m in Sources */,
 				123AAEF81D713AE30027554A /* MKAnnotationView+WebCache.m in Sources */,
 				12BF62981D6D75270083ECD5 /* SectionModel.m in Sources */,
+				123D7E781D75765C008B0DF9 /* Cell_FModel.m in Sources */,
+				123D7E801D7576C7008B0DF9 /* Circle_FindVC.m in Sources */,
 				121947531D71680F002F8287 /* MJRefreshAutoGifFooter.m in Sources */,
 				121947551D71680F002F8287 /* MJRefreshAutoStateFooter.m in Sources */,
 				121947341D716672002F8287 /* MyMainViewController.m in Sources */,
@@ -1004,6 +1049,7 @@
 				121947541D71680F002F8287 /* MJRefreshAutoNormalFooter.m in Sources */,
 				12C8C2991D730F3D001DD69B /* UIView+SDAutoLayout.m in Sources */,
 				121947771D7168BE002F8287 /* MJRefreshHeader.m in Sources */,
+				123D7E771D75765C008B0DF9 /* Section_FModel.m in Sources */,
 				1219472E1D7165F0002F8287 /* MJRefreshConst.m in Sources */,
 				123AAF051D713AE30027554A /* UIImageView+HighlightedWebCache.m in Sources */,
 				123AAEF91D713AE30027554A /* NSData+ImageContentType.m in Sources */,

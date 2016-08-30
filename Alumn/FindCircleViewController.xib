@@ -167,12 +167,18 @@
                         <action selector="electricButtonClicked:" destination="-1" eventType="touchUpInside" id="Par-W1-uCM"/>
                     </connections>
                 </button>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PoN-dH-wAm">
+                <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PoN-dH-wAm">
                     <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="375" id="RbR-tB-ZCX"/>
+                        <constraint firstAttribute="width" secondItem="PoN-dH-wAm" secondAttribute="height" multiplier="375:44" id="UVA-gb-dmN"/>
+                        <constraint firstAttribute="height" constant="65" id="aAh-rG-iiO"/>
                         <constraint firstAttribute="width" secondItem="PoN-dH-wAm" secondAttribute="height" multiplier="375:44" id="roe-qk-68W"/>
                     </constraints>
+                    <color key="barTintColor" red="0.26274509800000001" green="0.81176470590000005" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </textAttributes>
                     <items>
                         <navigationItem title="发现圈子" id="Wsd-2E-QCu"/>
                     </items>
@@ -263,8 +269,10 @@
                 <constraint firstItem="KBb-GF-FNC" firstAttribute="top" secondItem="2ns-1c-Fxa" secondAttribute="bottom" constant="42" id="mGN-ev-ATB"/>
                 <constraint firstItem="nqp-JO-LY5" firstAttribute="leading" secondItem="a6Y-bs-IDM" secondAttribute="leading" id="maL-de-Egd"/>
                 <constraint firstItem="9Qe-fw-zbX" firstAttribute="width" secondItem="a6Y-bs-IDM" secondAttribute="width" id="nBK-mp-Z0o"/>
+                <constraint firstItem="PoN-dH-wAm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nTg-PK-Zrx"/>
                 <constraint firstItem="eTb-6t-pkP" firstAttribute="centerX" secondItem="nqp-JO-LY5" secondAttribute="centerX" id="pcP-aD-IVp"/>
                 <constraint firstItem="nqp-JO-LY5" firstAttribute="top" secondItem="PoN-dH-wAm" secondAttribute="bottom" constant="46" id="pgk-6B-VfP"/>
+                <constraint firstItem="PoN-dH-wAm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="r0f-el-T4h"/>
                 <constraint firstItem="DoA-Mq-AaY" firstAttribute="top" secondItem="eGh-QY-pL8" secondAttribute="bottom" constant="42" id="r2T-oy-Oio"/>
                 <constraint firstItem="9Qe-fw-zbX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sSH-XA-PuY"/>
                 <constraint firstItem="9Qe-fw-zbX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="t3o-kD-EqN"/>
@@ -282,6 +290,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="hUB-bz-Ou8"/>
                     <exclude reference="f6Y-vd-cme"/>
                     <exclude reference="kYE-TQ-fKV"/>
                     <exclude reference="Bkt-iS-gts"/>

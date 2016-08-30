@@ -7,6 +7,7 @@
 //
 
 #import "FindCircleViewController.h"
+#import "Circle_FindVC.h"
 
 @interface FindCircleViewController ()
 
@@ -75,6 +76,12 @@
     
     [self clickEffect:self.EnterpriseButton image:self.enterpriseImage];
     NSLog(@"you click enterprise.");
+    Circle_FindVC *setprize = [[Circle_FindVC alloc]initWithNibName:@"Circle_FindVC" bundle:nil];
+    [self.navigationController pushViewController:setprize animated:true];
+    //UIStoryboard *sb = [UIStoryboard storyboardWithName:@"findCircle" bundle:nil];
+  // UIViewController *VC = [sb instantiateViewControllerWithIdentifier:@"Circle_FindVC"];
+    //[self.navigationController pushViewController:VC animated:YES];
+    
     
     
 }

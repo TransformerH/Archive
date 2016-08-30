@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JhR-50-esF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="B1o-Xo-0Xq">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -66,6 +66,9 @@
                                         <state key="normal" image="circleseatilshare">
                                             <attributedString key="attributedTitle"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="39Y-eQ-C1Y" kind="push" id="jt4-42-CrS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b8R-kg-Fg6">
                                         <rect key="frame" x="342" y="10" width="25" height="24"/>
@@ -258,7 +261,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="SAx-98-gXb" kind="embed" id="gSO-ml-Xv0"/>
+                                    <segue destination="SAx-98-gXb" kind="embed" id="w1x-a6-bPy"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -300,6 +303,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Olc-7V-ttE"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -329,36 +333,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4WS-Bq-xRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="1562"/>
+            <point key="canvasLocation" x="1212.5" y="881.5"/>
         </scene>
-        <!--Lf DeleteVC-->
-        <scene sceneID="DO5-e3-5qS">
+        <!--View Controller-->
+        <scene sceneID="s6u-Xc-uRd">
             <objects>
-                <viewController id="JhR-50-esF" customClass="LfDeleteVC" sceneMemberID="viewController">
+                <viewController id="39Y-eQ-C1Y" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b6N-aE-7FE"/>
+                        <viewControllerLayoutGuide type="bottom" id="tnq-tR-s7h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wSP-yc-Uda">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UUF-eO-det" customClass="MyNavigationBar">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Khe-UX-VuE"/>
+                                    <constraint firstAttribute="width" constant="375" id="ggd-Tl-PuN"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="kjW-rl-IgM"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="管理管理员" id="7wE-QG-JYt">
+                                        <barButtonItem key="leftBarButtonItem" image="返回" id="agm-DG-mbx">
+                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="添加" id="DJn-M3-bXP">
+                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zbo-1R-s6U">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="Hjd-5c-hHb"/>
+                                    <constraint firstAttribute="width" secondItem="Zbo-1R-s6U" secondAttribute="height" multiplier="125:201" id="RET-hD-Pol"/>
+                                    <constraint firstAttribute="width" secondItem="Zbo-1R-s6U" secondAttribute="height" multiplier="125:201" id="Rez-Za-Udg"/>
+                                    <constraint firstAttribute="height" constant="603" id="Y4f-d7-Iju"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="fSN-Mx-VUg" kind="embed" id="qsA-Go-QWM"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zbo-1R-s6U" firstAttribute="top" secondItem="UUF-eO-det" secondAttribute="bottom" id="6tA-rZ-Vso"/>
+                            <constraint firstItem="UUF-eO-det" firstAttribute="top" secondItem="b6N-aE-7FE" secondAttribute="bottom" id="d24-kJ-Sv3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UUF-eO-det" secondAttribute="trailing" constant="-20" id="dGq-tO-Uxj"/>
+                            <constraint firstItem="Zbo-1R-s6U" firstAttribute="leading" secondItem="wSP-yc-Uda" secondAttribute="leadingMargin" constant="-20" id="jns-2F-WUx"/>
+                            <constraint firstItem="UUF-eO-det" firstAttribute="leading" secondItem="wSP-yc-Uda" secondAttribute="leadingMargin" constant="-20" id="rbk-Ic-6Gt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rYw-d4-Knb"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jB5-ly-2ns" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fax-BH-RoY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1283" y="2884"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="hzz-wU-AMf">
-            <objects>
-                <tableViewController id="Erh-UW-9Ew" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2bp-OV-eE7" customClass="VVeboTableView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="Erh-UW-9Ew" id="FWe-1w-Iug"/>
-                            <outlet property="delegate" destination="Erh-UW-9Ew" id="hDd-sj-dzA"/>
-                        </connections>
-                    </tableView>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P9y-9o-aSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1173" y="171"/>
+            <point key="canvasLocation" x="1734.5" y="2193.5"/>
         </scene>
         <!--DemoVC5-->
         <scene sceneID="zRB-EQ-tEW">
@@ -366,7 +400,15 @@
                 <viewController id="SAx-98-gXb" customClass="DemoVC5" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLk-ni-75f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-91" y="2147"/>
+            <point key="canvasLocation" x="405" y="2368"/>
+        </scene>
+        <!--Lf DeleteVC-->
+        <scene sceneID="Oqk-Cf-Xca">
+            <objects>
+                <viewController id="fSN-Mx-VUg" customClass="LfDeleteVC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4v2-Aq-Kyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1734.5" y="3059.5"/>
         </scene>
     </scenes>
     <resources>

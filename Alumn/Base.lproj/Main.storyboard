@@ -120,7 +120,7 @@
         <!--主页-->
         <scene sceneID="xYt-BO-yQc">
             <objects>
-                <viewController id="6aQ-Fd-wu6" customClass="SecondViewLoadControllerViewController" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" id="6aQ-Fd-wu6" customClass="SecondViewLoadControllerViewController" sceneMemberID="viewController">
                     <navigationBar key="view" contentMode="scaleToFill" shadowImage="1" id="MOe-nU-qpf" customClass="MyNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -129,6 +129,7 @@
                         </items>
                     </navigationBar>
                     <tabBarItem key="tabBarItem" title="主页" image="home_icon" id="Std-HE-8cc"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3G-Ti-pgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpX-OW-UPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1450.5" y="-366.5"/>
+            <point key="canvasLocation" x="1584.5" y="-574.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="p5i-za-Gri">

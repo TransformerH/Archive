@@ -6,13 +6,13 @@
 //  Copyright © 2016年 刘龙飞. All rights reserved.
 //
 
-#import "CollectionViewCell.h"
-#import "UIView+SDAutoLayout.h"
+#import "CollectionViewCell_F.h"
+
 
 #define UISCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define CELL_WIDTH (([[UIScreen mainScreen] bounds].size.width - 40) / 2)
 
-@implementation CollectionViewCell
+@implementation CollectionViewCell_F
 
 
 - (instancetype)initWithFrame:(CGRect)frame{

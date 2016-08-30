@@ -116,7 +116,10 @@
 }
 - (IBAction)back:(id)sender {
     // 返回之前storyboard定义界面
+    //[self.navigationController popViewControllerAnimated:YES];
+      //[self.navigationController popToRootViewControllerAnimated:YES];
     [self.navigationController popViewControllerAnimated:YES];
+    
 }
 - (IBAction)searchButtonClicked:(id)sender {
     searchViewController *ContmetViewController =[[searchViewController alloc] init];
@@ -219,5 +222,8 @@
     viewVC.dargbutton =self.button;
     
 }
+
+
+
 
 @end
