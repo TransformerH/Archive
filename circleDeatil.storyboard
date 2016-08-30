@@ -148,6 +148,9 @@
                                                 <exclude reference="zrB-aB-Ky1"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="sendMessage:" destination="B1o-Xo-0Xq" eventType="touchUpInside" id="8KD-3J-kA5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

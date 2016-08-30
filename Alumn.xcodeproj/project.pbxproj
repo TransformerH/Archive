@@ -81,6 +81,10 @@
 		123D7E921D758CE0008B0DF9 /* PeopleVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E911D758CE0008B0DF9 /* PeopleVM.m */; };
 		123D7E941D758D00008B0DF9 /* peopleList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 123D7E931D758D00008B0DF9 /* peopleList.plist */; };
 		123D7E961D758D2D008B0DF9 /* MeList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 123D7E951D758D2D008B0DF9 /* MeList.plist */; };
+		123D7EA01D759B58008B0DF9 /* RRSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E991D759B57008B0DF9 /* RRSendMessageViewController.m */; };
+		123D7EA11D759B58008B0DF9 /* RRMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E9B1D759B57008B0DF9 /* RRMessageModel.m */; };
+		123D7EA21D759B58008B0DF9 /* RRCustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E9D1D759B57008B0DF9 /* RRCustomScrollView.m */; };
+		123D7EA31D759B58008B0DF9 /* UICollectionViewCellPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E9F1D759B58008B0DF9 /* UICollectionViewCellPhoto.m */; };
 		123F26161D73BCDC00B619DF /* circleSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123F26141D73BCDC00B619DF /* circleSettingVC.m */; };
 		123F26171D73BCDC00B619DF /* circleSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123F26151D73BCDC00B619DF /* circleSettingVC.xib */; };
 		123F26341D74195300B619DF /* LfDeleteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123F262F1D74195300B619DF /* LfDeleteVC.m */; };
@@ -274,6 +278,14 @@
 		123D7E911D758CE0008B0DF9 /* PeopleVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleVM.m; sourceTree = "<group>"; };
 		123D7E931D758D00008B0DF9 /* peopleList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = peopleList.plist; sourceTree = "<group>"; };
 		123D7E951D758D2D008B0DF9 /* MeList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MeList.plist; sourceTree = "<group>"; };
+		123D7E981D759B57008B0DF9 /* RRSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSendMessageViewController.h; sourceTree = "<group>"; };
+		123D7E991D759B57008B0DF9 /* RRSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSendMessageViewController.m; sourceTree = "<group>"; };
+		123D7E9A1D759B57008B0DF9 /* RRMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMessageModel.h; sourceTree = "<group>"; };
+		123D7E9B1D759B57008B0DF9 /* RRMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMessageModel.m; sourceTree = "<group>"; };
+		123D7E9C1D759B57008B0DF9 /* RRCustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRCustomScrollView.h; sourceTree = "<group>"; };
+		123D7E9D1D759B57008B0DF9 /* RRCustomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRCustomScrollView.m; sourceTree = "<group>"; };
+		123D7E9E1D759B58008B0DF9 /* UICollectionViewCellPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewCellPhoto.h; sourceTree = "<group>"; };
+		123D7E9F1D759B58008B0DF9 /* UICollectionViewCellPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewCellPhoto.m; sourceTree = "<group>"; };
 		123F26131D73BCDC00B619DF /* circleSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleSettingVC.h; sourceTree = "<group>"; };
 		123F26141D73BCDC00B619DF /* circleSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleSettingVC.m; sourceTree = "<group>"; };
 		123F26151D73BCDC00B619DF /* circleSettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circleSettingVC.xib; sourceTree = "<group>"; };
@@ -587,6 +599,21 @@
 			name = peopleList;
 			sourceTree = "<group>";
 		};
+		123D7E971D759B43008B0DF9 /* NewMessage */ = {
+			isa = PBXGroup;
+			children = (
+				123D7E981D759B57008B0DF9 /* RRSendMessageViewController.h */,
+				123D7E991D759B57008B0DF9 /* RRSendMessageViewController.m */,
+				123D7E9A1D759B57008B0DF9 /* RRMessageModel.h */,
+				123D7E9B1D759B57008B0DF9 /* RRMessageModel.m */,
+				123D7E9C1D759B57008B0DF9 /* RRCustomScrollView.h */,
+				123D7E9D1D759B57008B0DF9 /* RRCustomScrollView.m */,
+				123D7E9E1D759B58008B0DF9 /* UICollectionViewCellPhoto.h */,
+				123D7E9F1D759B58008B0DF9 /* UICollectionViewCellPhoto.m */,
+			);
+			name = NewMessage;
+			sourceTree = "<group>";
+		};
 		123F262D1D74194000B619DF /* LeftToDelete */ = {
 			isa = PBXGroup;
 			children = (
@@ -805,6 +832,7 @@
 		7AB0F9FE1D644DDB0098CEDF /* Circle */ = {
 			isa = PBXGroup;
 			children = (
+				123D7E971D759B43008B0DF9 /* NewMessage */,
 				123D7E6B1D757641008B0DF9 /* FindCircle */,
 				12BF62AC1D6D96130083ECD5 /* SecondViewController.xib */,
 				1263B7F11D6EE14F0018A762 /* circleDeatil.storyboard */,
@@ -1022,6 +1050,7 @@
 				121BE6291D6C52530072705F /* TabBarController.m in Sources */,
 				123F26341D74195300B619DF /* LfDeleteVC.m in Sources */,
 				121947421D71675F002F8287 /* CircleCell.m in Sources */,
+				123D7EA11D759B58008B0DF9 /* RRMessageModel.m in Sources */,
 				12BF62A81D6D81270083ECD5 /* SecondViewLoadControllerViewController.m in Sources */,
 				123AAF131D713C810027554A /* tableListViewController.m in Sources */,
 				123F26351D74195300B619DF /* LfDeleteVCCellTableViewCell.m in Sources */,
@@ -1042,6 +1071,7 @@
 				123AAF001D713AE30027554A /* SDWebImagePrefetcher.m in Sources */,
 				12C8C29D1D730F3D001DD69B /* SDRefreshView.m in Sources */,
 				1219473C1D716747002F8287 /* CardCell.m in Sources */,
+				123D7EA01D759B58008B0DF9 /* RRSendMessageViewController.m in Sources */,
 				123F26161D73BCDC00B619DF /* circleSettingVC.m in Sources */,
 				121BE63C1D6C57820072705F /* ViewController.m in Sources */,
 				123AAF031D713AE30027554A /* UIImage+MultiFormat.m in Sources */,
@@ -1062,6 +1092,7 @@
 				12C8C29B1D730F3D001DD69B /* SDRefreshFooterView.m in Sources */,
 				1219475E1D716827002F8287 /* MJRefreshBackNormalFooter.m in Sources */,
 				12C973421D704A58005B814A /* searchController.m in Sources */,
+				123D7EA21D759B58008B0DF9 /* RRCustomScrollView.m in Sources */,
 				12C8C2981D730F3D001DD69B /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				12F5166B1D6FD2C4003E6B33 /* circleDeatilVC.m in Sources */,
 				12BC84EA1D7285E600383806 /* UIDragButton.m in Sources */,
@@ -1097,6 +1128,7 @@
 				121947541D71680F002F8287 /* MJRefreshAutoNormalFooter.m in Sources */,
 				12C8C2991D730F3D001DD69B /* UIView+SDAutoLayout.m in Sources */,
 				121947771D7168BE002F8287 /* MJRefreshHeader.m in Sources */,
+				123D7EA31D759B58008B0DF9 /* UICollectionViewCellPhoto.m in Sources */,
 				123D7E771D75765C008B0DF9 /* Section_FModel.m in Sources */,
 				1219472E1D7165F0002F8287 /* MJRefreshConst.m in Sources */,
 				123AAF051D713AE30027554A /* UIImageView+HighlightedWebCache.m in Sources */,

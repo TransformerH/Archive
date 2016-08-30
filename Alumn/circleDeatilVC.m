@@ -22,6 +22,7 @@
 #import "UIDragButton.h"
 //#import "WeiXinFriendsCircleVC .h"
 #import "circleSettingVC.h"
+#import "RRSendMessageViewController.h"
 
 #define floatSize 120
 
@@ -223,6 +224,21 @@
     
 }
 
+- (IBAction)sendMessage:(id)sender {
+    
+    RRSendMessageViewController *controller = [[RRSendMessageViewController alloc] init];
+    
+    [controller presentController:self :^(RRMessageModel *model, BOOL isCancel) {
+        if (isCancel == true) {
+            NSLog(@" ");
+        }
+        else {
+            NSLog(@"message :%@",model.text);
+        }
+        [controller dismissViewControllerAnimated:YES completion:nil];
+    }];
+
+}
 
 
 
