@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MyAltview.h"
 @interface Circle_FindVC : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *back;
+@property (strong ,nonatomic) MyAltview *alt;
+@property (strong,nonatomic) UIView *darkview;
+
+-(void) animationAlert:(UIView *)view;
 
 @end

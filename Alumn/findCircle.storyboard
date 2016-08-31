@@ -8,12 +8,31 @@
         <!--Circle FindVC-->
         <scene sceneID="zBM-5a-POG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QpX-iz-G1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Circle_FindVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nsr-WK-XrM" customClass="Circle_FindVC" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QpX-iz-G1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="263"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pQI-Sw-qDS">
+            <objects>
+                <viewController id="x3B-Ds-0pH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="krM-Ll-ri0"/>
+                        <viewControllerLayoutGuide type="bottom" id="dgD-wA-snm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ihy-LB-V3b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Y6-w7-cbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="172"/>
         </scene>
     </scenes>
 </document>

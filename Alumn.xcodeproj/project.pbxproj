@@ -91,6 +91,9 @@
 		123F26351D74195300B619DF /* LfDeleteVCCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 123F26311D74195300B619DF /* LfDeleteVCCellTableViewCell.m */; };
 		123F26361D74195300B619DF /* LfDeleteVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 123F26331D74195300B619DF /* LfDeleteVCModel.m */; };
 		1263B7F21D6EE14F0018A762 /* circleDeatil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1263B7F11D6EE14F0018A762 /* circleDeatil.storyboard */; };
+		12BC79621D76CECF00711333 /* MyAltview.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC79611D76CECF00711333 /* MyAltview.m */; };
+		12BC79661D76D10000711333 /* MyAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC79641D76D10000711333 /* MyAlertVC.m */; };
+		12BC79691D76DC0A00711333 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BC79681D76DC0A00711333 /* line.png */; };
 		12BC84EA1D7285E600383806 /* UIDragButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC84E91D7285E600383806 /* UIDragButton.m */; };
 		12BC84ED1D72865D00383806 /* FloatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC84EC1D72865D00383806 /* FloatingViewController.m */; };
 		12BF62911D6D74BF0083ECD5 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BF62901D6D74BF0083ECD5 /* SecondViewController.m */; };
@@ -296,6 +299,11 @@
 		123F26321D74195300B619DF /* LfDeleteVCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LfDeleteVCModel.h; sourceTree = "<group>"; };
 		123F26331D74195300B619DF /* LfDeleteVCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LfDeleteVCModel.m; sourceTree = "<group>"; };
 		1263B7F11D6EE14F0018A762 /* circleDeatil.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = circleDeatil.storyboard; path = ../circleDeatil.storyboard; sourceTree = "<group>"; };
+		12BC79601D76CECF00711333 /* MyAltview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAltview.h; sourceTree = "<group>"; };
+		12BC79611D76CECF00711333 /* MyAltview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAltview.m; sourceTree = "<group>"; };
+		12BC79631D76D10000711333 /* MyAlertVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAlertVC.h; sourceTree = "<group>"; };
+		12BC79641D76D10000711333 /* MyAlertVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAlertVC.m; sourceTree = "<group>"; };
+		12BC79681D76DC0A00711333 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		12BC84E81D7285E600383806 /* UIDragButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDragButton.h; sourceTree = "<group>"; };
 		12BC84E91D7285E600383806 /* UIDragButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDragButton.m; sourceTree = "<group>"; };
 		12BC84EB1D72865D00383806 /* FloatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatingViewController.h; sourceTree = "<group>"; };
@@ -656,6 +664,8 @@
 				123AAF121D713C810027554A /* tableListViewController.m */,
 				12BC84EB1D72865D00383806 /* FloatingViewController.h */,
 				12BC84EC1D72865D00383806 /* FloatingViewController.m */,
+				12BC79631D76D10000711333 /* MyAlertVC.h */,
+				12BC79641D76D10000711333 /* MyAlertVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -663,6 +673,8 @@
 		12BF628C1D6D23200083ECD5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				12BC79601D76CECF00711333 /* MyAltview.h */,
+				12BC79611D76CECF00711333 /* MyAltview.m */,
 				12BF629A1D6D75910083ECD5 /* CollectionViewCell.h */,
 				12BF629B1D6D75910083ECD5 /* CollectionViewCell.m */,
 				12BF629C1D6D75910083ECD5 /* CollectionReusableView.h */,
@@ -796,6 +808,7 @@
 				12C8C2AC1D731104001DD69B /* icon3.jpg */,
 				12C8C2AD1D731104001DD69B /* icon4.jpg */,
 				123AAF141D713E7E0027554A /* data.plist */,
+				12BC79681D76DC0A00711333 /* line.png */,
 				7AB0F9D81D644B510098CEDF /* main.m */,
 				123AAF161D713E900027554A /* corner_circle@2x.png */,
 				123AAF171D713E900027554A /* t_comments@2x.png */,
@@ -964,6 +977,7 @@
 				123F26171D73BCDC00B619DF /* circleSettingVC.xib in Resources */,
 				123D7E961D758D2D008B0DF9 /* MeList.plist in Resources */,
 				7AB0F9E71D644B510098CEDF /* LaunchScreen.storyboard in Resources */,
+				12BC79691D76DC0A00711333 /* line.png in Resources */,
 				123D7E811D7576C7008B0DF9 /* Circle_FindVC.xib in Resources */,
 				12C8C2B01D731104001DD69B /* icon2.jpg in Resources */,
 				7AB0F9E41D644B510098CEDF /* Assets.xcassets in Resources */,
@@ -1047,6 +1061,7 @@
 				121947741D7168BE002F8287 /* MJRefreshBackFooter.m in Sources */,
 				123AAF101D713B380027554A /* VVeboTableView.m in Sources */,
 				123D7E871D758CC8008B0DF9 /* PeopleListVC.m in Sources */,
+				12BC79621D76CECF00711333 /* MyAltview.m in Sources */,
 				121BE6291D6C52530072705F /* TabBarController.m in Sources */,
 				123F26341D74195300B619DF /* LfDeleteVC.m in Sources */,
 				121947421D71675F002F8287 /* CircleCell.m in Sources */,
@@ -1133,6 +1148,7 @@
 				1219472E1D7165F0002F8287 /* MJRefreshConst.m in Sources */,
 				123AAF051D713AE30027554A /* UIImageView+HighlightedWebCache.m in Sources */,
 				123AAEF91D713AE30027554A /* NSData+ImageContentType.m in Sources */,
+				12BC79661D76D10000711333 /* MyAlertVC.m in Sources */,
 				12C9733B1D702D15005B814A /* RNContainerController.m in Sources */,
 				12C8C2A81D730F7A001DD69B /* DemoVC5Model.m in Sources */,
 			);

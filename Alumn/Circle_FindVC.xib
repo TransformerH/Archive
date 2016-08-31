@@ -40,6 +40,9 @@
                         <constraint firstAttribute="width" secondItem="s5i-ji-xbL" secondAttribute="height" multiplier="375:44" id="4SI-me-MrX"/>
                     </constraints>
                     <color key="barTintColor" red="0.26274509800000001" green="0.81176470590000005" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </textAttributes>
                     <items>
                         <navigationItem title="圈子分类" id="9ki-Ir-1pP">
                             <barButtonItem key="leftBarButtonItem" image="返回" id="Yd6-jR-VCz">

@@ -13,6 +13,8 @@
 
 #import "Section_FModel.h"
 #import "Cell_FModel.h"
+#import "UIView+SDAutoLayout.h"
+#import "MyAlertVC.h"
 
 #define UISCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 
@@ -185,11 +187,26 @@
         [self.collectionView_F reloadData];
     }else{
         NSLog(@"第%ld个section,点击图片%ld",indexPath.section,indexPath.row);
-        //在storyborad中使用push方法不拖线跳转
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *VC = [sb instantiateViewControllerWithIdentifier:@"circleDeatil"];
-        [self.navigationController pushViewController:VC animated:YES];
-    }
+        //MyAlertVC *ContmetViewController =[[MyAlertVC alloc] init];
+        //[self.view addSubview:[ContmetViewController init].view];
+        _darkview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+        _darkview.backgroundColor = [UIColor blackColor];
+        _darkview.alpha = 0.5;
+        _darkview.userInteractionEnabled =YES;
+         UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(event:)];
+        [tapGesture setNumberOfTapsRequired:1];
+        [_darkview addGestureRecognizer:tapGesture];
+        [self.view addSubview:_darkview];
+        self.alt = [MyAltview new];
+        self.alt.altwidth=280;
+        [_alt CreatAlt:nil circleName:@"XXXXXppppppXXXXXXXXXXX" altTitle:@"XXXXXXXX" Content:@"asd阿速度发送地方fa阿vjasdasdsdsadasdasffsavavsfasfasfasfasfsafsafasfasfasfasfasfsafasfasfsafsafasfasfasfasfasfsafasfasfsafsafasfasfasfafasfsafas小大三大" altButton:nil altbtnTcolor:[UIColor redColor] altselectbtnTcolor:[UIColor whiteColor] ];
+        _alt.sd_layout
+        .centerYEqualToView(self.view)
+        .centerXEqualToView(self.view);
+        [self.view addSubview:_alt.view];
+        [self animationAlert:_alt.view];
+        [_alt show];
+           }
 }
 
 
@@ -212,7 +229,31 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)event:(UITapGestureRecognizer *)gesture
+{
+    NSLog(@"单机");
+    [_alt removeFromSuperview];
+    [_alt hide];
+    [_darkview removeFromSuperview];
+}
 
+-(void) animationAlert:(UIView *)view
+{
+    
+    CAKeyframeAnimation *popAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
+    popAnimation.duration = 1;
+    popAnimation.values = @[[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.01f, 0.01f, 1.0f)],
+                            [NSValue valueWithCATransform3D:CATransform3DMakeScale(1.1f, 1.1f, 1.0f)],
+                            [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.9f, 0.9f, 1.0f)],
+                            [NSValue valueWithCATransform3D:CATransform3DIdentity]];
+    popAnimation.keyTimes = @[@0.0f, @0.5f, @0.75f, @1.0f];
+    popAnimation.timingFunctions = @[[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
+                                     [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
+                                     [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    [view.layer addAnimation:popAnimation forKey:nil];
+    
+    
+}
 @end
 
 
