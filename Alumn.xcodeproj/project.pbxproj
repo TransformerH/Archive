@@ -91,6 +91,9 @@
 		123F26351D74195300B619DF /* LfDeleteVCCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 123F26311D74195300B619DF /* LfDeleteVCCellTableViewCell.m */; };
 		123F26361D74195300B619DF /* LfDeleteVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 123F26331D74195300B619DF /* LfDeleteVCModel.m */; };
 		1263B7F21D6EE14F0018A762 /* circleDeatil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1263B7F11D6EE14F0018A762 /* circleDeatil.storyboard */; };
+		129B1B6F1D77CBA1007BC318 /* 0123.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 129B1B6E1D77CBA1007BC318 /* 0123.jpg */; };
+		129B1B741D77D2E5007BC318 /* NameAndPicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B1B721D77D2E5007BC318 /* NameAndPicVC.m */; };
+		129B1B751D77D2E5007BC318 /* NameAndPicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 129B1B731D77D2E5007BC318 /* NameAndPicVC.xib */; };
 		12BC79621D76CECF00711333 /* MyAltview.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC79611D76CECF00711333 /* MyAltview.m */; };
 		12BC79661D76D10000711333 /* MyAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC79641D76D10000711333 /* MyAlertVC.m */; };
 		12BC79691D76DC0A00711333 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BC79681D76DC0A00711333 /* line.png */; };
@@ -299,6 +302,10 @@
 		123F26321D74195300B619DF /* LfDeleteVCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LfDeleteVCModel.h; sourceTree = "<group>"; };
 		123F26331D74195300B619DF /* LfDeleteVCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LfDeleteVCModel.m; sourceTree = "<group>"; };
 		1263B7F11D6EE14F0018A762 /* circleDeatil.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = circleDeatil.storyboard; path = ../circleDeatil.storyboard; sourceTree = "<group>"; };
+		129B1B6E1D77CBA1007BC318 /* 0123.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0123.jpg; sourceTree = "<group>"; };
+		129B1B711D77D2E5007BC318 /* NameAndPicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameAndPicVC.h; sourceTree = "<group>"; };
+		129B1B721D77D2E5007BC318 /* NameAndPicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameAndPicVC.m; sourceTree = "<group>"; };
+		129B1B731D77D2E5007BC318 /* NameAndPicVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameAndPicVC.xib; sourceTree = "<group>"; };
 		12BC79601D76CECF00711333 /* MyAltview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAltview.h; sourceTree = "<group>"; };
 		12BC79611D76CECF00711333 /* MyAltview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAltview.m; sourceTree = "<group>"; };
 		12BC79631D76D10000711333 /* MyAlertVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAlertVC.h; sourceTree = "<group>"; };
@@ -635,6 +642,23 @@
 			name = LeftToDelete;
 			sourceTree = "<group>";
 		};
+		129B1B701D77D1F7007BC318 /* CircleSetting */ = {
+			isa = PBXGroup;
+			children = (
+				129B1B711D77D2E5007BC318 /* NameAndPicVC.h */,
+				129B1B721D77D2E5007BC318 /* NameAndPicVC.m */,
+				129B1B731D77D2E5007BC318 /* NameAndPicVC.xib */,
+			);
+			name = CircleSetting;
+			sourceTree = "<group>";
+		};
+		129B1B821D781D09007BC318 /* Flip */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Flip;
+			sourceTree = "<group>";
+		};
 		12BF628B1D6D22C80083ECD5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -758,6 +782,7 @@
 		7AB0F9CB1D644B510098CEDF = {
 			isa = PBXGroup;
 			children = (
+				129B1B821D781D09007BC318 /* Flip */,
 				123F262D1D74194000B619DF /* LeftToDelete */,
 				12C8C29F1D730F5A001DD69B /* AutoTableView */,
 				12C8C28C1D730F3D001DD69B /* SDAutoLayout */,
@@ -810,6 +835,7 @@
 				123AAF141D713E7E0027554A /* data.plist */,
 				12BC79681D76DC0A00711333 /* line.png */,
 				7AB0F9D81D644B510098CEDF /* main.m */,
+				129B1B6E1D77CBA1007BC318 /* 0123.jpg */,
 				123AAF161D713E900027554A /* corner_circle@2x.png */,
 				123AAF171D713E900027554A /* t_comments@2x.png */,
 				123AAF181D713E900027554A /* t_repost@2x.png */,
@@ -845,6 +871,7 @@
 		7AB0F9FE1D644DDB0098CEDF /* Circle */ = {
 			isa = PBXGroup;
 			children = (
+				129B1B701D77D1F7007BC318 /* CircleSetting */,
 				123D7E971D759B43008B0DF9 /* NewMessage */,
 				123D7E6B1D757641008B0DF9 /* FindCircle */,
 				12BF62AC1D6D96130083ECD5 /* SecondViewController.xib */,
@@ -968,6 +995,7 @@
 				12C8C2AF1D731104001DD69B /* icon1.jpg in Resources */,
 				123AAF151D713E7E0027554A /* data.plist in Resources */,
 				123D7D9D1D756023008B0DF9 /* findCircle.storyboard in Resources */,
+				129B1B6F1D77CBA1007BC318 /* 0123.jpg in Resources */,
 				123D7E941D758D00008B0DF9 /* peopleList.plist in Resources */,
 				123AAF1B1D713E900027554A /* t_repost@2x.png in Resources */,
 				12BF62AD1D6D96130083ECD5 /* SecondViewController.xib in Resources */,
@@ -990,6 +1018,7 @@
 				121947241D7165E3002F8287 /* MJRefresh.bundle in Resources */,
 				123D7E831D758930008B0DF9 /* 创建圈子.png in Resources */,
 				123AAF1A1D713E900027554A /* t_comments@2x.png in Resources */,
+				129B1B751D77D2E5007BC318 /* NameAndPicVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,6 +1105,7 @@
 				123D7E7A1D75765C008B0DF9 /* CollectionReusableView_F.m in Sources */,
 				12C9733C1D702D15005B814A /* RNTableViewController.m in Sources */,
 				12BF629F1D6D75910083ECD5 /* CollectionReusableView.m in Sources */,
+				129B1B741D77D2E5007BC318 /* NameAndPicVC.m in Sources */,
 				1219475F1D716827002F8287 /* MJRefreshBackStateFooter.m in Sources */,
 				7AB0F9DC1D644B510098CEDF /* AppDelegate.m in Sources */,
 				12BF62911D6D74BF0083ECD5 /* SecondViewController.m in Sources */,
@@ -1281,6 +1311,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Alumn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alumna.Alumn;
@@ -1297,6 +1331,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Alumn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alumna.Alumn;

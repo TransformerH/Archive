@@ -92,7 +92,8 @@
     _view3.sd_layout
     .topSpaceToView(_view2, 10)
     .leftEqualToView(_view2)
-    .widthRatioToView(self.contentView, 0.8);
+    .widthRatioToView(self.contentView, 0.8)
+    .bottomSpaceToView(self,10);
     
     
 }
@@ -116,7 +117,7 @@
         CGFloat scale = pic.size.height / pic.size.width;
         _view3.sd_layout.autoHeightRatio(scale);
         _view3.image = pic;
-        bottomMargin = 10;
+        bottomMargin = 20;
     } else {
         _view3.sd_layout.autoHeightRatio(0);
     }

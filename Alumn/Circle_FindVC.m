@@ -204,7 +204,7 @@
         .centerYEqualToView(self.view)
         .centerXEqualToView(self.view);
         [self.view addSubview:_alt.view];
-        [self animationAlert:_alt.view];
+        [Circle_FindVC animationAlert:_alt.view];
         [_alt show];
            }
 }
@@ -237,7 +237,7 @@
     [_darkview removeFromSuperview];
 }
 
--(void) animationAlert:(UIView *)view
++(void) animationAlert:(UIView *)view
 {
     
     CAKeyframeAnimation *popAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];

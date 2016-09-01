@@ -23,6 +23,9 @@
 //#import "WeiXinFriendsCircleVC .h"
 #import "circleSettingVC.h"
 #import "RRSendMessageViewController.h"
+#import "NameAndPicVC.h"
+//#import "UIViewController+PortalTransition.h"
+//#import "CYViewControllerTransitioningDelegate.h"
 
 #define floatSize 120
 
@@ -32,11 +35,11 @@
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 
 @interface circleDeatilVC ()<UIDragButtonDelegate>
-
 /**
  *  悬浮的window
  */
 @property(strong,nonatomic)UIWindow *window;
+//@property (nonatomic, strong) CYViewControllerTransitioningDelegate *viewControllerTransitionDelegate;
 
 /**
  *  悬浮的按钮
@@ -76,7 +79,7 @@
     //[self addChildViewController:floatVc];
     //[self.view addSubview:floatVc.view];
     //_current =self;
-   
+  // self.viewControllerTransitionDelegate = [CYViewControllerTransitioningDelegate new];
     
     
     
@@ -240,6 +243,21 @@
 
 }
 
+- (IBAction)setButton3Clicked:(id)sender {
+//
+//    NameAndPicVC *newVC = [NameAndPicVC new];
+//    newVC.modalPresentationStyle = UIModalPresentationCustom;
+//    self.viewControllerTransitionDelegate.viewController = newVC;
+//    //[self presentViewController:newVC animated:YES completion:nil];
+//    //Or you can call this catogory method
+//    [self presentPortalTransitionViewController:newVC completion:nil];
+//    
+    
+    NameAndPicVC *vc = [[NameAndPicVC alloc] init];
+    [self.navigationController pushViewController:vc
+                                         animated:YES];
+    
+}
 
 
 @end

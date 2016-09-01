@@ -9,6 +9,7 @@
 #import "MyAltview.h"
 #import "UIView+SDAutoLayout.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Circle_FindVC.h"
 
 #define floatSize 300
 
@@ -83,6 +84,7 @@
     //设置图形样子
     maskLayer.path = maskPath.CGPath;
     Ximg.layer.mask = maskLayer;
+    [Circle_FindVC animationAlert:Ximg];
     [view addSubview:Ximg];
     
     UILabel *circleName=[UILabel new];
@@ -130,6 +132,7 @@
     .widthIs(15)
     .topSpaceToView(circleName,5)
     .leftSpaceToView(alttitle,0);
+    [Circle_FindVC animationAlert:king];
     [view addSubview:king];
     
     UIImageView *line = [UIImageView new];
@@ -263,7 +266,7 @@
 
 -(void)checkbtn1:(UIButton *)sender
 {
-    NSLog(@"dadasdadaddafafgacza");
+    NSLog(@"dadasdadaddafaknlnlknlfgacza");
     //    [self hide];
 }
 -(void)show

@@ -13,6 +13,6 @@
 @property (strong ,nonatomic) MyAltview *alt;
 @property (strong,nonatomic) UIView *darkview;
 
--(void) animationAlert:(UIView *)view;
++(void) animationAlert:(UIView *)view;
 
 @end

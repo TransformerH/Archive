@@ -77,7 +77,7 @@
     
     NSArray *picImageNamesArray = @[ @"01.jpg",
                                      @"02.jpg",
-                                     @"03.jpg",
+                                     @"0123.jpg",
                                      @"11.jpg",
                                      @"10.jpg",
                                      ];
