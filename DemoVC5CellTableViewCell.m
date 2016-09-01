@@ -17,6 +17,7 @@
 {
     UIImageView *_view0;
     UILabel *_view1;
+    UILabel *_time;
     UILabel *_view2;
     UIImageView *_view3;
 }
@@ -40,6 +41,11 @@
     view1.font = [UIFont systemFontOfSize:16];
     _view1 = view1;
     
+    UILabel *time = [UILabel new];
+    time.textColor = [UIColor lightGrayColor];
+    time.font = [UIFont systemFontOfSize:12];
+    _time = time;
+    
     UILabel *view2 = [UILabel new];
     view2.textColor = [UIColor grayColor];
     view2.font = [UIFont systemFontOfSize:16];
@@ -52,8 +58,10 @@
     
     [self.contentView addSubview:view0];
     [self.contentView addSubview:view1];
-    [self.contentView addSubview:view2];
+    [self.contentView addSubview:time];
     [self.contentView addSubview:view3];
+    [self.contentView addSubview:view2];
+   
 
     
     
@@ -70,8 +78,13 @@
     .rightSpaceToView(self.contentView, 10)
     .heightRatioToView(_view0, 0.4);
     
+    _time.sd_layout
+    .topSpaceToView(_view1,2)
+    .leftSpaceToView(_view0,5)
+    .rightSpaceToView(self.contentView,10);
+    
     _view2.sd_layout
-    .topSpaceToView(_view1, 10)
+    .topSpaceToView(_time, 10)
     .rightSpaceToView(self.contentView, 10)
     .leftEqualToView(_view1)
     .autoHeightRatio(0);
@@ -79,7 +92,7 @@
     _view3.sd_layout
     .topSpaceToView(_view2, 10)
     .leftEqualToView(_view2)
-    .widthRatioToView(_view2, 0.7);
+    .widthRatioToView(self.contentView, 0.8);
     
     
 }
@@ -91,6 +104,7 @@
     _view0.image = [UIImage imageNamed:model.iconName];
     _view1.text = model.name;
     _view2.text = model.content;
+    _time.text= model.time;
     
     CGFloat bottomMargin = 0;
     

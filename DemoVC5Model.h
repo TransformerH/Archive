@@ -16,5 +16,6 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSString *picName;
+@property (nonatomic, copy) NSString *time;
 
 @end
