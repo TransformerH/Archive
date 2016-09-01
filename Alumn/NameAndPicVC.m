@@ -138,6 +138,10 @@
     return YES;
 }
 
+- (IBAction)backItemClicked:(id)sender {
+     [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 /*
 #pragma mark - Navigation

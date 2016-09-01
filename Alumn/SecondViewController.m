@@ -12,6 +12,8 @@
 
 #import "SectionModel.h"
 #import "CellModel.h"
+#import "UIViewController+PortalTransition.h"
+#import "CYViewControllerTransitioningDelegate.h"
 
 #define UISCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 
@@ -27,7 +29,7 @@ NS_ENUM(NSInteger,CellState){
 
 
 @interface SecondViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
-
+@property (nonatomic, strong) CYViewControllerTransitioningDelegate *viewControllerTransitionDelegate;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property(nonatomic,assign) enum CellState;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
@@ -227,7 +229,12 @@ NS_ENUM(NSInteger,CellState){
       //在storyborad中使用push方法不拖线跳转
       UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
       UIViewController *VC = [sb instantiateViewControllerWithIdentifier:@"circleDeatil"];
-                              [self.navigationController pushViewController:VC animated:YES];
+      VC.modalPresentationStyle = UIModalPresentationCustom;
+      self.viewControllerTransitionDelegate.viewController = VC;
+      //[self presentViewController:newVC animated:YES completion:nil];
+      //Or you can call this catogory method
+      [self presentPortalTransitionViewController:VC completion:nil];
+      //[self.navigationController pushViewController:VC animated:YES];
   }
 }
 

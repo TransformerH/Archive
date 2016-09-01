@@ -35,6 +35,9 @@
                         <navigationItem title="修改名称及封面" id="jM7-IL-dyU">
                             <barButtonItem key="leftBarButtonItem" image="返回" id="Rkw-JL-eKb">
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="backItemClicked:" destination="-1" id="OYr-Mx-SCN"/>
+                                </connections>
                             </barButtonItem>
                         </navigationItem>
                     </items>

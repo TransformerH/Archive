@@ -67,8 +67,7 @@
                                             <attributedString key="attributedTitle"/>
                                         </state>
                                         <connections>
-                                            <action selector="setButton3Clicked:" destination="B1o-Xo-0Xq" eventType="touchUpInside" id="Lum-UZ-S1c"/>
-                                            <segue destination="39Y-eQ-C1Y" kind="push" id="jt4-42-CrS"/>
+                                            <action selector="setButton3Clicked:" destination="B1o-Xo-0Xq" eventType="touchUpInside" id="1yM-7j-QjH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b8R-kg-Fg6">

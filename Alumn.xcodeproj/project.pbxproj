@@ -94,6 +94,12 @@
 		129B1B6F1D77CBA1007BC318 /* 0123.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 129B1B6E1D77CBA1007BC318 /* 0123.jpg */; };
 		129B1B741D77D2E5007BC318 /* NameAndPicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B1B721D77D2E5007BC318 /* NameAndPicVC.m */; };
 		129B1B751D77D2E5007BC318 /* NameAndPicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 129B1B731D77D2E5007BC318 /* NameAndPicVC.xib */; };
+		129B1BB31D782701007BC318 /* CYPortalTransitionContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B1BA81D782701007BC318 /* CYPortalTransitionContext.m */; };
+		129B1BB41D782701007BC318 /* CYPortalTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B1BAA1D782701007BC318 /* CYPortalTransitionAnimator.m */; };
+		129B1BB51D782701007BC318 /* UIViewController+PortalTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B1BAC1D782701007BC318 /* UIViewController+PortalTransition.m */; };
+		129B1BB61D782701007BC318 /* UINavigationController+PortalTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B1BAE1D782701007BC318 /* UINavigationController+PortalTransition.m */; };
+		129B1BB71D782701007BC318 /* CYNavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B1BB01D782701007BC318 /* CYNavigationControllerDelegate.m */; };
+		129B1BB81D782701007BC318 /* CYViewControllerTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B1BB21D782701007BC318 /* CYViewControllerTransitioningDelegate.m */; };
 		12BC79621D76CECF00711333 /* MyAltview.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC79611D76CECF00711333 /* MyAltview.m */; };
 		12BC79661D76D10000711333 /* MyAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC79641D76D10000711333 /* MyAlertVC.m */; };
 		12BC79691D76DC0A00711333 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BC79681D76DC0A00711333 /* line.png */; };
@@ -306,6 +312,18 @@
 		129B1B711D77D2E5007BC318 /* NameAndPicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameAndPicVC.h; sourceTree = "<group>"; };
 		129B1B721D77D2E5007BC318 /* NameAndPicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameAndPicVC.m; sourceTree = "<group>"; };
 		129B1B731D77D2E5007BC318 /* NameAndPicVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameAndPicVC.xib; sourceTree = "<group>"; };
+		129B1BA71D782701007BC318 /* CYPortalTransitionContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPortalTransitionContext.h; sourceTree = "<group>"; };
+		129B1BA81D782701007BC318 /* CYPortalTransitionContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPortalTransitionContext.m; sourceTree = "<group>"; };
+		129B1BA91D782701007BC318 /* CYPortalTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPortalTransitionAnimator.h; sourceTree = "<group>"; };
+		129B1BAA1D782701007BC318 /* CYPortalTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPortalTransitionAnimator.m; sourceTree = "<group>"; };
+		129B1BAB1D782701007BC318 /* UIViewController+PortalTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PortalTransition.h"; sourceTree = "<group>"; };
+		129B1BAC1D782701007BC318 /* UIViewController+PortalTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PortalTransition.m"; sourceTree = "<group>"; };
+		129B1BAD1D782701007BC318 /* UINavigationController+PortalTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+PortalTransition.h"; sourceTree = "<group>"; };
+		129B1BAE1D782701007BC318 /* UINavigationController+PortalTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+PortalTransition.m"; sourceTree = "<group>"; };
+		129B1BAF1D782701007BC318 /* CYNavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYNavigationControllerDelegate.h; sourceTree = "<group>"; };
+		129B1BB01D782701007BC318 /* CYNavigationControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYNavigationControllerDelegate.m; sourceTree = "<group>"; };
+		129B1BB11D782701007BC318 /* CYViewControllerTransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYViewControllerTransitioningDelegate.h; sourceTree = "<group>"; };
+		129B1BB21D782701007BC318 /* CYViewControllerTransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYViewControllerTransitioningDelegate.m; sourceTree = "<group>"; };
 		12BC79601D76CECF00711333 /* MyAltview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAltview.h; sourceTree = "<group>"; };
 		12BC79611D76CECF00711333 /* MyAltview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAltview.m; sourceTree = "<group>"; };
 		12BC79631D76D10000711333 /* MyAlertVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAlertVC.h; sourceTree = "<group>"; };
@@ -655,6 +673,18 @@
 		129B1B821D781D09007BC318 /* Flip */ = {
 			isa = PBXGroup;
 			children = (
+				129B1BA71D782701007BC318 /* CYPortalTransitionContext.h */,
+				129B1BA81D782701007BC318 /* CYPortalTransitionContext.m */,
+				129B1BA91D782701007BC318 /* CYPortalTransitionAnimator.h */,
+				129B1BAA1D782701007BC318 /* CYPortalTransitionAnimator.m */,
+				129B1BAB1D782701007BC318 /* UIViewController+PortalTransition.h */,
+				129B1BAC1D782701007BC318 /* UIViewController+PortalTransition.m */,
+				129B1BAD1D782701007BC318 /* UINavigationController+PortalTransition.h */,
+				129B1BAE1D782701007BC318 /* UINavigationController+PortalTransition.m */,
+				129B1BAF1D782701007BC318 /* CYNavigationControllerDelegate.h */,
+				129B1BB01D782701007BC318 /* CYNavigationControllerDelegate.m */,
+				129B1BB11D782701007BC318 /* CYViewControllerTransitioningDelegate.h */,
+				129B1BB21D782701007BC318 /* CYViewControllerTransitioningDelegate.m */,
 			);
 			name = Flip;
 			sourceTree = "<group>";
@@ -1084,8 +1114,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				129B1BB71D782701007BC318 /* CYNavigationControllerDelegate.m in Sources */,
 				123AAF0C1D713B010027554A /* VVeboTableViewCell.m in Sources */,
 				121947761D7168BE002F8287 /* MJRefreshFooter.m in Sources */,
+				129B1BB31D782701007BC318 /* CYPortalTransitionContext.m in Sources */,
 				123AAF071D713AE30027554A /* UIView+WebCacheOperation.m in Sources */,
 				121947741D7168BE002F8287 /* MJRefreshBackFooter.m in Sources */,
 				123AAF101D713B380027554A /* VVeboTableView.m in Sources */,
@@ -1096,6 +1128,7 @@
 				121947421D71675F002F8287 /* CircleCell.m in Sources */,
 				123D7EA11D759B58008B0DF9 /* RRMessageModel.m in Sources */,
 				12BF62A81D6D81270083ECD5 /* SecondViewLoadControllerViewController.m in Sources */,
+				129B1BB61D782701007BC318 /* UINavigationController+PortalTransition.m in Sources */,
 				123AAF131D713C810027554A /* tableListViewController.m in Sources */,
 				123F26351D74195300B619DF /* LfDeleteVCCellTableViewCell.m in Sources */,
 				12BF62991D6D75270083ECD5 /* CellModel.m in Sources */,
@@ -1141,6 +1174,7 @@
 				12C8C2981D730F3D001DD69B /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				12F5166B1D6FD2C4003E6B33 /* circleDeatilVC.m in Sources */,
 				12BC84EA1D7285E600383806 /* UIDragButton.m in Sources */,
+				129B1BB41D782701007BC318 /* CYPortalTransitionAnimator.m in Sources */,
 				123D7E8A1D758CCF008B0DF9 /* PeopleViewCell.m in Sources */,
 				123AAEFA1D713AE30027554A /* SDImageCache.m in Sources */,
 				123AAED31D713ABA0027554A /* UIScreen+Additions.m in Sources */,
@@ -1161,6 +1195,7 @@
 				12BF62981D6D75270083ECD5 /* SectionModel.m in Sources */,
 				123D7E781D75765C008B0DF9 /* Cell_FModel.m in Sources */,
 				123D7E801D7576C7008B0DF9 /* Circle_FindVC.m in Sources */,
+				129B1BB81D782701007BC318 /* CYViewControllerTransitioningDelegate.m in Sources */,
 				121947531D71680F002F8287 /* MJRefreshAutoGifFooter.m in Sources */,
 				123D7E8F1D758CD9008B0DF9 /* ChooseButton.m in Sources */,
 				121947551D71680F002F8287 /* MJRefreshAutoStateFooter.m in Sources */,
@@ -1173,6 +1208,7 @@
 				121947541D71680F002F8287 /* MJRefreshAutoNormalFooter.m in Sources */,
 				12C8C2991D730F3D001DD69B /* UIView+SDAutoLayout.m in Sources */,
 				121947771D7168BE002F8287 /* MJRefreshHeader.m in Sources */,
+				129B1BB51D782701007BC318 /* UIViewController+PortalTransition.m in Sources */,
 				123D7EA31D759B58008B0DF9 /* UICollectionViewCellPhoto.m in Sources */,
 				123D7E771D75765C008B0DF9 /* Section_FModel.m in Sources */,
 				1219472E1D7165F0002F8287 /* MJRefreshConst.m in Sources */,

@@ -24,8 +24,10 @@
 #import "circleSettingVC.h"
 #import "RRSendMessageViewController.h"
 #import "NameAndPicVC.h"
-//#import "UIViewController+PortalTransition.h"
-//#import "CYViewControllerTransitioningDelegate.h"
+#import "UIViewController+PortalTransition.h"
+#import "CYViewControllerTransitioningDelegate.h"
+
+
 
 #define floatSize 120
 
@@ -39,7 +41,8 @@
  *  悬浮的window
  */
 @property(strong,nonatomic)UIWindow *window;
-//@property (nonatomic, strong) CYViewControllerTransitioningDelegate *viewControllerTransitionDelegate;
+@property (nonatomic, strong) CYViewControllerTransitioningDelegate *viewControllerTransitionDelegate;
+
 
 /**
  *  悬浮的按钮
@@ -60,6 +63,8 @@
 */
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+
     [self.NavBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsCompact];
     [self performSelector:@selector(createButton) withObject:nil afterDelay:1];
     //_floatview.frame = CGRectZero;
@@ -122,7 +127,9 @@
     // 返回之前storyboard定义界面
     //[self.navigationController popViewControllerAnimated:YES];
       //[self.navigationController popToRootViewControllerAnimated:YES];
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
     
 }
 - (IBAction)searchButtonClicked:(id)sender {
@@ -244,18 +251,18 @@
 }
 
 - (IBAction)setButton3Clicked:(id)sender {
-//
-//    NameAndPicVC *newVC = [NameAndPicVC new];
-//    newVC.modalPresentationStyle = UIModalPresentationCustom;
-//    self.viewControllerTransitionDelegate.viewController = newVC;
-//    //[self presentViewController:newVC animated:YES completion:nil];
-//    //Or you can call this catogory method
-//    [self presentPortalTransitionViewController:newVC completion:nil];
-//    
+
+    NameAndPicVC *newVC = [NameAndPicVC new];
+    newVC.modalPresentationStyle = UIModalPresentationCustom;
+    self.viewControllerTransitionDelegate.viewController = newVC;
+    //[self presentViewController:newVC animated:YES completion:nil];
+    //Or you can call this catogory method
+   [self presentPortalTransitionViewController:newVC completion:nil];
+
     
-    NameAndPicVC *vc = [[NameAndPicVC alloc] init];
-    [self.navigationController pushViewController:vc
-                                         animated:YES];
+////    
+//    NameAndPicVC *vc = [[NameAndPicVC alloc] init];
+//     [self.navigationController pushPortalTransitionViewController:vc completion:nil];
     
 }
 
