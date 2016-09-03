@@ -141,5 +141,13 @@
     return [self.tableView cellHeightForIndexPath:indexPath model:self.modelsArray[indexPath.row] keyPath:@"model"];
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //该方法响应列表中行的点击事件
+    NSLog(@"waht the Fuck");
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"dynamic" bundle:nil];
+    UIViewController *VC = [sb instantiateViewControllerWithIdentifier:@"circleDynamic"];
+    [self.navigationController pushViewController:VC animated:YES];
+  
+}
 @end

@@ -403,7 +403,7 @@
                 <viewController id="SAx-98-gXb" customClass="DemoVC5" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLk-ni-75f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="2368"/>
+            <point key="canvasLocation" x="405" y="2232"/>
         </scene>
         <!--Lf DeleteVC-->
         <scene sceneID="Oqk-Cf-Xca">
