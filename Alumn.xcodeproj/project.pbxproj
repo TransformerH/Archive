@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1218969A1D7ABF8D00368B7B /* dynamic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 121896991D7ABF8D00368B7B /* dynamic.storyboard */; };
 		121947241D7165E3002F8287 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 121947231D7165E3002F8287 /* MJRefresh.bundle */; };
 		1219472E1D7165F0002F8287 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 121947271D7165F0002F8287 /* MJRefreshConst.m */; };
 		1219472F1D7165F0002F8287 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 121947291D7165F0002F8287 /* UIScrollView+MJExtension.m */; };
@@ -96,7 +97,6 @@
 		129B1BB61D782701007BC318 /* UINavigationController+PortalTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B1BAE1D782701007BC318 /* UINavigationController+PortalTransition.m */; };
 		129B1BB71D782701007BC318 /* CYNavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B1BB01D782701007BC318 /* CYNavigationControllerDelegate.m */; };
 		129B1BB81D782701007BC318 /* CYViewControllerTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B1BB21D782701007BC318 /* CYViewControllerTransitioningDelegate.m */; };
-		129B65481D79982F00C3D004 /* dynamic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 129B65451D79982F00C3D004 /* dynamic.storyboard */; };
 		129B65491D79982F00C3D004 /* CircleGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 129B65461D79982F00C3D004 /* CircleGroup.plist */; };
 		129B654F1D79987800C3D004 /* UITableView+Improve.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B654C1D79987800C3D004 /* UITableView+Improve.m */; };
 		129B65501D79987800C3D004 /* UIImage+ReSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B654E1D79987800C3D004 /* UIImage+ReSize.m */; };
@@ -179,6 +179,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		121896991D7ABF8D00368B7B /* dynamic.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = dynamic.storyboard; sourceTree = "<group>"; };
 		121947231D7165E3002F8287 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		121947251D7165F0002F8287 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		121947261D7165F0002F8287 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
@@ -341,7 +342,6 @@
 		129B1BB01D782701007BC318 /* CYNavigationControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYNavigationControllerDelegate.m; sourceTree = "<group>"; };
 		129B1BB11D782701007BC318 /* CYViewControllerTransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYViewControllerTransitioningDelegate.h; sourceTree = "<group>"; };
 		129B1BB21D782701007BC318 /* CYViewControllerTransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYViewControllerTransitioningDelegate.m; sourceTree = "<group>"; };
-		129B65441D79982F00C3D004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/dynamic.storyboard; sourceTree = "<group>"; };
 		129B65461D79982F00C3D004 /* CircleGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CircleGroup.plist; path = "../../Downloads/familyGroup-master/FamilyGroup/CircleGroup.plist"; sourceTree = "<group>"; };
 		129B65471D79982F00C3D004 /* HeaderContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderContent.h; path = "../../Downloads/familyGroup-master/FamilyGroup/HeaderContent.h"; sourceTree = "<group>"; };
 		129B654B1D79987800C3D004 /* UITableView+Improve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Improve.h"; sourceTree = "<group>"; };
@@ -753,9 +753,9 @@
 				129B657A1D7998D900C3D004 /* View */,
 				129B65731D7998B900C3D004 /* Model */,
 				129B654A1D79984800C3D004 /* Extension */,
-				129B65451D79982F00C3D004 /* dynamic.storyboard */,
 				129B65461D79982F00C3D004 /* CircleGroup.plist */,
 				129B65471D79982F00C3D004 /* HeaderContent.h */,
+				121896991D7ABF8D00368B7B /* dynamic.storyboard */,
 			);
 			name = CircleDynamic;
 			sourceTree = "<group>";
@@ -1176,7 +1176,6 @@
 				129B65491D79982F00C3D004 /* CircleGroup.plist in Resources */,
 				7AB0F9E71D644B510098CEDF /* LaunchScreen.storyboard in Resources */,
 				12BC79691D76DC0A00711333 /* line.png in Resources */,
-				129B65481D79982F00C3D004 /* dynamic.storyboard in Resources */,
 				123D7E811D7576C7008B0DF9 /* Circle_FindVC.xib in Resources */,
 				129B65641D7998AE00C3D004 /* buttonSend@2x.png in Resources */,
 				129B65651D7998AE00C3D004 /* addPictures.png in Resources */,
@@ -1196,6 +1195,7 @@
 				123D7E831D758930008B0DF9 /* 创建圈子.png in Resources */,
 				129B65671D7998AE00C3D004 /* location.png in Resources */,
 				123AAF1A1D713E900027554A /* t_comments@2x.png in Resources */,
+				1218969A1D7ABF8D00368B7B /* dynamic.storyboard in Resources */,
 				129B1B751D77D2E5007BC318 /* NameAndPicVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1393,15 +1393,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		129B65451D79982F00C3D004 /* dynamic.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				129B65441D79982F00C3D004 /* Base */,
-			);
-			name = dynamic.storyboard;
-			path = "../../Downloads/familyGroup-master/FamilyGroup";
-			sourceTree = "<group>";
-		};
 		7AB0F9E01D644B510098CEDF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

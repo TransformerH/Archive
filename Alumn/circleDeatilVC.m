@@ -20,7 +20,6 @@
 #import "searchViewController.h"
 #import "FloatingViewController.h"
 #import "UIDragButton.h"
-//#import "WeiXinFriendsCircleVC .h"
 #import "circleSettingVC.h"
 #import "RRSendMessageViewController.h"
 #import "NameAndPicVC.h"

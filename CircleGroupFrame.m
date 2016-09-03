@@ -99,7 +99,7 @@
             CGFloat replyLabelWidth = replyLabelSize.width;
             CGFloat replyLabelHeight = replyLabelSize.height;
             self.cellHeight += padding +replyLabelHeight;
-            CGRect replyF = CGRectMake(replyLabelX, replyLabelY-5, replyLabelWidth, replyLabelHeight);
+            CGRect replyF = CGRectMake(replyLabelX, replyLabelY, replyLabelWidth, replyLabelHeight);
             [self.replysF addObject:[NSValue valueWithCGRect:replyF]];
         }
         

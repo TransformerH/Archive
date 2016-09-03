@@ -15,6 +15,9 @@
 
 #import "UITableView+SDAutoTableViewCellHeight.h"
 
+#import "CircleViewController.h"
+
+
 @interface DemoVC5 ()
 
 @property (nonatomic, strong) NSMutableArray *modelsArray;
@@ -145,9 +148,9 @@
 {
     //该方法响应列表中行的点击事件
     NSLog(@"waht the Fuck");
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"dynamic" bundle:nil];
-    UIViewController *VC = [sb instantiateViewControllerWithIdentifier:@"circleDynamic"];
-    [self.navigationController pushViewController:VC animated:YES];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+   CircleViewController *VC = [sb instantiateViewControllerWithIdentifier:@"jump"];
+    [self showViewController:VC sender:nil];
   
 }
 @end

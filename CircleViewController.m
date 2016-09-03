@@ -80,7 +80,7 @@
     cell.replyButton.tag = indexPath.row;   //评论时可以知道加到第几行
     cell.imageBlock = ^(NSArray *imageViews, NSInteger clickTag) {
         self.navigationController.navigationBarHidden = YES;
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"dynamic" bundle:nil];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         ShowImageViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ShowImage"];
         [vc setHidesBottomBarWhenPushed:YES]; //隐藏tabbar
         vc.clickTag = clickTag;
@@ -322,6 +322,10 @@
  
 }
 
+- (IBAction)back:(id)sender {
+[self dismissViewControllerAnimated:YES completion:nil];
+
+}
 
 
 
