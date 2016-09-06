@@ -173,22 +173,16 @@
     UIImageView *currentImageView = (UIImageView *)[self viewWithTag:currentScrollView.tag + 900];
     //UIImageView *currentImageView = currentScrollView;
     UIImageWriteToSavedPhotosAlbum(currentImageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
-    //UIImageWriteToSavedPhotosAlbum(currentImageView.image,nil,nil,nil);
-    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] init];
-    indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
-    indicator.center = self.center;
-    _indicatorView = indicator;
-    [[UIApplication sharedApplication].keyWindow addSubview:indicator];
-    [indicator startAnimating];
+
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
 {
-    [_indicatorView removeFromSuperview];
+//    [_indicatorView removeFromSuperview];
     
     UILabel *label = [[UILabel alloc] init];
     label.textColor = [UIColor whiteColor];
-    label.backgroundColor = [UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:0.90f];
+    label.backgroundColor = [UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:0.90f];
     label.layer.cornerRadius = 5;
     label.clipsToBounds = YES;
     label.bounds = CGRectMake(0, 0, 150, 30);
@@ -198,9 +192,12 @@
     [[UIApplication sharedApplication].keyWindow addSubview:label];
     [[UIApplication sharedApplication].keyWindow bringSubviewToFront:label];
     if (error) {
-        label.text = SDPhotoBrowserSaveImageFailText;
+        UIAlertView * error = [[UIAlertView alloc]initWithTitle:@"保存图片" message: @" >_< 保存失败 " delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [error show];
     }   else {
-        label.text = SDPhotoBrowserSaveImageSuccessText;
+        UIAlertView * success = [[UIAlertView alloc]initWithTitle:@"保存图片" message:@" ^_^ 保存成功 " delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [success show];
+
     }
     [label performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:1.0];
 }
