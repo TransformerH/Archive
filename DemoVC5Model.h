@@ -12,10 +12,12 @@
 
 @interface DemoVC5Model : NSObject
 
-@property (nonatomic, copy) NSString *iconName;
+@property (nonatomic, copy) NSArray *icon_url;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *content;
-@property (nonatomic, copy) NSString *picName;
-@property (nonatomic, copy) NSString *time;
+@property (nonatomic, copy) NSDictionary *image_urls;
+@property (nonatomic, copy) NSString *create_time;
+
++(id)modelWithDict:(NSDictionary *)dict;
 
 @end

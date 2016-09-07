@@ -17,14 +17,23 @@
 
 #import "CircleViewController.h"
 
+#import "Circle+Extension.h"
+
+#import "User.h"
+
+#import "AFNetManager.h"
+
 
 @interface DemoVC5 ()
+
 
 @property (nonatomic, strong) NSMutableArray *modelsArray;
 
 @end
 
 @implementation DemoVC5
+
+
 {
     SDRefreshFooterView *_refreshFooter;
 }
@@ -33,9 +42,10 @@
 {
     [super viewDidLoad];
     
+  
     
-    
-    [self creatModelsWithCount:10];
+    NSNumber *i=[[NSNumber alloc]initWithInt:1];
+    [self creatModelsWithCount:4 page:i];
     
     __weak typeof(self) weakSelf = self;
     
@@ -45,76 +55,43 @@
     __weak typeof(_refreshFooter) weakRefreshFooter = _refreshFooter;
     _refreshFooter.beginRefreshingOperation = ^() {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf creatModelsWithCount:10];
+            NSNumber *newpage=[[NSNumber alloc]initWithInt:page];
+            NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:@"57c69d68d36ef3151eb80bac",@"topic_id",@"4",@"count",newpage,@"page",@"0",@"order", nil];
+            NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [AFNetManager dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
+            NSLog (@"%@",postdic);
+   
+            [Circle circeDynamicListWithParameters:postdic page:newpage];
+            [weakSelf creatModelsWithCount:4 page:newpage];
             [weakSelf.tableView reloadData];
             [weakRefreshFooter endRefreshing];
+            
         });
     };
 }
 
-- (void)creatModelsWithCount:(NSInteger)count
+
+
+- (void)creatModelsWithCount:(NSInteger)count page:(NSNumber *) pages
 {
+    
     if (!_modelsArray) {
         _modelsArray = [NSMutableArray new];
     }
     
-    NSArray *iconImageNamesArray = @[@"icon0.jpg",
-                                     @"icon1.jpg",
-                                     @"icon2.jpg",
-                                     @"icon3.jpg",
-                                     @"icon4.jpg",
-                                     ];
-    
-    NSArray *namesArray = @[@"GSD_iOS",
-                            @"风口上的猪",
-                            @"当今世界网名都不好起了",
-                            @"我叫郭德纲",
-                            @"Hello Kitty"];
-    
-    NSArray *textArray = @[@"当你的 app 没有提供 3x 的 LaunchImage 时，系统默认进入兼容模式，大屏幕一切按照 320 宽度渲染，屏幕宽度返回 320；然后等比例拉伸到大屏。这种情况下对界面不会产生任何影响，等于把小屏完全拉伸。",
-                           @"然后等比例拉伸到大屏。这种情况下对界面不会产生任何影响，等于把小屏完全拉伸。",
-                           @"当你的 app 没有提供 3x 的 LaunchImage 时",
-                           @"但是建议不要长期处于这种模式下，否则在大屏上会显得字大，内容少，容易遭到用户投诉。",
-                           @"屏幕宽度返回 320；然后等比例拉伸到大屏。这种情况下对界面不会产生任何影响，等于把小屏完全拉伸。但是建议不要长期处于这种模式下。asdsadaskdlksal;dkl;sakdlksald;klckxzl;cklzx;kcl;xzkcl;zxkcl;kxzcl;zxkcl;zxkclkzxcl;xzkcl;zxkcl;kzxl;ckxzlk"
-                           ];
-    
-    NSArray *picImageNamesArray = @[ @"01.jpg",
-                                     @"02.jpg",
-                                     @"0123.jpg",
-                                     @"11.jpg",
-                                     @"10.jpg",
-                                     ];
-    
-    NSArray *timeArray =@[@"2014-05-09",
-                          @"2016-08-19",
-                          @"21341-12-01",
-                          @"1887-09-08",
-                          @"1678-09-02",
-                          ];
-    
-    for (int i = 0; i < count; i++) {
-        int iconRandomIndex = arc4random_uniform(5);
-        int nameRandomIndex = arc4random_uniform(5);
-        int contentRandomIndex = arc4random_uniform(5);
-        int picRandomIndex = arc4random_uniform(5);
-        int timeRandomIndex = arc4random_uniform(5);
-        
-        DemoVC5Model *model = [DemoVC5Model new];
-        model.iconName = iconImageNamesArray[iconRandomIndex];
-        model.name = namesArray[nameRandomIndex];
-        model.content = textArray[contentRandomIndex];
-        model.time = timeArray[timeRandomIndex];
-        
-        
-        // 模拟“有或者无图片”
-        int random = arc4random_uniform(100);
-        if (random <= 80) {
-            model.picName = picImageNamesArray[picRandomIndex];
-        }
-        
-        [self.modelsArray addObject:model];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *plistPath1= [paths objectAtIndex:0];
+    NSString *plistName =[[NSString alloc] initWithFormat:@"DynamicList%@.plist",pages];
+    NSString *fileName = [plistPath1 stringByAppendingPathComponent:plistName];
+    NSArray *dictArray = [NSArray arrayWithContentsOfFile:fileName];
+     NSMutableArray *models = [NSMutableArray arrayWithCapacity:[dictArray count]];
+    for (NSDictionary *dict in dictArray) {
+        DemoVC5Model *mod = [DemoVC5Model modelWithDict:dict];
+        [self.modelsArray  addObject:mod];
     }
-}
+    page++;
+  
+  }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -153,4 +130,17 @@
     [self showViewController:VC sender:nil];
   
 }
+
++(void) setID:(NSString *)id
+{
+    ID = id;
+}
+
++(NSString *) getID
+{
+    extern NSString *ID;
+    return ID;
+}
+
+
 @end

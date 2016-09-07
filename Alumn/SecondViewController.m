@@ -14,6 +14,9 @@
 #import "CellModel.h"
 #import "UIViewController+PortalTransition.h"
 #import "CYViewControllerTransitioningDelegate.h"
+#import "User.h"
+#import "Circle.h"
+#import "Circle+Extension.h"
 
 #define UISCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 
@@ -227,6 +230,13 @@ NS_ENUM(NSInteger,CellState){
   }else{
     NSLog(@"第%ld个section,点击图片%ld",indexPath.section,indexPath.row);
       //在storyborad中使用push方法不拖线跳转
+          int page =1;
+          NSNumber *i=[[NSNumber alloc]initWithInt:page];
+          NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:@"57c69d68d36ef3151eb80bac",@"topic_id",@"4",@"count",i,@"page",@"0",@"order", nil];
+          NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [self dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
+          NSLog (@"%@",postdic);
+          [Circle circeDynamicListWithParameters:postdic page:i];
+          page++;
       UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
       UIViewController *VC = [sb instantiateViewControllerWithIdentifier:@"circleDeatil"];
       VC.modalPresentationStyle = UIModalPresentationCustom;
@@ -413,6 +423,18 @@ NS_ENUM(NSInteger,CellState){
       
       }
     }
+}
+
+- (NSString *)dictionaryToJson:(NSDictionary *)dic
+
+{
+    
+    NSError *parseError = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
 }
 
 @end

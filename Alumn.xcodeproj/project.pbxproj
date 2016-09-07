@@ -167,6 +167,7 @@
 		12FA7D981D7F975800830501 /* firstStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D8E1D7F975800830501 /* firstStep.m */; };
 		12FA7D991D7F975800830501 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D901D7F975800830501 /* Circle.m */; };
 		12FA7D9A1D7F975800830501 /* Circle+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D921D7F975800830501 /* Circle+Extension.m */; };
+		12FA7D9D1D7FAF7400830501 /* login_temp.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D9C1D7FAF7400830501 /* login_temp.m */; };
 		72A6F5BA4B2CACE7227F1ED2 /* libPods-Alumn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6823B5CAA4109F719819251F /* libPods-Alumn.a */; };
 		7AB0F9D91D644B510098CEDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0F9D81D644B510098CEDF /* main.m */; };
 		7AB0F9DC1D644B510098CEDF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0F9DB1D644B510098CEDF /* AppDelegate.m */; };
@@ -466,6 +467,8 @@
 		12FA7D901D7F975800830501 /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
 		12FA7D911D7F975800830501 /* Circle+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Circle+Extension.h"; sourceTree = "<group>"; };
 		12FA7D921D7F975800830501 /* Circle+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Circle+Extension.m"; sourceTree = "<group>"; };
+		12FA7D9B1D7FAF7400830501 /* login_temp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = login_temp.h; sourceTree = "<group>"; };
+		12FA7D9C1D7FAF7400830501 /* login_temp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = login_temp.m; sourceTree = "<group>"; };
 		353BBB90646DFA597ABCC758 /* Pods-Alumn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alumn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alumn/Pods-Alumn.debug.xcconfig"; sourceTree = "<group>"; };
 		6823B5CAA4109F719819251F /* libPods-Alumn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Alumn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB0F9D41D644B510098CEDF /* Alumn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alumn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1007,6 +1010,8 @@
 				7AB0F9E01D644B510098CEDF /* Main.storyboard */,
 				7AB0F9E51D644B510098CEDF /* LaunchScreen.storyboard */,
 				7AB0F9E31D644B510098CEDF /* Assets.xcassets */,
+				12FA7D9B1D7FAF7400830501 /* login_temp.h */,
+				12FA7D9C1D7FAF7400830501 /* login_temp.m */,
 				7AB0F9E81D644B510098CEDF /* Info.plist */,
 				7AB0F9D71D644B510098CEDF /* Supporting Files */,
 			);
@@ -1389,6 +1394,7 @@
 				123AAF061D713AE30027554A /* UIImageView+WebCache.m in Sources */,
 				123AAEFD1D713AE30027554A /* SDWebImageDownloader.m in Sources */,
 				12FA7D941D7F975800830501 /* User.m in Sources */,
+				12FA7D9D1D7FAF7400830501 /* login_temp.m in Sources */,
 				121947731D7168BE002F8287 /* MJRefreshAutoFooter.m in Sources */,
 				123D7E791D75765C008B0DF9 /* CollectionViewCell_F.m in Sources */,
 				12BF62AB1D6D8C1D0083ECD5 /* MyNavigationBar.m in Sources */,

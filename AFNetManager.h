@@ -15,5 +15,5 @@ typedef void (^SuccessBlock)(NSDictionary *dict, BOOL success); // 访问成功b
 typedef void (^AFNErrorBlock)(NSError *error); // 访问失败block
 + (NSString*)getMainURL;
 +(AFHTTPSessionManager *)manager;
-
++(NSString *)dictionaryToJson:(NSDictionary *)dic;
 @end

@@ -315,7 +315,7 @@
         <!--LoginVC-->
         <scene sceneID="W4T-TH-Ye4">
             <objects>
-                <viewController title="LoginVC" hidesBottomBarWhenPushed="YES" id="sOd-GY-RZt" sceneMemberID="viewController">
+                <viewController title="LoginVC" hidesBottomBarWhenPushed="YES" id="sOd-GY-RZt" customClass="login_temp" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2nK-ad-h7F"/>
                         <viewControllerLayoutGuide type="bottom" id="XKH-lN-ZqS"/>

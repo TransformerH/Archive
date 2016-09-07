@@ -149,18 +149,7 @@
     [Circle circleDeatilsWithParameters:postdic];
 }
 
-- (IBAction)dynamicClicked:(id)sender {
-    static int page =1;
-    NSNumber *i=[[NSNumber alloc]initWithInt:page];
-    NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:@"57c69d68d36ef3151eb80bac",@"topic_id",@"4",@"count",i,@"page",@"0",@"order", nil];
-    NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [self dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
-    NSLog (@"%@",postdic);
-    [Circle circeDynamicListWithParameters:postdic page:i];
-    page++;
-   
-    
 
-}
 
 
 

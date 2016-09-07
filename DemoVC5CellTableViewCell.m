@@ -102,17 +102,17 @@
 {
     _model = model;
     
-    _view0.image = [UIImage imageNamed:model.iconName];
+    //_view0.image = [UIImage imageNamed:[model.image_urls objectForKey:@"item"]];
     _view1.text = model.name;
     _view2.text = model.content;
-    _time.text= model.time;
+    _time.text= model.create_time;
     
     CGFloat bottomMargin = 0;
     
     
     // 在实际的开发中，网络图片的宽高应由图片服务器返回然后计算宽高比。
     
-    UIImage *pic = [UIImage imageNamed:model.picName];
+    UIImage *pic = [UIImage imageNamed:@"10.jpg"];
     if (pic.size.width > 0) {
         CGFloat scale = pic.size.height / pic.size.width;
         _view3.sd_layout.autoHeightRatio(scale);
