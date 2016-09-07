@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking.h>
+#import "AFNetworking.h"
 
 @interface AFNetManager : NSObject
 #define kTimeOutInterval 30 // 请求超时的时间

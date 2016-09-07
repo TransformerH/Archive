@@ -36,6 +36,14 @@ static const NSString *xrsf;
 @property (strong,nonatomic) NSString *state;
 @property (strong,nonatomic) NSString *country;
 
+//-----------------------------------------------   telephone for register
+@property (strong,nonatomic) NSString *telephone;
+@property (strong,nonatomic) NSString *password;
+
+@property (strong,nonatomic) NSString *phone;
+@property (strong,nonatomic) NSString *pwd;
+//-----------------------------------------------
+
 +(NSString *) getXrsf;
 +(void) setXrsf :(NSString *) str;
 
