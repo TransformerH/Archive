@@ -159,6 +159,14 @@
 		12C9733F1D702D81005B814A /* CustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9733E1D702D81005B814A /* CustomSearchBar.m */; };
 		12C973421D704A58005B814A /* searchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C973411D704A58005B814A /* searchController.m */; };
 		12F5166B1D6FD2C4003E6B33 /* circleDeatilVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F5166A1D6FD2C4003E6B33 /* circleDeatilVC.m */; };
+		12FA7D931D7F975800830501 /* AFNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D841D7F975800830501 /* AFNetManager.m */; };
+		12FA7D941D7F975800830501 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D861D7F975800830501 /* User.m */; };
+		12FA7D951D7F975800830501 /* User+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D881D7F975800830501 /* User+Extension.m */; };
+		12FA7D961D7F975800830501 /* Dynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D8A1D7F975800830501 /* Dynamic.m */; };
+		12FA7D971D7F975800830501 /* Dynamic+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D8C1D7F975800830501 /* Dynamic+Extension.m */; };
+		12FA7D981D7F975800830501 /* firstStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D8E1D7F975800830501 /* firstStep.m */; };
+		12FA7D991D7F975800830501 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D901D7F975800830501 /* Circle.m */; };
+		12FA7D9A1D7F975800830501 /* Circle+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D921D7F975800830501 /* Circle+Extension.m */; };
 		72A6F5BA4B2CACE7227F1ED2 /* libPods-Alumn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6823B5CAA4109F719819251F /* libPods-Alumn.a */; };
 		7AB0F9D91D644B510098CEDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0F9D81D644B510098CEDF /* main.m */; };
 		7AB0F9DC1D644B510098CEDF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0F9DB1D644B510098CEDF /* AppDelegate.m */; };
@@ -442,6 +450,22 @@
 		12C973411D704A58005B814A /* searchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchController.m; sourceTree = "<group>"; };
 		12F516691D6FD2C4003E6B33 /* circleDeatilVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleDeatilVC.h; sourceTree = "<group>"; };
 		12F5166A1D6FD2C4003E6B33 /* circleDeatilVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleDeatilVC.m; sourceTree = "<group>"; };
+		12FA7D831D7F975800830501 /* AFNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetManager.h; sourceTree = "<group>"; };
+		12FA7D841D7F975800830501 /* AFNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetManager.m; sourceTree = "<group>"; };
+		12FA7D851D7F975800830501 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		12FA7D861D7F975800830501 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		12FA7D871D7F975800830501 /* User+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Extension.h"; sourceTree = "<group>"; };
+		12FA7D881D7F975800830501 /* User+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Extension.m"; sourceTree = "<group>"; };
+		12FA7D891D7F975800830501 /* Dynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dynamic.h; sourceTree = "<group>"; };
+		12FA7D8A1D7F975800830501 /* Dynamic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dynamic.m; sourceTree = "<group>"; };
+		12FA7D8B1D7F975800830501 /* Dynamic+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Dynamic+Extension.h"; sourceTree = "<group>"; };
+		12FA7D8C1D7F975800830501 /* Dynamic+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Dynamic+Extension.m"; sourceTree = "<group>"; };
+		12FA7D8D1D7F975800830501 /* firstStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstStep.h; sourceTree = "<group>"; };
+		12FA7D8E1D7F975800830501 /* firstStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstStep.m; sourceTree = "<group>"; };
+		12FA7D8F1D7F975800830501 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		12FA7D901D7F975800830501 /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
+		12FA7D911D7F975800830501 /* Circle+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Circle+Extension.h"; sourceTree = "<group>"; };
+		12FA7D921D7F975800830501 /* Circle+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Circle+Extension.m"; sourceTree = "<group>"; };
 		353BBB90646DFA597ABCC758 /* Pods-Alumn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alumn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alumn/Pods-Alumn.debug.xcconfig"; sourceTree = "<group>"; };
 		6823B5CAA4109F719819251F /* libPods-Alumn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Alumn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB0F9D41D644B510098CEDF /* Alumn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alumn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -912,6 +936,29 @@
 			name = AutoTableView;
 			sourceTree = "<group>";
 		};
+		12FA7D821D7F973200830501 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				12FA7D831D7F975800830501 /* AFNetManager.h */,
+				12FA7D841D7F975800830501 /* AFNetManager.m */,
+				12FA7D851D7F975800830501 /* User.h */,
+				12FA7D861D7F975800830501 /* User.m */,
+				12FA7D871D7F975800830501 /* User+Extension.h */,
+				12FA7D881D7F975800830501 /* User+Extension.m */,
+				12FA7D891D7F975800830501 /* Dynamic.h */,
+				12FA7D8A1D7F975800830501 /* Dynamic.m */,
+				12FA7D8B1D7F975800830501 /* Dynamic+Extension.h */,
+				12FA7D8C1D7F975800830501 /* Dynamic+Extension.m */,
+				12FA7D8D1D7F975800830501 /* firstStep.h */,
+				12FA7D8E1D7F975800830501 /* firstStep.m */,
+				12FA7D8F1D7F975800830501 /* Circle.h */,
+				12FA7D901D7F975800830501 /* Circle.m */,
+				12FA7D911D7F975800830501 /* Circle+Extension.h */,
+				12FA7D921D7F975800830501 /* Circle+Extension.m */,
+			);
+			name = NetWork;
+			sourceTree = "<group>";
+		};
 		38081C480C51D141CD6972FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -923,6 +970,7 @@
 		7AB0F9CB1D644B510098CEDF = {
 			isa = PBXGroup;
 			children = (
+				12FA7D821D7F973200830501 /* NetWork */,
 				129B65431D79981A00C3D004 /* CircleDynamic */,
 				129B1B821D781D09007BC318 /* Flip */,
 				123F262D1D74194000B619DF /* LeftToDelete */,
@@ -1280,6 +1328,7 @@
 				12BF62991D6D75270083ECD5 /* CellModel.m in Sources */,
 				129B65831D7998E800C3D004 /* ReplyInputView.m in Sources */,
 				12BC84ED1D72865D00383806 /* FloatingViewController.m in Sources */,
+				12FA7D951D7F975800830501 /* User+Extension.m in Sources */,
 				12C8C2A71D730F7A001DD69B /* DemoVC5CellTableViewCell.m in Sources */,
 				121947481D716770002F8287 /* JoinedCircleTableViewController.m in Sources */,
 				123D7E7A1D75765C008B0DF9 /* CollectionReusableView_F.m in Sources */,
@@ -1298,6 +1347,7 @@
 				1219473C1D716747002F8287 /* CardCell.m in Sources */,
 				123D7EA01D759B58008B0DF9 /* RRSendMessageViewController.m in Sources */,
 				123F26161D73BCDC00B619DF /* circleSettingVC.m in Sources */,
+				12FA7D971D7F975800830501 /* Dynamic+Extension.m in Sources */,
 				121BE63C1D6C57820072705F /* ViewController.m in Sources */,
 				123AAF031D713AE30027554A /* UIImage+MultiFormat.m in Sources */,
 				121947381D7166F3002F8287 /* TableViewController.m in Sources */,
@@ -1315,12 +1365,14 @@
 				129B658B1D79991F00C3D004 /* ShowImageViewController.m in Sources */,
 				121947751D7168BE002F8287 /* MJRefreshComponent.m in Sources */,
 				12C8C29B1D730F3D001DD69B /* SDRefreshFooterView.m in Sources */,
+				12FA7D9A1D7F975800830501 /* Circle+Extension.m in Sources */,
 				1219475E1D716827002F8287 /* MJRefreshBackNormalFooter.m in Sources */,
 				129B65501D79987800C3D004 /* UIImage+ReSize.m in Sources */,
 				12C973421D704A58005B814A /* searchController.m in Sources */,
 				123D7EA21D759B58008B0DF9 /* RRCustomScrollView.m in Sources */,
 				12C8C2981D730F3D001DD69B /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				12F5166B1D6FD2C4003E6B33 /* circleDeatilVC.m in Sources */,
+				12FA7D991D7F975800830501 /* Circle.m in Sources */,
 				12BC84EA1D7285E600383806 /* UIDragButton.m in Sources */,
 				129B1BB41D782701007BC318 /* CYPortalTransitionAnimator.m in Sources */,
 				123D7E8A1D758CCF008B0DF9 /* PeopleViewCell.m in Sources */,
@@ -1336,6 +1388,7 @@
 				129B65791D7998C700C3D004 /* CircleGroupFrame.m in Sources */,
 				123AAF061D713AE30027554A /* UIImageView+WebCache.m in Sources */,
 				123AAEFD1D713AE30027554A /* SDWebImageDownloader.m in Sources */,
+				12FA7D941D7F975800830501 /* User.m in Sources */,
 				121947731D7168BE002F8287 /* MJRefreshAutoFooter.m in Sources */,
 				123D7E791D75765C008B0DF9 /* CollectionViewCell_F.m in Sources */,
 				12BF62AB1D6D8C1D0083ECD5 /* MyNavigationBar.m in Sources */,
@@ -1343,6 +1396,7 @@
 				121947671D71683E002F8287 /* MJRefreshNormalHeader.m in Sources */,
 				123AAEF81D713AE30027554A /* MKAnnotationView+WebCache.m in Sources */,
 				129B658D1D79991F00C3D004 /* CircleViewController.m in Sources */,
+				12FA7D961D7F975800830501 /* Dynamic.m in Sources */,
 				12BF62981D6D75270083ECD5 /* SectionModel.m in Sources */,
 				123D7E781D75765C008B0DF9 /* Cell_FModel.m in Sources */,
 				129B658C1D79991F00C3D004 /* ReportStateViewController.m in Sources */,
@@ -1366,6 +1420,8 @@
 				123D7EA31D759B58008B0DF9 /* UICollectionViewCellPhoto.m in Sources */,
 				123D7E771D75765C008B0DF9 /* Section_FModel.m in Sources */,
 				1219472E1D7165F0002F8287 /* MJRefreshConst.m in Sources */,
+				12FA7D931D7F975800830501 /* AFNetManager.m in Sources */,
+				12FA7D981D7F975800830501 /* firstStep.m in Sources */,
 				123AAF051D713AE30027554A /* UIImageView+HighlightedWebCache.m in Sources */,
 				123AAEF91D713AE30027554A /* NSData+ImageContentType.m in Sources */,
 				12BC79661D76D10000711333 /* MyAlertVC.m in Sources */,
