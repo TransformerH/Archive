@@ -6,4 +6,5 @@ pod 'LinqToObjectiveC', '2.0.0'
 pod 'RBStoryboardLink', '~> 0.1'
 pod 'Masonry', '~> 1.0.1'
 pod 'CBTableViewDataSource'
+pod 'AFNetworking', '~>3.1.0'
 end

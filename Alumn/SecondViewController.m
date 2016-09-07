@@ -164,19 +164,36 @@ NS_ENUM(NSInteger,CellState){
     for (int i = 0; i < 1; i++) {
       //默认初始有两个Section；
       _dataCellArray = [[NSMutableArray alloc] initWithCapacity:6];//2个；
-      for (int j = 0; j < 6; j++) {
+      //for (int j = 0; j < 6; j++) {
         //默认一个section中有6个cell；
         //初始化每一个cell；
-        CellModel *cellModel = [[CellModel alloc] init];
-        cellModel.cellImage = self.cellImageArr[j];
-        cellModel.cellDesc = self.cellDescArr[j];
+//        CellModel *cellModel = [[CellModel alloc] init];
+//        cellModel.cellImage = self.cellImageArr[j];
+//        cellModel.cellDesc = self.cellDescArr[j];
+//          CellModel *cellModel = [[CellModel alloc] init];
+          NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+          NSString *plistPath1= [paths objectAtIndex:0];
+          NSString *plistName =[[NSString alloc] initWithFormat:@"MainPageCircle.plist"];
+          NSString *fileName = [plistPath1 stringByAppendingPathComponent:plistName];
+          NSArray *dictArray = [NSArray arrayWithContentsOfFile:fileName];
+          NSMutableArray *models = [NSMutableArray arrayWithCapacity:[dictArray count]];
+          for (NSDictionary *dict in dictArray) {
+              CellModel *mod = [CellModel modelWithDict:dict];
+              NSLog(@"%@",dict);
+                [ _dataCellArray  addObject:mod];
+          }
 
         //添加到cell数组中；
-        [_dataCellArray addObject:cellModel];
-      }//for;
+        //[_dataCellArray addObject:cellModel];
+      //}//for;
       //初始化section；
+        NSDictionary *finally =[[NSDictionary alloc] initWithObjectsAndKeys:@"添加",@"name",@"add",@"ID",nil];
+        CellModel *finallyCell = [CellModel modelWithDict:finally];
+        [_dataCellArray addObject:finallyCell];
+        
+
       SectionModel *sectionModel = [[SectionModel alloc] init];
-      sectionModel.sectionName = self.headerArray[i];
+      //sectionModel.sectionName = self.headerArray[i];
       //把上面生成的cell数组加入到section数组中；
       sectionModel.cellArray = _dataCellArray;
       //增加一个section；

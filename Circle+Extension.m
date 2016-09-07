@@ -40,11 +40,13 @@ static Circle *circle;
         NSLog(@"%@",plistPath1);
         //得到完整的路径名
         NSString *fileName = [plistPath1 stringByAppendingPathComponent:@"MainPageCircle.plist"];
-        NSDictionary *mainCirlce = [dic objectForKey:@""];
+        NSDictionary *main = [dic objectForKey:@"Data"];
+        NSDictionary *result = [main objectForKey:@"response"];
+        NSDictionary *mainCilrcle = [result objectForKey:@"results"];
             NSFileManager *fm = [NSFileManager defaultManager];
         if ([fm createFileAtPath:fileName contents:nil attributes:nil] ==YES) {
             
-            [dic writeToFile:fileName atomically:YES];
+            [mainCilrcle writeToFile:fileName atomically:YES];
             NSLog(@"文件写入完成");  
         }
         

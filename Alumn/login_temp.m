@@ -8,6 +8,7 @@
 
 #import "login_temp.h"
 #import "User+Extension.h"
+#import "Circle+Extension.h"
 
 @interface login_temp ()
 
@@ -23,6 +24,8 @@
     } AFNErrorBlock:^(NSError *error) {
         NSLog(@"%@",error);
     }];
+  
+
     
     
 }
@@ -30,6 +33,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)maincircleGet:(id)sender {
+      [Circle getMainPageCircleWithParameters:nil];
 }
 
 /*
