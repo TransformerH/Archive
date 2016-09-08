@@ -181,7 +181,7 @@
 		12D89DEE1D813A5000CFDBBA /* Dynamic+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D89DE31D813A5000CFDBBA /* Dynamic+Extension.m */; };
 		12D89DEF1D813A5000CFDBBA /* firstStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D89DE51D813A5000CFDBBA /* firstStep.m */; };
 		12D89DF01D813A5000CFDBBA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D89DE71D813A5000CFDBBA /* User.m */; };
-		12D89DF11D813A5000CFDBBA /* User+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D89DE91D813A5000CFDBBA /* User+Extension.m */; };
+		12D89DF71D813BDC00CFDBBA /* User+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D89DF61D813BDC00CFDBBA /* User+Extension.m */; };
 		12F5166B1D6FD2C4003E6B33 /* circleDeatilVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F5166A1D6FD2C4003E6B33 /* circleDeatilVC.m */; };
 		12FA7D9D1D7FAF7400830501 /* login_temp.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D9C1D7FAF7400830501 /* login_temp.m */; };
 		7AB0F9D91D644B510098CEDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0F9D81D644B510098CEDF /* main.m */; };
@@ -509,8 +509,8 @@
 		12D89DE51D813A5000CFDBBA /* firstStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = firstStep.m; path = Network/firstStep.m; sourceTree = "<group>"; };
 		12D89DE61D813A5000CFDBBA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Network/User.h; sourceTree = "<group>"; };
 		12D89DE71D813A5000CFDBBA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Network/User.m; sourceTree = "<group>"; };
-		12D89DE81D813A5000CFDBBA /* User+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+Extension.h"; path = "Network/User+Extension.h"; sourceTree = "<group>"; };
-		12D89DE91D813A5000CFDBBA /* User+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+Extension.m"; path = "Network/User+Extension.m"; sourceTree = "<group>"; };
+		12D89DF51D813BDC00CFDBBA /* User+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+Extension.h"; path = "Network/User+Extension.h"; sourceTree = "<group>"; };
+		12D89DF61D813BDC00CFDBBA /* User+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+Extension.m"; path = "Network/User+Extension.m"; sourceTree = "<group>"; };
 		12F516691D6FD2C4003E6B33 /* circleDeatilVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleDeatilVC.h; sourceTree = "<group>"; };
 		12F5166A1D6FD2C4003E6B33 /* circleDeatilVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleDeatilVC.m; sourceTree = "<group>"; };
 		12FA7D9B1D7FAF7400830501 /* login_temp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = login_temp.h; sourceTree = "<group>"; };
@@ -1029,8 +1029,8 @@
 				12D89DE51D813A5000CFDBBA /* firstStep.m */,
 				12D89DE61D813A5000CFDBBA /* User.h */,
 				12D89DE71D813A5000CFDBBA /* User.m */,
-				12D89DE81D813A5000CFDBBA /* User+Extension.h */,
-				12D89DE91D813A5000CFDBBA /* User+Extension.m */,
+				12D89DF51D813BDC00CFDBBA /* User+Extension.h */,
+				12D89DF61D813BDC00CFDBBA /* User+Extension.m */,
 			);
 			name = NetWork;
 			sourceTree = "<group>";
@@ -1505,7 +1505,7 @@
 				123D7E801D7576C7008B0DF9 /* Circle_FindVC.m in Sources */,
 				129B1BB81D782701007BC318 /* CYViewControllerTransitioningDelegate.m in Sources */,
 				121947531D71680F002F8287 /* MJRefreshAutoGifFooter.m in Sources */,
-				12D89DF11D813A5000CFDBBA /* User+Extension.m in Sources */,
+				12D89DF71D813BDC00CFDBBA /* User+Extension.m in Sources */,
 				1221ABF81D810964006B3993 /* LoginViewController.m in Sources */,
 				123D7E8F1D758CD9008B0DF9 /* ChooseButton.m in Sources */,
 				1221ABE91D81050C006B3993 /* UIView+SDExtension.m in Sources */,

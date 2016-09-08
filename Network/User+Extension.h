@@ -24,7 +24,7 @@
 
 
 /* 我的 */
- 
+
 //我的页面圈子内容获取
 +(void) CirlceIntroduceWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
 //收藏的名片获取
