@@ -7,7 +7,7 @@
 //
 
 #import "createaCircleStep1VC.h"
-
+#import "createCircleStep2.h"
 
 @interface createaCircleStep1VC ()
 
@@ -151,5 +151,13 @@
  // Pass the selected object to the new view controller.
  }
  */
+- (IBAction)nextStep:(id)sender {
+    createCircleStep2 *vc = [[createCircleStep2 alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
+- (IBAction)closeCreate:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

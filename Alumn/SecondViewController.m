@@ -17,7 +17,7 @@
 #import "User.h"
 #import "Circle.h"
 #import "Circle+Extension.h"
-
+#import "createaCircleStep1VC.h"
 #define UISCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 
 NS_ENUM(NSInteger,CellState){
@@ -234,6 +234,8 @@ NS_ENUM(NSInteger,CellState){
   SectionModel *sec = [self.dataSectionArray objectAtIndex:indexPath.section];
   if ((indexPath.row == sec.cellArray.count - 1)) {
     NSLog(@"点击最后一个cell，执行添加操作");
+      createaCircleStep1VC *create = [[createaCircleStep1VC alloc]init];
+      [self.navigationController pushViewController:create animated:YES];
     //初始化一个新的cell模型；
     CellModel *cel = [[CellModel alloc] init];
     cel.cellImage = @"1";

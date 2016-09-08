@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CAF863CFA6F1688F7311D1F /* libPods-Alumn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7096AB6CCADA5DBE333A29 /* libPods-Alumn.a */; };
 		1212B7C51D802142009A172A /* RegisterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1212B7B81D802142009A172A /* RegisterViewModel.m */; };
 		1212B7C61D802142009A172A /* genderTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1212B7BA1D802142009A172A /* genderTextField.m */; };
 		1212B7C71D802142009A172A /* FacultyAndMajorText.m in Sources */ = {isa = PBXBuildFile; fileRef = 1212B7BC1D802142009A172A /* FacultyAndMajorText.m */; };
@@ -101,10 +102,6 @@
 		123D7E921D758CE0008B0DF9 /* PeopleVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E911D758CE0008B0DF9 /* PeopleVM.m */; };
 		123D7E941D758D00008B0DF9 /* peopleList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 123D7E931D758D00008B0DF9 /* peopleList.plist */; };
 		123D7E961D758D2D008B0DF9 /* MeList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 123D7E951D758D2D008B0DF9 /* MeList.plist */; };
-		123D7EA01D759B58008B0DF9 /* RRSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E991D759B57008B0DF9 /* RRSendMessageViewController.m */; };
-		123D7EA11D759B58008B0DF9 /* RRMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E9B1D759B57008B0DF9 /* RRMessageModel.m */; };
-		123D7EA21D759B58008B0DF9 /* RRCustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E9D1D759B57008B0DF9 /* RRCustomScrollView.m */; };
-		123D7EA31D759B58008B0DF9 /* UICollectionViewCellPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D7E9F1D759B58008B0DF9 /* UICollectionViewCellPhoto.m */; };
 		123F26161D73BCDC00B619DF /* circleSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123F26141D73BCDC00B619DF /* circleSettingVC.m */; };
 		123F26171D73BCDC00B619DF /* circleSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123F26151D73BCDC00B619DF /* circleSettingVC.xib */; };
 		123F26341D74195300B619DF /* LfDeleteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123F262F1D74195300B619DF /* LfDeleteVC.m */; };
@@ -182,6 +179,12 @@
 		12D89DEF1D813A5000CFDBBA /* firstStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D89DE51D813A5000CFDBBA /* firstStep.m */; };
 		12D89DF01D813A5000CFDBBA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D89DE71D813A5000CFDBBA /* User.m */; };
 		12D89DF71D813BDC00CFDBBA /* User+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D89DF61D813BDC00CFDBBA /* User+Extension.m */; };
+		12D89DFB1D81463A00CFDBBA /* createCircleStep2.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D89DF91D81463A00CFDBBA /* createCircleStep2.m */; };
+		12D89DFC1D81463A00CFDBBA /* createCircleStep2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12D89DFA1D81463A00CFDBBA /* createCircleStep2.xib */; };
+		12D89E001D81531E00CFDBBA /* RRCustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D89DFF1D81531E00CFDBBA /* RRCustomScrollView.m */; };
+		12D89E031D81532900CFDBBA /* RRMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D89E021D81532900CFDBBA /* RRMessageModel.m */; };
+		12D89E061D81533400CFDBBA /* RRSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D89E051D81533400CFDBBA /* RRSendMessageViewController.m */; };
+		12D89E091D81536200CFDBBA /* UICollectionViewCellPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D89E081D81536200CFDBBA /* UICollectionViewCellPhoto.m */; };
 		12F5166B1D6FD2C4003E6B33 /* circleDeatilVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F5166A1D6FD2C4003E6B33 /* circleDeatilVC.m */; };
 		12FA7D9D1D7FAF7400830501 /* login_temp.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D9C1D7FAF7400830501 /* login_temp.m */; };
 		7AB0F9D91D644B510098CEDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0F9D81D644B510098CEDF /* main.m */; };
@@ -190,7 +193,6 @@
 		7AB0F9E41D644B510098CEDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB0F9E31D644B510098CEDF /* Assets.xcassets */; };
 		7AB0F9E71D644B510098CEDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB0F9E51D644B510098CEDF /* LaunchScreen.storyboard */; };
 		7AB0F9F21D644B510098CEDF /* AlumnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0F9F11D644B510098CEDF /* AlumnUITests.m */; };
-		CA326302BB89EB97C38C9623 /* Pods_Alumn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B31F9D869496A9FFEF36FC2F /* Pods_Alumn.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -378,14 +380,6 @@
 		123D7E911D758CE0008B0DF9 /* PeopleVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleVM.m; sourceTree = "<group>"; };
 		123D7E931D758D00008B0DF9 /* peopleList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = peopleList.plist; sourceTree = "<group>"; };
 		123D7E951D758D2D008B0DF9 /* MeList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MeList.plist; sourceTree = "<group>"; };
-		123D7E981D759B57008B0DF9 /* RRSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSendMessageViewController.h; sourceTree = "<group>"; };
-		123D7E991D759B57008B0DF9 /* RRSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSendMessageViewController.m; sourceTree = "<group>"; };
-		123D7E9A1D759B57008B0DF9 /* RRMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMessageModel.h; sourceTree = "<group>"; };
-		123D7E9B1D759B57008B0DF9 /* RRMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMessageModel.m; sourceTree = "<group>"; };
-		123D7E9C1D759B57008B0DF9 /* RRCustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRCustomScrollView.h; sourceTree = "<group>"; };
-		123D7E9D1D759B57008B0DF9 /* RRCustomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRCustomScrollView.m; sourceTree = "<group>"; };
-		123D7E9E1D759B58008B0DF9 /* UICollectionViewCellPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewCellPhoto.h; sourceTree = "<group>"; };
-		123D7E9F1D759B58008B0DF9 /* UICollectionViewCellPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewCellPhoto.m; sourceTree = "<group>"; };
 		123F26131D73BCDC00B619DF /* circleSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleSettingVC.h; sourceTree = "<group>"; };
 		123F26141D73BCDC00B619DF /* circleSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleSettingVC.m; sourceTree = "<group>"; };
 		123F26151D73BCDC00B619DF /* circleSettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circleSettingVC.xib; sourceTree = "<group>"; };
@@ -511,11 +505,23 @@
 		12D89DE71D813A5000CFDBBA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Network/User.m; sourceTree = "<group>"; };
 		12D89DF51D813BDC00CFDBBA /* User+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+Extension.h"; path = "Network/User+Extension.h"; sourceTree = "<group>"; };
 		12D89DF61D813BDC00CFDBBA /* User+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+Extension.m"; path = "Network/User+Extension.m"; sourceTree = "<group>"; };
+		12D89DF81D81463A00CFDBBA /* createCircleStep2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = createCircleStep2.h; sourceTree = "<group>"; };
+		12D89DF91D81463A00CFDBBA /* createCircleStep2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = createCircleStep2.m; sourceTree = "<group>"; };
+		12D89DFA1D81463A00CFDBBA /* createCircleStep2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = createCircleStep2.xib; sourceTree = "<group>"; };
+		12D89DFE1D81531700CFDBBA /* RRCustomScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRCustomScrollView.h; sourceTree = "<group>"; };
+		12D89DFF1D81531E00CFDBBA /* RRCustomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRCustomScrollView.m; sourceTree = "<group>"; };
+		12D89E011D81532400CFDBBA /* RRMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRMessageModel.h; sourceTree = "<group>"; };
+		12D89E021D81532900CFDBBA /* RRMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMessageModel.m; sourceTree = "<group>"; };
+		12D89E041D81532F00CFDBBA /* RRSendMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRSendMessageViewController.h; sourceTree = "<group>"; };
+		12D89E051D81533400CFDBBA /* RRSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSendMessageViewController.m; sourceTree = "<group>"; };
+		12D89E071D81535C00CFDBBA /* UICollectionViewCellPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionViewCellPhoto.h; sourceTree = "<group>"; };
+		12D89E081D81536200CFDBBA /* UICollectionViewCellPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewCellPhoto.m; sourceTree = "<group>"; };
 		12F516691D6FD2C4003E6B33 /* circleDeatilVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleDeatilVC.h; sourceTree = "<group>"; };
 		12F5166A1D6FD2C4003E6B33 /* circleDeatilVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleDeatilVC.m; sourceTree = "<group>"; };
 		12FA7D9B1D7FAF7400830501 /* login_temp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = login_temp.h; sourceTree = "<group>"; };
 		12FA7D9C1D7FAF7400830501 /* login_temp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = login_temp.m; sourceTree = "<group>"; };
 		353BBB90646DFA597ABCC758 /* Pods-Alumn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alumn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alumn/Pods-Alumn.debug.xcconfig"; sourceTree = "<group>"; };
+		3C7096AB6CCADA5DBE333A29 /* libPods-Alumn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Alumn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB0F9D41D644B510098CEDF /* Alumn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alumn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB0F9D81D644B510098CEDF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7AB0F9DA1D644B510098CEDF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -527,7 +533,6 @@
 		7AB0F9ED1D644B510098CEDF /* AlumnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlumnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB0F9F11D644B510098CEDF /* AlumnUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlumnUITests.m; sourceTree = "<group>"; };
 		7AB0F9F31D644B510098CEDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B31F9D869496A9FFEF36FC2F /* Pods_Alumn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alumn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE033CA780532003F36C5091 /* Pods-Alumn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alumn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alumn/Pods-Alumn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -536,7 +541,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA326302BB89EB97C38C9623 /* Pods_Alumn.framework in Frameworks */,
+				0CAF863CFA6F1688F7311D1F /* libPods-Alumn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +682,9 @@
 				1221ABBE1D80F275006B3993 /* createaCircleStep1VC.h */,
 				1221ABBF1D80F275006B3993 /* createaCircleStep1VC.m */,
 				1221ABC01D80F275006B3993 /* createaCircleStep1VC.xib */,
+				12D89DF81D81463A00CFDBBA /* createCircleStep2.h */,
+				12D89DF91D81463A00CFDBBA /* createCircleStep2.m */,
+				12D89DFA1D81463A00CFDBBA /* createCircleStep2.xib */,
 			);
 			name = CreateCircle;
 			sourceTree = "<group>";
@@ -817,21 +825,6 @@
 				123D7E951D758D2D008B0DF9 /* MeList.plist */,
 			);
 			name = peopleList;
-			sourceTree = "<group>";
-		};
-		123D7E971D759B43008B0DF9 /* NewMessage */ = {
-			isa = PBXGroup;
-			children = (
-				123D7E981D759B57008B0DF9 /* RRSendMessageViewController.h */,
-				123D7E991D759B57008B0DF9 /* RRSendMessageViewController.m */,
-				123D7E9A1D759B57008B0DF9 /* RRMessageModel.h */,
-				123D7E9B1D759B57008B0DF9 /* RRMessageModel.m */,
-				123D7E9C1D759B57008B0DF9 /* RRCustomScrollView.h */,
-				123D7E9D1D759B57008B0DF9 /* RRCustomScrollView.m */,
-				123D7E9E1D759B58008B0DF9 /* UICollectionViewCellPhoto.h */,
-				123D7E9F1D759B58008B0DF9 /* UICollectionViewCellPhoto.m */,
-			);
-			name = NewMessage;
 			sourceTree = "<group>";
 		};
 		123F262D1D74194000B619DF /* LeftToDelete */ = {
@@ -1035,10 +1028,25 @@
 			name = NetWork;
 			sourceTree = "<group>";
 		};
+		12D89DFD1D81526E00CFDBBA /* SengMessage */ = {
+			isa = PBXGroup;
+			children = (
+				12D89DFE1D81531700CFDBBA /* RRCustomScrollView.h */,
+				12D89DFF1D81531E00CFDBBA /* RRCustomScrollView.m */,
+				12D89E011D81532400CFDBBA /* RRMessageModel.h */,
+				12D89E021D81532900CFDBBA /* RRMessageModel.m */,
+				12D89E041D81532F00CFDBBA /* RRSendMessageViewController.h */,
+				12D89E051D81533400CFDBBA /* RRSendMessageViewController.m */,
+				12D89E081D81536200CFDBBA /* UICollectionViewCellPhoto.m */,
+				12D89E071D81535C00CFDBBA /* UICollectionViewCellPhoto.h */,
+			);
+			name = SengMessage;
+			sourceTree = "<group>";
+		};
 		38081C480C51D141CD6972FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B31F9D869496A9FFEF36FC2F /* Pods_Alumn.framework */,
+				3C7096AB6CCADA5DBE333A29 /* libPods-Alumn.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1172,9 +1180,9 @@
 		7AB0F9FE1D644DDB0098CEDF /* Circle */ = {
 			isa = PBXGroup;
 			children = (
+				12D89DFD1D81526E00CFDBBA /* SengMessage */,
 				1221ABBD1D80F0E3006B3993 /* CreateCircle */,
 				129B1B701D77D1F7007BC318 /* CircleSetting */,
-				123D7E971D759B43008B0DF9 /* NewMessage */,
 				123D7E6B1D757641008B0DF9 /* FindCircle */,
 				12BF62AC1D6D96130083ECD5 /* SecondViewController.xib */,
 				1263B7F11D6EE14F0018A762 /* circleDeatil.storyboard */,
@@ -1305,6 +1313,7 @@
 				123AAF151D713E7E0027554A /* data.plist in Resources */,
 				123D7D9D1D756023008B0DF9 /* findCircle.storyboard in Resources */,
 				129B1B6F1D77CBA1007BC318 /* 0123.jpg in Resources */,
+				12D89DFC1D81463A00CFDBBA /* createCircleStep2.xib in Resources */,
 				123D7E941D758D00008B0DF9 /* peopleList.plist in Resources */,
 				123AAF1B1D713E900027554A /* t_repost@2x.png in Resources */,
 				12BF62AD1D6D96130083ECD5 /* SecondViewController.xib in Resources */,
@@ -1409,16 +1418,17 @@
 			files = (
 				129B1BB71D782701007BC318 /* CYNavigationControllerDelegate.m in Sources */,
 				121947761D7168BE002F8287 /* MJRefreshFooter.m in Sources */,
+				12D89E061D81533400CFDBBA /* RRSendMessageViewController.m in Sources */,
 				129B1BB31D782701007BC318 /* CYPortalTransitionContext.m in Sources */,
 				123AAF071D713AE30027554A /* UIView+WebCacheOperation.m in Sources */,
 				121947741D7168BE002F8287 /* MJRefreshBackFooter.m in Sources */,
+				12D89DFB1D81463A00CFDBBA /* createCircleStep2.m in Sources */,
 				123D7E871D758CC8008B0DF9 /* PeopleListVC.m in Sources */,
 				12BC79621D76CECF00711333 /* MyAltview.m in Sources */,
 				121BE6291D6C52530072705F /* TabBarController.m in Sources */,
 				123F26341D74195300B619DF /* LfDeleteVC.m in Sources */,
 				129B65811D7998E800C3D004 /* ShowImageView.m in Sources */,
 				121947421D71675F002F8287 /* CircleCell.m in Sources */,
-				123D7EA11D759B58008B0DF9 /* RRMessageModel.m in Sources */,
 				12BF62A81D6D81270083ECD5 /* SecondViewLoadControllerViewController.m in Sources */,
 				129B1BB61D782701007BC318 /* UINavigationController+PortalTransition.m in Sources */,
 				123F26351D74195300B619DF /* LfDeleteVCCellTableViewCell.m in Sources */,
@@ -1446,8 +1456,8 @@
 				123AAF001D713AE30027554A /* SDWebImagePrefetcher.m in Sources */,
 				1219473C1D716747002F8287 /* CardCell.m in Sources */,
 				1221ABFA1D810964006B3993 /* RegisterFiveVC.m in Sources */,
-				123D7EA01D759B58008B0DF9 /* RRSendMessageViewController.m in Sources */,
 				123F26161D73BCDC00B619DF /* circleSettingVC.m in Sources */,
+				12D89E091D81536200CFDBBA /* UICollectionViewCellPhoto.m in Sources */,
 				121BE63C1D6C57820072705F /* ViewController.m in Sources */,
 				123AAF031D713AE30027554A /* UIImage+MultiFormat.m in Sources */,
 				121947381D7166F3002F8287 /* TableViewController.m in Sources */,
@@ -1470,8 +1480,8 @@
 				1219475E1D716827002F8287 /* MJRefreshBackNormalFooter.m in Sources */,
 				129B65501D79987800C3D004 /* UIImage+ReSize.m in Sources */,
 				12C973421D704A58005B814A /* searchController.m in Sources */,
-				123D7EA21D759B58008B0DF9 /* RRCustomScrollView.m in Sources */,
 				1212B7C61D802142009A172A /* genderTextField.m in Sources */,
+				12D89E031D81532900CFDBBA /* RRMessageModel.m in Sources */,
 				12F5166B1D6FD2C4003E6B33 /* circleDeatilVC.m in Sources */,
 				12BC84EA1D7285E600383806 /* UIDragButton.m in Sources */,
 				129B1BB41D782701007BC318 /* CYPortalTransitionAnimator.m in Sources */,
@@ -1493,6 +1503,7 @@
 				123AAEFD1D713AE30027554A /* SDWebImageDownloader.m in Sources */,
 				12FA7D9D1D7FAF7400830501 /* login_temp.m in Sources */,
 				121947731D7168BE002F8287 /* MJRefreshAutoFooter.m in Sources */,
+				12D89E001D81531E00CFDBBA /* RRCustomScrollView.m in Sources */,
 				123D7E791D75765C008B0DF9 /* CollectionViewCell_F.m in Sources */,
 				12BF62AB1D6D8C1D0083ECD5 /* MyNavigationBar.m in Sources */,
 				129B65821D7998E800C3D004 /* CircleGroupCell.m in Sources */,
@@ -1525,7 +1536,6 @@
 				121947771D7168BE002F8287 /* MJRefreshHeader.m in Sources */,
 				129B1BB51D782701007BC318 /* UIViewController+PortalTransition.m in Sources */,
 				129B65781D7998C700C3D004 /* CircleGroup.m in Sources */,
-				123D7EA31D759B58008B0DF9 /* UICollectionViewCellPhoto.m in Sources */,
 				1221ABE71D81050C006B3993 /* SDRefreshHeaderView.m in Sources */,
 				123D7E771D75765C008B0DF9 /* Section_FModel.m in Sources */,
 				1219472E1D7165F0002F8287 /* MJRefreshConst.m in Sources */,
