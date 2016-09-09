@@ -26,6 +26,10 @@ static NSString *IDinList;
 @property (weak, nonatomic) circleDeatilVC *current;
 //@property (weak, nonatomic) IBOutlet UIView *floatview;
 @property(strong,nonatomic)UIDragButton *button;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundimage;
+@property (weak, nonatomic) NSString *backgroundUrl;
+@property (weak , nonatomic) NSString *number;
+@property (weak , nonatomic)NSString *circleNameStr;
 
 -(void)hidden:(UIButton *) mybutton;
 

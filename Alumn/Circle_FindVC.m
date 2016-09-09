@@ -121,20 +121,23 @@
         _dataSectionArray = [[NSMutableArray alloc] initWithCapacity:1];//1个；
         for (int i = 0; i < 1; i++) {
             //默认初始有两个Section；
-            _dataCellArray = [[NSMutableArray alloc] initWithCapacity:6];//2个；
-            for (int j = 0; j < 6; j++) {
-                //默认一个section中有6个cell；
-                //初始化每一个cell；
-                Cell_FModel *cellModel = [[Cell_FModel alloc] init];
-                cellModel.cellImage = self.cellImageArr[j];
-                cellModel.cellDesc = self.cellDescArr[j];
-                
-                //添加到cell数组中；
-                [_dataCellArray addObject:cellModel];
-            }//for;
-            //初始化section；
+            _dataCellArray = [[NSMutableArray alloc] initWithCapacity:999];//2个；
+            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            NSString *plistPath1= [paths objectAtIndex:0];
+            NSString *plistName =[[NSString alloc] initWithFormat:@"TYPE.plist"];
+            NSString *fileName = [plistPath1 stringByAppendingPathComponent:plistName];
+            NSArray *dictArray = [NSArray arrayWithContentsOfFile:fileName];
+            //          NSMutableArray *models = [NSMutableArray arrayWithCapacity:[dictArray count]];
+            for (NSDictionary *dict in dictArray) {
+                Cell_FModel *mod = [Cell_FModel modelWithDict:dict];
+                NSLog(@"%@",dict);
+                [ _dataCellArray  addObject:mod];
+            }
+            
+            
+            
             Section_FModel *sectionModel = [[Section_FModel alloc] init];
-            sectionModel.sectionName = self.headerArray[i];
+            //sectionModel.sectionName = self.headerArray[i];
             //把上面生成的cell数组加入到section数组中；
             sectionModel.cellArray = _dataCellArray;
             //增加一个section；
@@ -144,48 +147,15 @@
     return _dataSectionArray;
 }
 
-//这里标题的添加也使用懒加载；
-- (NSMutableArray *)headerArray{
-    
-    if (!_headerArray) {
-        self.headerArray = [[NSMutableArray alloc] initWithObjects:@"第一个",@"第二个", nil];
-    }
-    return _headerArray;
-}
 
-- (NSMutableArray *)cellImageArr{
-    
-    if (!_cellImageArr) {
-        self.cellImageArr = [[NSMutableArray alloc] initWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",nil];
-    }
-    return _cellImageArr;
-}
 
-- (NSMutableArray *)cellDescArr{
-    if (!_cellDescArr) {
-        self.cellDescArr = [[NSMutableArray alloc] initWithObjects:@"第0个",@"第1个",@"第2个",@"第3个",@"第4个",@"添加",nil];
-    }
-    return _cellDescArr;
-}
+
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     //取出是某一个section；
     Section_FModel *sec = [self.dataSectionArray objectAtIndex:indexPath.section];
-    if ((indexPath.row == sec.cellArray.count - 1)) {
-        NSLog(@"点击最后一个cell，执行添加操作");
-        //初始化一个新的cell模型；
-        Cell_FModel *cel = [[Cell_FModel alloc] init];
-        cel.cellImage = @"2";
-        cel.cellDesc = @"再来一个";
-        //获取当前的cell数组；
-        self.dataCellArray = sec.cellArray;
-        //把新创建的cell插入到最后一个之前；
-        [self.dataCellArray insertObject:cel atIndex:self.dataCellArray.count - 1];
-        //更新UI；
-        [self.collectionView_F reloadData];
-    }else{
         NSLog(@"第%ld个section,点击图片%ld",indexPath.section,indexPath.row);
         //MyAlertVC *ContmetViewController =[[MyAlertVC alloc] init];
         //[self.view addSubview:[ContmetViewController init].view];
@@ -206,7 +176,7 @@
         [self.view addSubview:_alt.view];
         [Circle_FindVC animationAlert:_alt.view];
         [_alt show];
-           }
+
 }
 
 

@@ -15,6 +15,7 @@
 //定义cell中的描述文字；
 @property(nonatomic,strong) NSString *cellDesc;
 @property(nonatomic,strong) NSString *ID;
+@property (nonatomic,strong) NSString *numbers;
 
 +(id)modelWithDict:(NSDictionary *)dict;
 

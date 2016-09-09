@@ -10,6 +10,7 @@
 static int page =1;
 @interface SecondViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIView *view;
+
 +(int) getPage;
 +(void) setPage :(int) num;
 +(void) setPageAdd1;

@@ -95,7 +95,7 @@ NS_ENUM(NSInteger,CellState){
   CellModel *cel = [sec.cellArray objectAtIndex:indexPath.row];
   //取出数据；
  // cell.imageView.image = [UIImage imageNamed:cel.cellImage];
-  [cell.imageView sd_setImageWithURL:[NSURL URLWithString:cel.cellImage] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+  [cell.imageView sd_setImageWithURL:[NSURL URLWithString:cel.cellImage] placeholderImage:[UIImage imageNamed:@"10.jpg"]];
     cell.descLabel.text = cel.cellDesc;
   //设置删除按钮
   // 点击编辑按钮触发事件
@@ -168,7 +168,7 @@ NS_ENUM(NSInteger,CellState){
     _dataSectionArray = [[NSMutableArray alloc] initWithCapacity:1];//1个；
     for (int i = 0; i < 1; i++) {
       //默认初始有两个Section；
-      _dataCellArray = [[NSMutableArray alloc] initWithCapacity:6];//2个；
+      _dataCellArray = [[NSMutableArray alloc] initWithCapacity:999];//2个；
       //for (int j = 0; j < 6; j++) {
         //默认一个section中有6个cell；
         //初始化每一个cell；
@@ -178,7 +178,7 @@ NS_ENUM(NSInteger,CellState){
 //          CellModel *cellModel = [[CellModel alloc] init];
           NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
           NSString *plistPath1= [paths objectAtIndex:0];
-          NSString *plistName =[[NSString alloc] initWithFormat:@"MainPageCircle1.plist"];
+          NSString *plistName =[[NSString alloc] initWithFormat:@"MainPageCircle.plist"];
           NSString *fileName = [plistPath1 stringByAppendingPathComponent:plistName];
           NSArray *dictArray = [NSArray arrayWithContentsOfFile:fileName];
 //          NSMutableArray *models = [NSMutableArray arrayWithCapacity:[dictArray count]];
@@ -263,7 +263,10 @@ NS_ENUM(NSInteger,CellState){
           NSLog (@"%@",postdic);
           [Circle circeDynamicListWithParameters:postdic page:i SuccessBlock:^(NSDictionary *dict, BOOL success) {
               UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-              UIViewController *VC = [sb instantiateViewControllerWithIdentifier:@"circleDeatil"];
+              circleDeatilVC *VC = [sb instantiateViewControllerWithIdentifier:@"circleDeatil"];
+              VC.backgroundUrl = getcell.cellImage;
+              VC.circleNameStr = getcell.cellDesc;
+              VC.number=getcell.numbers;
               VC.modalPresentationStyle = UIModalPresentationCustom;
               self.viewControllerTransitionDelegate.viewController = VC;
               //[self presentViewController:newVC animated:YES completion:nil];

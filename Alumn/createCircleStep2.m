@@ -7,7 +7,9 @@
 //
 
 #import "createCircleStep2.h"
-
+#import "AFNetManager.h"
+#import "Circle+Extension.h"
+#import "User.h"
 @interface createCircleStep2 ()
 
 @end
@@ -16,24 +18,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _typeArray = [NSArray arrayWithObjects:@"创业圈",@"软件圈",@"经管圈",@"实习圈",@"法律圈",@"电气圈",nil];
+    [self.finishItem setEnabled:true];
+    self.view.userInteractionEnabled =YES;
+    UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(reKeyBoard:)];
+    [tapGesture setNumberOfTapsRequired:1];
+    [self.view addGestureRecognizer:tapGesture];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *plistPath1= [paths objectAtIndex:0];
+    NSString *plistName =[[NSString alloc] initWithFormat:@"User.plist"];
+    NSLog(@"circle Plsit of dynamic%@",plistName);
+    NSString *fileName = [plistPath1 stringByAppendingPathComponent:plistName];
+    NSDictionary *dict  = [NSDictionary dictionaryWithContentsOfFile:fileName];
+    NSLog(@"大bug%@",[dict objectForKey:@"name"]);
+    creator_name = [dict objectForKey:@"name"];
+    self.uid = [dict objectForKey:@"uid"];
+    _typeArray = [NSArray arrayWithObjects:@"社团圈",@"职业圈",@"创业圈",@"地域圈",@"院系圈",@"兴趣圈",nil];
+//    self.TYPE_id = [NSArray arrayWithObjects:@"57cd04e8ea77f7753a8f3c28",
+//                                                          @"57cd04ba55c400f83aa1384d",
+//                                                          @"57cd049d55c400f83aa1384c",
+//                                                          @"57cbd6747019c95ec2d856eb",
+//                                                          @"57bdcad0d0146385e6abb6be",
+//                                                          @"57cbd6747019c95ec2d856eb",nil];
     // Do any additional setup after loading the view from its nib.
 //    self.NameLabel.frame=CGRectMake(0, 106, 375, 34);
 //    self.NameLabel.numberOfLines=0;
 //    self.NameLabel.textAlignment=NSTextAlignmentCenter;
-//    CGSize size = [self.circleName sizeWithFont:_NameLabel.font constrainedToSize:CGSizeMake(_NameLabel.frame.size.width, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+      [self.finishItem setEnabled:true];
+     CGSize size =[self.circleName sizeWithFont:_NameLabel.font constrainedToSize:CGSizeMake(_NameLabel.frame.size.width, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
 //    [self.NameLabel setFrame:CGRectMake(0, 106, 375, size.height)];
     NSLog(@"%@",self.circleName);
      self.NameLabel.text = self.circleName;
     self.reasonlabel.enabled = NO;
     self.introLabel.enabled =NO;
-    self.reasaonTextView.delegate =self;
-    self.introTextView.delegate =self;
     self.reasonlabel.text = @"在此处填写您创建该圈子的理由";
     self.introLabel.text =@"在此处填写您对该圈子的介绍";
     self.pickerView.delegate=self;
     self.pickerView.frame = CGRectMake(0, 667, 375, 140);
     self.pickerView.hidden = YES;
+    self.reasaonTextView.delegate =self;
+    self.introTextView.delegate =self;
+    if(self.reasaonTextView.text.length!=0&&self.introTextView.text.length!=0&&self.typeLabel.text!=0)
+    {
+        [self.finishItem setEnabled:false];
+    }
     
     
     
@@ -114,6 +141,7 @@ numberOfRowsInComponent:(NSInteger)component {
     
     NSLog(@"HANG%@",[_typeArray objectAtIndex:row]);
     self.typeLabel.text =[_typeArray objectAtIndex:row];
+    self.typeName = [_typeArray objectAtIndex:row];
     
 }
 
@@ -133,7 +161,11 @@ numberOfRowsInComponent:(NSInteger)component {
 //    }
     self.introLabel.hidden= self.introTextView.hasText;
     self.reasonlabel.hidden = self.reasaonTextView.hasText;
+    intro = self.introTextView.text;
+    reason =self.reasaonTextView.text;
 }
+
+
 
 - (IBAction)inView:(id)sender {
     
@@ -174,6 +206,36 @@ numberOfRowsInComponent:(NSInteger)component {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+- (IBAction)finish:(id)sender {
+    NSLog(@"%@12334",self.typeName);
+    //NSLog(@"%@3456",[self.TYPE_id objectForKey:self.typeName]);
+    NSLog(@"%@4566",reason);
+    NSLog(@"%@6789",intro);
+    NSLog(@"dasdasdBUFf%@",creator_name);
+    NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:[User getXrsf],@"_xsrf",
+                             self.circleName,@"circle_name",
+                             @"http://img1.imgtn.bdimg.com/it/u=1372134302,958716461&fm=206&gp=0.jpg",@"circle_icon_url",
+                             self.uid,@"creator_uid",
+                             self.typeName,@"circle_type_name",
+                             reason,@"reason_message",
+                             intro,@"description",
+                             creator_name,@"creator_name",nil];
+    NSLog (@"创建圈子%@",userInfo);
+    [Circle createCircleWithParamenters:userInfo];
+  
+    
+    
+}
+
+- (void)reKeyBoard:(UITapGestureRecognizer *)gesture
+{
+    NSLog(@"单机");
+    
+    [self.introTextView resignFirstResponder];
+    [self.reasaonTextView resignFirstResponder];
+    
+}
 
 
 

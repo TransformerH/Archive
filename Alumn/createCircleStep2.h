@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+static NSString *reason;
+static NSString *intro;
+static NSString *creator_name;
 @interface createCircleStep2 : UIViewController <UIPickerViewDelegate,UIPickerViewDataSource,UITextViewDelegate>
 {
     
@@ -24,5 +26,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *introTextView;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *finishItem;
+@property (weak,nonatomic) NSString *uid;
+@property (weak ,nonatomic) NSString *ID;
+@property (weak ,nonatomic) NSArray *TYPE_id;
 
+@property (weak , nonatomic) NSString *typeName;
 @end

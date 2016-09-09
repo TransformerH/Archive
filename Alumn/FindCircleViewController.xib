@@ -8,17 +8,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindCircleViewController">
             <connections>
-                <outlet property="EnterpriseButton" destination="a6Y-bs-IDM" id="qly-oP-OW6"/>
-                <outlet property="InternshipButton" destination="eGh-QY-pL8" id="d4o-NB-Hnt"/>
+                <outlet property="ClubButton" destination="c5p-nQ-lu5" id="5IV-4v-5qS"/>
                 <outlet property="InternshipImage" destination="Wpu-In-xxJ" id="dft-p9-MeC"/>
-                <outlet property="ecoManButton" destination="9Qe-fw-zbX" id="ksv-6q-XfS"/>
+                <outlet property="OccupationButton" destination="3ad-yO-pz4" id="zQc-CJ-xtK"/>
                 <outlet property="ecoManImage" destination="DoA-Mq-AaY" id="gzU-ie-hDL"/>
-                <outlet property="electricButton" destination="3ad-yO-pz4" id="p6z-nO-WT5"/>
                 <outlet property="electricImage" destination="KBb-GF-FNC" id="69Z-xc-vgc"/>
                 <outlet property="enterpriseImage" destination="nqp-JO-LY5" id="qxd-Bl-iWP"/>
-                <outlet property="lawButton" destination="2ns-1c-Fxa" id="PAp-fL-eRs"/>
+                <outlet property="factulButton" destination="a6Y-bs-IDM" id="yUF-A5-WVa"/>
+                <outlet property="fieldButton" destination="2ns-1c-Fxa" id="Fvp-8v-U9a"/>
+                <outlet property="hobbyButton" destination="9Qe-fw-zbX" id="9Zc-Rk-wjS"/>
+                <outlet property="jobButton" destination="eGh-QY-pL8" id="L5A-9z-IeB"/>
                 <outlet property="lawImage" destination="qdM-Hy-Aow" id="D9r-UA-gEs"/>
-                <outlet property="softwareButton" destination="c5p-nQ-lu5" id="akf-Eq-mGZ"/>
                 <outlet property="softwareImage" destination="9gf-aO-yMa" id="fge-hL-eBG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -34,7 +34,7 @@
                         <constraint firstAttribute="width" secondItem="nqp-JO-LY5" secondAttribute="height" multiplier="1:1" id="L3a-0F-mq3"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="创业圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTb-6t-pkP">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="院系圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTb-6t-pkP">
                     <rect key="frame" x="67" y="178" width="53" height="25"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,7 +57,7 @@
                         <attributedString key="attributedTitle"/>
                     </state>
                     <connections>
-                        <action selector="softwareClicked:" destination="-1" eventType="touchUpInside" id="pIf-TC-LYf"/>
+                        <action selector="ClubClicked:" destination="-1" eventType="touchUpInside" id="bF9-Sx-3TK"/>
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="实习圈" translatesAutoresizingMaskIntoConstraints="NO" id="Wpu-In-xxJ">
@@ -66,13 +66,13 @@
                         <constraint firstAttribute="width" secondItem="Wpu-In-xxJ" secondAttribute="height" multiplier="1:1" id="1sU-Bt-LQe"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="实习圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGB-gZ-sNY">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="职业圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGB-gZ-sNY">
                     <rect key="frame" x="67" y="369" width="53" height="25"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eGh-QY-pL8">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eGh-QY-pL8" userLabel="job Button">
                     <rect key="frame" x="0.0" y="259" width="188" height="187"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="187" id="KWV-8Q-h28"/>
@@ -83,7 +83,7 @@
                         <attributedString key="attributedTitle"/>
                     </state>
                     <connections>
-                        <action selector="InternshipClicked:" destination="-1" eventType="touchUpInside" id="6S2-FD-RKh"/>
+                        <action selector="jobClicked:" destination="-1" eventType="touchUpInside" id="k3W-Np-j2M"/>
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="法律圈" translatesAutoresizingMaskIntoConstraints="NO" id="qdM-Hy-Aow">
@@ -92,27 +92,12 @@
                         <constraint firstAttribute="width" secondItem="qdM-Hy-Aow" secondAttribute="height" multiplier="1:1" id="jXh-MN-kh0"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="法律圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZ4-qW-bGI">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="地域圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZ4-qW-bGI">
                     <rect key="frame" x="249" y="369" width="53" height="25"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ns-1c-Fxa">
-                    <rect key="frame" x="188" y="259" width="188" height="187"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="2ns-1c-Fxa" secondAttribute="height" multiplier="1:1" id="HXj-7q-cOl"/>
-                        <constraint firstAttribute="width" secondItem="2ns-1c-Fxa" secondAttribute="height" multiplier="1:1" id="cej-4q-Bzt"/>
-                        <constraint firstAttribute="width" constant="187.5" id="ngF-0g-ChQ"/>
-                        <constraint firstAttribute="height" constant="187" id="q7G-13-bgR"/>
-                    </constraints>
-                    <state key="normal">
-                        <attributedString key="attributedTitle"/>
-                    </state>
-                    <connections>
-                        <action selector="lawButtonClicked:" destination="-1" eventType="touchUpInside" id="fBi-L1-VU9"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="经管圈" translatesAutoresizingMaskIntoConstraints="NO" id="DoA-Mq-AaY">
                     <rect key="frame" x="63" y="488" width="60" height="60"/>
                     <constraints>
@@ -120,13 +105,13 @@
                         <constraint firstAttribute="width" secondItem="DoA-Mq-AaY" secondAttribute="height" multiplier="1:1" id="ryO-EM-9Ll"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="经管圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0m-Is-7V7">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="兴趣圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0m-Is-7V7">
                     <rect key="frame" x="67" y="556" width="53" height="25"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qe-fw-zbX">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qe-fw-zbX" userLabel="hobbyButton">
                     <rect key="frame" x="0.0" y="446" width="188" height="187"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="9Qe-fw-zbX" secondAttribute="height" multiplier="1:1" id="ThJ-it-rMd"/>
@@ -138,7 +123,7 @@
                         <attributedString key="attributedTitle"/>
                     </state>
                     <connections>
-                        <action selector="ecoManButtonClicked:" destination="-1" eventType="touchUpInside" id="y2P-3k-gMe"/>
+                        <action selector="hobbyClicked:" destination="-1" eventType="touchUpInside" id="RCJ-cv-AMJ"/>
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="电气圈" translatesAutoresizingMaskIntoConstraints="NO" id="KBb-GF-FNC">
@@ -147,13 +132,13 @@
                         <constraint firstAttribute="width" secondItem="KBb-GF-FNC" secondAttribute="height" multiplier="1:1" id="vvT-vX-cjV"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="电气圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOZ-fN-1is">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="创业圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOZ-fN-1is">
                     <rect key="frame" x="249" y="556" width="53" height="25"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ad-yO-pz4">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ad-yO-pz4" userLabel="Occupation Button">
                     <rect key="frame" x="187" y="446" width="188" height="187"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="187" id="HMX-9v-Wzq"/>
@@ -164,7 +149,7 @@
                         <attributedString key="attributedTitle"/>
                     </state>
                     <connections>
-                        <action selector="electricButtonClicked:" destination="-1" eventType="touchUpInside" id="Par-W1-uCM"/>
+                        <action selector="occupationButtonClicked:" destination="-1" eventType="touchUpInside" id="mVM-QD-JaC"/>
                     </connections>
                 </button>
                 <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PoN-dH-wAm">
@@ -188,7 +173,7 @@
                         </mask>
                     </variation>
                 </navigationBar>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6Y-bs-IDM">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6Y-bs-IDM" userLabel="factul Button">
                     <rect key="frame" x="0.0" y="64" width="188" height="187"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="a6Y-bs-IDM" secondAttribute="height" multiplier="1:1" id="52M-12-WG6"/>
@@ -199,15 +184,30 @@
                         <attributedString key="attributedTitle"/>
                     </state>
                     <connections>
-                        <action selector="enterpriseClicked:" destination="-1" eventType="touchUpInside" id="Wmr-EI-jPG"/>
+                        <action selector="factulClicked:" destination="-1" eventType="touchUpInside" id="hzj-69-LdT"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="软件圈" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLC-rf-M8z">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="社团圈" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLC-rf-M8z">
                     <rect key="frame" x="247" y="176" width="53" height="26"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ns-1c-Fxa">
+                    <rect key="frame" x="188" y="259" width="188" height="187"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="2ns-1c-Fxa" secondAttribute="height" multiplier="1:1" id="HXj-7q-cOl"/>
+                        <constraint firstAttribute="width" secondItem="2ns-1c-Fxa" secondAttribute="height" multiplier="1:1" id="cej-4q-Bzt"/>
+                        <constraint firstAttribute="width" constant="187.5" id="ngF-0g-ChQ"/>
+                        <constraint firstAttribute="height" constant="187" id="q7G-13-bgR"/>
+                    </constraints>
+                    <state key="normal">
+                        <attributedString key="attributedTitle"/>
+                    </state>
+                    <connections>
+                        <action selector="fieldClicked:" destination="-1" eventType="touchUpInside" id="oD7-Cp-8DK"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

@@ -16,10 +16,12 @@
 //        [self setValuesForKeysWithDictionary:dict];
         self.content = [dict objectForKey:@"content"];
         self.create_time = [dict objectForKey:@"create_time"];
-        //self.image_urls = [dict objectForKey:@"image_urls" ];
+        self.image_urls = [dict objectForKey:@"image_urls" ];
         NSDictionary *creator = [dict objectForKey:@"creator"];
         //self.icon_url = [creator objectForKey:@"icon_url"];
-        self.name = [creator objectForKey:@"name"];
+        NSString *cut = [creator objectForKey:@"name"];
+        self.name= [cut substringFromIndex:11];
+        self.icon_url= [creator objectForKey:@"icon_url"];
         }
     return self;
 }

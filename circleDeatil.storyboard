@@ -313,6 +313,7 @@
                         <outlet property="ExitButton" destination="b8R-kg-Fg6" id="xQH-tI-dzf"/>
                         <outlet property="NavBar" destination="gT8-Z9-BQI" id="3Dt-Of-R5P"/>
                         <outlet property="back" destination="8Hy-H5-4CW" id="yK9-KM-h4z"/>
+                        <outlet property="backgroundimage" destination="lqj-ew-j04" id="Htn-dD-VmA"/>
                         <outlet property="cicrleName" destination="CDi-GV-sTy" id="uXe-Ln-4nr"/>
                         <outlet property="ciecleDeatilMask2" destination="HLh-F3-kOQ" id="XBZ-8s-6Fq"/>
                         <outlet property="numbers" destination="AIY-sy-uVC" id="7b7-aq-KXI"/>

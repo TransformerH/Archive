@@ -16,7 +16,9 @@
         //        [self setValuesForKeysWithDictionary:dict];
         self.ID = [dict objectForKey:@"id"];
         self.cellDesc = [dict objectForKey:@"name"];
-        self.cellImage = [dict objectForKey:@"image_urls"];
+        self.cellImage = [dict objectForKey:@"icon_url"];
+        NSDictionary *stat= [dict objectForKey:@"stats"];
+        self.numbers = [stat objectForKey:@"fans"];
         
     }
     return self;

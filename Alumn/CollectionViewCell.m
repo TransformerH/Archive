@@ -35,6 +35,7 @@
       self.descLabel.shadowColor= [UIColor whiteColor];
     self.descLabel.textAlignment = NSTextAlignmentCenter;
     self.descLabel.text = @"111";
+    self.descLabel.font = [UIFont systemFontOfSize:16];
     self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(CELL_WIDTH -20, -5, 30, 30)];
     [self.deleteButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
     //先设置不可见；

@@ -60,9 +60,9 @@ static User *user;
             NSLog(@"检测手机号成功%@",dic);
             
             NSString *codeString = [[NSString alloc] initWithFormat:@"%@",[dic valueForKey:@"code"]];
-            NSString *successMsg = [[NSString alloc] initWithFormat:@"%d",3002];
+            NSString *successMsg = [[NSString alloc] initWithFormat:@"%d",3000];
             NSString *error1 = [[NSString alloc] initWithFormat:@"%d",3001];
-            NSString *error2 = [[NSString alloc] initWithFormat:@"%d",3003];
+            NSString *error2 = [[NSString alloc] initWithFormat:@"%d",3002];
             
             if([codeString isEqualToString:successMsg]){
                 NSLog(@"检测手机号成功%@",dic);

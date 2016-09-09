@@ -26,6 +26,7 @@
 #import "UIViewController+PortalTransition.h"
 #import "CYViewControllerTransitioningDelegate.h"
 #import "SecondViewController.h"
+#import   "UIImageView+WebCache.h"
 
 
 #define floatSize 120
@@ -67,12 +68,13 @@
     [self.NavBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsCompact];
     [self performSelector:@selector(createButton) withObject:nil afterDelay:1];
     //_floatview.frame = CGRectZero;
-    
+     [self.backgroundimage sd_setImageWithURL:[NSURL URLWithString:self.backgroundUrl] placeholderImage:[UIImage imageNamed:@"10.jpg"]];
     self.NavBar.layer.masksToBounds = YES;
     [self.NavBar setBackgroundColor:[UIColor clearColor]];
-    [self.cicrleName setText:@"圈子名称"];
+    [self.cicrleName setText:self.circleNameStr];
     [self.cicrleName endEditing:true];
-    [self.numbers setText:@"成员 ％ld"];
+   NSString *num =[[NSString alloc] initWithFormat:@"成员 %@人",self.number];
+    [self.numbers setText:num];
    //[self.view bringSubviewToFront:_setButton];
     [self.ciecleDeatilMask2 setHidden:true];
     [self.setButton1 setHidden:true];

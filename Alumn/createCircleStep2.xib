@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="createCircleStep2">
             <connections>
                 <outlet property="NameLabel" destination="jEj-kr-zIM" id="qYm-B2-ewV"/>
+                <outlet property="finishItem" destination="dLr-u1-Ka6" id="7E3-ey-bNU"/>
                 <outlet property="introLabel" destination="S0k-La-hYK" id="ySK-il-5Wr"/>
                 <outlet property="introTextView" destination="MVj-mY-IcG" id="tfw-DL-byb"/>
                 <outlet property="pickerView" destination="6RY-2y-i5W" id="dlA-Hb-Xux"/>
@@ -41,6 +42,9 @@
                             </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" title="完成" id="dLr-u1-Ka6">
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="finish:" destination="-1" id="cVg-IZ-Okw"/>
+                                </connections>
                             </barButtonItem>
                         </navigationItem>
                     </items>

@@ -40,14 +40,7 @@
 //
 //}
 
-- (IBAction)button2:(id)sender {
-        NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:@"57bdcad0d0146385e6abb6be",@"t_cat_id",@"5",@"count",@"1",@"page", nil];
-        NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [self dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
-        NSLog (@"%@",postdic);
-      [Circle getTypetopicWithParameters:postdic];
-    
-    
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

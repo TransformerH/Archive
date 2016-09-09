@@ -12,18 +12,18 @@
 {
      BOOL flag; 
 }
-@property (weak, nonatomic) IBOutlet UIButton *EnterpriseButton;
+@property (weak, nonatomic) IBOutlet UIButton *factulButton;
 @property (weak, nonatomic) IBOutlet UIImageView *enterpriseImage;
 @property (weak, nonatomic) IBOutlet UIImageView *softwareImage;
-@property (weak, nonatomic) IBOutlet UIButton *softwareButton;
-@property (weak, nonatomic) IBOutlet UIButton *InternshipButton;
+@property (weak, nonatomic) IBOutlet UIButton *ClubButton;
+@property (weak, nonatomic) IBOutlet UIButton *jobButton;
 @property (weak, nonatomic) IBOutlet UIImageView *InternshipImage;
 @property (weak, nonatomic) IBOutlet UIImageView *lawImage;
-@property (weak, nonatomic) IBOutlet UIButton *lawButton;
+@property (weak, nonatomic) IBOutlet UIButton *fieldButton;
 @property (weak, nonatomic) IBOutlet UIImageView *ecoManImage;
-@property (weak, nonatomic) IBOutlet UIButton *ecoManButton;
+@property (weak, nonatomic) IBOutlet UIButton *hobbyButton;
 @property (weak, nonatomic) IBOutlet UIImageView *electricImage;
-@property (weak, nonatomic) IBOutlet UIButton *electricButton;
+@property (weak, nonatomic) IBOutlet UIButton *OccupationButton;
 
 -(void)clickEffect :(UIButton *) BUTTON image:(UIImageView *) myimage;
 

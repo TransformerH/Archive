@@ -24,7 +24,9 @@
 +(void) createCircleFirstWithParameters :(NSDictionary *) parm;
 +(void) createCircleSecondWithParameters :(NSDictionary *) parm;
 //获得某个类型的圈子列表
-+(void) getTypetopicWithParameters :(NSDictionary *) parm;
++(void) getTypetopicWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
 +(void) uploadPicture:(UIImage *)image;
+
++(void) createCircleWithParamenters :(NSDictionary *) parm;
 
 @end

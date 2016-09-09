@@ -64,6 +64,7 @@ static Circle *circle;
 +(void) circleIndexWithParameters :(NSDictionary *) parm
 {
     
+    
 }
 //申请加入圈子
 +(void) joinCircleWithParameters :(NSDictionary *) parm
@@ -81,14 +82,29 @@ static Circle *circle;
 }
 
 //获得某个类型的圈子列表
-+(void) getTypetopicWithParameters :(NSDictionary *) parm
++(void) getTypetopicWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
 {
       NSString *getFirstURL = [NSString stringWithFormat:@"%@/gettypetopic",[AFNetManager getMainURL]];
     [[AFNetManager manager] POST:getFirstURL parameters:parm progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
         
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
         NSLog(@"User+exten: %@", dic);
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *plistPath1= [paths objectAtIndex:0];
         
+        NSLog(@"%@",plistPath1);
+        //得到完整的路径名
+        NSString *fileName = [plistPath1 stringByAppendingPathComponent:@"TYPE.plist"];
+        NSDictionary *main = [dic objectForKey:@"Data"];
+        NSDictionary *result = [main objectForKey:@"response"];
+        NSDictionary *mainCilrcle = [result objectForKey:@"results"];
+        NSFileManager *fm = [NSFileManager defaultManager];
+        if ([fm createFileAtPath:fileName contents:nil attributes:nil] ==YES) {
+            
+            [mainCilrcle writeToFile:fileName atomically:YES];
+            NSLog(@"文件写入完成");
+        }
+        successBlock(dic,YES);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
         
         NSLog(@"getxsrf failure");
@@ -166,28 +182,48 @@ static Circle *circle;
 
 +(void) uploadPicture:(UIImage *)image
 {
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.001);
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
     NSString *_encodedImageStr = [imageData base64Encoding];
+    //NSString *postdata =
+    //NSLog(@"%@",_encodedImageStr);
+    //NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:_encodedImageStr,@"", nil];
     
-    NSLog(@"%@",_encodedImageStr);
-    NSString *getFirstURL = [NSString stringWithFormat:@"%@/uploadimg",[AFNetManager getMainURL]];
+    NSDictionary *postdata = [[NSDictionary alloc] initWithObjectsAndKeys: _encodedImageStr,@"base64ImgStr",[User getXrsf],@"_xsrf", nil];
+    NSLog(@"circle deatil: %@",postdata);
+    NSString *getFirstURL = [NSString stringWithFormat:@"%@/upload_img",[AFNetManager getMainURL]];
+    
+    [[AFNetManager manager] POST:getFirstURL parameters:postdata progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
+        
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        //NSLog(@"circle deatil: %@", responseObject);
+        NSLog(@"circle deatil: %@", dic);
+        
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
+        
+        NSLog(@"getxsrf failure");
+        
+    }];
+}
 
-//[[AFNetManager manager]POST:getFirstURL  parameters:_encodedImageStr constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-//    // 上传文件
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    formatter.dateFormat            = @"yyyyMMddHHmmss";
-//    NSString *str                         = [formatter stringFromDate:[NSDate date]];
-//    NSString *fileName               = [NSString stringWithFormat:@"%@.jpg", str];
-//    
-//    [formData appendPartWithFileData:imageData name:@"photos" fileName:fileName mimeType:@"image/png"];
-//    
-//} progress:^(NSProgress * _Nonnull uploadProgress) {
-//    
-//} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//    NSLog(@"上传成功");
-//} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//    NSLog(@"失败");
-//}];
+
++(void) createCircleWithParamenters :(NSDictionary *) parm
+{
+    NSString *getFirstURL = [NSString stringWithFormat:@"%@/createTopic",[AFNetManager getMainURL]];
+    [[AFNetManager manager] POST:getFirstURL parameters:parm progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
+        
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        //NSLog(@"circle deatil: %@", responseObject);
+    NSLog(@"circle deatil: %@", dic);
+            
+        }
+     failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
+        
+        NSLog(@"getxsrf failure");
+        
+    }];
+
 }
 
 @end
