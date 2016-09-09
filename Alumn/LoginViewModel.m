@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewModel.h"
+#import "Circle+Extension.h"
 
 @implementation LoginViewModel
 
@@ -51,8 +52,14 @@
             NSDictionary *loginDic = [[NSDictionary alloc] initWithObjectsAndKeys:self.user.phone,@"telephone",self.user.pwd,@"password", nil];
             
             [User loginWithParameters:loginDic SuccessBlock:^(NSDictionary *dict, BOOL success) {
-                [subscriber sendNext:@"success"];
-                [subscriber sendCompleted];
+
+                [Circle getMainPageCircleWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+                    [subscriber sendNext:@"success"];
+                    [subscriber sendCompleted];
+                     
+                } AFNErrorBlock:^(NSError *error) {
+                    NSLog(@"%@",error);
+                }];
                 //确认登陆跳转
                 
             } AFNErrorBlock:^(NSError *error) {

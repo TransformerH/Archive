@@ -34,9 +34,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)maincircleGet:(id)sender {
-      [Circle getMainPageCircleWithParameters:nil];
-}
+//- (IBAction)maincircleGet:(id)sender {
+//      [Circle getMainPageCircleWithParameters:nil];
+//}
 
 /*
 #pragma mark - Navigation

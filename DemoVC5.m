@@ -23,6 +23,10 @@
 
 #import "AFNetManager.h"
 
+#import "circleDeatilVC.h"
+
+#import "SecondViewController.h"
+
 
 @interface DemoVC5 ()
 
@@ -43,7 +47,6 @@
     [super viewDidLoad];
     
   
-    
     NSNumber *i=[[NSNumber alloc]initWithInt:1];
     [self creatModelsWithCount:4 page:i];
     
@@ -55,15 +58,18 @@
     __weak typeof(_refreshFooter) weakRefreshFooter = _refreshFooter;
     _refreshFooter.beginRefreshingOperation = ^() {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSNumber *newpage=[[NSNumber alloc]initWithInt:page];
-            NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:@"57c69d68d36ef3151eb80bac",@"topic_id",@"4",@"count",newpage,@"page",@"0",@"order", nil];
+            NSNumber *newpage=[[NSNumber alloc]initWithInt:[SecondViewController getPage]];
+            NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:[circleDeatilVC getIDinList],@"topic_id",@"4",@"count",newpage,@"page",@"0",@"order", nil];
             NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [AFNetManager dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
             NSLog (@"%@",postdic);
-   
-            [Circle circeDynamicListWithParameters:postdic page:newpage];
-            [weakSelf creatModelsWithCount:4 page:newpage];
-            [weakSelf.tableView reloadData];
-            [weakRefreshFooter endRefreshing];
+            [Circle circeDynamicListWithParameters:postdic page:newpage SuccessBlock:^(NSDictionary *dict, BOOL success) {
+                [weakSelf creatModelsWithCount:4 page:newpage];
+                [weakSelf.tableView reloadData];
+                [weakRefreshFooter endRefreshing];
+            } AFNErrorBlock:^(NSError *error) {
+                NSLog(@"%@",error);
+            }];
+            
             
         });
     };
@@ -80,15 +86,16 @@
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *plistPath1= [paths objectAtIndex:0];
-    NSString *plistName =[[NSString alloc] initWithFormat:@"DynamicList%@.plist",pages];
+    NSString *plistName =[[NSString alloc] initWithFormat:@"DynamicList%@_Page%@.plist",[circleDeatilVC getIDinList],pages];
+    NSLog(@"circle Plsit of dynamic%@",plistName);
     NSString *fileName = [plistPath1 stringByAppendingPathComponent:plistName];
     NSArray *dictArray = [NSArray arrayWithContentsOfFile:fileName];
-     NSMutableArray *models = [NSMutableArray arrayWithCapacity:[dictArray count]];
     for (NSDictionary *dict in dictArray) {
         DemoVC5Model *mod = [DemoVC5Model modelWithDict:dict];
         [self.modelsArray  addObject:mod];
     }
-    page++;
+    extern int pageoflist;
+    [SecondViewController setPageAdd1];
   
   }
 
@@ -131,16 +138,7 @@
   
 }
 
-+(void) setID:(NSString *)id
-{
-    ID = id;
-}
 
-+(NSString *) getID
-{
-    extern NSString *ID;
-    return ID;
-}
 
 
 @end

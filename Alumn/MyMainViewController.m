@@ -15,11 +15,18 @@
 #import "TableViewController.h"
 #import "JoinedCircleTableViewController.h"
 #import "CardTableViewController.h"
+#import "User.h"
+#import "User+Extension.h"
+#import "MeViewModel.h"
+#import "AFNetManager.h"
 
 @interface MyMainViewController ()<UIScrollViewDelegate,UITableViewDelegate>
 {
     CGFloat _lastPosition;
 }
+
+@property (nonatomic,strong)MeViewModel *meVM;
+
 
 //框架最下面的scrollView;
 //最底层scrollerView
@@ -297,7 +304,7 @@
                 NSLog(@"contentTable0");
                 
                 CardTableViewController *cardTableVC = [[CardTableViewController alloc] init];
-                cardTableVC.itemNum = i+2;
+                cardTableVC.itemNum = 3;
                 cardTableVC.page = i+1;
                 cardTableVC.view.frame = self.contentScrollView.bounds;
                 cardTableVC.tableView.delegate = self;
@@ -315,7 +322,7 @@
                 NSLog(@"contentTable1");
                 
                 JoinedCircleTableViewController *joinedCircleVC = [[JoinedCircleTableViewController alloc]init];
-                joinedCircleVC.itemNum = i+2;
+                joinedCircleVC.itemNum = [MeViewModel adminCircleFromPlist].count;
                 joinedCircleVC.page = i+1;
                 joinedCircleVC.view.frame = self.contentScrollView.bounds;
                 joinedCircleVC.tableView.delegate = self;
@@ -332,7 +339,7 @@
                 NSLog(@"contentTable 2");
                 
                 TableViewController *tableViewVC = [[TableViewController alloc]init];
-                tableViewVC.itemNum = i+2;
+                tableViewVC.itemNum = [MeViewModel createCircleFromPlist].count;
                 tableViewVC.page = i+1;
                 tableViewVC.view.frame = self.contentScrollView.bounds;
                 tableViewVC.tableView.delegate = self;
@@ -611,6 +618,34 @@
         }
         
     }
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    self.meVM = [[MeViewModel alloc] init];
+    
+    
+    [User MyAdminCirlceIntroduceWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+        NSLog(@"获得加入的圈子列表");
+        [self.meVM getMyAdminCircleList:[dict valueForKey:@"Data"]];
+    } AFNErrorBlock:^(NSError *error) {
+        NSLog(@"获得失败，加入的圈子");
+    }];
+    
+    [User MyCreateCirlceIntroduceWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+        NSLog(@"获得创建的圈子列表");
+        [self.meVM getMyCreateCircleList:[dict valueForKey:@"Data"]];
+    } AFNErrorBlock:^(NSError *error) {
+        NSLog(@"获得失败，创建的圈子");
+    }];
+    
+    [User CardWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+        NSLog(@"获得收藏的Cards");
+        [self.meVM getMyCardsList:[dict valueForKey:@"Data"]];
+    } AFNErrorBlock:^(NSError *error) {
+        NSLog(@"获得失败，收藏的Cards");
+    }];
     
 }
 

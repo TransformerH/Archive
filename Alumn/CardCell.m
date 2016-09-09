@@ -36,13 +36,13 @@
     }];
     _imgView.layer.cornerRadius = 30;
     _imgView.layer.masksToBounds = YES;
-
+    
     
     //*********************** Labels
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.imgView).offset(20);
         make.top.equalTo(self.contentView).offset(40);
-       // make.size.mas_equalTo(CGSizeMake(30, 60));
+        // make.size.mas_equalTo(CGSizeMake(30, 60));
     }];
     
     [_majorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -64,7 +64,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

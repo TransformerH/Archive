@@ -11,13 +11,13 @@
 @interface Circle (Extension)
 +(Circle*) getCircle;
 //获得圈子主页列表
-+(void) getMainPageCircleWithParameters:(NSDictionary *) parm;
++(void) getMainPageCircleWithParameters:(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
 //获得圈子详情
 +(void) circleDeatilsWithParameters :(NSDictionary *) parm;
 //获得分类里的圈子列表 名字，简介，图片等
 +(void) circleIndexWithParameters :(NSDictionary *) parm;
 //获得圈子动态列表
-+(void) circeDynamicListWithParameters:(NSDictionary *)parm page:(NSNumber *) pages;;
++(void) circeDynamicListWithParameters:(NSDictionary *)parm page:(NSNumber *) pages SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
 //申请加入圈子
 +(void) joinCircleWithParameters :(NSDictionary *) parm;
 // 创建圈子

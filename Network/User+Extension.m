@@ -139,6 +139,7 @@ static User *user;
                                      
                                      [user writeToFile:fileName atomically:YES];
                                      NSLog(@"文件写入完成");
+                                     successBlock(dic,YES);
                                  }
                                  
                              }
@@ -158,24 +159,91 @@ static User *user;
 
 /* 我的 */
 
+/* 我的 */
+
 //我的页面圈子内容获取
-+(void) CirlceIntroduceWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
++(void) MyAdminCirlceIntroduceWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
 {
+    //    ******************
+    
+    
+    //    ******************
+    
+    
     NSString *myCircleURL = [[NSString alloc] initWithFormat:@"%@/get_my_filter_circle",[AFNetManager getMainURL]];
     
-    NSDictionary *requestDic = [[NSDictionary alloc] initWithObjectsAndKeys:[User getXrsf],@"_xsrf",[parm valueForKey:@"my_admin_circle"],@"myfilter_circle", nil];
+    NSLog(@"myCircleURL: %@",myCircleURL);
+    
+    NSString *circleType = [[self getUserDic] valueForKey:@"admin_circle_list"];
+    
+    NSLog(@"admin_list  %@",circleType);
+    
+    NSDictionary *requestDic = [[NSDictionary alloc] initWithObjectsAndKeys:[User getXrsf],@"_xsrf",circleType,@"my_filter_circle", nil];
+    
+    NSLog(@"传给：%@",requestDic);
+    
+    
     [[AFNetManager manager] POST:myCircleURL parameters:requestDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
-        NSLog(@"获取我的页面圈子内容成功 ：%@", dic);
-        successBlock(nil,YES);
+        NSLog(@"获取我加入的圈子内容成功 ：%@", dic);
+        successBlock(dic,YES);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"获取我的页面圈子内容失败 ：%@",error);
+        NSLog(@"获取我加入的圈子内容失败 ：%@",error);
         afnErrorblock(error);
     }];
 }
+
+
++(void) MyCreateCirlceIntroduceWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
+{
+    //    ******************
+    
+    
+    //    ******************
+    
+    
+    NSString *myCircleURL = [[NSString alloc] initWithFormat:@"%@/get_my_filter_circle",[AFNetManager getMainURL]];
+    
+    NSString *circleType = [[self getUserDic] valueForKey:@"create_circle_list"];
+    
+    NSLog(@"create_list  %@",circleType);
+    
+    NSDictionary *requestDic = [[NSDictionary alloc] initWithObjectsAndKeys:[User getXrsf],@"_xsrf",circleType,@"my_filter_circle", nil];
+    
+    NSLog(@"传给：%@",requestDic);
+    
+    
+    [[AFNetManager manager] POST:myCircleURL parameters:requestDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"获取我创建的圈子内容成功 ：%@", dic);
+        successBlock(dic,YES);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"获取我创建的圈子内容失败 ：%@",error);
+        afnErrorblock(error);
+    }];
+}
+
+
 //收藏的名片获取
 +(void) CardWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
 {
+    NSString *myCardURL = [[NSString alloc] initWithFormat:@"%@/followslist",[AFNetManager getMainURL]];
+    
+    NSString *uid = [[self getUserDic] valueForKey:@"uid"];
+    
+    NSDictionary *cardDic = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInt:30],@"count",[NSNumber numberWithInt:1],@"page",uid,@"uid", nil];
+    NSDictionary *requestDic = [[NSDictionary alloc] initWithObjectsAndKeys:[User getXrsf],@"_xsrf",[self dictionaryToJson:cardDic],@"info_json", nil];
+    
+    NSLog(@"传给For Card：%@",requestDic);
+    
+    [[AFNetManager manager] POST:myCardURL parameters:requestDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"获取我Card内容成功 ：%@", dic);
+        successBlock(dic,YES);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"获取我Card内容失败 ：%@",error);
+        afnErrorblock(error);
+    }];
     
 }
 //注销
@@ -220,5 +288,23 @@ static User *user;
     return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
 }
+
++ (NSDictionary*)getUserDic{
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *plistPath1= [paths objectAtIndex:0];
+    
+    NSLog(@"%@",plistPath1);
+    //得到完整的路径名
+    NSString *fileName = [plistPath1 stringByAppendingPathComponent:@"User.plist"];
+    
+    NSMutableDictionary *userDic = [NSMutableDictionary dictionaryWithContentsOfFile:fileName];
+    
+    
+    return [[NSDictionary alloc]initWithDictionary:userDic];
+    
+    
+}
+
 
 @end

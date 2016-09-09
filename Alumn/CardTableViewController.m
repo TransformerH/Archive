@@ -9,6 +9,7 @@
 #import "CardTableViewController.h"
 #import "MJRefresh.h"
 #import "CardCell.h"
+#import "MeViewModel.h"
 
 @interface CardTableViewController ()
 
@@ -38,13 +39,23 @@
     
     self.tableView.footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
+        
         [weakSelf delayInSeconds:1.0 block:^{
-            weakSelf.itemNum += 4;
-            [weakSelf.tableView.footer endRefreshing];
-            [weakSelf.tableView reloadData];
+            if(weakSelf.itemNum < [MeViewModel collectCardsFromPlist].count){
+                if((weakSelf.itemNum + 4) < ([MeViewModel collectCardsFromPlist].count - 2)){
+                    weakSelf.itemNum += 4;
+                }else{
+                    weakSelf.itemNum += ([MeViewModel collectCardsFromPlist].count - weakSelf.itemNum);
+                    
+                    NSLog([[NSString alloc] initWithFormat:@"现在的数字是%ld",(long)weakSelf.itemNum]);
+                }
+                [weakSelf.tableView.footer endRefreshing];
+                [weakSelf.tableView reloadData];
+            }
         }];
+        
     }];
-
+    
 }
 - (void)delayInSeconds:(CGFloat)delayInSeconds block:(dispatch_block_t) block
 {
@@ -66,69 +77,76 @@
 }
 
 - (CardCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-
+    
     
     CardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"card" forIndexPath:indexPath];
-    cell.name = @"Sheryl";
-    cell.major = @"CS";
-    cell.classNum = @"2014 4";
-    cell.job = @"Apple";
+    //    if(![[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"source_uid"] isEqualToString:[[NSString alloc] initWithFormat: @"%d",-1]]){
+    cell.name = [[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"real_name"];
+    cell.major =[[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"faculty"];
+    cell.classNum =[[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"major"];
+    cell.job = [[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"job"];
+    //    }else{
+    //        cell.name = @"系统管理员";
+    //        cell.major = @"软件学院";
+    //        cell.classNum = @"软件工程专业";
+    //        cell.job = @"student";
+    //    }
     return cell;
 }
 
 
 /*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
+ - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+ 
+ // Configure the cell...
+ 
+ return cell;
+ }
+ */
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

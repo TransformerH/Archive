@@ -9,6 +9,7 @@
 #import "Circle+Extension.h"
 #import "AFNetManager.h"
 #import "User.h"
+#import "circleDeatilVC.h"
 
 @implementation Circle (Extension)
 
@@ -23,7 +24,7 @@ static Circle *circle;
     
     return circle;
 }
-+(void) getMainPageCircleWithParameters :(NSDictionary *) parm
++(void) getMainPageCircleWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
 {
     NSString *getFirstURL = [NSString stringWithFormat:@"%@/get_my_circle",[AFNetManager getMainURL]];
     NSLog(@"User+exten: %@", [User getXrsf]);
@@ -47,7 +48,8 @@ static Circle *circle;
         if ([fm createFileAtPath:fileName contents:nil attributes:nil] ==YES) {
             
             [mainCilrcle writeToFile:fileName atomically:YES];
-            NSLog(@"文件写入完成");  
+            NSLog(@"文件写入完成");
+            successBlock(dic,YES);
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
@@ -116,13 +118,13 @@ static Circle *circle;
 }
 
 //获得圈子动态列表
-+(void) circeDynamicListWithParameters:(NSDictionary *)parm page:(NSNumber *) pages;
++(void) circeDynamicListWithParameters:(NSDictionary *)parm page:(NSNumber *) pages SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
 {
     //得到完整的路径名
 //    BOOL flag =false;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *plistPath1= [paths objectAtIndex:0];
-    NSString *plistName =[[NSString alloc] initWithFormat:@"DynamicList%@.plist",pages];
+    NSString *plistName =[[NSString alloc] initWithFormat:@"DynamicList%@_Page%@.plist",[circleDeatilVC getIDinList],pages];
     NSString *fileName = [plistPath1 stringByAppendingPathComponent:plistName];
    
     NSFileManager *fm = [NSFileManager defaultManager];
@@ -143,6 +145,7 @@ static Circle *circle;
         if ([fm createFileAtPath:fileName contents:nil attributes:nil] ==YES) {
             [list writeToFile:fileName atomically:YES];
                         NSLog(@"文件写入完成");
+            successBlock(dic,YES);
            
         }
         

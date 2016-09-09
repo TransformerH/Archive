@@ -8,7 +8,7 @@
 
 #import "createaCircleStep1VC.h"
 #import "createCircleStep2.h"
-
+static NSString *name;
 @interface createaCircleStep1VC ()
 
 @end
@@ -27,6 +27,7 @@
     _circleName.delegate=self;
     
     
+    [_circleName addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     
     [self textFieldShouldReturn:_circleName];
     _selectphoto.userInteractionEnabled =YES;
@@ -119,20 +120,25 @@
     
 }
 
+-(void)textFieldDidChange :(UITextField *)theTextField{
+    NSLog( @"text changed: %@", theTextField.text);
+    name = theTextField.text;
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    if (textField == self.circleName) {
-        if (string.length == 0) return YES;
-        
-        NSInteger existedLength = textField.text.length;
-        NSInteger selectedLength = range.length;
-        NSInteger replaceLength = string.length;
-        if (existedLength - selectedLength + replaceLength > 20) {
-            return NO;
-        }
-    }
+//    if (textField == self.circleName)
+//        if (string.length == 0) return YES;
+//        
+//        NSInteger existedLength = textField.text.length;
+//        NSInteger selectedLength = range.length;
+//        NSInteger replaceLength = string.length;
+//        if (existedLength - selectedLength + replaceLength > 80) {
+//            return NO;
+//        }
+//    }
     
     return YES;
 }
@@ -154,6 +160,9 @@
 - (IBAction)nextStep:(id)sender {
     createCircleStep2 *vc = [[createCircleStep2 alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
+    vc.circleName = name;
+    vc.image=self.mainImage.image;
+    NSLog(@"%@",name);
     
 }
 

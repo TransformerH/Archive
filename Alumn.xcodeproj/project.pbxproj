@@ -145,6 +145,7 @@
 		129B658B1D79991F00C3D004 /* ShowImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B65861D79991F00C3D004 /* ShowImageViewController.m */; };
 		129B658C1D79991F00C3D004 /* ReportStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B65881D79991F00C3D004 /* ReportStateViewController.m */; };
 		129B658D1D79991F00C3D004 /* CircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B658A1D79991F00C3D004 /* CircleViewController.m */; };
+		129E24E21D824576008488FC /* MeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 129E24E11D824576008488FC /* MeViewModel.m */; };
 		12BC79621D76CECF00711333 /* MyAltview.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC79611D76CECF00711333 /* MyAltview.m */; };
 		12BC79661D76D10000711333 /* MyAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC79641D76D10000711333 /* MyAlertVC.m */; };
 		12BC79691D76DC0A00711333 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BC79681D76DC0A00711333 /* line.png */; };
@@ -444,6 +445,8 @@
 		129B65881D79991F00C3D004 /* ReportStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportStateViewController.m; sourceTree = "<group>"; };
 		129B65891D79991F00C3D004 /* CircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleViewController.h; sourceTree = "<group>"; };
 		129B658A1D79991F00C3D004 /* CircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleViewController.m; sourceTree = "<group>"; };
+		129E24E11D824576008488FC /* MeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewModel.m; sourceTree = "<group>"; };
+		129E24E31D82457B008488FC /* MeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeViewModel.h; sourceTree = "<group>"; };
 		12BC79601D76CECF00711333 /* MyAltview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAltview.h; sourceTree = "<group>"; };
 		12BC79611D76CECF00711333 /* MyAltview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAltview.m; sourceTree = "<group>"; };
 		12BC79631D76D10000711333 /* MyAlertVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAlertVC.h; sourceTree = "<group>"; };
@@ -931,6 +934,15 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		129E24E01D82455A008488FC /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				129E24E11D824576008488FC /* MeViewModel.m */,
+				129E24E31D82457B008488FC /* MeViewModel.h */,
+			);
+			name = viewModel;
+			sourceTree = "<group>";
+		};
 		12BF628B1D6D22C80083ECD5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1171,6 +1183,7 @@
 		7AB0F9FD1D644DD10098CEDF /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				129E24E01D82455A008488FC /* viewModel */,
 				121947391D71673D002F8287 /* Cell */,
 				121947351D7166CE002F8287 /* Controller */,
 			);
@@ -1269,6 +1282,7 @@
 				TargetAttributes = {
 					7AB0F9D31D644B510098CEDF = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 74ZXL5YH3Z;
 					};
 					7AB0F9EC1D644B510098CEDF = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1424,6 +1438,7 @@
 				121947741D7168BE002F8287 /* MJRefreshBackFooter.m in Sources */,
 				12D89DFB1D81463A00CFDBBA /* createCircleStep2.m in Sources */,
 				123D7E871D758CC8008B0DF9 /* PeopleListVC.m in Sources */,
+				129E24E21D824576008488FC /* MeViewModel.m in Sources */,
 				12BC79621D76CECF00711333 /* MyAltview.m in Sources */,
 				121BE6291D6C52530072705F /* TabBarController.m in Sources */,
 				123F26341D74195300B619DF /* LfDeleteVC.m in Sources */,
@@ -1678,6 +1693,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1687,6 +1704,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alumna.Alumn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Alumn/Alumn-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1698,6 +1716,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1707,6 +1727,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alumna.Alumn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Alumn/Alumn-Bridging-Header.h";
 			};
 			name = Release;

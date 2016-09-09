@@ -35,10 +35,10 @@
 
     
 }
-- (IBAction)click:(id)sender {
-    [Circle getMainPageCircleWithParameters:nil];
-
-}
+//- (IBAction)click:(id)sender {
+//    [Circle getMainPageCircleWithParameters:nil];
+//
+//}
 
 - (IBAction)button2:(id)sender {
         NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:@"57bdcad0d0146385e6abb6be",@"t_cat_id",@"5",@"count",@"1",@"page", nil];

@@ -25,7 +25,7 @@
 #import "NameAndPicVC.h"
 #import "UIViewController+PortalTransition.h"
 #import "CYViewControllerTransitioningDelegate.h"
-
+#import "SecondViewController.h"
 
 
 #define floatSize 120
@@ -128,6 +128,7 @@
       //[self.navigationController popToRootViewControllerAnimated:YES];
     //[self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
+    [SecondViewController setPage:1];
 
     
 }
@@ -221,10 +222,7 @@
     [self.ExitButton setHidden:false];
 }
 
-- (IBAction)backButtonClicked:(id)sender {
-    //[self.navigationController popViewControllerAnimated:YES];
-    [self.button setHidden:false];
-}
+
 - (IBAction)settingButoonClicked:(id)sender {
     [self.button setHidden: true];
     circleSettingVC *viewVC = [[circleSettingVC alloc]init];
@@ -265,5 +263,15 @@
     
 }
 
++(NSString *) getIDinList
+{
+    extern NSString *IDinList;
+    return IDinList;
+    
+}
++(void) setIDinList :(NSString *) str
+{
+    IDinList = str;
+}
 
 @end

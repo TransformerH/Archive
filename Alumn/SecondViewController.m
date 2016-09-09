@@ -18,8 +18,10 @@
 #import "Circle.h"
 #import "Circle+Extension.h"
 #import "createaCircleStep1VC.h"
+#import   "UIImageView+WebCache.h"
+#import "circleDeatilVC.h"
 #define UISCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
-
+BOOL flag=false;
 NS_ENUM(NSInteger,CellState){
   
   //右上角编辑按钮的两种状态；
@@ -52,9 +54,10 @@ NS_ENUM(NSInteger,CellState){
 @implementation SecondViewController
 
 - (void)viewDidLoad {
+   
 
   [super viewDidLoad];
-  //进行CollectionView和Cell的绑定
+
   [self.collectionView registerClass:[CollectionViewCell class]  forCellWithReuseIdentifier:@"CollectionCell"];
   self.collectionView.backgroundColor = [UIColor colorWithRed:242.0f/255.0f green:242.0f/255.0f blue:248.0f/255.0f alpha:0.5];//背景透明
   //加入头部视图；
@@ -71,6 +74,7 @@ NS_ENUM(NSInteger,CellState){
   longPress.minimumPressDuration = 1.0;
   //将长按手势添加到需要实现长按操作的视图里
   [self.collectionView addGestureRecognizer:longPress];
+
 }
 
 
@@ -90,8 +94,9 @@ NS_ENUM(NSInteger,CellState){
   //找到Section中的cell数组中某个具体的cell；
   CellModel *cel = [sec.cellArray objectAtIndex:indexPath.row];
   //取出数据；
-  cell.imageView.image = [UIImage imageNamed:cel.cellImage];
-  cell.descLabel.text = cel.cellDesc;
+ // cell.imageView.image = [UIImage imageNamed:cel.cellImage];
+  [cell.imageView sd_setImageWithURL:[NSURL URLWithString:cel.cellImage] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    cell.descLabel.text = cel.cellDesc;
   //设置删除按钮
   // 点击编辑按钮触发事件
   if(CellState == NormalState){
@@ -173,10 +178,10 @@ NS_ENUM(NSInteger,CellState){
 //          CellModel *cellModel = [[CellModel alloc] init];
           NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
           NSString *plistPath1= [paths objectAtIndex:0];
-          NSString *plistName =[[NSString alloc] initWithFormat:@"MainPageCircle.plist"];
+          NSString *plistName =[[NSString alloc] initWithFormat:@"MainPageCircle1.plist"];
           NSString *fileName = [plistPath1 stringByAppendingPathComponent:plistName];
           NSArray *dictArray = [NSArray arrayWithContentsOfFile:fileName];
-          NSMutableArray *models = [NSMutableArray arrayWithCapacity:[dictArray count]];
+//          NSMutableArray *models = [NSMutableArray arrayWithCapacity:[dictArray count]];
           for (NSDictionary *dict in dictArray) {
               CellModel *mod = [CellModel modelWithDict:dict];
               NSLog(@"%@",dict);
@@ -249,21 +254,27 @@ NS_ENUM(NSInteger,CellState){
   }else{
     NSLog(@"第%ld个section,点击图片%ld",indexPath.section,indexPath.row);
       //在storyborad中使用push方法不拖线跳转
-          int page =1;
-          NSNumber *i=[[NSNumber alloc]initWithInt:page];
-          NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:@"57c69d68d36ef3151eb80bac",@"topic_id",@"4",@"count",i,@"page",@"0",@"order", nil];
+      CellModel *getcell= self.dataCellArray[indexPath.row];
+      NSLog(@"adsadasfasfasf xcvadvlpaksvpk%@",getcell.ID);
+      [circleDeatilVC setIDinList:getcell.ID];
+          NSNumber *i=[[NSNumber alloc]initWithInt:[SecondViewController getPage]];
+          NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:getcell.ID,@"topic_id",@"4",@"count",i,@"page",@"0",@"order", nil];
           NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [self dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
           NSLog (@"%@",postdic);
-          [Circle circeDynamicListWithParameters:postdic page:i];
-          page++;
-      UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-      UIViewController *VC = [sb instantiateViewControllerWithIdentifier:@"circleDeatil"];
-      VC.modalPresentationStyle = UIModalPresentationCustom;
-      self.viewControllerTransitionDelegate.viewController = VC;
-      //[self presentViewController:newVC animated:YES completion:nil];
-      //Or you can call this catogory method
-      [self presentPortalTransitionViewController:VC completion:nil];
-      //[self.navigationController pushViewController:VC animated:YES];
+          [Circle circeDynamicListWithParameters:postdic page:i SuccessBlock:^(NSDictionary *dict, BOOL success) {
+              UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+              UIViewController *VC = [sb instantiateViewControllerWithIdentifier:@"circleDeatil"];
+              VC.modalPresentationStyle = UIModalPresentationCustom;
+              self.viewControllerTransitionDelegate.viewController = VC;
+              //[self presentViewController:newVC animated:YES completion:nil];
+              //Or you can call this catogory method
+              [self presentPortalTransitionViewController:VC completion:nil];
+              //[self.navigationController pushViewController:VC animated:YES];
+          } AFNErrorBlock:^(NSError *error) {
+              NSLog(@"%@",error);
+          }];
+      //[SecondViewController setPageAdd1];
+      
   }
 }
 
@@ -454,6 +465,21 @@ NS_ENUM(NSInteger,CellState){
     
     return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
+}
+
++(int) getPage
+{
+    extern int page;
+    return page;
+}
++(void) setPage: (int)num
+{
+    page = num;
+}
+
++(void) setPageAdd1
+{
+    page++;
 }
 
 @end

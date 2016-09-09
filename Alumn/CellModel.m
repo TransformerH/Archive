@@ -16,6 +16,8 @@
         //        [self setValuesForKeysWithDictionary:dict];
         self.ID = [dict objectForKey:@"id"];
         self.cellDesc = [dict objectForKey:@"name"];
+        self.cellImage = [dict objectForKey:@"image_urls"];
+        
     }
     return self;
 }

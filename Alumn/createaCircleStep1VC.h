@@ -14,6 +14,7 @@
 @property (strong, nonatomic) UIActionSheet *actionSheet;
 @property (weak, nonatomic) IBOutlet UIImageView *mainImage;
 @property (weak, nonatomic) IBOutlet UITextField *circleName;
+@property (weak, nonatomic) IBOutlet UITextField *circleNameField;
 
 @end
 

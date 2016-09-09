@@ -110,7 +110,7 @@
                                              self.textView.frame.size.width, self.textView.frame.size.height / 2);
         } completion:^(BOOL finished) {
             NSRange bottom = NSMakeRange(self.textView.text.length -1, 1);
-            [self.textView scrollRangeToVisible:bottom];
+        [self.textView scrollRangeToVisible:bottom];
         }];
         
         [UIView animateWithDuration:0.5 animations:^{

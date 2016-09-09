@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIDragButton.h"
-
+static NSString *IDinList;
 @interface circleDeatilVC : UIViewController
 //@property (weak, nonatomic) IBOutlet UIDragButton *setButton;
 @property (weak, nonatomic) IBOutlet UIImageView *ciecleDeatilMask2;
@@ -28,4 +28,7 @@
 @property(strong,nonatomic)UIDragButton *button;
 
 -(void)hidden:(UIButton *) mybutton;
+
++(NSString *) getIDinList;
++(void) setIDinList :(NSString *) str;
 @end

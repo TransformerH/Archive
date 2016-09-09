@@ -10,9 +10,10 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "LoginViewModel.h"
 #import "RegisterFirstViewController.h"
+#import "Circle+Extension.h"
 
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;
 @property (weak, nonatomic) IBOutlet UIImageView *userLogoView;
 @property (weak, nonatomic) IBOutlet UIImageView *userLineView;
@@ -58,7 +59,22 @@
     
     [self bindVM];
     
+    self.view.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fingerTapped:)];
+    [self.view addGestureRecognizer:singleTap];
+    
 }
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)fingerTapped:(UITapGestureRecognizer*)gestureRecognizer{
+    [self.view endEditing:YES];
+}
+
 
 - (void)bindVM{
     RAC(self.loginVM.user,phone) = self.telephoneTextField.rac_textSignal;
@@ -67,14 +83,19 @@
     RAC(self.loginBtn,enabled) = self.loginVM.loginEnableSignal;
     [[self.loginBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         [self.loginVM.loginCommand execute:nil];
-           }];
+    }];
     
     [self.loginVM.loginCommand.executionSignals.switchToLatest subscribeNext:^(NSString *result) {
         if([result isEqualToString:@"success"]){
+            BOOL flag =false;
+            
+            
+           
             NSLog(@"跳转到登录成功界面");
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UIViewController *VC = [sb instantiateViewControllerWithIdentifier:@"FiveTab"];
             [self.navigationController pushViewController:VC animated:YES];
+            
             
         }else{
             NSLog(@"登录失败");
