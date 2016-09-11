@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *back;
 @property (strong ,nonatomic) MyAltview *alt;
 @property (strong,nonatomic) UIView *darkview;
+@property (strong ,nonatomic) NSString *ID;
 
 +(void) animationAlert:(UIView *)view;
 

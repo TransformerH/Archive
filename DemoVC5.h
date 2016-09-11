@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-
+static NSMutableDictionary *currentCell;
 @interface DemoVC5 : UITableViewController
 @property (weak,nonatomic) NSString* IDINlIST;
++(NSDictionary *)getCurrentCell;
++(void) setCurrentCellLike:(NSString *)str;
+
 @end

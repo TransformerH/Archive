@@ -15,7 +15,15 @@
         //        [self setValuesForKeysWithDictionary:dict];
         self.ID = [dict objectForKey:@"id"];
         self.cellDesc = [dict objectForKey:@"name"];
+        self.cellImage = [dict objectForKey:@"icon_url"];
         //self.cellImage = [dict objectForKey:@"image_urls"];
+        NSDictionary *stat= [dict objectForKey:@"custom"];
+        self.creator = [stat objectForKey:@"creator_name"];
+        self.content = [dict objectForKey:@"description"];
+        self.virtual_cid =  [stat objectForKey:@"virtual_cid"];
+        self.creator_id = [stat objectForKey:@"creator_uid"];
+        
+        
         
     }
     return self;

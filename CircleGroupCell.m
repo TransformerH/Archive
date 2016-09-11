@@ -9,6 +9,7 @@
 
 #import "CircleGroupCell.h"
 #import "HeaderContent.h"
+#import   "UIImageView+WebCache.h"
 #define nameFont [UIFont systemFontOfSize:12]
 #define textFont [UIFont systemFontOfSize:13]
 #define timeFont [UIFont systemFontOfSize:10]
@@ -110,7 +111,7 @@
     CircleGroup *circleGroup = self.circleGroupFrame.circleGroup;
     
     //创建头像
-    self.iconView.image = [UIImage imageNamed:circleGroup.icon];
+    [self.iconView  sd_setImageWithURL:[NSURL URLWithString:circleGroup.icon] placeholderImage:[UIImage imageNamed:@"10.jpg"]];
     
     //创建昵称
     self.nameLabel.text = circleGroup.name;
@@ -131,7 +132,8 @@
         pictureView.userInteractionEnabled = YES;
         [self.contentView addSubview:pictureView];
         [self.picturesView addObject:pictureView];
-        ((UIImageView *)[self.picturesView objectAtIndex:i]).image = [UIImage imageNamed:[circleGroup.pictures objectAtIndex:i]];
+//        ((UIImageView *)[self.picturesView objectAtIndex:i]).image = [UIImage imageNamed:[circleGroup.pictures objectAtIndex:i]];
+         [((UIImageView *)[self.picturesView objectAtIndex:i]) sd_setImageWithURL:[NSURL URLWithString:[circleGroup.pictures objectAtIndex:i]] placeholderImage:[UIImage imageNamed:@"10.jpg"]];
     }
 
 
@@ -139,7 +141,7 @@
     
     //时间戳
     self.timeLabel.text = circleGroup.time;
-    
+    NSLog(@"PLLLLLLL%@",[circleGroup.replys objectAtIndex:1]);
     //创建评论
     for (int i = 0; i < [circleGroup.replys count]; i++) {
         UILabel *replyLabel = [[UILabel alloc]init];
@@ -147,7 +149,7 @@
         replyLabel.numberOfLines = 0;
         
         NSString *searchText = [circleGroup.replys objectAtIndex:i];
-        //NSString *searchText = @"浮夸：哈哈";
+        //NSString *searchText = @"浮夸：哈哈dasdksajdk";
         //把评论的姓名变色，用正则表达式
         NSRange range = [searchText rangeOfString:@"([\u4e00-\u9fa5]|[a-zA-Z0-9])+：" options:NSRegularExpressionSearch];
         if (range.location != NSNotFound) {

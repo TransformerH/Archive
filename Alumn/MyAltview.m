@@ -10,7 +10,10 @@
 #import "UIView+SDAutoLayout.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Circle_FindVC.h"
-
+#import   "UIImageView+WebCache.h"
+#import "JIONVC.h"
+#import "User.h"
+#import "Circle+Extension.h"
 #define floatSize 300
 
 // 屏幕高度
@@ -26,8 +29,12 @@
 @synthesize deleta;
 
 
--(void)CreatAlt:(UIImage*)backimg circleName:(NSString *) Name altTitle:(NSString *)Title Content:(NSString *)content altButton:(NSArray *)altbtnArray altbtnTcolor:(UIColor *)color altselectbtnTcolor:(UIColor *)selectcolor
+-(void)CreatAlt:(UIImage*)backimg circleName:(NSString *) Name altTitle:(NSString *)Title  Content:(NSString *)content altButton:(NSArray *)altbtnArray altbtnTcolor:(UIColor *)color altselectbtnTcolor:(UIColor *)selectcolor icon:(NSString *)icon_urls creator_id:(NSString *)creatorID circle_ID:(NSString *)circleID
 {
+    self.circleName =Name;
+    self.circlrurl=icon_urls;
+    self.creatorid=creatorID;
+    self.circleid=creatorID;
     
 
     
@@ -44,7 +51,7 @@
     
     
     UIImageView *CirclePic =[UIImageView new];
-    [CirclePic setImage:[UIImage imageNamed:@"7"]];
+    [CirclePic  sd_setImageWithURL:[NSURL URLWithString:icon_urls] placeholderImage:[UIImage imageNamed:@"7"]];
     CirclePic.sd_layout
     .heightIs(view.height/1.6)
     .widthIs(altwidth)
@@ -67,7 +74,8 @@
     
     
     UIImageView *Ximg=[UIImageView new];
-    [Ximg setImage:[UIImage imageNamed:@"7"]];
+    //[Ximg setImage:[UIImage imageNamed:@"7"]];
+    [Ximg sd_setImageWithURL:[NSURL URLWithString:icon_urls] placeholderImage:[UIImage imageNamed:@"7"]];
     [Ximg setUserInteractionEnabled:YES];
     //UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     //[Ximg addGestureRecognizer:singleTap];
@@ -92,11 +100,11 @@
     circleName.text=_name;
     [circleName setLineBreakMode: UILineBreakModeWordWrap];
     //CGSize size1 = [_name sizeWithFont:[UIFont systemFontOfSize:29.0f] constrainedToSize:CGSizeMake(MAXFLOAT, circleName.frame.size.height)];
-    CGSize size1 = [_name  sizeWithFont:[UIFont systemFontOfSize:29.0f] constrainedToSize:CGSizeMake(altwidth-20, 700.0f) lineBreakMode:NSLineBreakByCharWrapping ];
+    CGSize size1 = [_name  sizeWithFont:[UIFont systemFontOfSize:20.0f] constrainedToSize:CGSizeMake(altwidth-20, 700.0f) lineBreakMode:NSLineBreakByCharWrapping ];
     [circleName setNumberOfLines:0];
     [circleName setTextAlignment:NSTextAlignmentCenter];
-    [circleName setFont:[UIFont systemFontOfSize:29]];
-    [circleName setTextColor:[UIColor  redColor]];
+    [circleName setFont:[UIFont systemFontOfSize:20]];
+    [circleName setTextColor:[UIColor  blackColor]];
     [circleName setBackgroundColor:[UIColor clearColor]];
     circleName.sd_layout
     .widthIs(size1.width)
@@ -116,7 +124,7 @@
     [alttitle setNumberOfLines:1];
     [alttitle setTextAlignment:NSTextAlignmentCenter];
     [alttitle setFont:[UIFont systemFontOfSize:14]];
-    [alttitle setTextColor:[UIColor  redColor]];
+    [alttitle setTextColor:[UIColor  blackColor]];
     [alttitle setBackgroundColor:[UIColor clearColor]];
     [view addSubview:alttitle];
     alttitle.sd_layout
@@ -160,6 +168,7 @@
     .heightIs((int)size.height+5)
     .topSpaceToView(line ,5)
     .centerXEqualToView(alttitle);
+    [altcontent setTextAlignment:NSTextAlignmentCenter];
     altcontent.numberOfLines = (int)size.height/20+1;
     altheight=255+altcontent.frame.size.height+circleName.frame.size.height;
     [view addSubview:altcontent];
@@ -268,6 +277,26 @@
 {
     NSLog(@"dadasdadaddafaknlnlknlfgacza");
     //    [self hide];
+//    JIONVC *vc = [[JIONVC alloc]init];
+//    [vc.view setFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height)];
+//    self.userInteractionEnabled=false;
+//    [self.view addSubview:vc.view];
+    NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:[User getXrsf],@"_xsrf",
+                             self.circleName,@"circle_name",
+                             self.circleid,@"circle_id",
+                             self.circlrurl,@"circle_url",
+                             @"",@"reason",
+                             self.creatorid,@"creator_id",
+                              nil];
+    [Circle joinCircleWithParameters:userInfo SuccessBlock:^(NSDictionary *dict, BOOL success) {
+        [self hide];
+    } AFNErrorBlock:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    
+   
+    
+    
 }
 -(void)show
 {

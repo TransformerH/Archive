@@ -27,6 +27,8 @@
 
 #import "SecondViewController.h"
 
+#import "Circle+Extension.h"
+
 
 @interface DemoVC5 ()
 
@@ -91,7 +93,7 @@
     NSString *fileName = [plistPath1 stringByAppendingPathComponent:plistName];
     NSArray *dictArray = [NSArray arrayWithContentsOfFile:fileName];
     for (NSDictionary *dict in dictArray) {
-        DemoVC5Model *mod = [DemoVC5Model modelWithDict:dict];
+        DemoVC5Model *mod = [DemoVC5Model modelWithDict:dict page:pages ID:[circleDeatilVC getIDinList]];
         [self.modelsArray  addObject:mod];
     }
     extern int pageoflist;
@@ -131,13 +133,49 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //该方法响应列表中行的点击事件
-    NSLog(@"waht the Fuck");
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-   CircleViewController *VC = [sb instantiateViewControllerWithIdentifier:@"jump"];
-    [self showViewController:VC sender:nil];
-  
+     DemoVC5CellTableViewCell *cell = [[DemoVC5CellTableViewCell alloc]init];
+    
+    cell.model = self.modelsArray[indexPath.row];
+    NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:[User getXrsf],@"_xsrf",
+                             cell.model.feed_id,@"feed_id",@"1",@"page",@"999",@"count",nil];
+    
+    [Circle getCommentWithParameters:userInfo SuccessBlock:^(NSDictionary *dict, BOOL success) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        CircleViewController *VC = [sb instantiateViewControllerWithIdentifier:@"jump"];
+        NSLog(@"cell.model.name%@",cell.model.name);
+        currentCell = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                       cell.model.name,@"name",
+                       cell.model.content,@"content",
+                       cell.model.icon_url ,@"icon_url",
+                       cell.model.create_time,@"create_time",
+                       cell.model.image_urls,@"img_urls",
+                       cell.model.feed_id,@"feed_id",
+                       cell.model.liked_num,@"liked_num",
+                       cell.model.liked,@"liked",
+                       cell.model.Atpage,@"page",
+                       cell.model.ID,@"ID",
+                       
+                       nil];
+        [self showViewController:VC sender:nil];
+        
+    } AFNErrorBlock:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    
+    
+}
++(NSDictionary *)getCurrentCell
+{
+    //extern NSDictionary *currentCell;
+    return currentCell;
 }
 
++(void) setCurrentCellLike:(NSString *)str 
+{
+    [currentCell setObject:str forKey:@"liked"];
+    //[currentCell setObject:num forKey:@"liked_num"];
+    NSLog(@"hghjghjghjghjg$$$$%@",[currentCell objectForKey:@"liked"]);
+}
 
 
 

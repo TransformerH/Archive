@@ -15,6 +15,7 @@
 #import "Cell_FModel.h"
 #import "UIView+SDAutoLayout.h"
 #import "MyAlertVC.h"
+#import   "UIImageView+WebCache.h"
 
 #define UISCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 
@@ -67,7 +68,7 @@
     //找到Section中的cell数组中某个具体的cell；
     Cell_FModel *cel = [sec.cellArray objectAtIndex:indexPath.row];
     //取出数据；
-    cell.imageView.image = [UIImage imageNamed:cel.cellImage];
+   [cell.imageView sd_setImageWithURL:[NSURL URLWithString:cel.cellImage] placeholderImage:[UIImage imageNamed:@"10.jpg"]];
     cell.descLabel.text = cel.cellDesc;
     
     return cell;
@@ -124,7 +125,7 @@
             _dataCellArray = [[NSMutableArray alloc] initWithCapacity:999];//2个；
             NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
             NSString *plistPath1= [paths objectAtIndex:0];
-            NSString *plistName =[[NSString alloc] initWithFormat:@"TYPE.plist"];
+            NSString *plistName =[[NSString alloc] initWithFormat:@"TYPE_%@.plist",self.ID];
             NSString *fileName = [plistPath1 stringByAppendingPathComponent:plistName];
             NSArray *dictArray = [NSArray arrayWithContentsOfFile:fileName];
             //          NSMutableArray *models = [NSMutableArray arrayWithCapacity:[dictArray count]];
@@ -169,7 +170,9 @@
         [self.view addSubview:_darkview];
         self.alt = [MyAltview new];
         self.alt.altwidth=280;
-        [_alt CreatAlt:nil circleName:@"XXXXXppppppXXXXXXXXXXX" altTitle:@"XXXXXXXX" Content:@"asd阿速度发送地方fa阿vjasdasdsdsadasdasffsavavsfasfasfasfasfsafsafasfasfasfasfasfsafasfasfsafsafasfasfasfasfasfsafasfasfsafsafasfasfasfafasfsafas小大三大" altButton:nil altbtnTcolor:[UIColor redColor] altselectbtnTcolor:[UIColor whiteColor] ];
+      Cell_FModel *getcell= self.dataCellArray[indexPath.row];
+    NSString *contentWithBlanck = [[NSString alloc] initWithFormat:@"%@,%@",getcell.content,@"\n"];
+    [_alt CreatAlt:nil circleName:getcell.cellDesc altTitle:getcell.creator Content:contentWithBlanck altButton:nil altbtnTcolor:[UIColor blackColor] altselectbtnTcolor:[UIColor whiteColor] icon:getcell.cellImage creator_id:getcell.creator_id circle_ID:getcell.ID  ];
         _alt.sd_layout
         .centerYEqualToView(self.view)
         .centerXEqualToView(self.view);

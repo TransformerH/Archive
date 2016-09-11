@@ -81,10 +81,10 @@
     
     CardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"card" forIndexPath:indexPath];
     //    if(![[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"source_uid"] isEqualToString:[[NSString alloc] initWithFormat: @"%d",-1]]){
-    cell.name = [[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"real_name"];
-    cell.major =[[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"faculty"];
-    cell.classNum =[[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"major"];
-    cell.job = [[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"job"];
+    cell.name = [[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"name"];
+    cell.major =[[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"fa"];
+    cell.classNum =[[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"ma"];
+    cell.job = [[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"jo"];
     //    }else{
     //        cell.name = @"系统管理员";
     //        cell.major = @"软件学院";

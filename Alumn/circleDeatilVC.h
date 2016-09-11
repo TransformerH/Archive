@@ -30,6 +30,7 @@ static NSString *IDinList;
 @property (weak, nonatomic) NSString *backgroundUrl;
 @property (weak , nonatomic) NSString *number;
 @property (weak , nonatomic)NSString *circleNameStr;
+@property (weak , nonatomic) NSNumber *page;
 
 -(void)hidden:(UIButton *) mybutton;
 

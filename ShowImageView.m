@@ -9,6 +9,7 @@
 
 #import "ShowImageView.h"
 #import "HeaderContent.h"
+#import   "UIImageView+WebCache.h"
 @interface ShowImageView()<UIScrollViewDelegate>
 @property (nonatomic,assign)CGRect self_frame;
 @property (nonatomic,weak)UIScrollView *scrollView;
@@ -91,9 +92,7 @@
         imageScrollView.minimumZoomScale = 1;
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        //NSLog(@"%f,%f,%f,%f",self.bounds.origin.x,self.bounds.origin.y,self.bounds.size.width,self.bounds.size.height);
-        UIImage *img = [UIImage imageNamed:[appendArray objectAtIndex:i]];
-        imageView.image = img;
+        [imageView  sd_setImageWithURL:[NSURL URLWithString:[appendArray objectAtIndex:i]]];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         _imageScrollView =imageScrollView;
         [imageScrollView addSubview:imageView];

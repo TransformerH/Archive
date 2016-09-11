@@ -95,7 +95,7 @@ NS_ENUM(NSInteger,CellState){
   CellModel *cel = [sec.cellArray objectAtIndex:indexPath.row];
   //取出数据；
  // cell.imageView.image = [UIImage imageNamed:cel.cellImage];
-  [cell.imageView sd_setImageWithURL:[NSURL URLWithString:cel.cellImage] placeholderImage:[UIImage imageNamed:@"10.jpg"]];
+  [cell.imageView sd_setImageWithURL:[NSURL URLWithString:cel.cellImage] placeholderImage:[UIImage imageNamed:@"创建圈子.png"]];
     cell.descLabel.text = cel.cellDesc;
   //设置删除按钮
   // 点击编辑按钮触发事件
@@ -182,17 +182,18 @@ NS_ENUM(NSInteger,CellState){
           NSString *fileName = [plistPath1 stringByAppendingPathComponent:plistName];
           NSArray *dictArray = [NSArray arrayWithContentsOfFile:fileName];
 //          NSMutableArray *models = [NSMutableArray arrayWithCapacity:[dictArray count]];
-          for (NSDictionary *dict in dictArray) {
+        if (dictArray.count!=0)
+        { for (NSDictionary *dict in dictArray) {
               CellModel *mod = [CellModel modelWithDict:dict];
               NSLog(@"%@",dict);
                 [ _dataCellArray  addObject:mod];
-          }
+        }}
 
         //添加到cell数组中；
         //[_dataCellArray addObject:cellModel];
       //}//for;
       //初始化section；
-        NSDictionary *finally =[[NSDictionary alloc] initWithObjectsAndKeys:@"添加",@"name",@"add",@"ID",nil];
+        NSDictionary *finally =[[NSDictionary alloc] initWithObjectsAndKeys:@"添加",@"name",@"add",@"ID",@"创建圈子.png",@"icon_url",nil];
         CellModel *finallyCell = [CellModel modelWithDict:finally];
         [_dataCellArray addObject:finallyCell];
         
@@ -241,16 +242,16 @@ NS_ENUM(NSInteger,CellState){
     NSLog(@"点击最后一个cell，执行添加操作");
       createaCircleStep1VC *create = [[createaCircleStep1VC alloc]init];
       [self.navigationController pushViewController:create animated:YES];
-    //初始化一个新的cell模型；
-    CellModel *cel = [[CellModel alloc] init];
-    cel.cellImage = @"1";
-    cel.cellDesc = @"再来一个";
-    //获取当前的cell数组；
-    self.dataCellArray = sec.cellArray;
-    //把新创建的cell插入到最后一个之前；
-    [self.dataCellArray insertObject:cel atIndex:self.dataCellArray.count - 1];
-    //更新UI；
-    [self.collectionView reloadData];
+//    //初始化一个新的cell模型；
+//    CellModel *cel = [[CellModel alloc] init];
+//    cel.cellImage = @"1";
+//    cel.cellDesc = @"再来一个";
+//    //获取当前的cell数组；
+//    self.dataCellArray = sec.cellArray;
+//    //把新创建的cell插入到最后一个之前；
+//    [self.dataCellArray insertObject:cel atIndex:self.dataCellArray.count - 1];
+//    //更新UI；
+//    [self.collectionView reloadData];
   }else{
     NSLog(@"第%ld个section,点击图片%ld",indexPath.section,indexPath.row);
       //在storyborad中使用push方法不拖线跳转

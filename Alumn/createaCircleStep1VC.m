@@ -158,11 +158,17 @@ static NSString *name;
  }
  */
 - (IBAction)nextStep:(id)sender {
+    if(name.length!=0)
+    {
     createCircleStep2 *vc = [[createCircleStep2 alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     vc.circleName = name;
     vc.image=self.mainImage.image;
-    NSLog(@"%@",name);
+        NSLog(@"%@",name);}
+    else{
+         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请输入圈子名称" message:@"请输入不为空的圈子名称" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+        [alert show];
+    }
     
 }
 

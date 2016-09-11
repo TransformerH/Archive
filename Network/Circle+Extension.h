@@ -19,14 +19,18 @@
 //获得圈子动态列表
 +(void) circeDynamicListWithParameters:(NSDictionary *)parm page:(NSNumber *) pages SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
 //申请加入圈子
-+(void) joinCircleWithParameters :(NSDictionary *) parm;
-// 创建圈子
-+(void) createCircleFirstWithParameters :(NSDictionary *) parm;
-+(void) createCircleSecondWithParameters :(NSDictionary *) parm;
++(void) joinCircleWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
+;
+
 //获得某个类型的圈子列表
-+(void) getTypetopicWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
-+(void) uploadPicture:(UIImage *)image;
++(void) getTypetopicWithParameters :(NSDictionary *) parm ID:(NSString *)Type_id SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
++(void) uploadPicture:(UIImage *)image method:(NSString *) method SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
 
 +(void) createCircleWithParamenters :(NSDictionary *) parm;
-
+//获取评论列表
++(void) getCommentWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
+// 发布评论
++(void) pubcommentWithParameters :(NSDictionary * ) parm;
+//点赞
++(void) greatWithParameters :(NSDictionary *) parm;
 @end

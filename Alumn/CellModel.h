@@ -16,6 +16,7 @@
 @property(nonatomic,strong) NSString *cellDesc;
 @property(nonatomic,strong) NSString *ID;
 @property (nonatomic,strong) NSString *numbers;
+@property (nonatomic,strong) NSNumber *Atpage;
 
 +(id)modelWithDict:(NSDictionary *)dict;
 

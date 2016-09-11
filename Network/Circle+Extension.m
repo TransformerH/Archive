@@ -67,22 +67,28 @@ static Circle *circle;
     
 }
 //申请加入圈子
-+(void) joinCircleWithParameters :(NSDictionary *) parm
++(void) joinCircleWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
+
 {
-    
-}
-// 创建圈子
-+(void) createCircleFirstWithParameters :(NSDictionary *) parm
-{
-    
-}
-+(void) createCircleSecondWithParameters :(NSDictionary *) parm
-{
-    
+    NSString *getFirstURL = [NSString stringWithFormat:@"%@/apply_circle",[AFNetManager getMainURL]];
+    [[AFNetManager manager] POST:getFirstURL parameters:parm progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
+        
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        //NSLog(@"circle deatil: %@", responseObject);
+        NSLog(@"circle deatil: %@", dic);
+        successBlock(dic,YES);
+        
+    }
+                         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
+                             
+                             NSLog(@"getxsrf failure");
+                             
+                         }];
 }
 
+
 //获得某个类型的圈子列表
-+(void) getTypetopicWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
++(void) getTypetopicWithParameters :(NSDictionary *) parm ID:(NSString *)Type_id SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
 {
       NSString *getFirstURL = [NSString stringWithFormat:@"%@/gettypetopic",[AFNetManager getMainURL]];
     [[AFNetManager manager] POST:getFirstURL parameters:parm progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
@@ -91,10 +97,8 @@ static Circle *circle;
         NSLog(@"User+exten: %@", dic);
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *plistPath1= [paths objectAtIndex:0];
-        
-        NSLog(@"%@",plistPath1);
-        //得到完整的路径名
-        NSString *fileName = [plistPath1 stringByAppendingPathComponent:@"TYPE.plist"];
+        NSString *plistName =[[NSString alloc] initWithFormat:@"TYPE_%@.plist",Type_id];
+        NSString *fileName = [plistPath1 stringByAppendingPathComponent:plistName];
         NSDictionary *main = [dic objectForKey:@"Data"];
         NSDictionary *result = [main objectForKey:@"response"];
         NSDictionary *mainCilrcle = [result objectForKey:@"results"];
@@ -180,23 +184,22 @@ static Circle *circle;
 
 
 
-+(void) uploadPicture:(UIImage *)image
++(void) uploadPicture:(UIImage *)image method:(NSString *) method SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
 {
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.0000001);
     NSString *_encodedImageStr = [imageData base64Encoding];
-    //NSString *postdata =
-    //NSLog(@"%@",_encodedImageStr);
-    //NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:_encodedImageStr,@"", nil];
     
-    NSDictionary *postdata = [[NSDictionary alloc] initWithObjectsAndKeys: _encodedImageStr,@"base64ImgStr",[User getXrsf],@"_xsrf", nil];
-    NSLog(@"circle deatil: %@",postdata);
-    NSString *getFirstURL = [NSString stringWithFormat:@"%@/upload_img",[AFNetManager getMainURL]];
+    NSDictionary *postdata = [[NSDictionary alloc] initWithObjectsAndKeys: _encodedImageStr,@"base64ImgStr",[User getXrsf],@"_xsrf",[User getXrsf],@"random_num", nil];
+    //NSLog(@"circle deatil: %@",postdata);
+    NSString *getFirstURL = [NSString stringWithFormat:@"%@/%@",[AFNetManager getMainURL],method];
     
     [[AFNetManager manager] POST:getFirstURL parameters:postdata progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
         
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
         //NSLog(@"circle deatil: %@", responseObject);
         NSLog(@"circle deatil: %@", dic);
+        successBlock(dic,YES);
+        
         
         
         
@@ -204,8 +207,7 @@ static Circle *circle;
         
         NSLog(@"getxsrf failure");
         
-    }];
-}
+    }];}
 
 
 +(void) createCircleWithParamenters :(NSDictionary *) parm
@@ -225,5 +227,85 @@ static Circle *circle;
     }];
 
 }
+
+//获取评论列表
++(void) getCommentWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
+
+{
+    NSString *getFirstURL = [NSString stringWithFormat:@"%@/commentlist",[AFNetManager getMainURL]];
+    [[AFNetManager manager] POST:getFirstURL parameters:parm progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
+        
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        //NSLog(@"circle deatil: %@", responseObject);
+        NSLog(@"circle deatil: %@", dic);
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *plistPath1= [paths objectAtIndex:0];
+        NSString *id= [NSString stringWithFormat:@"id_%@_comment.plist",[parm objectForKey:@"feed_id"]];
+        NSLog(@"%@",plistPath1);
+        //得到完整的路径名
+        NSString *fileName = [plistPath1 stringByAppendingPathComponent:id];
+        NSDictionary *main = [dic objectForKey:@"Data"];
+        NSDictionary *result = [main objectForKey:@"response"];
+        NSDictionary *mainComment = [result objectForKey:@"results"];
+        NSFileManager *fm = [NSFileManager defaultManager];
+        if ([fm createFileAtPath:fileName contents:nil attributes:nil] ==YES) {
+            
+            [mainComment writeToFile:fileName atomically:YES];
+            NSLog(@"文件写入完成");
+        }
+
+        
+        successBlock(dic,YES);
+        
+    }
+                         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
+                             
+                             NSLog(@"getxsrf failure");
+                             
+                         }];
+
+    
+}
+
++(void) pubcommentWithParameters :(NSDictionary * ) parm
+{
+    NSString *getFirstURL = [NSString stringWithFormat:@"%@/pubcomment",[AFNetManager getMainURL]];
+    [[AFNetManager manager] POST:getFirstURL parameters:parm progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
+        
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        //NSLog(@"circle deatil: %@", responseObject);
+        NSLog(@"circle deatil: %@", dic);
+        
+    }
+                         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
+                             
+                             NSLog(@"getxsrf failure");
+                             
+                         }];
+    
+}
+
+
++(void) greatWithParameters :(NSDictionary *) parm
+{
+    NSString *getFirstURL = [NSString stringWithFormat:@"%@/like",[AFNetManager getMainURL]];
+    [[AFNetManager manager] POST:getFirstURL parameters:parm progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
+        
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        //NSLog(@"circle deatil: %@", responseObject);
+        NSLog(@"circle deatil: %@", dic);
+        
+    }
+                         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
+                             
+                             NSLog(@"getxsrf failure");
+                             
+                         }];
+    
+}
+
+
+
+
 
 @end

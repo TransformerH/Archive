@@ -103,7 +103,7 @@
                             <attributedString key="attributedText">
                                 <fragment content="圈子介绍">
                                     <attributes>
-                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
@@ -150,7 +150,7 @@
                             <attributedString key="attributedText">
                                 <fragment content="设置该圈子所在分类">
                                     <attributes>
-                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>

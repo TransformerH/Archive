@@ -12,7 +12,13 @@
 #import "CircleGroupCell.h"
 #import "ShowImageViewController.h"
 #import "ReplyInputView.h"
+#import "DemoVC5.h"
+#import "Circle+Extension.h"
 #include "UIView+SDAutoLayout.h"
+#import "circleDeatilVC.h"
+#include "User.h"
+
+
 
 // 屏幕高度
 #define ScreenH [UIScreen mainScreen].bounds.size.height
@@ -41,7 +47,12 @@
     // Do any additional setup after loading the view.
     [self.navigationController setNavigationBarHidden:NO];
     [self.circleTableView   setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    [_numbers setHidden:YES];
+    if([[[DemoVC5 getCurrentCell] objectForKey:@"liked"] isEqualToString:@"True"])
+    {
+        [self.like_btn setImage:[UIImage imageNamed:@"liked.png"] forState:UIControlStateNormal];
+    }else{
+        [self.like_btn setImage:[UIImage imageNamed:@"like.png"] forState:UIControlStateNormal];
+    }
     self.flag = YES;
     //获取通知中心
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
@@ -94,16 +105,42 @@
 -(NSMutableArray *)circleGroupData
 {
     if (!_circleGroupData) {
-        NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"CircleGroup.plist" ofType:nil];
-        NSArray *dictArray = [NSArray arrayWithContentsOfFile:fullPath];
-        NSMutableArray *models = [NSMutableArray arrayWithCapacity:[dictArray count]];
-        for (NSDictionary *dict in dictArray) {
-            CircleGroup *circleGroup = [CircleGroup circleGroupWithDict:dict];
+//        NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"CircleGroup.plist" ofType:nil];
+//        NSArray *dictArray = [NSArray arrayWithContentsOfFile:fullPath];
+        NSMutableArray *models = [NSMutableArray arrayWithCapacity:1];
+//        for (NSDictionary *dict in dictArray) {
+          NSLog(@"xiangqing  ---%@",[[DemoVC5 getCurrentCell] objectForKey:@"feed_id"]);
+        //NSString *num=[[NSString alloc]initWithFormat:@"%@",[[DemoVC5 getCurrentCell] objectForKey:@"liked_num"]];
+        NSNumber *convert= [[DemoVC5 getCurrentCell] objectForKey:@"liked_num"];
+        NSLog(@"iueqiweiuiwuqe%@", [[DemoVC5 getCurrentCell] objectForKey:@"liked"]);
+        NSString *num2=[[NSString alloc]initWithFormat:@"%@",convert];
+        _numbers.text =num2;
+        myIntstat = [convert intValue];
+        if([[[DemoVC5 getCurrentCell] objectForKey:@"liked"] isEqualToString:@"True"])
+        {
+            [self.like_btn setImage:[UIImage imageNamed:@"liked.png"] forState:UIControlStateNormal];
+        }else{
+            [self.like_btn setImage:[UIImage imageNamed:@"like.png"] forState:UIControlStateNormal];
+        }
+        
+        NSLog(@"hhhhhhhhhhh%@",[[DemoVC5 getCurrentCell] objectForKey:@"liked_num"]);
+                    CircleGroup *circleGroup = [[CircleGroup alloc]initWithDict:[DemoVC5 getCurrentCell]];
+
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *plistPath1= [paths objectAtIndex:0];
+        NSString *plistName= [NSString stringWithFormat:@"id_%@_comment.plist",[[DemoVC5 getCurrentCell] objectForKey:@"feed_id"]];
+        NSLog(@"circle Plsit of dynamic%@",plistName);
+        NSString *fileName = [plistPath1 stringByAppendingPathComponent:plistName];
+        NSArray *commentArray = [NSArray arrayWithContentsOfFile:fileName];
+        //NSDictionary *dict in commentArray;
+        if (commentArray.count!=0)
+        {[circleGroup initcomment:commentArray];}
+        
             CircleGroupFrame *circleGroupFrame = [[CircleGroupFrame alloc]init];
             circleGroupFrame.circleGroup = circleGroup;
             
             [models addObject:circleGroupFrame];
-        }
+//        }
         _circleGroupData = [models copy];
     }
     //NSLog(@"%lu",(unsigned long)[_statusFrames count]);
@@ -248,9 +285,13 @@
     [replyInputView setContentSizeBlock:^(CGSize contentSize) {
         [self updateHeight:contentSize];
     }];
-    
+    NSString *user=[[DemoVC5 getCurrentCell] objectForKey:@"name"];
+    NSString *name = [[NSString alloc]initWithFormat:@"%@ :",user ];
     [replyInputView setReplyAddBlock:^(NSString *replyText, NSInteger inputTag) {
-        replyText = [@"浮夸：" stringByAppendingString:replyText];
+            NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:[[DemoVC5 getCurrentCell] objectForKey:@"feed_id"],@"feed_id",replyText,@"content", nil];
+        NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [self dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
+        [Circle pubcommentWithParameters:postdic];
+        replyText = [name stringByAppendingString:replyText];
         CircleGroupFrame *circleGroupFrameNeedChanged = self.circleGroupData[inputTag];
         CircleGroup *newCircleGroup = circleGroupFrameNeedChanged.circleGroup;
         //做个中转
@@ -323,14 +364,65 @@
 }
 
 - (IBAction)back:(id)sender {
-[self dismissViewControllerAnimated:YES completion:nil];
+    NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:[[DemoVC5 getCurrentCell] objectForKey:@"ID"],@"topic_id",@"4",@"count",[[DemoVC5 getCurrentCell] objectForKey:@"page"],@"page",@"0",@"order", nil];
+    NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [AFNetManager dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
+    [Circle circeDynamicListWithParameters:postdic page:[[DemoVC5 getCurrentCell] objectForKey:@"page"] SuccessBlock:^(NSDictionary *dict, BOOL success) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } AFNErrorBlock:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    
 
 }
 
 
 
 - (IBAction)likeButtonClik:(id)sender {
-    [ _numbers setHidden:false];
+  
+   
+  
+    [_like_btn setImage:[UIImage imageNamed:@"liked.png"] forState:UIControlStateNormal];
+    //liked =@"Ture";
+    
+      NSNumber *temp = [[NSNumber alloc]initWithInt:myIntstat];
+ 
+    
+    NSString *Meth = [[NSString alloc]initWithFormat:@"POST"];
+     if([[[DemoVC5 getCurrentCell] objectForKey:@"liked"] isEqualToString:@"True"])
+    {
+        Meth = @"DELETE";
+        NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:Meth,@"method",[[DemoVC5 getCurrentCell] objectForKey:@"feed_id"],@"feed_id",[User getXrsf],@"_xsrf",nil];
+        [Circle greatWithParameters:userInfo];
+         [self.like_btn setImage:[UIImage imageNamed:@"like.png"] forState:UIControlStateNormal];
+        myIntstat--;
+        NSNumber *cn = [[NSNumber alloc]initWithInt:myIntstat];
+        [DemoVC5 setCurrentCellLike:@"False"];
+            NSString *num1=[[NSString alloc]initWithFormat:@"%@",cn];
+         _numbers.text =num1;
+    }else{
+        NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:Meth,@"method",[[DemoVC5 getCurrentCell] objectForKey:@"feed_id"],@"feed_id",[User getXrsf],@"_xsrf",nil];
+        [Circle greatWithParameters:userInfo];
+        myIntstat++;
+        NSNumber *cn = [[NSNumber alloc]initWithInt:myIntstat];
+        [DemoVC5 setCurrentCellLike:@"True"];
+         [self.like_btn setImage:[UIImage imageNamed:@"liked.png"] forState:UIControlStateNormal];
+        NSString *num2=[[NSString alloc]initWithFormat:@"%@",cn];
+        _numbers.text =num2;
+    }
+   
+   
+    
+}
+     
+ - (NSString *)dictionaryToJson:(NSDictionary *)dic
+ 
+{
+    
+    NSError *parseError = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
 }
 @end

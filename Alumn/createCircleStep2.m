@@ -10,6 +10,7 @@
 #import "AFNetManager.h"
 #import "Circle+Extension.h"
 #import "User.h"
+#import "TabBarController.h"
 @interface createCircleStep2 ()
 
 @end
@@ -213,16 +214,31 @@ numberOfRowsInComponent:(NSInteger)component {
     NSLog(@"%@4566",reason);
     NSLog(@"%@6789",intro);
     NSLog(@"dasdasdBUFf%@",creator_name);
-    NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:[User getXrsf],@"_xsrf",
-                             self.circleName,@"circle_name",
-                             @"http://img1.imgtn.bdimg.com/it/u=1372134302,958716461&fm=206&gp=0.jpg",@"circle_icon_url",
-                             self.uid,@"creator_uid",
-                             self.typeName,@"circle_type_name",
-                             reason,@"reason_message",
-                             intro,@"description",
-                             creator_name,@"creator_name",nil];
-    NSLog (@"创建圈子%@",userInfo);
-    [Circle createCircleWithParamenters:userInfo];
+    if(reason.length!=0&&intro.length!=0&&self.typeName.length!=0)
+    {
+    [Circle uploadPicture:self.image method:@"upload_normal_img" SuccessBlock:^(NSDictionary *dict, BOOL success) {
+        NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:[User getXrsf],@"_xsrf",
+                                 self.circleName,@"circle_name",
+                                 [dict objectForKey:@"img_key"],@"circle_icon_url",
+                                 self.uid,@"creator_uid",
+                                 self.typeName,@"circle_type_name",
+                                 reason,@"reason_message",
+                                 intro,@"description",
+                                 creator_name,@"creator_name",nil];
+        NSLog (@"创建圈子%@",userInfo);
+        [Circle createCircleWithParamenters:userInfo];
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+    } AFNErrorBlock:^(NSError *error) {
+        NSLog(@"bug %@",error);
+    }];
+    
+//    TabBarController *vc =[[TabBarController alloc]init];
+//  [self.presentingViewController.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+        
+        }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请输入正确内容" message:@"请输入不为空的内容" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+        [alert show];
+    }
   
     
     

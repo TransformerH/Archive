@@ -79,8 +79,9 @@
     NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:@"57bdcad0d0146385e6abb6be",@"t_cat_id",@"999",@"count",@"1",@"page", nil];
     NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [self dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
     NSLog (@"%@",postdic);
-    [Circle getTypetopicWithParameters:postdic SuccessBlock:^(NSDictionary *dict, BOOL success) {
+    [Circle getTypetopicWithParameters:postdic ID:@"57bdcad0d0146385e6abb6be" SuccessBlock:^(NSDictionary *dict, BOOL success) {
         Circle_FindVC *setprize = [[Circle_FindVC alloc]initWithNibName:@"Circle_FindVC" bundle:nil];
+        setprize.ID =@"57bdcad0d0146385e6abb6be" ;
         [self.navigationController pushViewController:setprize animated:true];
     }AFNErrorBlock:^(NSError *error) {
         NSLog(@"%@",error);
@@ -102,8 +103,9 @@
     NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:@"57cd04e8ea77f7753a8f3c28",@"t_cat_id",@"999",@"count",@"1",@"page", nil];
     NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [self dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
     NSLog (@"%@",postdic);
-    [Circle getTypetopicWithParameters:postdic SuccessBlock:^(NSDictionary *dict, BOOL success) {
+    [Circle getTypetopicWithParameters:postdic ID:@"57cd04e8ea77f7753a8f3c28" SuccessBlock:^(NSDictionary *dict, BOOL success) {
         Circle_FindVC *setprize = [[Circle_FindVC alloc]initWithNibName:@"Circle_FindVC" bundle:nil];
+        setprize.ID =@"57cd04e8ea77f7753a8f3c28" ;
         [self.navigationController pushViewController:setprize animated:true];
     }AFNErrorBlock:^(NSError *error) {
         NSLog(@"%@",error);
@@ -117,8 +119,9 @@
     NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:@"57cd04ba55c400f83aa1384d",@"t_cat_id",@"999",@"count",@"1",@"page", nil];
     NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [self dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
     NSLog (@"%@",postdic);
-    [Circle getTypetopicWithParameters:postdic SuccessBlock:^(NSDictionary *dict, BOOL success) {
+    [Circle getTypetopicWithParameters:postdic ID:@"57cd04ba55c400f83aa1384d" SuccessBlock:^(NSDictionary *dict, BOOL success) {
         Circle_FindVC *setprize = [[Circle_FindVC alloc]initWithNibName:@"Circle_FindVC" bundle:nil];
+        setprize.ID =@"57cd04ba55c400f83aa1384d" ;
         [self.navigationController pushViewController:setprize animated:true];
     }AFNErrorBlock:^(NSError *error) {
         NSLog(@"%@",error);
@@ -132,8 +135,9 @@
     NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:@"57bdcae1b51b2d1717bd4e49",@"t_cat_id",@"999",@"count",@"1",@"page", nil];
     NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [self dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
     NSLog (@"%@",postdic);
-    [Circle getTypetopicWithParameters:postdic SuccessBlock:^(NSDictionary *dict, BOOL success) {
+    [Circle getTypetopicWithParameters:postdic ID:@"57bdcae1b51b2d1717bd4e49" SuccessBlock:^(NSDictionary *dict, BOOL success) {
         Circle_FindVC *setprize = [[Circle_FindVC alloc]initWithNibName:@"Circle_FindVC" bundle:nil];
+        setprize.ID =@"57bdcae1b51b2d1717bd4e49";
         [self.navigationController pushViewController:setprize animated:true];
     }AFNErrorBlock:^(NSError *error) {
         NSLog(@"%@",error);
@@ -148,8 +152,9 @@
     NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:@"57cbd6747019c95ec2d856eb",@"t_cat_id",@"999",@"count",@"1",@"page", nil];
     NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [self dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
     NSLog (@"%@",postdic);
-    [Circle getTypetopicWithParameters:postdic SuccessBlock:^(NSDictionary *dict, BOOL success) {
+    [Circle getTypetopicWithParameters:postdic ID:@"57cbd6747019c95ec2d856eb" SuccessBlock:^(NSDictionary *dict, BOOL success) {
         Circle_FindVC *setprize = [[Circle_FindVC alloc]initWithNibName:@"Circle_FindVC" bundle:nil];
+        setprize.ID =@"57cbd6747019c95ec2d856eb";
         [self.navigationController pushViewController:setprize animated:true];
     }AFNErrorBlock:^(NSError *error) {
         NSLog(@"%@",error);
@@ -164,8 +169,9 @@
     NSDictionary *userInfo =[[NSDictionary alloc] initWithObjectsAndKeys:@"57cd049d55c400f83aa1384c",@"t_cat_id",@"999",@"count",@"1",@"page", nil];
     NSDictionary *postdic = [[NSDictionary alloc] initWithObjectsAndKeys: [self dictionaryToJson:userInfo],@"info_json",[User getXrsf],@"_xsrf", nil];
     NSLog (@"%@",postdic);
-    [Circle getTypetopicWithParameters:postdic SuccessBlock:^(NSDictionary *dict, BOOL success) {
+    [Circle getTypetopicWithParameters:postdic ID:@"57cd049d55c400f83aa1384c" SuccessBlock:^(NSDictionary *dict, BOOL success) {
         Circle_FindVC *setprize = [[Circle_FindVC alloc]initWithNibName:@"Circle_FindVC" bundle:nil];
+        setprize.ID =@"57cd049d55c400f83aa1384c";
         [self.navigationController pushViewController:setprize animated:true];
     }AFNErrorBlock:^(NSError *error) {
         NSLog(@"%@",error);

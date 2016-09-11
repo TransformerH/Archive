@@ -17,7 +17,12 @@
 @property (nonatomic, copy) NSArray *image_urls;
 @property (nonatomic, copy) NSString *create_time;
 @property (nonatomic, copy) NSString *icon_url;
+@property (nonatomic, copy) NSString *feed_id;
+@property (nonatomic, copy) NSNumber *liked_num;
+@property  (nonatomic, copy) NSString *liked;
+@property (nonatomic ,copy) NSNumber *Atpage;
+@property (nonatomic, copy) NSString *ID;
 
-+(id)modelWithDict:(NSDictionary *)dict;
++(id)modelWithDict:(NSDictionary *)dict page:(NSNumber *)page ID:(NSString *)id;
 
 @end

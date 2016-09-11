@@ -82,18 +82,6 @@
                                 <constraint firstAttribute="height" constant="2" id="WP7-1h-QJP"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAo-ID-kaw">
-                            <rect key="frame" x="170" y="0.0" width="60" height="60"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="aAo-ID-kaw" secondAttribute="height" multiplier="1:1" id="ns4-14-tgz"/>
-                            </constraints>
-                            <state key="normal" image="camera">
-                                <attributedString key="attributedTitle"/>
-                            </state>
-                            <connections>
-                                <action selector="selectPhotoClicked:" destination="-1" eventType="touchUpInside" id="nXc-r4-dSw"/>
-                            </connections>
-                        </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入圈子名字" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVI-yy-3qK">
                             <rect key="frame" x="0.0" y="225" width="230" height="30"/>
                             <constraints>
@@ -122,6 +110,18 @@
                                 </mask>
                             </variation>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAo-ID-kaw">
+                            <rect key="frame" x="170" y="0.0" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="aAo-ID-kaw" secondAttribute="height" multiplier="1:1" id="ns4-14-tgz"/>
+                            </constraints>
+                            <state key="normal" image="camera">
+                                <attributedString key="attributedTitle"/>
+                            </state>
+                            <connections>
+                                <action selector="selectPhotoClicked:" destination="-1" eventType="touchUpInside" id="nXc-r4-dSw"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>

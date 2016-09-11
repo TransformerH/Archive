@@ -70,7 +70,7 @@
     
     
     //时间戳
-    CGFloat timeLabelWidth = 50;
+    CGFloat timeLabelWidth = 150;
     CGFloat timeLabelHeight = 15;
     CGFloat timeLabelX = nameLabelX;
     CGFloat timeLabelY = self.cellHeight;
