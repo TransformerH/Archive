@@ -52,11 +52,11 @@
             NSDictionary *loginDic = [[NSDictionary alloc] initWithObjectsAndKeys:self.user.phone,@"telephone",self.user.pwd,@"password", nil];
             
             [User loginWithParameters:loginDic SuccessBlock:^(NSDictionary *dict, BOOL success) {
-
+                
                 [Circle getMainPageCircleWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
                     [subscriber sendNext:@"success"];
                     [subscriber sendCompleted];
-                     
+                    
                 } AFNErrorBlock:^(NSError *error) {
                     NSLog(@"%@",error);
                 }];

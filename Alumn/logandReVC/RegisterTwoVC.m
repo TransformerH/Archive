@@ -30,6 +30,8 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    isViewWillLoad = NO;
+    
     self.registerVM = [RegisterViewModel getRegisterVM];
     
     //---------------------------------------------   设置navigationBar透明
@@ -54,7 +56,6 @@
     self.genderText.alpha = 0.8;
     self.genderText.layer.masksToBounds = YES;
     self.genderText.layer.cornerRadius = 6.0;
-    [self.genderText setSecureTextEntry:YES];
     
     self.nextBtn =[[UIButton alloc] initWithFrame:CGRectMake(self.inputView.frame.size.width / 7.5, 120, self.inputView.frame.size.width, 40)];
     self.nextBtn.backgroundColor = [UIColor colorWithRed:89/255.0 green:209/255.0 blue:141/255.0 alpha:1.0];
@@ -68,13 +69,25 @@
     [self.inputView addSubview:self.nextBtn];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[self OriginImage:[UIImage imageNamed:@"bgImage"] scaleToSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)]];
+    if(self.genderText.text == nil){
+        NSLog(@"viewDidLoad gender初始值:nil");
+    }else if([self.genderText.text isEqualToString:@""]){
+        NSLog(@"viewDidLoad gender初始值: \"\"");
+    }
+    
     
     [self bindVM];
 }
 
 - (void)bindVM{
+    [self.genderText.rac_textSignal subscribeNext:^(id x) {
+        NSLog(@"输出genderText %@",self.genderText.text);
+    }];
+    
+    
     RAC(self.registerVM.user,name) = self.nameText.rac_textSignal;
-    RAC(self.registerVM.user,gender) = self.genderText.rac_textSignal;
+    
+    RAC(self.registerVM.user,genderString) = self.genderText.rac_textSignal;
     
     RAC(self.nextBtn,enabled) = self.registerVM.registerTwoEnableSignal;
 }
@@ -84,9 +97,17 @@
     [self.navigationController pushViewController:registerThree animated:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    self.nameText.text = @"";
+    self.genderText.text= @"";
+    if(isViewWillLoad){
+        NSLog(@"ZHIXING");
+        [self bindVM];
+    }
+}
 
 //改变图片的大小适应image View的大小
-        
+
 - (UIImage *)OriginImage:(UIImage *)image scaleToSize:(CGSize)size{
     UIGraphicsBeginImageContext(size);
     [image drawInRect:CGRectMake(0, 0, size.width, size.height)];

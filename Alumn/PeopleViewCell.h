@@ -15,6 +15,7 @@
 @property (copy,nonatomic) NSString *classNum;
 @property (copy,nonatomic) NSString *city;
 @property (copy,nonatomic) NSString *job;
+@property (nonatomic,strong) NSString *peopleUrl;
 
 
 @end

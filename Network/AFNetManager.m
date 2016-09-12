@@ -107,7 +107,7 @@
     
     NSLog(@"getMainURL");
     
-    return @"http://192.168.2.5:8002";
+    return @"http://139.196.207.155:8000";
 }
 
 

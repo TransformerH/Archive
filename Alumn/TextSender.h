@@ -11,15 +11,8 @@
 static NSString *firstYear = nil;
 static NSString *secondYear = nil;
 static BOOL isFirstTextField = YES;
-static BOOL isFaculty = YES;
+
 static NSString *placeTextFieldType = nil;
-//static NSInteger countryIndex = -1;
-//static NSInteger stateIndex = -1;
-//static NSInteger cityIndex = -1;
-
-static NSString *facultyName = nil;
-
-
 
 @interface TextSender : NSObject
 
@@ -52,10 +45,11 @@ static NSString *facultyName = nil;
 
 //--------------------------------  about major and faculty
 
-- (void)setFacultyOrMajor:(BOOL)isFirst;
-- (BOOL)getFacultyOrMajor;
-- (void)setFaculty:(NSString*)name;
-- (NSString*)getFaculty;
+
++ (void)SetIsFaculty:(BOOL)faculty;
++ (BOOL)getIsFaculty;
++ (void)setFaculty:(NSString*)name;
++ (NSString*)getFaculty;
 
 
 

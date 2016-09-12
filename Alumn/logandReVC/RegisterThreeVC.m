@@ -14,6 +14,7 @@
 #import "EnrollYearTextField.h"
 #import "TextSender.h"
 #import "FacultyAndMajorText.h"
+#import "RegisterTwoVC.h"
 
 
 @interface RegisterThreeVC()
@@ -29,6 +30,7 @@
 
 @property (strong,nonatomic) RegisterViewModel *registerVM;
 @property (strong,nonatomic) TextSender *sender;
+@property (strong,nonatomic) RegisterTwoVC *registerTwoVC;
 
 
 @end
@@ -38,8 +40,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    isViewWillLoad = YES;
+    
+    self.registerTwoVC = [[RegisterTwoVC alloc] init];
+    isViewWillLoad = YES;
+    
     self.registerVM = [RegisterViewModel getRegisterVM];
     self.sender = [TextSender getSender];
+    //-------------------------------------------- 设置 faculty 数据
+    //    [self.sender SetIsFaculty:YES];
+    
     
     //---------------------------------------------   设置navigationBar透明
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsCompact];
@@ -95,26 +105,15 @@
     [self.inputView addSubview:self.inSchoolBtn];
     [self.inputView addSubview:self.inJobBtn];
     
-    [self bindVM];
-    
-}
-
-
-- (void)bindVM{
-
-    
-    RAC(self.registerVM.user,faculty) = self.facultyText.rac_textSignal;
-    RAC(self.registerVM.user,major) = self.majorText.rac_textSignal;
-    RAC(self.registerVM.user,admission_year) = self.enrollYearText.rac_textSignal;
-    
-    RAC(self.inJobBtn,enabled) = self.registerVM.registerThreeEnableSignal;
-    if(self.registerVM.registerThreeEnableSignal){
-        NSLog(@"对的哦");
+    [self.facultyText becomeFirstResponder];
+    if(self.facultyText.isFirstResponder){
+        [TextSender SetIsFaculty:YES];
     }
-    
-    self.inSchoolBtn.enabled = YES;
-    self.inJobBtn.enabled = YES;
+    if(self.majorText.isFirstResponder){
+        [TextSender SetIsFaculty:NO];
+    }
 }
+
 
 - (void)inSchoolBtnClick:(id)sender{
     self.registerVM.user.company = @"The SEU";
@@ -122,12 +121,21 @@
     self.registerVM.user.country = @"中国";
     self.registerVM.user.state = @"江苏";
     self.registerVM.user.city = @"南京";
+    
+    self.registerVM.user.faculty = self.facultyText.text;
+    self.registerVM.user.major = self.majorText.text;
+    self.registerVM.user.admission_year = [self.enrollYearText.text integerValue];
+    
     RegisterFiveVC *registerFive = [self.storyboard instantiateViewControllerWithIdentifier:@"registerFive"];
     [self.navigationController pushViewController:registerFive animated:YES];
 }
 
 - (void)inJobBtnClick:(id)sender{
     NSLog(@"有没有执行？？？");
+    
+    self.registerVM.user.faculty = self.facultyText.text;
+    self.registerVM.user.major = self.majorText.text;
+    self.registerVM.user.admission_year = [self.enrollYearText.text integerValue];
     
     RegisterFourVC *registerFour = [self.storyboard instantiateViewControllerWithIdentifier:@"registerFour"];
     [self.navigationController pushViewController:registerFour animated:YES];

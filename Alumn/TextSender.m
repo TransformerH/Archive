@@ -16,6 +16,12 @@ static NSInteger countryIndex = 0;
 static NSInteger stateIndex = -1;
 static NSInteger cityIndex = -1;
 
+//----------------------------   设置faculty ， major
+static NSString *facultyName = nil;
+static BOOL isFaculty;
+
+
+
 @implementation TextSender
 
 + (TextSender*)getSender{
@@ -24,6 +30,7 @@ static NSInteger cityIndex = -1;
     
     dispatch_once(&dec,^{
         isFirstTextField = YES;
+        isFaculty = nil;
         sender = [[TextSender alloc] init];
     });
     
@@ -86,10 +93,15 @@ static NSInteger cityIndex = -1;
 }
 
 - (void)setPlaceTextFieldType:(NSString *)type{
+    
+    NSLog(@"setPlaceTextFieldType : %@",type);
+    
     placeTextFieldType = type;
 }
 
 - (NSString*)getPlaceTextFieldType{
+    
+    NSLog(@"getPlaceTextFieldType : %@",placeTextFieldType);
     
     return placeTextFieldType;
 }
@@ -148,25 +160,37 @@ static NSInteger cityIndex = -1;
     stateIndex = 0;
 }
 
-- (void)setFacultyOrMajor:(BOOL)isFirst{
-    isFaculty = isFirst;
+
++ (void)SetIsFaculty:(BOOL)faculty{
+    if(faculty){
+        NSLog(@"getfaculty is YES");
+    }else{
+        NSLog(@"getfaculty is NO");
+    }
+    isFaculty = faculty;
+    if(isFaculty){
+        NSLog(@"isFaculty is YES");
+    }else{
+        NSLog(@"isFaculty is NO");
+    }
+    
 }
 
-- (BOOL)getFacultyOrMajor{
++ (BOOL)getIsFaculty{
+    if(isFaculty){
+        NSLog(@"getIsF :YES");
+    }else{
+        NSLog(@"getIsF :NO");
+    }
     return isFaculty;
 }
 
-- (void)setFaculty:(NSString*)name{
-    
-    NSLog(@"faculty index :%@",name);
++ (void)setFaculty:(NSString*)name{
     facultyName = name;
-    NSLog(@"static facultyname: %@",facultyName);
 }
 
-- (NSString*)getFaculty{
-    
++ (NSString*)getFaculty{
     return facultyName;
-    
 }
 
 @end

@@ -42,7 +42,7 @@
         
         [weakSelf delayInSeconds:1.0 block:^{
             if(weakSelf.itemNum < [MeViewModel collectCardsFromPlist].count){
-                if((weakSelf.itemNum + 4) < ([MeViewModel collectCardsFromPlist].count - 2)){
+                if((weakSelf.itemNum + 4) < ([MeViewModel collectCardsFromPlist].count )){
                     weakSelf.itemNum += 4;
                 }else{
                     weakSelf.itemNum += ([MeViewModel collectCardsFromPlist].count - weakSelf.itemNum);
@@ -81,10 +81,12 @@
     
     CardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"card" forIndexPath:indexPath];
     //    if(![[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"source_uid"] isEqualToString:[[NSString alloc] initWithFormat: @"%d",-1]]){
-    cell.name = [[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"name"];
-    cell.major =[[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"fa"];
-    cell.classNum =[[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"ma"];
-    cell.job = [[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"jo"];
+    if([MeViewModel collectCardsFromPlist].count > 0){
+        cell.name = [[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"name"];
+        cell.major =[[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"fa"];
+        cell.classNum =[[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"ma"];
+        cell.job = [[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"jo"];
+    }
     //    }else{
     //        cell.name = @"系统管理员";
     //        cell.major = @"软件学院";

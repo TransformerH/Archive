@@ -16,7 +16,7 @@
 @property (nonatomic,strong) RACSignal *registerOneEnableSignal;
 @property (nonatomic,strong) RACSignal *registerTwoEnableSignal;
 @property (nonatomic,strong) RACSignal *registerThreeEnableSignal;
-@property (nonatomic,strong) RACSignal *registerFourEnableSignal;
+//@property (nonatomic,strong) RACSignal *registerFourEnableSignal;
 @property (nonatomic,strong) RACSignal *registerFiveEnableSiganl;
 
 @property (nonatomic,strong) RACCommand *telephoneCheckCommand;

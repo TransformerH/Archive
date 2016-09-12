@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+static BOOL isViewWillLoad;
+
 @interface RegisterTwoVC : UIViewController
+
 
 @end

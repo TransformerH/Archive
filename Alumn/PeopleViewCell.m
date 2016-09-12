@@ -66,5 +66,21 @@
     }
 }
 
+- (void)setPeopleUrl:(NSString *)peopleUrl{
+    _peopleUrl = [peopleUrl copy];
+    UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_peopleUrl]]];
+    [self.userImg setImage:[self OriginImage:img scaleToSize:self.userImg.bounds.size]];
+}
+
+//改变图片的大小适应image View的大小
+-(UIImage *)OriginImage:(UIImage *)image scaleToSize:(CGSize)size{
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return scaledImage;
+}
+
+
 
 @end

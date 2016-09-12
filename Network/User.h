@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "MeViewModel.h"
+
 
 
 static const NSString *xrsf;
@@ -19,6 +22,9 @@ static const NSString *xrsf;
 @property (strong,nonatomic) NSString *major;
 @property (strong,nonatomic) NSString *name;
 @property (assign,nonatomic) NSInteger gender;
+
+@property (strong,nonatomic) NSString *genderString;
+
 @property (strong,nonatomic) NSString *job;
 @property (strong,nonatomic) NSString *city;
 @property (strong,nonatomic) NSString *tags;
@@ -44,7 +50,10 @@ static const NSString *xrsf;
 @property (strong,nonatomic) NSString *pwd;
 //-----------------------------------------------
 
+@property (strong,nonatomic)UIImage *userHeadImg;
+
 +(NSString *) getXrsf;
 +(void) setXrsf :(NSString *) str;
++ (MeViewModel*)meVM;
 
 @end

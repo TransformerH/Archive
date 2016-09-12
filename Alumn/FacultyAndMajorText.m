@@ -9,27 +9,29 @@
 #import "FacultyAndMajorText.h"
 #import "TextSender.h"
 
+static BOOL majorTurn;
+static NSString *currentType;
+
 @interface FacultyAndMajorText()
 
 @property (nonatomic,strong) TextSender *sender;
+
 
 @end
 
 @implementation FacultyAndMajorText
 {
-    UIToolbar *inputAccessoryView;
 }
 
-@synthesize facultiesAndMajors;
-@synthesize facultyArray;
+@synthesize dataArray;
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 - (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
@@ -37,31 +39,51 @@
         
     }
     
-    [self getArrays];
     return self;
 }
 
 - (void)setSelectRow:(NSInteger)index{
     if(index >= 0){
-        [pickView selectRow:index inComponent:0 animated:YES];
+        [self.pickView selectRow:index inComponent:0 animated:YES];
     }
 }
 - (void)drawRect:(CGRect)rect{
-    pickView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 320, 120)];
-    pickView.dataSource = self;
-    pickView.delegate = self;
-    self.inputView = pickView;
-    self.text = self.facultyArray[0];
-}
-
-- (NSArray*)getCurrentArray{
+    self.pickView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 320, 120)];
+    self.pickView.dataSource = self;
+    self.pickView.delegate = self;
+    self.inputView = self.pickView;
+    self.text = @"";
     
-    self.sender = [TextSender getSender];
-    if([self.sender getFacultyOrMajor]){
-        return self.facultyArray;
-    }else{
-        return [self.facultiesAndMajors valueForKey:[self.sender getFaculty]];
-    }
+    //    //----------------------------------------设置数据
+    //    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"majorList" ofType:@"plist"];
+    //    NSDictionary *facultiesAndMajors = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    //    NSMutableArray *facultyArray = [[NSMutableArray alloc] init];
+    //
+    //    if([TextSender getIsFaculty]){
+    //
+    //        NSLog(@"现在是facultyTextfield");
+    //
+    //        for(NSString *key in facultiesAndMajors.allKeys){
+    //            [facultyArray addObject:key];
+    //        }
+    //
+    //        self.dataArray = [NSArray arrayWithArray:facultyArray];
+    //    }else{
+    //
+    //        NSLog(@"现在是majorTextfield");
+    //        if(![TextSender getIsFaculty]){
+    //            NSLog(@"NO");
+    //        }else{
+    //            NSLog(@"YES");
+    //        }
+    //
+    //
+    //        if([TextSender getFaculty] == nil){
+    //            self.dataArray = nil;
+    //        }else{
+    //            self.dataArray = [NSArray arrayWithArray:[facultiesAndMajors valueForKey:[TextSender getFaculty]]];
+    //        }
+    //    }
     
 }
 
@@ -71,32 +93,72 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return [[self getCurrentArray] count];
+    
+    return dataArray.count;
 }
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return [[self getCurrentArray] objectAtIndex:row];
+    return dataArray[row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    self.text = [[self getCurrentArray] objectAtIndex:row];
+    
+    self.text = dataArray[row];
+    if([TextSender getIsFaculty]){
+        [TextSender setFaculty:dataArray[row]];
+        //  [TextSender SetIsFaculty:NO];
+    }
+    //    }else{
+    //        [TextSender SetIsFaculty:YES];
+    //    }
+    
 }
 
 #pragma mark - inputAccessoryView with toolbar
 - (BOOL)canBecomeFirstResponder{
+    //----------------------------------------设置数据
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"majorList" ofType:@"plist"];
+    NSDictionary *facultiesAndMajors = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    NSMutableArray *facultyArray = [[NSMutableArray alloc] init];
+    
+    if([TextSender getIsFaculty]){
+        
+        NSLog(@"现在是facultyTextfield");
+        
+        for(NSString *key in facultiesAndMajors.allKeys){
+            [facultyArray addObject:key];
+        }
+        
+        self.dataArray = [NSArray arrayWithArray:facultyArray];
+    }else{
+        
+        NSLog(@"现在是majorTextfield");
+        if(![TextSender getIsFaculty]){
+            NSLog(@"NO");
+        }else{
+            NSLog(@"YES");
+        }
+        
+        
+        if([TextSender getFaculty] == nil){
+            self.dataArray = nil;
+        }else{
+            self.dataArray = [NSArray arrayWithArray:[facultiesAndMajors valueForKey:[TextSender getFaculty]]];
+        }
+    }
+    
+    
     return YES;
 }
 
 - (void)done:(id)sender{
-    
-    if([self.sender getFacultyOrMajor]){
-      
-                NSLog(@"%@",self.text);
-                [self.sender setFaculty:self.text];
-        [self.sender setFacultyOrMajor:NO];
+    if([TextSender getIsFaculty]){
+        [TextSender SetIsFaculty:NO];
     }else{
-        [self.sender setFacultyOrMajor:YES];
+        [TextSender SetIsFaculty:YES];
     }
+    
+    
     [self resignFirstResponder];
     [super resignFirstResponder];
 }
@@ -122,24 +184,6 @@
         }
         return inputAccessoryView;
     }
-}
-
-
-
-- (void)getArrays{
-    self.facultyArray = [[NSMutableArray alloc] init];
-    
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"majorList" ofType:@"plist"];
-    self.facultiesAndMajors = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    
-    NSLog(@"all majors %@",self.facultiesAndMajors);
-
-    
-    for(NSString *key in self.facultiesAndMajors.allKeys){
-        [self.facultyArray addObject:key];
-    }
-    
-    NSLog(@"all faculties  %@",self.facultyArray);
 }
 
 @end

@@ -46,6 +46,8 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[self OriginImage:[UIImage imageNamed:@"bgImage"] scaleToSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)]];
     
     //-----------------------------------------------  控件设置
+    
+    [self.passwordTextField setSecureTextEntry:YES];
     self.headImage.image = [self OriginImage:[UIImage imageNamed:@"logohead"] scaleToSize:self.headImage.bounds.size];
     self.userLogoView.image = [self OriginImage:[UIImage imageNamed:@"userLogo"] scaleToSize:self.userLogoView.bounds.size];
     self.passwordLogo.image = [self OriginImage:[UIImage imageNamed:@"passwordLogo"] scaleToSize:self.passwordLogo.bounds.size];
@@ -90,7 +92,7 @@
             BOOL flag =false;
             
             
-           
+            
             NSLog(@"跳转到登录成功界面");
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UIViewController *VC = [sb instantiateViewControllerWithIdentifier:@"FiveTab"];

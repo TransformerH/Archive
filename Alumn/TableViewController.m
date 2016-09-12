@@ -68,8 +68,10 @@
 - (CircleCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CircleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
+    if([MeViewModel createCircleFromPlist].count >0)
+    {
     cell.name = [[MeViewModel createCircleFromPlist][indexPath.row] valueForKey:@"name"];
+    }
     
     //  cell.textLabel.font = [UIFont systemFontOfSize:17];
     //   cell.textLabel.text = [NSString stringWithFormat:@"pageView%ld need inherit scrollView%ld",(long)_page,(long)indexPath.row];

@@ -10,13 +10,20 @@
 
 @interface FacultyAndMajorText : UITextField
 <UIPickerViewDataSource,UIPickerViewDelegate>{
-    UIPickerView *pickView;
+    
+    UIToolbar *inputAccessoryView;
+    
 }
 
 
-@property (nonatomic,strong) NSMutableArray *facultyArray;
-@property (nonatomic,strong) NSDictionary *facultiesAndMajors;
+//@property (nonatomic,strong) NSMutableArray *facultyArray;
+//@property (nonatomic,strong) NSDictionary *facultiesAndMajors;
+@property (nonatomic,strong) UIPickerView *pickView;
+@property (nonatomic,strong) NSArray *dataArray;
+
 
 - (void)setSelectRow:(NSInteger)index;
+- (void)setCurrentType:(NSString*)type;
+
 
 @end

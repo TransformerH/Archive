@@ -14,6 +14,7 @@
 
 +(User*) getUser;
 //注册 post
++ (void)upLoadUserImg:(UIImage *)image method:(NSString *) method SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
 +(void) registerWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
 //手机号验证 post
 +(void) checkphoneWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
@@ -47,7 +48,13 @@
 //高级筛选
 +(void) highSearchWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
 
+
+//   人脉界面
++ (void)peopleListWithParameters:(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock;
+
 + (NSDictionary*)getUserDic;
+
++ (NSString *)dictionaryToJson:(NSDictionary *)dic;
 
 
 @end

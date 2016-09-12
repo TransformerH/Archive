@@ -44,7 +44,7 @@
         [response writeToFile:fileName atomically:YES];
         NSLog(@"myCreateCircle文件写入完成");
     }
-
+    
 }
 
 - (void)getMyCardsList:(NSDictionary *)Data{

@@ -294,8 +294,6 @@
     //$$$$$$$$$$$$$$$$$$$$$$$$ tableViewArray 初始化
     [self.contableTableViewArray removeAllObjects];
     
-    NSLog(@"$$$$$$$$$$$$$$$$  headMenuDateArray :%lu",self.headMenuDateArray.count);
-    
     for (int i = 0; i < self.headMenuDateArray.count; i ++) {
         
         switch (i) {
@@ -304,7 +302,7 @@
                 NSLog(@"contentTable0");
                 
                 CardTableViewController *cardTableVC = [[CardTableViewController alloc] init];
-                cardTableVC.itemNum = 3;
+                cardTableVC.itemNum = [MeViewModel collectCardsFromPlist].count;
                 cardTableVC.page = i+1;
                 cardTableVC.view.frame = self.contentScrollView.bounds;
                 cardTableVC.tableView.delegate = self;

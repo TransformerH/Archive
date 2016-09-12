@@ -10,4 +10,6 @@
 
 @interface RegisterFiveVC : UIViewController
 
+@property (strong,nonatomic)UIImage *userImg;
+
 @end

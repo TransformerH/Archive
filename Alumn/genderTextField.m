@@ -52,12 +52,22 @@
 }
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return [genderArray objectAtIndex:row];
+    if([[genderArray objectAtIndex:row] isEqualToString:@"0"]){
+        return @"女";
+    }else{
+        return @"男";
+    }
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    self.text = [genderArray objectAtIndex:row];
+    
+    if([[genderArray objectAtIndex:row] isEqualToString:[NSString stringWithFormat:@"%d",0]]){
+        self.text = @"女";
+    }else{
+        self.text = @"男";
+    }
 }
+
 
 #pragma mark - inputAccessoryView with toolbar
 - (BOOL)canBecomeFirstResponder{

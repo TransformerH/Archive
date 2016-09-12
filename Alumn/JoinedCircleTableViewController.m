@@ -10,6 +10,7 @@
 #import "MJRefresh.h"
 #import "CircleCell.h"
 #import "MeViewModel.h"
+#import "MessageViewModel.h"
 
 
 
@@ -77,8 +78,10 @@
 }
 
 - (CircleCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    
     CircleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"circle" forIndexPath:indexPath];
-    cell.name = [[MeViewModel adminCircleFromPlist][indexPath.row] valueForKey:@"name"];
+    if([MeViewModel adminCircleFromPlist].count >0){
+        cell.name = [[MeViewModel adminCircleFromPlist][indexPath.row] valueForKey:@"name"];}
     
     
     return cell;

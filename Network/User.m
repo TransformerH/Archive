@@ -19,4 +19,10 @@
     xrsf = str;
 }
 
++ (MeViewModel*)meVM{
+    MeViewModel *meVM = [[MeViewModel alloc] init];
+    return meVM;
+}
+
+
 @end

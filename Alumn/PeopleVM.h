@@ -11,6 +11,7 @@
 @interface PeopleVM : NSObject
 
 - (NSArray*)getPeople;
+- (NSArray*)reGetPeople;
 - (NSArray*)matchPeople:(NSArray*)choose;
 - (NSArray*)searchPeople:(NSString*)message;
 

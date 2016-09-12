@@ -34,7 +34,7 @@
     self.circleName =Name;
     self.circlrurl=icon_urls;
     self.creatorid=creatorID;
-    self.circleid=creatorID;
+    self.circleid=circleID;
     
 
     
@@ -288,10 +288,15 @@
                              @"",@"reason",
                              self.creatorid,@"creator_id",
                               nil];
+    NSLog(@"hhghjghj%@",userInfo);
     [Circle joinCircleWithParameters:userInfo SuccessBlock:^(NSDictionary *dict, BOOL success) {
+        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"提示" message:@"已发送加入申请" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+        [alert1 show];
         [self hide];
     } AFNErrorBlock:^(NSError *error) {
-        NSLog(@"%@",error);
+        //NSLog(@"%@",error);
+        UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"提示" message:@"发送请求中出现了错误，请重试" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+        [alert2 show];
     }];
     
    
