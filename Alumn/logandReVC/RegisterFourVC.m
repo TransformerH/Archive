@@ -106,30 +106,30 @@
     //    [self.inputView addSubview:self.cityText];
     [self.inputView addSubview:self.nextBtn];
     
-    //    [self.countryText.rac_textSignal subscribeNext:^(id x) {
-    ////        if([self.countryText.text isEqualToString:@""]){
-    //        if(self.countryText.isFirstResponder){
-    //            NSLog(@"********************************************countryTextField");
-    //            [self.sender setPlaceTextFieldType:@"country"];
-    //        }
-    //    }];
-    //
-    //    [self.stateText.rac_textSignal subscribeNext:^(id x) {
-    ////        if((![self.countryText.text isEqualToString:@""]) && ([self.stateText.text isEqualToString:@""])){
-    ////        if( (![self.countryText.text isEqualToString:@""])&& [self.stateText.text isEqualToString:@""]){
-    //        if(self.stateText.isFirstResponder){
-    //            NSLog(@"********************************************stateTextField");
-    //            [self.sender setPlaceTextFieldType:@"state"];
-    //        }
-    //    }];
-    //
-    //    [self.cityText.rac_textSignal subscribeNext:^(id x) {
-    //      //  if((![self.countryText.text isEqualToString:@""]) && (![self.stateText.text isEqualToString:@""]) && ([self.cityText.text isEqualToString:@""])){
-    //        if(self.cityText.isFirstResponder){
-    //            NSLog(@"********************************************cityTextField");
-    //            [self.sender setPlaceTextFieldType:@"city"];
-    //        }
-    //    }];
+        [self.countryText.rac_textSignal subscribeNext:^(id x) {
+    //        if([self.countryText.text isEqualToString:@""]){
+            if(self.countryText.isFirstResponder){
+                NSLog(@"********************************************countryTextField");
+                [self.sender setPlaceTextFieldType:@"country"];
+            }
+        }];
+    
+        [self.stateText.rac_textSignal subscribeNext:^(id x) {
+    //        if((![self.countryText.text isEqualToString:@""]) && ([self.stateText.text isEqualToString:@""])){
+    //        if( (![self.countryText.text isEqualToString:@""])&& [self.stateText.text isEqualToString:@""]){
+            if(self.stateText.isFirstResponder){
+                NSLog(@"********************************************stateTextField");
+                [self.sender setPlaceTextFieldType:@"state"];
+            }
+        }];
+    
+        [self.cityText.rac_textSignal subscribeNext:^(id x) {
+          //  if((![self.countryText.text isEqualToString:@""]) && (![self.stateText.text isEqualToString:@""]) && ([self.cityText.text isEqualToString:@""])){
+            if(self.cityText.isFirstResponder){
+                NSLog(@"********************************************cityTextField");
+                [self.sender setPlaceTextFieldType:@"city"];
+            }
+        }];
     
     
     

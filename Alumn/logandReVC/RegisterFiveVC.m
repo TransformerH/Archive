@@ -73,6 +73,7 @@
             [User loginWithParameters:userDic SuccessBlock:^(NSDictionary *dict, BOOL success) {
                 
                 NSLog(@"注册后自动登录成功");
+                
                 UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 UIViewController *VC = [sb instantiateViewControllerWithIdentifier:@"FiveTab"];
                 [self.navigationController pushViewController:VC animated:YES];

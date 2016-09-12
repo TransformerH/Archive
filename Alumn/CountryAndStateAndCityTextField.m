@@ -76,7 +76,7 @@
     //#####################################  更改返回的数组
     NSString *type = [self.sender getPlaceTextFieldType];
     
-    if(type == nil){
+    if([type isEqualToString:@"country"]){
         return countryArray;
     }else if([type isEqualToString:@"state"]){
         NSLog(@"countryNum %ld(long)",(long)[self.sender getCountryIndex]);
@@ -139,7 +139,7 @@
 }
 
 - (void)done:(id)sender{
-    if([self.sender getPlaceTextFieldType] == nil){
+    if([[self.sender getPlaceTextFieldType] isEqualToString:@"country"] ){
         [self.sender setPlaceTextFieldType:@"state"];
     }else if([[self.sender getPlaceTextFieldType] isEqualToString:@"state"]){
         [self.sender setPlaceTextFieldType:@"city"];

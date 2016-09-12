@@ -25,7 +25,36 @@ static User *user;
     return user;
 }
 
+
+
+
 //注册 post
++ (void)upLoadUserImg:(UIImage *)image method:(NSString *) method SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
+{
+    
+    NSLog(@"已执行上传头像函数");
+    
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.0000001);
+    NSString *_encodedImageStr = [imageData base64Encoding];
+    
+    NSDictionary *postdata = [[NSDictionary alloc] initWithObjectsAndKeys: _encodedImageStr,@"base64ImgStr",[User getXrsf],@"_xsrf",[User getXrsf],@"random_num", nil];
+    //NSLog(@"circle deatil: %@",postdata);
+    NSString *getFirstURL = [NSString stringWithFormat:@"%@/%@",[AFNetManager getMainURL],method];
+    
+    [[AFNetManager manager] POST:getFirstURL parameters:postdata progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
+        
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        //NSLog(@"circle deatil: %@", responseObject);
+        NSLog(@"circle deatil: %@", dic);
+        successBlock(dic,YES);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
+        
+        NSLog(@"getxsrf failure");
+    }];
+}
+
+
 +(void) registerWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
 {
     NSString *registerURL = [[NSString alloc] initWithFormat:@"%@/register",[AFNetManager getMainURL]];
@@ -59,7 +88,7 @@ static User *user;
             
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
             NSLog(@"检测手机号成功%@",dic);
-            if((int)[dic valueForKey:@"code"] == 3000){
+            if([[dic valueForKey:@"code"] integerValue]== 3000){
                 //----------------------------------------  #######获取界面所有注册信息
                 NSDictionary *registerDic = [[NSDictionary alloc] initWithObjectsAndKeys:@"南京",@"city",@"江苏省",@"state",@"中国",@"country",@"软件学院",@"faculty",@"韩雪滢",@"name",@"软件工程",@"major",@"the SEU",@"company",[NSNumber numberWithInt:2014],@"admission_year",@"15051839068",@"telephone",@"student",@"job",[NSNumber numberWithInt:0],@"gender",@"sheryl",@"password", nil];
                 //---------------------------------------- ###########
