@@ -34,7 +34,7 @@ static User *user;
     
     NSLog(@"已执行上传头像函数");
     
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.0000001);
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
     NSString *_encodedImageStr = [imageData base64Encoding];
     
     NSDictionary *postdata = [[NSDictionary alloc] initWithObjectsAndKeys: _encodedImageStr,@"base64ImgStr",[User getXrsf],@"_xsrf",[User getXrsf],@"random_num", nil];

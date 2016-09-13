@@ -186,7 +186,7 @@ static Circle *circle;
 
 +(void) uploadPicture:(UIImage *)image method:(NSString *) method SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
 {
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.0000001);
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
     NSString *_encodedImageStr = [imageData base64Encoding];
     
     NSDictionary *postdata = [[NSDictionary alloc] initWithObjectsAndKeys: _encodedImageStr,@"base64ImgStr",[User getXrsf],@"_xsrf",[User getXrsf],@"random_num", nil];
