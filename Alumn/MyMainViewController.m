@@ -19,6 +19,8 @@
 #import "User+Extension.h"
 #import "MeViewModel.h"
 #import "AFNetManager.h"
+#import   "UIImageView+WebCache.h"
+
 
 @interface MyMainViewController ()<UIScrollViewDelegate,UITableViewDelegate>
 {
@@ -110,7 +112,9 @@
         UIImage *img = [UIImage imageNamed:@"Image"];
         UIImageView *userHead = [[UIImageView alloc] initWithImage:img];
         userHead.frame = CGRectMake(userImg.frame.origin.x, userImg.frame.origin.y, 100, 100);
-        
+        [userHead sd_setImageWithURL:[NSURL URLWithString:[[User getUserDic] valueForKey:@"icon_url"]]];
+        userHead.layer.masksToBounds = YES;
+        userHead.layer.cornerRadius = userHead.bounds.size.width / 2.0;
         
         
         UIButton *chooseBtn = [[UIButton alloc] init];

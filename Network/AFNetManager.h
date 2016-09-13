@@ -13,6 +13,7 @@
 #define kTimeOutInterval 30 // 请求超时的时间
 typedef void (^SuccessBlock)(NSDictionary *dict, BOOL success); // 访问成功block
 typedef void (^AFNErrorBlock)(NSError *error); // 访问失败block
+typedef void (^uplpadSuccess) (NSString *str ,BOOL success );
 + (NSString*)getMainURL;
 +(AFHTTPSessionManager *)manager;
 +(NSString *)dictionaryToJson:(NSDictionary *)dic;

@@ -70,6 +70,8 @@
     _peopleUrl = [peopleUrl copy];
     UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_peopleUrl]]];
     [self.userImg setImage:[self OriginImage:img scaleToSize:self.userImg.bounds.size]];
+    self.userImg.layer.masksToBounds = YES;
+    self.userImg.layer.cornerRadius = self.userImg.bounds.size.width / 2.0;
 }
 
 //改变图片的大小适应image View的大小

@@ -319,7 +319,7 @@ static User *user;
     
     [[AFNetManager manager] POST:myCommentURL parameters:requestDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
-           NSLog(@"获取我Comment内容成功 ：%@", dic);
+        NSLog(@"获取我Comment内容成功 ：%@", dic);
         successBlock(dic,YES);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"获取我Comment内容失败 ：%@",error);
@@ -433,7 +433,52 @@ static User *user;
     
 }
 
++ (void)upLoadImages:(NSArray *)images UploadSuccess:(uplpadSuccess)uplpadSuccess AFNErrorBlock:(AFNErrorBlock)afnErrorblock {
+    bool flag =NO;
+    int imgNum = 0;
+    int countPics = 0;
+    if(images.count >= 9){
+        imgNum = 9;
+    }else{
+        imgNum = images.count;
+    }
+    
+    
+    if(!flag)
+    {
+        [User upLoadUserImg:images[0] method:@"upload_normal_img" SuccessBlock:^(NSDictionary *dict, BOOL success) {
+            
+            picUrls = [NSString stringWithFormat:@"%@%@",picUrls,[dict valueForKey:@"img_key"]];
+            NSLog(@"picUrls input %@",picUrls);
+            
+        } AFNErrorBlock:^(NSError *error) {
+            NSLog(@"第 %d 张图片上传失败,i");
+        }];
+        flag=YES;
+    }
+    
+    if(flag){
+        for(int i = 1 ;i < imgNum ; i++){
+            NSLog(@"upLoadImages for %d: %@",i,picUrls);
+            
+            
+            [User upLoadUserImg:images[i] method:@"upload_normal_img" SuccessBlock:^(NSDictionary *dict, BOOL success) {
+                
+                picUrls = [NSString stringWithFormat:@"%@;%@",picUrls,[dict valueForKey:@"img_key"]];
+                NSLog(@"picUrls input %@",picUrls);
+                
+            } AFNErrorBlock:^(NSError *error) {
+                NSLog(@"第 %d 张图片上传失败,i");
+            }];
+        }
+    }
+    
+    
+    
+    
+uplpadSuccess(picUrls,YES);
 
+}
 
 
 @end

@@ -9,7 +9,7 @@
 #import "User.h"
 #import "AFNetManager.h"
 #import "AFHTTPSessionManager.h"
-
+ static  NSString *picUrls=@"" ;
 @interface User (Extension)
 
 +(User*) getUser;
@@ -55,6 +55,8 @@
 + (NSDictionary*)getUserDic;
 
 + (NSString *)dictionaryToJson:(NSDictionary *)dic;
+
++ (void)upLoadImages:(NSArray*)images UploadSuccess:(uplpadSuccess)uplpadSuccess AFNErrorBlock:(AFNErrorBlock)afnErrorblock;
 
 
 @end

@@ -10,6 +10,10 @@
 // #import "PHPhotoLibrary.h"
 #import "RRSendMessageViewController.h"
 #import "RRCustomScrollView.h"
+#import "User.h"
+#import "User+Extension.h"
+#import "Dynamic.h"
+#import "Dynamic+Extension.h"
 
 @interface RRSendMessageViewController ()
 @property (nonatomic, strong) UITextView *textView;
@@ -54,15 +58,63 @@
     modelMessage.text = self.textView.text;
     modelMessage.photos = self.selectedPhotos;
     
-    if (self.completion != nil) {
-        self.completion(modelMessage, false);
-    }
+    //    if (self.completion != nil) {
+    //        self.completion(modelMessage, false);
+    //    }
+    //
+    //    //----------------------------------------------------  调用delegate的方法
+    //
+    //    if ([self.delegate respondsToSelector:@selector(getMessage:)]) {
+    //        [self.delegate getMessage:modelMessage];
+    //    }
     
-    //----------------------------------------------------  调用delegate的方法
+//    int imgNum = 0;
+//    int countPics = 0;
+//    static NSString *picUrls = @"";
+//    if(modelMessage.photos.count >= 9){
+//        imgNum = 9;
+//    }else{
+//        imgNum = self.selectedPhotos.count;
+//    }
+//    for(int i = 0 ;i < imgNum ; i++){
+//        if([modelMessage.photos[i] class]!=[picUrls class]){
+//            [User upLoadUserImg:modelMessage.photos[i] method:@"upload_normal_img" SuccessBlock:^(NSDictionary *dict, BOOL success) {
+//                picUrls = [NSString stringWithFormat:@"%@;%@",picUrls,[dict valueForKey:@"img_key"]];
+//            } AFNErrorBlock:^(NSError *error) {
+//                NSLog(@"第 %d 张图片上传失败,i");
+//            }];
+//        }
+//    }
+////    
+//    if(countPics >= imgNum){
+    [User upLoadImages: self.selectedPhotos UploadSuccess:^(NSString *str, BOOL success) {
+        if(str.length>0)
+        {
+        NSDictionary *upLoadDic = [[NSDictionary alloc] initWithObjectsAndKeys:self.textView.text,@"content",self.topic_ids,@"topic_ids",str,@"img_str", nil];
+        
+        [Dynamic publishWithParameters:upLoadDic SuccessBlock:^(NSDictionary *dict, BOOL success) {
+            NSLog(@"已发布公告");
+            extern NSString  *picUrls;
+            picUrls=@"";
+            NSLog(@"User uploads ***************************  %@",picUrls);
+            if ([self.delegate respondsToSelector:@selector(messageCancel)]) {
+                [self.delegate messageCancel];
+            }
+            
+            if (self.completion != nil) {
+                self.completion(nil, true);
+            }
+
+        } AFNErrorBlock:^(NSError *error) {
+            NSLog(@"发布公告失败");
+        }];
+        }
+    } AFNErrorBlock:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
     
-    if ([self.delegate respondsToSelector:@selector(getMessage:)]) {
-        [self.delegate getMessage:modelMessage];
-    }
+//    }
+    
 }
 
 - (void) cancelMessage {
@@ -110,7 +162,7 @@
                                              self.textView.frame.size.width, self.textView.frame.size.height / 2);
         } completion:^(BOOL finished) {
             NSRange bottom = NSMakeRange(self.textView.text.length -1, 1);
-        [self.textView scrollRangeToVisible:bottom];
+            [self.textView scrollRangeToVisible:bottom];
         }];
         
         [UIView animateWithDuration:0.5 animations:^{
@@ -276,11 +328,11 @@
 
 - (void) initPanelButton {
     self.buttonAddPhoto = [[UIButton alloc] initWithFrame:CGRectMake(10, -20, 40,20)];
-  /*  UIImageView *imageButton = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    imageButton.contentMode = UIViewContentModeScaleAspectFit;
-    imageButton.image = [UIImage imageNamed:ADD_PHOTO_IMAGE];
-  */
- //   [self.buttonAddPhoto addSubview:imageButton];
+    /*  UIImageView *imageButton = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+     imageButton.contentMode = UIViewContentModeScaleAspectFit;
+     imageButton.image = [UIImage imageNamed:ADD_PHOTO_IMAGE];
+     */
+    //   [self.buttonAddPhoto addSubview:imageButton];
     [self.buttonAddPhoto addTarget:self action:@selector(addPhoto) forControlEvents:UIControlEventTouchUpInside];
     [self.buttonAddPhoto setTitle:@"选择照片" forState:UIControlStateNormal];
     [self.buttonAddPhoto setTintColor:[UIColor blackColor]];
@@ -337,11 +389,11 @@
     self.navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
     self.navigationBar.backgroundColor = [UIColor colorWithRed:84 / 255.0 green:211 / 255.0 blue:139 / 255.0 alpha:1.0];
     
-  /*  UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"发送"
-                                                                    style:UIBarButtonItemStyleDone target:self action:@selector(postMessage)];
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"取消"
-                                                                   style:UIBarButtonItemStyleDone target:self action:@selector(cancelMessage)];
-    */
+    /*  UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"发送"
+     style:UIBarButtonItemStyleDone target:self action:@selector(postMessage)];
+     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"取消"
+     style:UIBarButtonItemStyleDone target:self action:@selector(cancelMessage)];
+     */
     UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 80, 30)];
     leftBtn.backgroundColor = [UIColor colorWithRed:84 / 255.0 green:211 / 255.0 blue:139 / 255.0 alpha:1.0];
     [leftBtn.layer setMasksToBounds:YES];
@@ -362,8 +414,8 @@
     
     UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"编辑公告"];
     
-  //  item.rightBarButtonItem = rightButton;
-  //  item.leftBarButtonItem = leftButton;
+    //  item.rightBarButtonItem = rightButton;
+    //  item.leftBarButtonItem = leftButton;
     item.hidesBackButton = YES;
     [self.navigationBar pushNavigationItem:item animated:NO];
     

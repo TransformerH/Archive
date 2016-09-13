@@ -18,6 +18,10 @@
 @property (nonatomic, assign) id<RRSendMessageDelegate> delegate;
 @property (nonatomic, assign) NSInteger numberPhoto;
 
+@property (nonatomic,strong) NSString *topic_ids;
+
+
+
 - (void) presentController:(UIViewController *) parentController :(void (^)(RRMessageModel *model, BOOL isCancel))completion;
 
 @end

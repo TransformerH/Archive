@@ -7,6 +7,7 @@
 //
 
 #import "SystemMessageTableViewCell.h"
+#import   "UIImageView+WebCache.h"
 
 @interface SystemMessageTableViewCell()
 
@@ -44,8 +45,12 @@
     if(![_circleURL isEqualToString:circleURL]){
         _circleURL = [circleURL copy];
         
-        UIImage *circleImg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_circleURL]]];
-        [self.messageImg setImage:[self OriginImage:circleImg scaleToSize:self.messageImg.bounds.size]];
+      //  UIImage *circleImg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_circleURL]]];
+            [self.messageImg  sd_setImageWithURL:[NSURL URLWithString:_circleURL] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                [self.messageImg setImage:[self OriginImage:image scaleToSize:self.messageImg.bounds.size]];
+            }];
+
+      //  [self.messageImg setImage:[self OriginImage:circleImg scaleToSize:self.messageImg.bounds.size]];
         self.messageImg.layer.masksToBounds = YES;
         self.messageImg.layer.cornerRadius = self.messageImg.bounds.size.width / 2.0;
     }

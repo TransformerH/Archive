@@ -236,6 +236,8 @@
 - (IBAction)sendMessage:(id)sender {
     
     RRSendMessageViewController *controller = [[RRSendMessageViewController alloc] init];
+    controller.topic_ids =[circleDeatilVC getIDinList];
+    NSLog(@"top_id %@",controller.topic_ids);
     
     [controller presentController:self :^(RRMessageModel *model, BOOL isCancel) {
         if (isCancel == true) {

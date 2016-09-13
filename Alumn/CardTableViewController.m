@@ -86,6 +86,7 @@
         cell.major =[[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"fa"];
         cell.classNum =[[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"ma"];
         cell.job = [[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"custom"] valueForKey:@"jo"];
+        cell.imgUrl =[[MeViewModel collectCardsFromPlist][indexPath.row] valueForKey:@"icon_url"];
     }
     //    }else{
     //        cell.name = @"系统管理员";

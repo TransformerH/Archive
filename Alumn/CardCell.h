@@ -14,5 +14,6 @@
 @property (nonatomic,strong) NSString *major;
 @property (nonatomic,strong) NSString *classNum;
 @property (nonatomic,strong) NSString *job;
+@property (nonatomic,strong) NSString *imgUrl;
 
 @end

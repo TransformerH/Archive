@@ -115,7 +115,9 @@
     // 在实际的开发中，网络图片的宽高应由图片服务器返回然后计算宽高比。ic
     
     UIImageView *pic = [[UIImageView alloc]init];
-    [pic  sd_setImageWithURL:[NSURL URLWithString:[self.model.image_urls objectAtIndex:1]]];
+    if(self.model.image_urls.count>0)
+    {
+    [pic  sd_setImageWithURL:[NSURL URLWithString:[self.model.image_urls objectAtIndex:0]]];
 //    NSLog(@"pictureurl%@",[self.model.image_urls objectAtIndex:1]);
     [pic sd_setImageWithURL:[self.model.image_urls objectAtIndex:1] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         if (image.size.width > 0) {
@@ -128,7 +130,9 @@
         }
  
     }];
-    
+    }else{
+        _view3.sd_layout.autoHeightRatio(0);
+    }
 
     //***********************高度自适应cell设置步骤************************
     

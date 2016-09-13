@@ -8,6 +8,7 @@
 
 #import "CardCell.h"
 #import "View+MASAdditions.h"
+#import   "UIImageView+WebCache.h"
 
 @interface CardCell()
 
@@ -94,6 +95,12 @@
         _classNum = [classNum copy];
         _classLabel.text = _classNum;
     }
+}
+
+- (void)setImgUrl:(NSString *)imgUrl{
+    _imgUrl = imgUrl;
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:_imgUrl]];
+    
 }
 
 @end

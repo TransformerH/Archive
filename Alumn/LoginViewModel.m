@@ -53,14 +53,43 @@
             
             [User loginWithParameters:loginDic SuccessBlock:^(NSDictionary *dict, BOOL success) {
                 
-                [Circle getMainPageCircleWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
-                    [subscriber sendNext:@"success"];
-                    [subscriber sendCompleted];
+                
+                
+                if(([[dict valueForKey:@"code"] integerValue] == 1204) ||([[dict valueForKey:@"code"] integerValue] == 1205) || ([[dict valueForKey:@"code"] integerValue] == 1206)
+                   )
+                {
                     
-                } AFNErrorBlock:^(NSError *error) {
-                    NSLog(@"%@",error);
-                }];
-                //确认登陆跳转
+                    [Circle getMainPageCircleWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+                        [subscriber sendNext:@"success"];
+                        [subscriber sendCompleted];
+                        
+                    } AFNErrorBlock:^(NSError *error) {
+                        NSLog(@"%@",error);
+                    }];
+                    //确认登陆跳转
+                }else {
+                    if([[dict valueForKey:@"code"] integerValue] == 1201){
+                        // format error
+                        [subscriber sendNext:@"format error"];
+                        [subscriber sendCompleted];
+                        
+                        
+                    }else if([[dict valueForKey:@"code"] integerValue] == 1202){
+                        //not register yet
+                        [subscriber sendNext:@"not register yet"];
+                        [subscriber sendCompleted];
+                        
+                        
+                    }else if([[dict valueForKey:@"code"] integerValue] == 1203){
+                        // wrong pwd
+                        [subscriber sendNext:@"wrong pwd"];
+                        [subscriber sendCompleted];
+                        
+                    }
+                    
+                    
+                }
+                
                 
             } AFNErrorBlock:^(NSError *error) {
                 [subscriber sendNext:@"error"];
@@ -69,7 +98,6 @@
             
             return nil;
         }];
-    }];
-}
+    }];}
 
 @end

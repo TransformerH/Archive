@@ -8,6 +8,7 @@
 
 #import "CircleCell.h"
 #import "View+MASAdditions.h"
+#import   "UIImageView+WebCache.h"
 
 
 @interface CircleCell()
@@ -30,7 +31,7 @@
         make.height.offset(60);
         
     }];
-    _imgView.layer.cornerRadius = 30;
+    _imgView.layer.cornerRadius = _imgView.bounds.size.width / 2.0;
     _imgView.layer.masksToBounds = YES;
     
     // **************************nameLabel
@@ -54,6 +55,11 @@
         _name = [name copy];
         _nameLabel.text = _name;
     }
+}
+
+- (void)setImgUrl:(NSString *)imgUrl{
+    _imgUrl = imgUrl;
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:_imgUrl]];
 }
 
 @end

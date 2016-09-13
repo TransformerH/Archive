@@ -88,22 +88,38 @@
     }];
     
     [self.loginVM.loginCommand.executionSignals.switchToLatest subscribeNext:^(NSString *result) {
+        NSString *returnMessage = [[NSString alloc]init];
+        
         if([result isEqualToString:@"success"]){
             BOOL flag =false;
-            
-            
-            
             NSLog(@"跳转到登录成功界面");
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UIViewController *VC = [sb instantiateViewControllerWithIdentifier:@"FiveTab"];
             [self.navigationController pushViewController:VC animated:YES];
             
             
-        }else{
-            NSLog(@"登录失败");
+        }else
+        {
+            if([result isEqualToString:@"format error"]){
+                returnMessage = @"输入格式错误";
+            }else if([result isEqualToString:@"not register yet"]){
+                returnMessage = @"您还没有注册，请先注册";
+            }else  if([result isEqualToString:@"wrong pwd"]){
+                returnMessage = @"输入的密码错误";
+            }
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"登录错误" message:returnMessage preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                NSLog(@"登录错误确认");
+            }];
+            [alertController addAction:cancleAction];
+            [self presentViewController:alertController animated:YES completion:nil];
         }
+        
     }];
 }
+
+
 - (IBAction)registerStart:(id)sender {
     RegisterFirstViewController *registerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"registerFirstVC"];
     [self.navigationController showViewController:registerVC sender:nil];

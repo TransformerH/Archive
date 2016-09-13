@@ -70,7 +70,8 @@
     CircleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if([MeViewModel createCircleFromPlist].count >0)
     {
-    cell.name = [[MeViewModel createCircleFromPlist][indexPath.row] valueForKey:@"name"];
+        cell.name = [[MeViewModel createCircleFromPlist][indexPath.row] valueForKey:@"name"];
+        cell.imgUrl = [[MeViewModel createCircleFromPlist][indexPath.row] valueForKey:@"icon_url"];
     }
     
     //  cell.textLabel.font = [UIFont systemFontOfSize:17];

@@ -56,20 +56,6 @@
                                             <constraint firstAttribute="width" secondItem="HLh-F3-kOQ" secondAttribute="height" multiplier="375:223" id="LLU-mg-d28"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fmS-jm-sSd">
-                                        <rect key="frame" x="271" y="70" width="86" height="85"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="fmS-jm-sSd" secondAttribute="height" multiplier="86:85" id="BZd-CD-cl7"/>
-                                            <constraint firstAttribute="width" secondItem="fmS-jm-sSd" secondAttribute="height" multiplier="86:85" id="D2E-Ct-ahC"/>
-                                            <constraint firstAttribute="width" secondItem="fmS-jm-sSd" secondAttribute="height" multiplier="86:85" id="hXY-eg-fvg"/>
-                                        </constraints>
-                                        <state key="normal" image="circleseatilshare">
-                                            <attributedString key="attributedTitle"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="setButton3Clicked:" destination="B1o-Xo-0Xq" eventType="touchUpInside" id="1yM-7j-QjH"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b8R-kg-Fg6">
                                         <rect key="frame" x="342" y="10" width="25" height="24"/>
                                         <constraints>
@@ -138,10 +124,32 @@
                                             <action selector="sendMessage:" destination="B1o-Xo-0Xq" eventType="touchUpInside" id="8KD-3J-kA5"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fmS-jm-sSd">
+                                        <rect key="frame" x="271" y="69" width="86" height="85"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fmS-jm-sSd" secondAttribute="height" multiplier="86:85" id="BZd-CD-cl7"/>
+                                            <constraint firstAttribute="width" secondItem="fmS-jm-sSd" secondAttribute="height" multiplier="86:85" id="D2E-Ct-ahC"/>
+                                            <constraint firstAttribute="width" secondItem="fmS-jm-sSd" secondAttribute="height" multiplier="86:85" id="hXY-eg-fvg"/>
+                                        </constraints>
+                                        <state key="normal" image="circleseatilshare">
+                                            <attributedString key="attributedTitle"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="BZd-CD-cl7"/>
+                                                <exclude reference="D2E-Ct-ahC"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="setButton3Clicked:" destination="B1o-Xo-0Xq" eventType="touchUpInside" id="1yM-7j-QjH"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="CPp-A2-B2G" firstAttribute="leading" secondItem="yUi-xa-9ng" secondAttribute="leading" constant="21" id="0CT-WA-2y5"/>
+                                    <constraint firstAttribute="trailing" secondItem="fmS-jm-sSd" secondAttribute="trailing" constant="18" id="0Xe-6f-QZX"/>
+                                    <constraint firstItem="CPp-A2-B2G" firstAttribute="leading" secondItem="yUi-xa-9ng" secondAttribute="leading" constant="17" id="0tc-wX-EaI"/>
                                     <constraint firstAttribute="bottom" secondItem="HLh-F3-kOQ" secondAttribute="bottom" id="4s1-tg-fzN"/>
                                     <constraint firstAttribute="trailing" secondItem="fmS-jm-sSd" secondAttribute="trailing" constant="14" id="79M-2Y-gn2"/>
                                     <constraint firstItem="jvX-Oc-deN" firstAttribute="top" secondItem="yUi-xa-9ng" secondAttribute="top" id="7zs-ds-jep"/>
@@ -209,6 +217,8 @@
                                         <exclude reference="gMI-M9-EB1"/>
                                         <exclude reference="79M-2Y-gn2"/>
                                         <exclude reference="9kD-zg-n3a"/>
+                                        <exclude reference="WZ8-1I-Csi"/>
+                                        <exclude reference="v0I-Xv-xZo"/>
                                         <exclude reference="ef3-JZ-VJa"/>
                                     </mask>
                                 </variation>

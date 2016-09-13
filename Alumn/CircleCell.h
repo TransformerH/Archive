@@ -11,5 +11,6 @@
 @interface CircleCell : UITableViewCell
 
 @property (nonatomic,strong) NSString *name;
+@property (nonatomic,strong) NSString *imgUrl;
 
 @end
