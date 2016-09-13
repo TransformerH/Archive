@@ -108,19 +108,9 @@
 		129B1BB81D782701007BC318 /* CYViewControllerTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B1BB21D782701007BC318 /* CYViewControllerTransitioningDelegate.m */; };
 		129B654F1D79987800C3D004 /* UITableView+Improve.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B654C1D79987800C3D004 /* UITableView+Improve.m */; };
 		129B65501D79987800C3D004 /* UIImage+ReSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 129B654E1D79987800C3D004 /* UIImage+ReSize.m */; };
-		129B65621D7998AE00C3D004 /* headicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B65511D7998AE00C3D004 /* headicon.png */; };
-		129B65631D7998AE00C3D004 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 129B65521D7998AE00C3D004 /* background.jpg */; };
-		129B65641D7998AE00C3D004 /* buttonSend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B65531D7998AE00C3D004 /* buttonSend@2x.png */; };
 		129B65651D7998AE00C3D004 /* addPictures.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B65541D7998AE00C3D004 /* addPictures.png */; };
 		129B65661D7998AE00C3D004 /* seen.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B65551D7998AE00C3D004 /* seen.png */; };
 		129B65671D7998AE00C3D004 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B65561D7998AE00C3D004 /* location.png */; };
-		129B65681D7998AE00C3D004 /* picture1.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B65571D7998AE00C3D004 /* picture1.png */; };
-		129B65691D7998AE00C3D004 /* picture2.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B65581D7998AE00C3D004 /* picture2.png */; };
-		129B656A1D7998AE00C3D004 /* picture3.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B65591D7998AE00C3D004 /* picture3.png */; };
-		129B656B1D7998AE00C3D004 /* picture4.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B655A1D7998AE00C3D004 /* picture4.png */; };
-		129B656C1D7998AE00C3D004 /* 范冰冰.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B655B1D7998AE00C3D004 /* 范冰冰.png */; };
-		129B656D1D7998AE00C3D004 /* 高圆圆.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B655C1D7998AE00C3D004 /* 高圆圆.png */; };
-		129B656E1D7998AE00C3D004 /* 林峰.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B655D1D7998AE00C3D004 /* 林峰.png */; };
 		129B656F1D7998AE00C3D004 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B655E1D7998AE00C3D004 /* reply.png */; };
 		129B65701D7998AE00C3D004 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B655F1D7998AE00C3D004 /* comment.png */; };
 		129B65711D7998AE00C3D004 /* great.png in Resources */ = {isa = PBXBuildFile; fileRef = 129B65601D7998AE00C3D004 /* great.png */; };
@@ -154,11 +144,6 @@
 		12C8C2A61D730F7A001DD69B /* DemoVC5.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C8C2A11D730F7A001DD69B /* DemoVC5.m */; };
 		12C8C2A71D730F7A001DD69B /* DemoVC5CellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C8C2A31D730F7A001DD69B /* DemoVC5CellTableViewCell.m */; };
 		12C8C2A81D730F7A001DD69B /* DemoVC5Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C8C2A51D730F7A001DD69B /* DemoVC5Model.m */; };
-		12C8C2AE1D731104001DD69B /* icon0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12C8C2A91D731104001DD69B /* icon0.jpg */; };
-		12C8C2AF1D731104001DD69B /* icon1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12C8C2AA1D731104001DD69B /* icon1.jpg */; };
-		12C8C2B01D731104001DD69B /* icon2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12C8C2AB1D731104001DD69B /* icon2.jpg */; };
-		12C8C2B11D731104001DD69B /* icon3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12C8C2AC1D731104001DD69B /* icon3.jpg */; };
-		12C8C2B21D731104001DD69B /* icon4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12C8C2AD1D731104001DD69B /* icon4.jpg */; };
 		12C973361D701A1C005B814A /* MyUiButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C973351D701A1C005B814A /* MyUiButton.m */; };
 		12C9733B1D702D15005B814A /* RNContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C973381D702D15005B814A /* RNContainerController.m */; };
 		12C9733C1D702D15005B814A /* RNTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C9733A1D702D15005B814A /* RNTableViewController.m */; };
@@ -395,19 +380,9 @@
 		129B654C1D79987800C3D004 /* UITableView+Improve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Improve.m"; sourceTree = "<group>"; };
 		129B654D1D79987800C3D004 /* UIImage+ReSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ReSize.h"; sourceTree = "<group>"; };
 		129B654E1D79987800C3D004 /* UIImage+ReSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ReSize.m"; sourceTree = "<group>"; };
-		129B65511D7998AE00C3D004 /* headicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headicon.png; sourceTree = "<group>"; };
-		129B65521D7998AE00C3D004 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		129B65531D7998AE00C3D004 /* buttonSend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonSend@2x.png"; sourceTree = "<group>"; };
 		129B65541D7998AE00C3D004 /* addPictures.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addPictures.png; sourceTree = "<group>"; };
 		129B65551D7998AE00C3D004 /* seen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seen.png; sourceTree = "<group>"; };
 		129B65561D7998AE00C3D004 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
-		129B65571D7998AE00C3D004 /* picture1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture1.png; sourceTree = "<group>"; };
-		129B65581D7998AE00C3D004 /* picture2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture2.png; sourceTree = "<group>"; };
-		129B65591D7998AE00C3D004 /* picture3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture3.png; sourceTree = "<group>"; };
-		129B655A1D7998AE00C3D004 /* picture4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture4.png; sourceTree = "<group>"; };
-		129B655B1D7998AE00C3D004 /* 范冰冰.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "范冰冰.png"; sourceTree = "<group>"; };
-		129B655C1D7998AE00C3D004 /* 高圆圆.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "高圆圆.png"; sourceTree = "<group>"; };
-		129B655D1D7998AE00C3D004 /* 林峰.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "林峰.png"; sourceTree = "<group>"; };
 		129B655E1D7998AE00C3D004 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
 		129B655F1D7998AE00C3D004 /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
 		129B65601D7998AE00C3D004 /* great.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = great.png; sourceTree = "<group>"; };
@@ -464,11 +439,6 @@
 		12C8C2A31D730F7A001DD69B /* DemoVC5CellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoVC5CellTableViewCell.m; sourceTree = "<group>"; };
 		12C8C2A41D730F7A001DD69B /* DemoVC5Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoVC5Model.h; sourceTree = "<group>"; };
 		12C8C2A51D730F7A001DD69B /* DemoVC5Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoVC5Model.m; sourceTree = "<group>"; };
-		12C8C2A91D731104001DD69B /* icon0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon0.jpg; sourceTree = "<group>"; };
-		12C8C2AA1D731104001DD69B /* icon1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon1.jpg; sourceTree = "<group>"; };
-		12C8C2AB1D731104001DD69B /* icon2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon2.jpg; sourceTree = "<group>"; };
-		12C8C2AC1D731104001DD69B /* icon3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon3.jpg; sourceTree = "<group>"; };
-		12C8C2AD1D731104001DD69B /* icon4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon4.jpg; sourceTree = "<group>"; };
 		12C973341D701A1C005B814A /* MyUiButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUiButton.h; sourceTree = "<group>"; };
 		12C973351D701A1C005B814A /* MyUiButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUiButton.m; sourceTree = "<group>"; };
 		12C973371D702D15005B814A /* RNContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNContainerController.h; sourceTree = "<group>"; };
@@ -1175,29 +1145,14 @@
 		7AB0F9D71D644B510098CEDF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				129B65511D7998AE00C3D004 /* headicon.png */,
-				129B65521D7998AE00C3D004 /* background.jpg */,
-				129B65531D7998AE00C3D004 /* buttonSend@2x.png */,
 				129B65541D7998AE00C3D004 /* addPictures.png */,
 				129B65551D7998AE00C3D004 /* seen.png */,
 				129B65561D7998AE00C3D004 /* location.png */,
-				129B65571D7998AE00C3D004 /* picture1.png */,
-				129B65581D7998AE00C3D004 /* picture2.png */,
-				129B65591D7998AE00C3D004 /* picture3.png */,
-				129B655A1D7998AE00C3D004 /* picture4.png */,
-				129B655B1D7998AE00C3D004 /* 范冰冰.png */,
-				129B655C1D7998AE00C3D004 /* 高圆圆.png */,
-				129B655D1D7998AE00C3D004 /* 林峰.png */,
 				129B655E1D7998AE00C3D004 /* reply.png */,
 				129B655F1D7998AE00C3D004 /* comment.png */,
 				129B65601D7998AE00C3D004 /* great.png */,
 				129B65611D7998AE00C3D004 /* biz_chat_comment_send_prs.png */,
 				123D7E821D758930008B0DF9 /* 创建圈子.png */,
-				12C8C2A91D731104001DD69B /* icon0.jpg */,
-				12C8C2AA1D731104001DD69B /* icon1.jpg */,
-				12C8C2AB1D731104001DD69B /* icon2.jpg */,
-				12C8C2AC1D731104001DD69B /* icon3.jpg */,
-				12C8C2AD1D731104001DD69B /* icon4.jpg */,
 				123AAF141D713E7E0027554A /* data.plist */,
 				12BC79681D76DC0A00711333 /* line.png */,
 				7AB0F9D81D644B510098CEDF /* main.m */,
@@ -1372,17 +1327,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				129B656D1D7998AE00C3D004 /* 高圆圆.png in Resources */,
 				129B656F1D7998AE00C3D004 /* reply.png in Resources */,
 				121947411D71675F002F8287 /* CardCell.xib in Resources */,
 				123AAF191D713E900027554A /* corner_circle@2x.png in Resources */,
 				1221ABC21D80F275006B3993 /* createaCircleStep1VC.xib in Resources */,
-				129B65681D7998AE00C3D004 /* picture1.png in Resources */,
-				129B656E1D7998AE00C3D004 /* 林峰.png in Resources */,
 				129B65661D7998AE00C3D004 /* seen.png in Resources */,
-				12C8C2AF1D731104001DD69B /* icon1.jpg in Resources */,
 				121FF0251D86E9890008B581 /* PeopleViewCell.xib in Resources */,
-				129B656B1D7998AE00C3D004 /* picture4.png in Resources */,
 				123AAF151D713E7E0027554A /* data.plist in Resources */,
 				123D7D9D1D756023008B0DF9 /* findCircle.storyboard in Resources */,
 				129B1B6F1D77CBA1007BC318 /* 0123.jpg in Resources */,
@@ -1392,34 +1342,24 @@
 				12BF62AD1D6D96130083ECD5 /* SecondViewController.xib in Resources */,
 				12B1E2931D84432F00CE63E3 /* Aicomment.png in Resources */,
 				129B65701D7998AE00C3D004 /* comment.png in Resources */,
-				129B65631D7998AE00C3D004 /* background.jpg in Resources */,
-				12C8C2AE1D731104001DD69B /* icon0.jpg in Resources */,
 				121947431D71675F002F8287 /* CircleCell.xib in Resources */,
 				12B1E2911D83F91B00CE63E3 /* liked.png in Resources */,
-				129B656A1D7998AE00C3D004 /* picture3.png in Resources */,
 				129B65711D7998AE00C3D004 /* great.png in Resources */,
-				12C8C2B11D731104001DD69B /* icon3.jpg in Resources */,
 				123F26171D73BCDC00B619DF /* circleSettingVC.xib in Resources */,
 				7AB0F9E71D644B510098CEDF /* LaunchScreen.storyboard in Resources */,
 				1221ABE51D81050C006B3993 /* sdRefeshView_arrow@2x.png in Resources */,
 				12BC79691D76DC0A00711333 /* line.png in Resources */,
 				123D7E811D7576C7008B0DF9 /* Circle_FindVC.xib in Resources */,
-				129B65641D7998AE00C3D004 /* buttonSend@2x.png in Resources */,
 				129B65651D7998AE00C3D004 /* addPictures.png in Resources */,
-				12C8C2B01D731104001DD69B /* icon2.jpg in Resources */,
 				7AB0F9E41D644B510098CEDF /* Assets.xcassets in Resources */,
 				7AB0F9E21D644B510098CEDF /* Main.storyboard in Resources */,
-				12C8C2B21D731104001DD69B /* icon4.jpg in Resources */,
 				129B65721D7998AE00C3D004 /* biz_chat_comment_send_prs.png in Resources */,
 				1219477E1D71B0A8002F8287 /* FindCircleViewController.xib in Resources */,
 				1263B7F21D6EE14F0018A762 /* circleDeatil.storyboard in Resources */,
-				129B656C1D7998AE00C3D004 /* 范冰冰.png in Resources */,
 				12B1E2901D83F91B00CE63E3 /* like.png in Resources */,
 				12E3C1551D870B56004F730D /* CommentTableViewCell.xib in Resources */,
 				12B1E2981D849E2C00CE63E3 /* JIONVC.xib in Resources */,
-				129B65621D7998AE00C3D004 /* headicon.png in Resources */,
 				121947241D7165E3002F8287 /* MJRefresh.bundle in Resources */,
-				129B65691D7998AE00C3D004 /* picture2.png in Resources */,
 				1212B7CD1D802163009A172A /* majorList.plist in Resources */,
 				123D7E831D758930008B0DF9 /* 创建圈子.png in Resources */,
 				129B65671D7998AE00C3D004 /* location.png in Resources */,
