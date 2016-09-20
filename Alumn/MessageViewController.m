@@ -3,7 +3,7 @@
 //  Alumn
 //
 //  Created by Dorangefly Liu on 16/9/13.
-//  Copyright © 2016年 刘龙飞. All rights reserved.
+//  Copyright © 2016年 刘畅. All rights reserved.
 //
 
 #define HeadMenuViewHeight 45
@@ -57,59 +57,24 @@
 
 @implementation MessageViewController
 
-- (void)viewWillAppear:(BOOL)animated{
-    
-//    NSDictionary *userLogin = [[NSDictionary alloc] initWithObjectsAndKeys:@"llf123456",@"password",@"15888888888",@"telephone", nil];
-//    [User loginWithParameters:userLogin SuccessBlock:^(NSDictionary *dict, BOOL success) {
-        //------------------------------------------请求通知
-        [User systemMessageWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
-            NSLog(@"获取消息列表成功");
-            [MessageViewModel messageListSaveInPlist:[[dict valueForKey:@"Data"] valueForKey:@"response"]];
-            NSArray *outMessage = [MessageViewModel messageListFromPlist];
-            //----------************************************************测试输出
-            NSLog(@"检测通知列表是否存入plist");
-            for(int i = 0;i < outMessage.count;i++){
-                NSLog(@"%d : %@",i,outMessage[i]);
-            }
-            
-            //----------************************************************测试输出
-            
-        } AFNErrorBlock:^(NSError *error) {
-            NSLog(@"获取消息列表失败");
-        }];
-        
-        //------------------------------------------请求评论
-        
-        [User reciveCommentWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
-            [MessageViewModel commentListSaveInPlist:[dict valueForKey:@"Data"]];
-            
-            //---------------************************************测试输出
-            NSLog(@"检测评论列表是否存入");
-            NSArray *outCommand = [[MessageViewModel commentListFromPlist]valueForKey:@"results"];
-            for(int i = 0;i < outCommand.count;i++){
-                NSLog(@"%@",outCommand[i]);
-            }
-            
-            //----------************************************************测试输出
-            
-            
-        } AFNErrorBlock:^(NSError *error) {
-            NSLog(@"获取评论失败");
-        }];
-        
-//    } AFNErrorBlock:^(NSError *error) {
-//        NSLog(@"登录失败");
-//    }];
-//    
-}
-
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    [self initWithUserInterface];
     
-//    AVObject *testObject = [AVObject objectWithClassName:@"TestObject"];
-//    [testObject setObject:@"bar" forKey:@"foo"];
-//    [testObject save];
+    [super viewDidLoad];
+    
+//    [User systemMessageWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+//        NSLog(@"获取消息列表成功");
+//    } AFNErrorBlock:^(NSError *error) {
+//        NSLog(@"获取消息列表失败");
+//    }];
+//    [User reciveCommentWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+//        NSLog(@"检测评论列表是否存入");
+//    } AFNErrorBlock:^(NSError *error) {
+//        NSLog(@"获取评论失败");
+//    }];
+
+    
+    [self initWithUserInterface];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -318,42 +283,41 @@
             case 0:{
                 NSLog(@"私信界面");
                 
-//                [[CDChatManager manager] openWithClientId:@"123" callback:^(BOOL succeeded, NSError *error) {
-//                    ChatListViewController *chatList = [[ChatListViewController alloc] init];
-//                    chatList.view.frame = self.contentScrollView.bounds;
-//                    chatList.tableView.tag = 100 + i;
-//                    [self addChildViewController:chatList];
-//                    [self.contableTableViewArray addObject:chatList.view];
-//                }];
-//                ChatListViewController *chatList = [[ChatListViewController alloc] init];
-//                chatList.tableView.tag = 100 + i;
-//                chatList.view.frame = self.contentScrollView.bounds;
-//                [self addChildViewController:chatList];
-//                [self.contableTableViewArray addObject:chatList.view];
+                //                [[CDChatManager manager] openWithClientId:@"123" callback:^(BOOL succeeded, NSError *error) {
+                //                    ChatListViewController *chatList = [[ChatListViewController alloc] init];
+                //                    chatList.view.frame = self.contentScrollView.bounds;
+                //                    chatList.tableView.tag = 100 + i;
+                //                    [self addChildViewController:chatList];
+                //                    [self.contableTableViewArray addObject:chatList.view];
+                //                }];
+                //                ChatListViewController *chatList = [[ChatListViewController alloc] init];
+                //                chatList.tableView.tag = 100 + i;
+                //                chatList.view.frame = self.contentScrollView.bounds;
+                //                [self addChildViewController:chatList];
+                //                [self.contableTableViewArray addObject:chatList.view];
                 
-                MessageTableViewController *tableViewVC = [[MessageTableViewController alloc]init];
-                tableViewVC.page = i+1;
-                tableViewVC.view.frame = self.contentScrollView.bounds;
-                tableViewVC.tableView.delegate = self;
-                tableViewVC.tableView.tag = 100 + i;
-                [self addChildViewController:tableViewVC];
+                CommentTableViewController *zeroCommentVC = [[CommentTableViewController alloc]init];
+                zeroCommentVC.view.frame = self.contentScrollView.bounds;
+                zeroCommentVC.tableView.delegate = self;
+                zeroCommentVC.tableView.tag = 100 + i;
                 
-                [_bottomScrollView.panGestureRecognizer requireGestureRecognizerToFail:tableViewVC.tableView.panGestureRecognizer];
+                [zeroCommentVC.tableView reloadData];
                 
-                [self.contableTableViewArray addObject:tableViewVC.view];
+                [self addChildViewController:zeroCommentVC];
                 
+                [_bottomScrollView.panGestureRecognizer requireGestureRecognizerToFail:zeroCommentVC.tableView.panGestureRecognizer];
                 
+                [self.contableTableViewArray addObject:zeroCommentVC.view];
                 break;
             }
             case 1:{
                 NSLog(@"通知界面");
-                
                 MessageTableViewController *tableViewVC = [[MessageTableViewController alloc]init];
-                tableViewVC.page = i+1;
                 tableViewVC.view.frame = self.contentScrollView.bounds;
                 tableViewVC.tableView.delegate = self;
                 tableViewVC.tableView.tag = 100 + i;
                 [self addChildViewController:tableViewVC];
+                [tableViewVC.tableView reloadData];
                 
                 [_bottomScrollView.panGestureRecognizer requireGestureRecognizerToFail:tableViewVC.tableView.panGestureRecognizer];
                 
@@ -361,6 +325,21 @@
                 
                 break;
                 
+//                CommentTableViewController *commentVC = [[CommentTableViewController alloc]init];
+//                commentVC.view.frame = self.contentScrollView.bounds;
+//                commentVC.tableView.delegate = self;
+//                commentVC.tableView.tag = 100 + i;
+//                
+//                [commentVC.tableView reloadData];
+//                
+//                [self addChildViewController:commentVC];
+//                
+//                [_bottomScrollView.panGestureRecognizer requireGestureRecognizerToFail:commentVC.tableView.panGestureRecognizer];
+//                
+//                [self.contableTableViewArray addObject:commentVC.view];
+//                break;
+
+//
             }
             case 2:{
                 NSLog(@"评论界面");

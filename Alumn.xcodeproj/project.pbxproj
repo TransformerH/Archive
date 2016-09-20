@@ -49,17 +49,6 @@
 		121BE63C1D6C57820072705F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121BE6371D6C57820072705F /* ViewController.m */; };
 		121FEFF71D86D98F0008B581 /* UserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FEFF61D86D98F0008B581 /* UserFactory.m */; };
 		121FF0001D86E05A0008B581 /* PeopleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FEFFF1D86E05A0008B581 /* PeopleViewModel.m */; };
-		121FF0181D86E97D0008B581 /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF0131D86E97D0008B581 /* PeopleViewController.m */; };
-		121FF0191D86E97D0008B581 /* MeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF0151D86E97D0008B581 /* MeInfoViewController.m */; };
-		121FF01A1D86E97D0008B581 /* HighLevelSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF0171D86E97D0008B581 /* HighLevelSearchViewController.m */; };
-		121FF0241D86E9890008B581 /* PeopleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF01C1D86E9890008B581 /* PeopleViewCell.m */; };
-		121FF0251D86E9890008B581 /* PeopleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121FF01D1D86E9890008B581 /* PeopleViewCell.xib */; };
-		121FF0261D86E9890008B581 /* ChooseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF01F1D86E9890008B581 /* ChooseButton.m */; };
-		121FF0271D86E9890008B581 /* YearpickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF0211D86E9890008B581 /* YearpickerTextField.m */; };
-		121FF0281D86E9890008B581 /* PlacepickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF0231D86E9890008B581 /* PlacepickerTextField.m */; };
-		121FF0301D86E9CC0008B581 /* PeopleVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF02B1D86E9CC0008B581 /* PeopleVM.m */; };
-		121FF0311D86E9CC0008B581 /* TextFieldSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF02D1D86E9CC0008B581 /* TextFieldSender.m */; };
-		121FF0321D86E9CC0008B581 /* MeInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF02F1D86E9CC0008B581 /* MeInfoViewModel.m */; };
 		1221ABC11D80F275006B3993 /* createaCircleStep1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1221ABBF1D80F275006B3993 /* createaCircleStep1VC.m */; };
 		1221ABC21D80F275006B3993 /* createaCircleStep1VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1221ABC01D80F275006B3993 /* createaCircleStep1VC.xib */; };
 		1221ABD81D8104DA006B3993 /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 1221ABD51D8104DA006B3993 /* UITableView+SDAutoTableViewCellHeight.m */; };
@@ -174,6 +163,17 @@
 		12E3C1641D871194004F730D /* MessageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E3C1631D871194004F730D /* MessageViewModel.m */; };
 		12F5166B1D6FD2C4003E6B33 /* circleDeatilVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F5166A1D6FD2C4003E6B33 /* circleDeatilVC.m */; };
 		12FA7D9D1D7FAF7400830501 /* login_temp.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FA7D9C1D7FAF7400830501 /* login_temp.m */; };
+		7A8D34CE1D883DDE004D7258 /* PeopleVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D34C91D883DDE004D7258 /* PeopleVM.m */; };
+		7A8D34CF1D883DDE004D7258 /* TextFieldSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D34CB1D883DDE004D7258 /* TextFieldSender.m */; };
+		7A8D34D01D883DDE004D7258 /* MeInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D34CD1D883DDE004D7258 /* MeInfoViewModel.m */; };
+		7A8D34D71D883E03004D7258 /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D34D21D883E03004D7258 /* PeopleViewController.m */; };
+		7A8D34D81D883E03004D7258 /* MeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D34D41D883E03004D7258 /* MeInfoViewController.m */; };
+		7A8D34D91D883E03004D7258 /* HighLevelSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D34D61D883E03004D7258 /* HighLevelSearchViewController.m */; };
+		7A8D34E31D883E3D004D7258 /* PeopleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D34DB1D883E3D004D7258 /* PeopleViewCell.m */; };
+		7A8D34E41D883E3D004D7258 /* PeopleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D34DC1D883E3D004D7258 /* PeopleViewCell.xib */; };
+		7A8D34E51D883E3D004D7258 /* ChooseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D34DE1D883E3D004D7258 /* ChooseButton.m */; };
+		7A8D34E61D883E3D004D7258 /* YearpickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D34E01D883E3D004D7258 /* YearpickerTextField.m */; };
+		7A8D34E71D883E3D004D7258 /* PlacepickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8D34E21D883E3D004D7258 /* PlacepickerTextField.m */; };
 		7AB0F9D91D644B510098CEDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0F9D81D644B510098CEDF /* main.m */; };
 		7AB0F9DC1D644B510098CEDF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0F9DB1D644B510098CEDF /* AppDelegate.m */; };
 		7AB0F9E21D644B510098CEDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB0F9E01D644B510098CEDF /* Main.storyboard */; };
@@ -273,27 +273,6 @@
 		121FEFF61D86D98F0008B581 /* UserFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFactory.m; sourceTree = "<group>"; };
 		121FEFFE1D86E05A0008B581 /* PeopleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewModel.h; sourceTree = "<group>"; };
 		121FEFFF1D86E05A0008B581 /* PeopleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewModel.m; sourceTree = "<group>"; };
-		121FF0121D86E97D0008B581 /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
-		121FF0131D86E97D0008B581 /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
-		121FF0141D86E97D0008B581 /* MeInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeInfoViewController.h; sourceTree = "<group>"; };
-		121FF0151D86E97D0008B581 /* MeInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeInfoViewController.m; sourceTree = "<group>"; };
-		121FF0161D86E97D0008B581 /* HighLevelSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighLevelSearchViewController.h; sourceTree = "<group>"; };
-		121FF0171D86E97D0008B581 /* HighLevelSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighLevelSearchViewController.m; sourceTree = "<group>"; };
-		121FF01B1D86E9890008B581 /* PeopleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewCell.h; sourceTree = "<group>"; };
-		121FF01C1D86E9890008B581 /* PeopleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewCell.m; sourceTree = "<group>"; };
-		121FF01D1D86E9890008B581 /* PeopleViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleViewCell.xib; sourceTree = "<group>"; };
-		121FF01E1D86E9890008B581 /* ChooseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseButton.h; sourceTree = "<group>"; };
-		121FF01F1D86E9890008B581 /* ChooseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseButton.m; sourceTree = "<group>"; };
-		121FF0201D86E9890008B581 /* YearpickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YearpickerTextField.h; sourceTree = "<group>"; };
-		121FF0211D86E9890008B581 /* YearpickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearpickerTextField.m; sourceTree = "<group>"; };
-		121FF0221D86E9890008B581 /* PlacepickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacepickerTextField.h; sourceTree = "<group>"; };
-		121FF0231D86E9890008B581 /* PlacepickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacepickerTextField.m; sourceTree = "<group>"; };
-		121FF02A1D86E9CC0008B581 /* PeopleVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleVM.h; sourceTree = "<group>"; };
-		121FF02B1D86E9CC0008B581 /* PeopleVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleVM.m; sourceTree = "<group>"; };
-		121FF02C1D86E9CC0008B581 /* TextFieldSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldSender.h; sourceTree = "<group>"; };
-		121FF02D1D86E9CC0008B581 /* TextFieldSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldSender.m; sourceTree = "<group>"; };
-		121FF02E1D86E9CC0008B581 /* MeInfoViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeInfoViewModel.h; sourceTree = "<group>"; };
-		121FF02F1D86E9CC0008B581 /* MeInfoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeInfoViewModel.m; sourceTree = "<group>"; };
 		1221ABBE1D80F275006B3993 /* createaCircleStep1VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = createaCircleStep1VC.h; sourceTree = "<group>"; };
 		1221ABBF1D80F275006B3993 /* createaCircleStep1VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = createaCircleStep1VC.m; sourceTree = "<group>"; };
 		1221ABC01D80F275006B3993 /* createaCircleStep1VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = createaCircleStep1VC.xib; sourceTree = "<group>"; };
@@ -498,6 +477,27 @@
 		12FA7D9C1D7FAF7400830501 /* login_temp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = login_temp.m; sourceTree = "<group>"; };
 		273E28A401731D3959451638 /* Pods_Alumn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alumn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3816569BD4D6A19087755871 /* Pods-Alumn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alumn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alumn/Pods-Alumn.debug.xcconfig"; sourceTree = "<group>"; };
+		7A8D34C81D883DDE004D7258 /* PeopleVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleVM.h; sourceTree = "<group>"; };
+		7A8D34C91D883DDE004D7258 /* PeopleVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleVM.m; sourceTree = "<group>"; };
+		7A8D34CA1D883DDE004D7258 /* TextFieldSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldSender.h; sourceTree = "<group>"; };
+		7A8D34CB1D883DDE004D7258 /* TextFieldSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldSender.m; sourceTree = "<group>"; };
+		7A8D34CC1D883DDE004D7258 /* MeInfoViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeInfoViewModel.h; sourceTree = "<group>"; };
+		7A8D34CD1D883DDE004D7258 /* MeInfoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeInfoViewModel.m; sourceTree = "<group>"; };
+		7A8D34D11D883E03004D7258 /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
+		7A8D34D21D883E03004D7258 /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
+		7A8D34D31D883E03004D7258 /* MeInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeInfoViewController.h; sourceTree = "<group>"; };
+		7A8D34D41D883E03004D7258 /* MeInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeInfoViewController.m; sourceTree = "<group>"; };
+		7A8D34D51D883E03004D7258 /* HighLevelSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighLevelSearchViewController.h; sourceTree = "<group>"; };
+		7A8D34D61D883E03004D7258 /* HighLevelSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighLevelSearchViewController.m; sourceTree = "<group>"; };
+		7A8D34DA1D883E3D004D7258 /* PeopleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewCell.h; sourceTree = "<group>"; };
+		7A8D34DB1D883E3D004D7258 /* PeopleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewCell.m; sourceTree = "<group>"; };
+		7A8D34DC1D883E3D004D7258 /* PeopleViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleViewCell.xib; sourceTree = "<group>"; };
+		7A8D34DD1D883E3D004D7258 /* ChooseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseButton.h; sourceTree = "<group>"; };
+		7A8D34DE1D883E3D004D7258 /* ChooseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseButton.m; sourceTree = "<group>"; };
+		7A8D34DF1D883E3D004D7258 /* YearpickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YearpickerTextField.h; sourceTree = "<group>"; };
+		7A8D34E01D883E3D004D7258 /* YearpickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearpickerTextField.m; sourceTree = "<group>"; };
+		7A8D34E11D883E3D004D7258 /* PlacepickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacepickerTextField.h; sourceTree = "<group>"; };
+		7A8D34E21D883E3D004D7258 /* PlacepickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacepickerTextField.m; sourceTree = "<group>"; };
 		7AB0F9D41D644B510098CEDF /* Alumn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alumn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB0F9D81D644B510098CEDF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7AB0F9DA1D644B510098CEDF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -682,12 +682,12 @@
 		121FF0011D86E07E0008B581 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				121FF0121D86E97D0008B581 /* PeopleViewController.h */,
-				121FF0131D86E97D0008B581 /* PeopleViewController.m */,
-				121FF0141D86E97D0008B581 /* MeInfoViewController.h */,
-				121FF0151D86E97D0008B581 /* MeInfoViewController.m */,
-				121FF0161D86E97D0008B581 /* HighLevelSearchViewController.h */,
-				121FF0171D86E97D0008B581 /* HighLevelSearchViewController.m */,
+				7A8D34D11D883E03004D7258 /* PeopleViewController.h */,
+				7A8D34D21D883E03004D7258 /* PeopleViewController.m */,
+				7A8D34D31D883E03004D7258 /* MeInfoViewController.h */,
+				7A8D34D41D883E03004D7258 /* MeInfoViewController.m */,
+				7A8D34D51D883E03004D7258 /* HighLevelSearchViewController.h */,
+				7A8D34D61D883E03004D7258 /* HighLevelSearchViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -695,12 +695,12 @@
 		121FF0291D86E9B30008B581 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
-				121FF02A1D86E9CC0008B581 /* PeopleVM.h */,
-				121FF02B1D86E9CC0008B581 /* PeopleVM.m */,
-				121FF02C1D86E9CC0008B581 /* TextFieldSender.h */,
-				121FF02D1D86E9CC0008B581 /* TextFieldSender.m */,
-				121FF02E1D86E9CC0008B581 /* MeInfoViewModel.h */,
-				121FF02F1D86E9CC0008B581 /* MeInfoViewModel.m */,
+				7A8D34C81D883DDE004D7258 /* PeopleVM.h */,
+				7A8D34C91D883DDE004D7258 /* PeopleVM.m */,
+				7A8D34CA1D883DDE004D7258 /* TextFieldSender.h */,
+				7A8D34CB1D883DDE004D7258 /* TextFieldSender.m */,
+				7A8D34CC1D883DDE004D7258 /* MeInfoViewModel.h */,
+				7A8D34CD1D883DDE004D7258 /* MeInfoViewModel.m */,
 			);
 			name = viewModel;
 			sourceTree = "<group>";
@@ -804,15 +804,15 @@
 		123D7E841D758A5A008B0DF9 /* peopleList */ = {
 			isa = PBXGroup;
 			children = (
-				121FF01B1D86E9890008B581 /* PeopleViewCell.h */,
-				121FF01C1D86E9890008B581 /* PeopleViewCell.m */,
-				121FF01D1D86E9890008B581 /* PeopleViewCell.xib */,
-				121FF01E1D86E9890008B581 /* ChooseButton.h */,
-				121FF01F1D86E9890008B581 /* ChooseButton.m */,
-				121FF0201D86E9890008B581 /* YearpickerTextField.h */,
-				121FF0211D86E9890008B581 /* YearpickerTextField.m */,
-				121FF0221D86E9890008B581 /* PlacepickerTextField.h */,
-				121FF0231D86E9890008B581 /* PlacepickerTextField.m */,
+				7A8D34DA1D883E3D004D7258 /* PeopleViewCell.h */,
+				7A8D34DB1D883E3D004D7258 /* PeopleViewCell.m */,
+				7A8D34DC1D883E3D004D7258 /* PeopleViewCell.xib */,
+				7A8D34DD1D883E3D004D7258 /* ChooseButton.h */,
+				7A8D34DE1D883E3D004D7258 /* ChooseButton.m */,
+				7A8D34DF1D883E3D004D7258 /* YearpickerTextField.h */,
+				7A8D34E01D883E3D004D7258 /* YearpickerTextField.m */,
+				7A8D34E11D883E3D004D7258 /* PlacepickerTextField.h */,
+				7A8D34E21D883E3D004D7258 /* PlacepickerTextField.m */,
 			);
 			name = peopleList;
 			sourceTree = "<group>";
@@ -923,8 +923,6 @@
 		129E24E01D82455A008488FC /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
-				12E3C1621D871194004F730D /* MessageViewModel.h */,
-				12E3C1631D871194004F730D /* MessageViewModel.m */,
 				12E3C15F1D870F59004F730D /* MeViewModel.h */,
 				12E3C1601D870F59004F730D /* MeViewModel.m */,
 			);
@@ -1086,6 +1084,8 @@
 		12E3C1451D8708B7004F730D /* VIewModel */ = {
 			isa = PBXGroup;
 			children = (
+				12E3C1621D871194004F730D /* MessageViewModel.h */,
+				12E3C1631D871194004F730D /* MessageViewModel.m */,
 			);
 			name = VIewModel;
 			sourceTree = "<group>";
@@ -1332,7 +1332,6 @@
 				123AAF191D713E900027554A /* corner_circle@2x.png in Resources */,
 				1221ABC21D80F275006B3993 /* createaCircleStep1VC.xib in Resources */,
 				129B65661D7998AE00C3D004 /* seen.png in Resources */,
-				121FF0251D86E9890008B581 /* PeopleViewCell.xib in Resources */,
 				123AAF151D713E7E0027554A /* data.plist in Resources */,
 				123D7D9D1D756023008B0DF9 /* findCircle.storyboard in Resources */,
 				129B1B6F1D77CBA1007BC318 /* 0123.jpg in Resources */,
@@ -1359,6 +1358,7 @@
 				12B1E2901D83F91B00CE63E3 /* like.png in Resources */,
 				12E3C1551D870B56004F730D /* CommentTableViewCell.xib in Resources */,
 				12B1E2981D849E2C00CE63E3 /* JIONVC.xib in Resources */,
+				7A8D34E41D883E3D004D7258 /* PeopleViewCell.xib in Resources */,
 				121947241D7165E3002F8287 /* MJRefresh.bundle in Resources */,
 				1212B7CD1D802163009A172A /* majorList.plist in Resources */,
 				123D7E831D758930008B0DF9 /* 创建圈子.png in Resources */,
@@ -1434,6 +1434,7 @@
 				129B1BB71D782701007BC318 /* CYNavigationControllerDelegate.m in Sources */,
 				121947761D7168BE002F8287 /* MJRefreshFooter.m in Sources */,
 				12D89E061D81533400CFDBBA /* RRSendMessageViewController.m in Sources */,
+				7A8D34D71D883E03004D7258 /* PeopleViewController.m in Sources */,
 				129B1BB31D782701007BC318 /* CYPortalTransitionContext.m in Sources */,
 				121947741D7168BE002F8287 /* MJRefreshBackFooter.m in Sources */,
 				12D89DFB1D81463A00CFDBBA /* createCircleStep2.m in Sources */,
@@ -1448,13 +1449,15 @@
 				123F26351D74195300B619DF /* LfDeleteVCCellTableViewCell.m in Sources */,
 				1212B7C51D802142009A172A /* RegisterViewModel.m in Sources */,
 				12BF62991D6D75270083ECD5 /* CellModel.m in Sources */,
+				7A8D34CE1D883DDE004D7258 /* PeopleVM.m in Sources */,
+				7A8D34CF1D883DDE004D7258 /* TextFieldSender.m in Sources */,
 				129B65831D7998E800C3D004 /* ReplyInputView.m in Sources */,
 				12BC84ED1D72865D00383806 /* FloatingViewController.m in Sources */,
 				12C8C2A71D730F7A001DD69B /* DemoVC5CellTableViewCell.m in Sources */,
 				121947481D716770002F8287 /* JoinedCircleTableViewController.m in Sources */,
+				7A8D34E61D883E3D004D7258 /* YearpickerTextField.m in Sources */,
 				12E3C14B1D870A6A004F730D /* MessageTableViewController.m in Sources */,
 				123D7E7A1D75765C008B0DF9 /* CollectionReusableView_F.m in Sources */,
-				121FF0271D86E9890008B581 /* YearpickerTextField.m in Sources */,
 				12C9733C1D702D15005B814A /* RNTableViewController.m in Sources */,
 				12BF629F1D6D75910083ECD5 /* CollectionReusableView.m in Sources */,
 				129B1B741D77D2E5007BC318 /* NameAndPicVC.m in Sources */,
@@ -1470,26 +1473,22 @@
 				1219472F1D7165F0002F8287 /* UIScrollView+MJExtension.m in Sources */,
 				1219473C1D716747002F8287 /* CardCell.m in Sources */,
 				1221ABFA1D810964006B3993 /* RegisterFiveVC.m in Sources */,
+				7A8D34E71D883E3D004D7258 /* PlacepickerTextField.m in Sources */,
 				123F26161D73BCDC00B619DF /* circleSettingVC.m in Sources */,
-				121FF0281D86E9890008B581 /* PlacepickerTextField.m in Sources */,
 				12D89E091D81536200CFDBBA /* UICollectionViewCellPhoto.m in Sources */,
 				121BE63C1D6C57820072705F /* ViewController.m in Sources */,
 				121947381D7166F3002F8287 /* TableViewController.m in Sources */,
 				1224C2001D7054C600B4CF72 /* searchViewController.m in Sources */,
 				12B1E2971D849E2C00CE63E3 /* JIONVC.m in Sources */,
-				121FF0191D86E97D0008B581 /* MeInfoViewController.m in Sources */,
 				123F26361D74195300B619DF /* LfDeleteVCModel.m in Sources */,
 				123AAED41D713ABA0027554A /* UIView+Additions.m in Sources */,
 				121947681D71683E002F8287 /* MJRefreshStateHeader.m in Sources */,
 				7AB0F9D91D644B510098CEDF /* main.m in Sources */,
-				121FF0241D86E9890008B581 /* PeopleViewCell.m in Sources */,
-				121FF0311D86E9CC0008B581 /* TextFieldSender.m in Sources */,
+				7A8D34E31D883E3D004D7258 /* PeopleViewCell.m in Sources */,
 				12C9733F1D702D81005B814A /* CustomSearchBar.m in Sources */,
 				1212B7C81D802142009A172A /* EnrollYearTextField.m in Sources */,
 				12BF629E1D6D75910083ECD5 /* CollectionViewCell.m in Sources */,
-				121FF0301D86E9CC0008B581 /* PeopleVM.m in Sources */,
 				1221ABFC1D810964006B3993 /* RegisterThreeVC.m in Sources */,
-				121FF0181D86E97D0008B581 /* PeopleViewController.m in Sources */,
 				129B658B1D79991F00C3D004 /* ShowImageViewController.m in Sources */,
 				121FEFF71D86D98F0008B581 /* UserFactory.m in Sources */,
 				12D89DF01D813A5000CFDBBA /* User.m in Sources */,
@@ -1499,14 +1498,12 @@
 				12E3C1641D871194004F730D /* MessageViewModel.m in Sources */,
 				129B65501D79987800C3D004 /* UIImage+ReSize.m in Sources */,
 				12C973421D704A58005B814A /* searchController.m in Sources */,
-				121FF01A1D86E97D0008B581 /* HighLevelSearchViewController.m in Sources */,
-				121FF0321D86E9CC0008B581 /* MeInfoViewModel.m in Sources */,
 				1212B7C61D802142009A172A /* genderTextField.m in Sources */,
 				12D89E031D81532900CFDBBA /* RRMessageModel.m in Sources */,
 				12F5166B1D6FD2C4003E6B33 /* circleDeatilVC.m in Sources */,
 				12E3C1581D870BCB004F730D /* CommentTableViewController.m in Sources */,
 				12BC84EA1D7285E600383806 /* UIDragButton.m in Sources */,
-				121FF0261D86E9890008B581 /* ChooseButton.m in Sources */,
+				7A8D34E51D883E3D004D7258 /* ChooseButton.m in Sources */,
 				129B1BB41D782701007BC318 /* CYPortalTransitionAnimator.m in Sources */,
 				12E3C1521D870B56004F730D /* SystemMessageTableViewCell.m in Sources */,
 				12D89DEE1D813A5000CFDBBA /* Dynamic+Extension.m in Sources */,
@@ -1529,7 +1526,9 @@
 				129B658D1D79991F00C3D004 /* CircleViewController.m in Sources */,
 				12BF62981D6D75270083ECD5 /* SectionModel.m in Sources */,
 				123D7E781D75765C008B0DF9 /* Cell_FModel.m in Sources */,
+				7A8D34D01D883DDE004D7258 /* MeInfoViewModel.m in Sources */,
 				129B658C1D79991F00C3D004 /* ReportStateViewController.m in Sources */,
+				7A8D34D91D883E03004D7258 /* HighLevelSearchViewController.m in Sources */,
 				123D7E801D7576C7008B0DF9 /* Circle_FindVC.m in Sources */,
 				129B1BB81D782701007BC318 /* CYViewControllerTransitioningDelegate.m in Sources */,
 				121947531D71680F002F8287 /* MJRefreshAutoGifFooter.m in Sources */,
@@ -1539,6 +1538,7 @@
 				121947551D71680F002F8287 /* MJRefreshAutoStateFooter.m in Sources */,
 				121947341D716672002F8287 /* MyMainViewController.m in Sources */,
 				129B654F1D79987800C3D004 /* UITableView+Improve.m in Sources */,
+				7A8D34D81D883E03004D7258 /* MeInfoViewController.m in Sources */,
 				121947661D71683E002F8287 /* MJRefreshGifHeader.m in Sources */,
 				1221ABD91D8104DA006B3993 /* UIView+SDAutoLayout.m in Sources */,
 				12D89DED1D813A5000CFDBBA /* Dynamic.m in Sources */,

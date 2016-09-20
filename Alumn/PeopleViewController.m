@@ -43,8 +43,8 @@ static BOOL isShow = NO;
 @property (strong,nonatomic) MeInfoViewModel *meInfoVM;
 @property (strong,nonatomic) TextFieldSender *sender;
 
-//@property (strong,nonatomic) UISearchController *searController;
-//@property (strong,nonatomic) UISearchBar *searchBar;
+@property (strong,nonatomic) UISearchController *searController;
+@property (strong,nonatomic) UISearchBar *searchBar;
 
 @property (copy,nonatomic) NSMutableArray *searchResult;
 
@@ -71,12 +71,13 @@ static BOOL isShow = NO;
     UIImageView *leftImgView = [[UIImageView alloc] initWithImage:[self OriginImage:leftImg scaleToSize:CGSizeMake(20, 20)]];
     leftImgView.bounds = CGRectMake(0, self.leftButton.frame.origin.y - 10, 20, 20);
     [self.leftButton addSubview:leftImgView];
+    [self.leftButton addTarget:self action:@selector(showSearchBar:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.rightButton addTarget:self action:@selector(showDown:) forControlEvents:UIControlEventTouchUpInside];
     
     
     //----------------------------------------------------------  Net
-    NSDictionary *userLogin = [[NSDictionary alloc] initWithObjectsAndKeys:@"zbh123",@"password",@"15999999999",@"telephone", nil];
+    NSDictionary *userLogin = [[NSDictionary alloc] initWithObjectsAndKeys:@"lc123456",@"password",@"15860686158",@"telephone", nil];
     [User loginWithParameters:userLogin SuccessBlock:^(NSDictionary *dict, BOOL success) {
         [User peopleListWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
             NSLog(@"获取人脉列表成功");
@@ -391,6 +392,14 @@ static BOOL isShow = NO;
     }
     
     [self.tableView reloadData];
+}
+
+
+
+- (void)showSearchBar:(id)sender{
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0,60, self.view.bounds.size.width, 40)];
+    [self.view addSubview:self.searchBar];
+    self.searchBar.showsCancelButton = YES;
 }
 
 

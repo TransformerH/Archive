@@ -71,7 +71,7 @@
 
 - (void)setName:(NSString *)name{
     if(![_name isEqualToString:name]){
-        _name = [name copy];
+        _name= [name substringFromIndex:11];
         _nameLabel.text = _name;
     }
 }
@@ -100,6 +100,8 @@
 - (void)setImgUrl:(NSString *)imgUrl{
     _imgUrl = imgUrl;
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:_imgUrl]];
+    self.imgView.layer.masksToBounds = YES;
+    self.imgView.layer.cornerRadius = self.imgView.bounds.size.width / 2.0;
     
 }
 

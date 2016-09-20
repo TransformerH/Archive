@@ -29,7 +29,7 @@
 + (NSArray*)peopleArrayFromPlist{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *plistPath1= [paths objectAtIndex:0];
-     NSString *fileName = [plistPath1 stringByAppendingPathComponent:@"peopleList.plist"];
+    NSString *fileName = [plistPath1 stringByAppendingPathComponent:@"peopleList.plist"];
     NSMutableDictionary *peopleDic = [NSMutableDictionary dictionaryWithContentsOfFile:fileName];
     NSArray *peopleList = [[peopleDic valueForKey:@"hits"]valueForKey:@"hits"];
     

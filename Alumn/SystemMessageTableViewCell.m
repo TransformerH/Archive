@@ -2,7 +2,7 @@
 //  SystemMessageTableViewCell.m
 //  scrollViewDamo
 //
-//  Created by 韩雪滢 on 9/11/16.
+//  Created by 刘畅 on 9/11/16.
 //  Copyright © 2016 小腊. All rights reserved.
 //
 
@@ -35,37 +35,36 @@
 
 
 - (void)setMessageName:(NSString *)messageName{
-    if(![_messageName isEqualToString:messageName]){
+//    if(![_messageName isEqualToString:messageName]){
         _messageName = [messageName copy];
         _messageNameLabel.text = _messageName;
-    }
+//    }
 }
 
 - (void)setCircleURL:(NSString *)circleURL{
-    if(![_circleURL isEqualToString:circleURL]){
-        _circleURL = [circleURL copy];
+    
+        _circleURL = circleURL;
         
-      //  UIImage *circleImg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_circleURL]]];
-            [self.messageImg  sd_setImageWithURL:[NSURL URLWithString:_circleURL] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                [self.messageImg setImage:[self OriginImage:image scaleToSize:self.messageImg.bounds.size]];
-            }];
+       UIImage *circleImg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_circleURL]]];
+//        [self.messageImg  sd_setImageWithURL:[NSURL URLWithString:_circleURL] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                [self.messageImg setImage:[self OriginImage:image scaleToSize:self.messageImg.bounds.size]];
+//            }];
 
-      //  [self.messageImg setImage:[self OriginImage:circleImg scaleToSize:self.messageImg.bounds.size]];
+        [self.messageImg setImage:[self OriginImage:circleImg scaleToSize:self.messageImg.bounds.size]];
         self.messageImg.layer.masksToBounds = YES;
         self.messageImg.layer.cornerRadius = self.messageImg.bounds.size.width / 2.0;
-    }
 }
 - (void)setMessageContent:(NSString *)messageContent{
-    if(![_messageContent isEqualToString:messageContent]){
+//    if(![_messageContent isEqualToString:messageContent]){
         _messageContent = [messageContent copy];
         _messageContentLabel.text = _messageContent;
-    }
+//    }
 }
 - (void)setUpdateTime:(NSString *)updateTime{
-    if(![_updateTime isEqualToString:updateTime]){
+//    if(![_updateTime isEqualToString:updateTime]){
         _updateTime = [updateTime copy];
         _messageUpdateLabel.text = _updateTime;
-    }
+//    }
 }
 //改变图片的大小适应image View的大小
 -(UIImage *)OriginImage:(UIImage *)image scaleToSize:(CGSize)size{

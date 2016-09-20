@@ -22,8 +22,6 @@
 @property (copy,nonatomic) NSString *company;
 @property (copy,nonatomic) NSString *type;
 
-@property (copy,nonatomic) NSString *imgurl;
-
 - (void)setInfo:(NSDictionary*)personDic;
 
 + (MeInfoViewModel*)getMeInfoVM;

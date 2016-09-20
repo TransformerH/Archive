@@ -20,7 +20,6 @@
     self.classNum = [[personDic valueForKey:@"_source"] valueForKey:@"major"];
     self.enrollYear = [[NSString alloc] initWithFormat:@"%@",[[personDic valueForKey:@"_source"] valueForKey:@"admission_year"]];
     self.school = @"东南大学";
-    self.imgurl = [[personDic valueForKey:@"_source"] valueForKey:@"icon_url"];
     
     NSLog (@"User city:%@ ; name:%@ ; job:%@ ; faculty:%@ ; company:%@ ; major:%@ ; enrollYear:%@ ; school:%@",self.city,self.name,self.job,self.major,self.company,self.classNum,self.enrollYear,self.school);
 }

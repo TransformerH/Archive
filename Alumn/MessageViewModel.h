@@ -10,17 +10,18 @@
 
 @interface MessageViewModel : NSObject
 
-+ (void)messageListSaveInPlist:(NSArray*)response;
-+ (NSArray*)messageListFromPlist;
-+ (NSArray*)getApplyInCircle;
-+ (NSArray*)getApplyResult;
-+ (NSArray*)getNewMemberIn;
-+ (NSArray*)createSucccessArray;
-+ (NSArray*)createFailureArray;
+//+ (void)messageListSaveInPlist:(NSArray*)response;
+//+ (NSArray*)getApplyInCircle;
+//+ (NSArray*)getApplyResult;
+//+ (NSArray*)getNewMemberIn;
+//+ (NSArray*)createSucccessArray;
+//+ (NSArray*)createFailureArray;
+//+ (void)commentListSaveInPlist:(NSDictionary*)response;
 
 
-+ (void)commentListSaveInPlist:(NSDictionary*)response;
 + (NSArray*)commentListFromPlist;
++ (NSArray*)messageListFromPlist;
+
 
 
 @end

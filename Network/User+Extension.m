@@ -94,7 +94,7 @@ static User *user;
                 //---------------------------------------- ###########
                 //  NSLog(@"注册全部信息%@",registerDic);
                 
-                successBlock(registerDic,YES);
+                successBlock(nil,YES);
             }
             else{
                 //手机号码验证失败
@@ -178,7 +178,6 @@ static User *user;
                              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                                  NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
                                  NSLog(@"%@", dic);
-                                 successBlock(dic,YES);
                                  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
                                  NSString *plistPath1= [paths objectAtIndex:0];
                                  
@@ -215,15 +214,10 @@ static User *user;
 //我的页面圈子内容获取
 +(void) MyAdminCirlceIntroduceWithParameters :(NSDictionary *) parm SuccessBlock:(SuccessBlock)successBlock AFNErrorBlock:(AFNErrorBlock) afnErrorblock
 {
-    //    ******************
-    
-    
-    //    ******************
-    
     
     NSString *myCircleURL = [[NSString alloc] initWithFormat:@"%@/get_my_filter_circle",[AFNetManager getMainURL]];
     
-    NSString *circleType = [[[parm valueForKey:@"Data"] valueForKey:@"response"] valueForKey:@"admin_circle_list"];
+    NSString *circleType = [[self getUserDic] valueForKey:@"admin_circle_list"];
     
     NSLog(@"admin_list  %@",circleType);
     
@@ -253,7 +247,7 @@ static User *user;
     
     NSString *myCircleURL = [[NSString alloc] initWithFormat:@"%@/get_my_filter_circle",[AFNetManager getMainURL]];
     
-    NSString *circleType = [[[parm valueForKey:@"Data"] valueForKey:@"response"] valueForKey:@"create_circle_list"];
+    NSString *circleType = [[self getUserDic] valueForKey:@"create_circle_list"];
     
     NSLog(@"create_list  %@",circleType);
     
@@ -278,7 +272,7 @@ static User *user;
 {
     NSString *myCardURL = [[NSString alloc] initWithFormat:@"%@/followslist",[AFNetManager getMainURL]];
     
-    NSString *uid = [[[parm valueForKey:@"Data"] valueForKey:@"response"] valueForKey:@"uid"];
+    NSString *uid = [[self getUserDic] valueForKey:@"uid"];
     
     NSDictionary *cardDic = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInt:30],@"count",[NSNumber numberWithInt:1],@"page",uid,@"uid", nil];
     NSDictionary *requestDic = [[NSDictionary alloc] initWithObjectsAndKeys:[User getXrsf],@"_xsrf",[self dictionaryToJson:cardDic],@"info_json", nil];
@@ -320,7 +314,25 @@ static User *user;
     [[AFNetManager manager] POST:myCommentURL parameters:requestDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
         NSLog(@"获取我Comment内容成功 ：%@", dic);
+        
+        NSArray *results = [[dic valueForKey:@"response"] valueForKey:@"results"];
+        
+        //---------------------------------------------------------------------------  将收到的评论存入plist
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *plistPath1= [paths objectAtIndex:0];
+        
+        NSLog(@"%@",plistPath1);
+        //得到完整的路径名
+        NSString *fileName = [plistPath1 stringByAppendingPathComponent:@"commentList.plist"];
+        NSFileManager *fm = [NSFileManager defaultManager];
+        if ([fm createFileAtPath:fileName contents:nil attributes:nil] ==YES) {
+            
+            [results writeToFile:fileName atomically:YES];
+            NSLog(@"commentList.plist文件写入完成");
+        }
         successBlock(dic,YES);
+        
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"获取我Comment内容失败 ：%@",error);
         afnErrorblock(error);
@@ -344,9 +356,37 @@ static User *user;
     NSLog(@"%@",requestDic);
     
     [[AFNetManager manager] POST:myMessageURL parameters:requestDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
-        //   NSLog(@"获取我Message内容成功 ：%@", dic);
-        successBlock(dic,YES);
+        
+        NSLog(@"获得的全部message %@",dic);
+        
+        NSArray *request = [[dic valueForKey:@"Data"] valueForKey:@"response"];
+        
+        //-------------------------------------------  将收到的message存入plist
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *plistPath1= [paths objectAtIndex:0];
+        
+        NSLog(@"%@",plistPath1);
+        //得到完整的路径名
+        NSString *fileName = [plistPath1 stringByAppendingPathComponent:@"messageList.plist"];
+        NSFileManager *fm = [NSFileManager defaultManager];
+        if ([fm createFileAtPath:fileName contents:nil attributes:nil] ==YES) {
+            
+            [request writeToFile:fileName atomically:YES];
+            NSLog(@"messageList.plist文件写入完成 array个数 %ld",(long)request.count);
+            
+            //*********************************************************测试输出
+            for(int i = 0;i < request.count ; i++)
+            {
+                NSLog(@"输出messageList.plist %@",request[i]);
+
+            }
+             successBlock(dic,YES);
+    }
+
+        
+       
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"获取我Message内容失败 ：%@",error);
         afnErrorblock(error);
@@ -363,13 +403,13 @@ static User *user;
     NSString *peoplelistURL = [[NSString alloc] initWithFormat:@"%@/search_user",[AFNetManager getMainURL]];
     
     
-    NSDictionary *requestDic = [[NSDictionary alloc] initWithObjectsAndKeys:[User getXrsf],@"_xsrf",[NSNumber numberWithInt:2000],@"filter_admission_year_min",[NSNumber numberWithInt:2016],@"filter_admission_year_max",@"[\"_金融_\",\"_软件学院_\"]",@"filter_major_list",@"[\"_中国_福建_漳州_\"]",@"filter_city_list",[NSNumber numberWithInt:0],@"all_match",@"",@"query", nil];
-    NSLog(@"发送到:%@",requestDic);
+    //    NSDictionary *requestDic = [[NSDictionary alloc] initWithObjectsAndKeys:[User getXrsf],@"_xsrf",[NSNumber numberWithInt:2000],@"filter_admission_year_min",[NSNumber numberWithInt:2016],@"filter_admission_year_max",@"[\"_金融_\",\"_软件学院_\"]",@"filter_major_list",@"[\"_中国_福建_漳州_\"]",@"filter_city_list",[NSNumber numberWithInt:0],@"all_match",@"",@"query", nil];
+    NSLog(@"发送到:%@",parm);
     
     
-    [[AFNetManager manager] POST:peoplelistURL parameters:requestDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [[AFNetManager manager] POST:peoplelistURL parameters:parm progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
-        //  NSLog(@"获取人脉列表成功 ：%@", dic);
+        NSLog(@"获取人脉列表成功 ：%@", dic);
         successBlock(dic,YES);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"获取人脉列表失败 ：%@",error);
@@ -403,7 +443,7 @@ static User *user;
     
     [[AFNetManager manager] POST:peoplelistURL parameters:requestDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
-        //   NSLog(@"获取人脉列表成功 ：%@", dic);
+        NSLog(@"获取人脉列表成功 ：%@", dic);
         successBlock(dic,YES);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"获取人脉列表失败 ：%@",error);

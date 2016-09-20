@@ -3,33 +3,43 @@
 //  Alumn
 //
 //  Created by Dorangefly Liu on 16/9/13.
-//  Copyright © 2016年 刘龙飞. All rights reserved.
+//  Copyright © 2016年 刘畅. All rights reserved.
 //
 
 #import "MessageTableViewController.h"
-#import "MJRefresh.h"
 #import "SystemMessageTableViewCell.h"
 #import "MessageViewModel.h"
-#import "MyAltview.h"
-#import "Circle_FindVC.h"
-#import "UIView+SDAutoLayout.h"
+#import "User.h"
+#import "User+Extension.h"
+
 
 
 @interface MessageTableViewController ()
 
-@property (nonatomic,strong)NSArray *dataArray;
-@property (nonatomic,strong)MyAltview *alt;
-@property (nonatomic,strong)UIView *darkview;
+
+@property (nonatomic,strong) NSArray *dataArray;
 
 @end
 
 @implementation MessageTableViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //---------------------------------  设置数据
-    self.dataArray = [MessageViewModel messageListFromPlist];
+    NSLog(@"测试尾");
+    
+    [User systemMessageWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+        NSLog(@"获取消息列表成功");
+        
+        self.dataArray = [MessageViewModel messageListFromPlist];
+        
+        NSLog(@"messageTableView的dataArray 的元素个数: %lu",(unsigned long)self.dataArray.count);
+        
+    } AFNErrorBlock:^(NSError *error) {
+        NSLog(@"获取消息列表失败");
+    }];
+    
     
     UINib *nib = [UINib nibWithNibName:@"SystemMessageTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"cell"];
@@ -37,64 +47,62 @@
     self.tableView.rowHeight = 110;
 }
 
-- (void)delayInSeconds:(CGFloat)delayInSeconds block:(dispatch_block_t) block
-{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC),  dispatch_get_main_queue(), block);
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.dataArray.count;
+    return [MessageViewModel messageListFromPlist].count;
 }
 
 - (SystemMessageTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SystemMessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.font = [UIFont systemFontOfSize:17];
-    for(int i = 0;i < self.dataArray.count;i++){
-        switch ([[[MessageViewModel messageListFromPlist][i] valueForKey:@"type"] intValue]) {
+  //  cell.textLabel.font = [UIFont systemFontOfSize:17];
+//    for(int i = 0;i < self.dataArray.count;i++){
+    
+    NSLog(@"消息列表的类型输出: %d",[[self.dataArray[indexPath.row] valueForKey:@"type"] intValue]);
+    
+        switch ([[self.dataArray[indexPath.row] valueForKey:@"type"] intValue]) {
             case 0:{
-                cell.circleURL = [[self.dataArray[i] valueForKey:@"message"] valueForKey:@"circle_url"];
+                cell.circleURL = @"http://pic.58pic.com/58pic/15/65/94/75558PICQEi_1024.jpg";
                 cell.messageName = @"圈子通知";
-                cell.messageContent = [NSString stringWithFormat:@"您申请创建的圈子 %@ 已通过审核",[[self.dataArray[i] valueForKey:@"message"] valueForKey:@"circle_name"]];
-                cell.updateTime = [self.dataArray[i] valueForKey:@"update_time"];
+                cell.messageContent = [NSString stringWithFormat:@"您申请创建的圈子 %@ 已通过审核",[[self.dataArray[indexPath.row][indexPath.row] valueForKey:@"message"] valueForKey:@"circle_name"]];
+                cell.updateTime = [self.dataArray[indexPath.row][indexPath.row] valueForKey:@"update_time"];
                 break;
             }
             case 1:{
-                cell.circleURL = [[self.dataArray[i] valueForKey:@"message"] valueForKey:@"circle_url"];
+                cell.circleURL = [[self.dataArray[indexPath.row][indexPath.row] valueForKey:@"message"] valueForKey:@"circle_url"];
                 cell.messageName = @"圈子通知";
-                cell.messageContent = [NSString stringWithFormat:@"您申请创建的圈子 %@ 未通过审核",[[self.dataArray[i] valueForKey:@"message"] valueForKey:@"circle_name"]];
-                cell.updateTime = [[MessageViewModel messageListFromPlist][i] valueForKey:@"update_time"];
+                cell.messageContent = [NSString stringWithFormat:@"您申请创建的圈子 %@ 未通过审核",[[self.dataArray[indexPath.row][indexPath.row] valueForKey:@"message"] valueForKey:@"circle_name"]];
+                cell.updateTime = [self.dataArray[indexPath.row] valueForKey:@"update_time"];
                 break;
             }
             case 2:{
-                cell.circleURL = [[self.dataArray[i] valueForKey:@"message"] valueForKey:@"circle_url"];
+                cell.circleURL = [[self.dataArray[indexPath.row][indexPath.row] valueForKey:@"message"] valueForKey:@"circle_url"];
                 cell.messageName = @"圈子通知";
-                cell.messageContent = [NSString stringWithFormat:@"%@已加入",[[self.dataArray[i] valueForKey:@"message"] valueForKey:@"apply_name"]];
-                cell.updateTime = [NSString stringWithFormat:@"%@ | %@",[[self.dataArray[i] valueForKey:@"message"] valueForKey:@"circle_name"],[self.dataArray[i] valueForKey:@"update_time"]];
+                cell.messageContent = [NSString stringWithFormat:@"%@已加入",[[self.dataArray[indexPath.row][indexPath.row] valueForKey:@"message"] valueForKey:@"apply_name"]];
+                cell.updateTime = [NSString stringWithFormat:@"%@ | %@",[[self.dataArray[indexPath.row][indexPath.row] valueForKey:@"message"] valueForKey:@"circle_name"],[self.dataArray[indexPath.row][indexPath.row] valueForKey:@"update_time"]];
                 break;
             }
             case 3:{
-                cell.circleURL = [[self.dataArray[i] valueForKey:@"message"] valueForKey:@"circle_url"];
+                cell.circleURL = @"http://pic2.ooopic.com/11/75/82/72b1OOOPIC1e.jpg";
                 cell.messageName = @"圈子通知";
-                cell.messageContent = [[self.dataArray[i] valueForKey:@"message"] valueForKey:@"result"];
-                cell.updateTime = [NSString stringWithFormat:@"%@ | %@",[[self.dataArray[i] valueForKey:@"message"] valueForKey:@"circle_name"],[self.dataArray[i] valueForKey:@"update_time"]];
+                cell.messageContent = [[self.dataArray[indexPath.row][indexPath.row] valueForKey:@"message"] valueForKey:@"result"];
+                cell.updateTime = [NSString stringWithFormat:@"%@ | %@",[[self.dataArray[indexPath.row][indexPath.row] valueForKey:@"message"] valueForKey:@"circle_name"],[self.dataArray[indexPath.row][indexPath.row] valueForKey:@"update_time"]];
                 break;
             }
             case 4:{
-                cell.circleURL = [[self.dataArray[i] valueForKey:@"message"] valueForKey:@"circle_url"];
+                cell.circleURL = @"http://pic2.ooopic.com/11/75/82/72b1OOOPIC1e.jpg";
                 cell.messageName = @"圈子通知";
-                cell.messageContent = [NSString stringWithFormat:@"%@申请加入%@",[[self.dataArray[i] valueForKey:@"message"] valueForKey:@"apply_name"],[[self.dataArray[i] valueForKey:@"message"] valueForKey:@"circle_name"]];
-                cell.updateTime = [NSString stringWithFormat:@"%@ | %@",[[self.dataArray[i] valueForKey:@"message"] valueForKey:@"circle_name"],[self.dataArray[i] valueForKey:@"update_time"]];
+                cell.messageContent = [NSString stringWithFormat:@"%@申请加入%@",[[self.dataArray[indexPath.row] valueForKey:@"message"] valueForKey:@"apply_name"],[[self.dataArray[indexPath.row] valueForKey:@"message"] valueForKey:@"circle_name"]];
+                cell.updateTime = [NSString stringWithFormat:@"%@ | %@",[[self.dataArray[indexPath.row] valueForKey:@"message"] valueForKey:@"circle_name"],[self.dataArray[indexPath.row] valueForKey:@"update_time"]];
                 break;
             }
                 
             default:
                 break;
         }
-    }
+//    }
     
     return cell;
 }
@@ -173,48 +181,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

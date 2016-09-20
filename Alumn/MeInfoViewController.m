@@ -8,7 +8,6 @@
 
 #import "MeInfoViewController.h"
 #import "MeInfoViewModel.h"
-#import   "UIImageView+WebCache.h"
 
 @interface MeInfoViewController ()
 
@@ -54,9 +53,9 @@
     // Do any additional setup after loading the view.
     
     //---------------------------------------------   设置navigationBar透明
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsCompact];
-//    self.navigationController.navigationBar.layer.masksToBounds = YES;
-//    [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsCompact];
+    self.navigationController.navigationBar.layer.masksToBounds = YES;
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
     //----------------------------------------------  设置navigationBar透明
     
     [self.navigationController.navigationItem setTitle:@"人脉详情"];
@@ -109,14 +108,14 @@
     [_rightBottomBtn addSubview:cardLabel];
     
     //-----------------------------------   先加底图
-    UIImage *maskImg = [self imageByApplyingAlpha:0.8 image:[UIImage imageNamed:@"meBG"]];
+    UIImage *maskImg = [self imageByApplyingAlpha:0.8 image:[UIImage imageNamed:@"maskImg"]];
     UIImageView *maskImgView = [[UIImageView alloc] initWithImage:[self OriginImage:maskImg scaleToSize:CGRectMake(0, 0, self.view.frame.size.width, _headView.frame.size.height).size]];
    //---------------####################################   设置headImg
+    UIImage *headImg = [UIImage imageNamed:@"headImg"];
     UIImageView *primerImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _headView.frame.size.height)];
     primerImgView.contentMode = UIViewContentModeCenter;
     primerImgView.clipsToBounds = YES;
-   [primerImgView sd_setImageWithURL:[NSURL URLWithString:self.meInfoVM.imgurl]];
-//    primerImgView.image = [self OriginImage:headImg scaleToSize:CGSizeMake(_headView.bounds.size.width, _headView.bounds.size.width)];
+    primerImgView.image = [self OriginImage:headImg scaleToSize:CGSizeMake(_headView.bounds.size.width, _headView.bounds.size.width)];
    
     [_headView addSubview:primerImgView];
     [_headView addSubview:maskImgView];
@@ -134,8 +133,7 @@
 //    [_headView addSubview:titleLabel];
     
     UIImageView *headImgView = [[UIImageView alloc] initWithFrame:CGRectMake(_headView.bounds.size.width / 8.5, 72, 70, 70)];
-   // headImgView.image = headImg;
-    [headImgView sd_setImageWithURL:[NSURL URLWithString:self.meInfoVM.imgurl]];
+    headImgView.image = headImg;
     headImgView.layer.masksToBounds = YES;
     headImgView.layer.cornerRadius = headImgView.bounds.size.width / 2.0;
     headImgView.layer.borderWidth = 1.5;

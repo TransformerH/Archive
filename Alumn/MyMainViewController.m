@@ -61,6 +61,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    self.meVM = [[MeViewModel alloc] init];
+    
+    
+    [User MyAdminCirlceIntroduceWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+        NSLog(@"获得加入的圈子列表 : %@",dict);
+        [self.meVM getMyAdminCircleList:[dict valueForKey:@"Data"]];
+    } AFNErrorBlock:^(NSError *error) {
+        NSLog(@"获得失败，加入的圈子");
+    }];
+    
+    [User MyCreateCirlceIntroduceWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+        NSLog(@"获得创建的圈子列表: %@",dict);
+        [self.meVM getMyCreateCircleList:[dict valueForKey:@"Data"]];
+    } AFNErrorBlock:^(NSError *error) {
+        NSLog(@"获得失败，创建的圈子");
+    }];
+    
+    [User CardWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+        NSLog(@"获得收藏的Cards :%@",dict);
+        [self.meVM getMyCardsList:[dict valueForKey:@"Data"]];
+    } AFNErrorBlock:^(NSError *error) {
+        NSLog(@"获得失败，收藏的Cards");
+    }];
+    
+
+    
     [self initWithUserInterface];
 }
 - (void)didReceiveMemoryWarning {
@@ -69,7 +97,7 @@
 }
 - (void)viewDidAppear:(BOOL)animated
 {
-    self.headMenuDateArray = @[@"收藏的名片",@"参与的圈子",@"管理的圈子"];
+    self.headMenuDateArray = @[@"收藏的名片",@"管理的圈子",@"创建的圈子"];
 }
 - (void)initWithUserInterface
 {
@@ -623,34 +651,34 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    
-    self.meVM = [[MeViewModel alloc] init];
-    
-    
-    [User MyAdminCirlceIntroduceWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
-        NSLog(@"获得加入的圈子列表");
-        [self.meVM getMyAdminCircleList:[dict valueForKey:@"Data"]];
-    } AFNErrorBlock:^(NSError *error) {
-        NSLog(@"获得失败，加入的圈子");
-    }];
-    
-    [User MyCreateCirlceIntroduceWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
-        NSLog(@"获得创建的圈子列表");
-        [self.meVM getMyCreateCircleList:[dict valueForKey:@"Data"]];
-    } AFNErrorBlock:^(NSError *error) {
-        NSLog(@"获得失败，创建的圈子");
-    }];
-    
-    [User CardWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
-        NSLog(@"获得收藏的Cards");
-        [self.meVM getMyCardsList:[dict valueForKey:@"Data"]];
-    } AFNErrorBlock:^(NSError *error) {
-        NSLog(@"获得失败，收藏的Cards");
-    }];
-    
-}
-
+//- (void)viewWillAppear:(BOOL)animated{
+//    
+//    self.meVM = [[MeViewModel alloc] init];
+//    
+//    
+//    [User MyAdminCirlceIntroduceWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+//        NSLog(@"获得加入的圈子列表 : %@",dict);
+//        [self.meVM getMyAdminCircleList:[dict valueForKey:@"Data"]];
+//    } AFNErrorBlock:^(NSError *error) {
+//        NSLog(@"获得失败，加入的圈子");
+//    }];
+//    
+//    [User MyCreateCirlceIntroduceWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+//        NSLog(@"获得创建的圈子列表: %@",dict);
+//        [self.meVM getMyCreateCircleList:[dict valueForKey:@"Data"]];
+//    } AFNErrorBlock:^(NSError *error) {
+//        NSLog(@"获得失败，创建的圈子");
+//    }];
+//    
+//    [User CardWithParameters:nil SuccessBlock:^(NSDictionary *dict, BOOL success) {
+//        NSLog(@"获得收藏的Cards :%@",dict);
+//        [self.meVM getMyCardsList:[dict valueForKey:@"Data"]];
+//    } AFNErrorBlock:^(NSError *error) {
+//        NSLog(@"获得失败，收藏的Cards");
+//    }];
+//    
+//}
+//
 
 
 @end
